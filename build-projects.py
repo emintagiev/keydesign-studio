@@ -32,6 +32,7 @@ HEADER = """  <header class="header" id="header">
         <button class="nav-toggle" type="button" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
           <span></span>
           <span></span>
+          <span></span>
         </button>
 
         <div class="lang" role="group" aria-label="Выбор языка / Language">

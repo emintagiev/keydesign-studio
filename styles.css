@@ -45,6 +45,7 @@
 
       /* Inner pages: header height + small gap (no extra air) */
       --page-top: calc(clamp(96px, 12.5vw, 130px) + 0.9rem + 0.75rem);
+      --header-h: calc(clamp(96px, 12.5vw, 130px) + 1.1rem);
 
       /* — Layout — */
       --container: 1320px;
@@ -803,6 +804,7 @@
       --hero-fg-faint: rgba(247, 240, 230, 0.58);
       --hero-line: rgba(247, 240, 230, 0.24);
       --hero-accent: color-mix(in srgb, var(--accent) 55%, #f7f0e6);
+      --header-h: 3.35rem;
     }
 
     /* header over hero — always light logo & nav on home */
@@ -1831,14 +1833,36 @@
       .nav.is-open {
         display: flex;
         position: fixed;
-        inset: 84px 0 0 0;
+        inset: var(--header-h) 0 0 0;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         gap: var(--sp-5);
         padding: var(--gutter);
-        background: var(--bg);
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        backdrop-filter: blur(18px) saturate(1.05);
+        -webkit-backdrop-filter: blur(18px) saturate(1.05);
         z-index: 90;
+      }
+
+      body.nav-open .header {
+        border-bottom-color: transparent;
+        background: color-mix(in srgb, var(--bg) 72%, transparent);
+        backdrop-filter: blur(14px) saturate(1.05);
+        -webkit-backdrop-filter: blur(14px) saturate(1.05);
+      }
+
+      body.home.nav-open .header {
+        background: color-mix(in srgb, #12100d 78%, transparent);
+      }
+
+      body.home.nav-open .header.is-scrolled {
+        background: color-mix(in srgb, #12100d 78%, transparent);
+        border-bottom-color: transparent;
+      }
+
+      .home .nav.is-open {
+        background: color-mix(in srgb, #12100d 86%, transparent);
       }
 
       .nav.is-open .nav__link {
@@ -1850,35 +1874,43 @@
       }
 
       .nav-toggle {
-        display: inline-grid;
-        place-items: center;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 42px;
         height: 42px;
         border: 1px solid var(--line);
         border-radius: 100px;
         background: transparent;
         cursor: pointer;
-        gap: 5px;
+        padding: 0;
       }
 
       .nav-toggle span {
         display: block;
         width: 18px;
-        height: 1.5px;
+        height: 2px;
         background: var(--text);
+        border-radius: 1px;
         transition: transform var(--t-fast), opacity var(--t-fast);
       }
 
+      .nav-toggle span + span {
+        margin-top: 4px;
+      }
+
       .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-        transform: translateY(3.25px) rotate(45deg);
+        transform: translateY(6px) rotate(45deg);
       }
 
       .nav-toggle[aria-expanded="true"] span:nth-child(2) {
-        transform: translateY(-3.25px) rotate(-45deg);
+        opacity: 0;
+        transform: scaleX(0);
       }
 
-      .home .nav.is-open {
-        inset: 52px 0 0 0;
+      .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
       }
 
       .hero__title {

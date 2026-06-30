@@ -450,18 +450,22 @@
       /* ---------- Mobile nav ---------- */
       var nav = document.getElementById("nav");
       var navToggle = document.getElementById("navToggle");
-      navToggle.addEventListener("click", function () {
-        var open = nav.classList.toggle("is-open");
-        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        document.body.style.overflow = open ? "hidden" : "";
-      });
-      nav.addEventListener("click", function (e) {
-        if (e.target.classList.contains("nav__link")) {
-          nav.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
-        }
-      });
+      if (nav && navToggle) {
+        navToggle.addEventListener("click", function () {
+          var open = nav.classList.toggle("is-open");
+          navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          document.body.classList.toggle("nav-open", open);
+          document.body.style.overflow = open ? "hidden" : "";
+        });
+        nav.addEventListener("click", function (e) {
+          if (e.target.classList.contains("nav__link")) {
+            nav.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("nav-open");
+            document.body.style.overflow = "";
+          }
+        });
+      }
 
       /* ---------- Header scroll state ---------- */
       var header = document.getElementById("header");
