@@ -94,16 +94,13 @@ git checkout site-clean   # или: git reset --hard origin/master
 - Оптимизация: `optimize-images.py` (max 2400px, quality 82%).
 - **Переоптимизировано** (salok и др. откатились к ~50 МБ): снова **175 МБ** в `assets/projects/`.
 
-### Деплой (готово к подключению)
-- Репозиторий на GitHub: `emintagiev/keydesign-studio`, ветка `master`.
-- **Cloudflare Pages:** Connect to Git → repo → branch `master`, build command пустой, output `/`.
-- **Netlify:** то же - static, root directory `/`.
-- `_redirects`: `/key-design-studio.html` → `/` (200).
-- Домен куплен - привязать в панели Pages/Netlify → Custom domains.
-- **Formspree для заявки:** formspree.io → форма на `key-des@mail.ru` → URL в `brief-config.js`:
-  ```javascript
-  window.KDS_BRIEF = { endpoint: "https://formspree.io/f/xxxxxxxx" };
-  ```
+### Деплой (keydesign.studio)
+- Репозиторий: `https://github.com/emintagiev/keydesign-studio`, ветка `master`.
+- **Cloudflare Pages:** Workers & Pages → Create → Connect to Git → repo → branch `master`.
+- Build command: *(пусто)*. Build output: `/`.
+- Custom domains: `keydesign.studio`, `www.keydesign.studio`.
+- Домен должен быть в Cloudflare (DNS). `_redirects`: `/` → главная.
+- **Formspree:** endpoint в `brief-config.js`.
 
 ---
 
