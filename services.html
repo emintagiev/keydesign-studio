@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Услуги Key Design Studio: дизайн-проект интерьера, менеджмент, авторский надзор, архитектурное планирование." />
+  <meta name="theme-color" content="#f4efe7" />
+  <title>Услуги - Key Design Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
+  <link rel="stylesheet" href="styles.css?v=58" />
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Key Design Studio">
+        <img class="brand__logo brand__logo--dark" src="assets/logo.png?v=11" alt="" width="859" height="722" />
+        <img class="brand__logo brand__logo--light" src="assets/logo-light.png?v=11" alt="" width="859" height="722" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="about.html" data-i18n="nav.about">О студии</a>
+        <a class="nav__link" href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a class="nav__link nav__link--active" href="services.html" data-i18n="nav.services">Услуги</a>
+        <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
+        <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
+        <a class="nav__link" href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="header__tools">
+        <button class="nav-toggle" type="button" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="lang" role="group" aria-label="Выбор языка / Language">
+          <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="services-page">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h1 class="eyebrow" data-i18n="nav.services">Услуги</h1>
+          <h2 class="section-head__subtitle" data-i18n="services.subtitle">Что мы делаем для вашего пространства</h2>
+        </div>
+        <a href="index.html" class="link-underline" data-i18n="nav.home">
+          На главную <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="services-list">
+        <!-- 1. Дизайн-проект -->
+        <article class="svc reveal" id="design">
+          <div class="svc__row">
+            <div class="svc__head">
+              <h2 class="svc__title" data-i18n="svc.1.title">Дизайн-проект интерьера</h2>
+              <p class="svc__lead" data-i18n="svc.1.lead">
+                Авторская концепция пространства и полный комплект рабочей документации: стиль, конструктивные решения и технологии отделки. Срок разработки - от двух месяцев, в зависимости от площади и сложности объекта.
+              </p>
+              <button class="svc__toggle link-underline" type="button" data-svc-toggle aria-expanded="false" data-i18n="svc.more">
+                Подробнее
+              </button>
+            </div>
+            <figure class="svc__orb" aria-hidden="true">
+              <img src="assets/services/service-design.jpg" alt="" loading="lazy" width="340" height="340" />
+            </figure>
+          </div>
+          <div class="svc__body" hidden>
+            <div class="svc__body-inner">
+              <div class="svc__steps">
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.1.s1.title">Техническое задание</h3>
+                    <p class="svc__step-text" data-i18n="svc.1.s1.text">Фиксируем задачи по каждой зоне, собираем пожелания и референсы по стилю, мебели и оборудованию.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.1.s2.title">Обмеры и фотофиксация</h3>
+                    <p class="svc__step-text" data-i18n="svc.1.s2.text">Выезжаем на объект, снимаем точные размеры и фиксируем исходное состояние помещений.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.1.s3.title">Планировочное решение</h3>
+                    <p class="svc__step-text" data-i18n="svc.1.s3.text">Предлагаем несколько вариантов расстановки зон с учётом сценариев жизни и инженерии.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.1.s4.title">3D-визуализация</h3>
+                    <p class="svc__step-text" data-i18n="svc.1.s4.text">Показываем будущую атмосферу интерьера: свет, материалы, мебель и детали в объёмных рендерах.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.1.s5.title">Рабочий проект</h3>
+                    <p class="svc__step-text" data-i18n="svc.1.s5.text">Готовим чертежи и спецификации, по которым строители и поставщики реализуют проект без догадок.</p>
+                  </div>
+                </div>
+              <p class="svc__note" data-i18n="svc.1.note">Отдельно можно заказать консультацию по планировке на этапе выбора квартиры или дома.</p>
+              <a href="#brief" class="btn svc__cta" data-open-brief data-i18n="svc.cta">
+                Оставить заявку
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Менеджмент -->
+        <article class="svc reveal" id="management">
+          <div class="svc__row">
+            <div class="svc__head">
+              <h2 class="svc__title" data-i18n="svc.2.title">Менеджмент проектов</h2>
+              <p class="svc__lead" data-i18n="svc.2.lead">
+                Ведём проект как единую систему: координируем поставщиков и подрядчиков, помогаем с комплектацией. Сокращаем время на подбор чистовых материалов, мебели и декора, выстраиваем бюджет и контролируем сроки поставок.
+              </p>
+              <button class="svc__toggle link-underline" type="button" data-svc-toggle aria-expanded="false" data-i18n="svc.more">
+                Подробнее
+              </button>
+            </div>
+            <figure class="svc__orb" aria-hidden="true">
+              <img src="assets/services/service-management.jpg" alt="" loading="lazy" width="340" height="340" />
+            </figure>
+          </div>
+          <div class="svc__body" hidden>
+            <div class="svc__body-inner">
+              <div class="svc__steps">
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s1.title">Поиск исполнителей</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s1.text">Подбираем проверенных поставщиков и подрядчиков под задачи и бюджет проекта.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s2.title">Карта материалов</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s2.text">Формируем техническое задание, собираем палитру отделки и согласовываем образцы с вами.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s3.title">Смета и сроки</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s3.text">Считаем стоимость материалов, мебели и наполнения по спецификациям проекта с указанием сроков.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s4.title">Утверждение бюджета</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s4.text">Согласовываем финальную смету и фиксируем приоритеты закупок.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s5.title">График оплат</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s5.text">Связываем платежи с этапами строительства, чтобы закупки шли в нужной последовательности.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.2.s6.title">Закупка и логистика</h3>
+                    <p class="svc__step-text" data-i18n="svc.2.s6.text">Ведём процесс от проверки коммерческих предложений до доставки и монтажа на объекте.</p>
+                  </div>
+                </div>
+              <a href="#brief" class="btn svc__cta" data-open-brief data-i18n="svc.cta">
+                Оставить заявку
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Авторский надзор -->
+        <article class="svc reveal" id="supervision">
+          <div class="svc__row">
+            <div class="svc__head">
+              <h2 class="svc__title" data-i18n="svc.3.title">Авторский надзор</h2>
+              <p class="svc__lead" data-i18n="svc.3.lead">
+                Сопровождаем реализацию дизайн-проекта на площадке: следим за качеством, координируем подрядчиков и своевременно вносим уточнения в документацию.
+              </p>
+              <button class="svc__toggle link-underline" type="button" data-svc-toggle aria-expanded="false" data-i18n="svc.more">
+                Подробнее
+              </button>
+            </div>
+            <figure class="svc__orb" aria-hidden="true">
+              <img src="assets/services/service-supervision.jpg" alt="" loading="lazy" width="340" height="340" />
+            </figure>
+          </div>
+          <div class="svc__body" hidden>
+            <div class="svc__body-inner">
+              <div class="svc__steps">
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s1.title">Выезды на объект</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s1.text">Регулярно приезжаем на площадку и сверяем ход работ с проектом.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s2.title">Консультации бригады</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s2.text">Отвечаем на вопросы строителей в процессе отделки и монтажа.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s3.title">Контроль качества</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s3.text">Проверяем соответствие узлов, материалов и геометрии рабочим чертежам.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s4.title">Корректировки проекта</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s4.text">Оперативно обновляем чертежи, если на объекте появляются уточнения.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s5.title">Смежные подрядчики</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s5.text">Согласуем работу инженеров, мебельщиков, декораторов и других специалистов.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.3.s6.title">Отчётность</h3>
+                    <p class="svc__step-text" data-i18n="svc.3.s6.text">Еженедельно фиксируем статус работ и принятые решения для прозрачности процесса.</p>
+                  </div>
+                </div>
+              <a href="#brief" class="btn svc__cta" data-open-brief data-i18n="svc.cta">
+                Оставить заявку
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Архитектурное планирование -->
+        <article class="svc reveal" id="planning">
+          <div class="svc__row">
+            <div class="svc__head">
+              <h2 class="svc__title" data-i18n="svc.4.title">Архитектурное планирование</h2>
+              <p class="svc__lead" data-i18n="svc.4.lead">
+                Проектируем логику пространства до деталей отделки: перепланировки, зонирование, инженерные вводные и связь интерьера с архитектурой здания.
+              </p>
+              <button class="svc__toggle link-underline" type="button" data-svc-toggle aria-expanded="false" data-i18n="svc.more">
+                Подробнее
+              </button>
+            </div>
+            <figure class="svc__orb" aria-hidden="true">
+              <img src="assets/services/service-architecture.jpg" alt="" loading="lazy" width="340" height="340" />
+            </figure>
+          </div>
+          <div class="svc__body" hidden>
+            <div class="svc__body-inner">
+              <div class="svc__steps">
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.4.s1.title">Анализ объекта</h3>
+                    <p class="svc__step-text" data-i18n="svc.4.s1.text">Изучаем планировку, инсоляцию, инженерные стояки и ограничения застройщика или БТИ.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.4.s2.title">Сценарии использования</h3>
+                    <p class="svc__step-text" data-i18n="svc.4.s2.text">Описываем, как вы будете жить в пространстве: маршруты, приватность, хранение, зоны отдыха и работы.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.4.s3.title">Планировочные схемы</h3>
+                    <p class="svc__step-text" data-i18n="svc.4.s3.text">Готовим варианты перепланировки с расстановкой мебели и привязкой инженерии.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.4.s4.title">Согласование изменений</h3>
+                    <p class="svc__step-text" data-i18n="svc.4.s4.text">Помогаем подготовить документы для согласования перепланировки, если это требуется.</p>
+                  </div>
+                  <div class="svc__step">
+                    <h3 class="svc__step-title" data-i18n="svc.4.s5.title">Связь с дизайн-проектом</h3>
+                    <p class="svc__step-text" data-i18n="svc.4.s5.text">Передаём утверждённую планировку в этап проработки материалов, света и деталей интерьера.</p>
+                  </div>
+                </div>
+              <a href="#brief" class="btn svc__cta" data-open-brief data-i18n="svc.cta">
+                Оставить заявку
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">Key Design Studio</span>
+      <span class="footer__meta">
+        © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
+      </span>
+      <span class="footer__meta" data-i18n="footer.cities">Москва · Санкт-Петербург</span>
+    </div>
+  </footer>
+
+  <div class="brief" id="brief" aria-hidden="true">
+    <div class="brief__backdrop" data-close-brief tabindex="-1"></div>
+    <div class="brief__dialog" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
+      <div class="brief__head">
+        <p class="brief__title" id="briefTitle" data-i18n="brief.title">Заявка на проект</p>
+        <span class="brief__counter" data-brief-counter>1 / 3</span>
+        <button class="brief__close" type="button" data-close-brief aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="brief__progress" aria-hidden="true">
+          <span class="brief__progress-bar" data-brief-progress style="width: 33.33%"></span>
+        </div>
+      </div>
+      <form class="brief__form" id="briefForm" novalidate>
+        <div class="brief__panel is-active" data-brief-step="1">
+          <p class="brief__question" data-i18n="brief.q1">Какой метраж пространства мы будем проектировать?</p>
+          <div class="brief__options">
+            <label class="brief__option"><input type="radio" name="area" value="До 60 м²" required /><span class="brief__option-text" data-i18n="brief.a1.1">До 60 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="60-120 м²" /><span class="brief__option-text" data-i18n="brief.a1.2">60-120 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="120-200 м²" /><span class="brief__option-text" data-i18n="brief.a1.3">120-200 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="200-500 м²" /><span class="brief__option-text" data-i18n="brief.a1.4">200-500 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="500-1000 м²" /><span class="brief__option-text" data-i18n="brief.a1.5">500-1000 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="Больше 1000 м²" /><span class="brief__option-text" data-i18n="brief.a1.6">Больше 1000 м²</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="2" hidden>
+          <p class="brief__question" data-i18n="brief.q2">Какое направление интерьера вам ближе?</p>
+          <div class="brief__options">
+            <label class="brief__option"><input type="radio" name="style" value="Классический" required /><span class="brief__option-text" data-i18n="brief.a2.1">Классический</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Ар-деко" /><span class="brief__option-text" data-i18n="brief.a2.2">Ар-деко</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Минимализм" /><span class="brief__option-text" data-i18n="brief.a2.3">Минимализм</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Современный" /><span class="brief__option-text" data-i18n="brief.a2.4">Современный</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Эклектика" /><span class="brief__option-text" data-i18n="brief.a2.5">Эклектика</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Пока выбираю" /><span class="brief__option-text" data-i18n="brief.a2.6">Пока выбираю</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="3" hidden>
+          <p class="brief__question" data-i18n="brief.q3">Когда планируете приступить к работам?</p>
+          <div class="brief__options brief__options--5">
+            <label class="brief__option"><input type="radio" name="timeline" value="Уже готов(а) начать" required /><span class="brief__option-text" data-i18n="brief.a3.1">Уже готов(а) начать</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="В течение полугода" /><span class="brief__option-text" data-i18n="brief.a3.2">В течение полугода</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="В течение года" /><span class="brief__option-text" data-i18n="brief.a3.3">В течение года</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="Не раньше чем через год" /><span class="brief__option-text" data-i18n="brief.a3.4">Не раньше чем через год</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="Пока не определился(лась)" /><span class="brief__option-text" data-i18n="brief.a3.5">Пока не определился(лась)</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="4" hidden>
+          <p class="brief__question" data-i18n="brief.q4">Как с вами связаться?</p>
+          <div class="brief__fields">
+            <label class="brief__field">
+              <span class="brief__label" data-i18n="brief.name">Имя</span>
+              <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="brief.namePh" placeholder="Имя" />
+            </label>
+            <label class="brief__field">
+              <span class="brief__label" data-i18n="brief.phone">Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" required data-i18n-placeholder="brief.phonePh" placeholder="Телефон" />
+            </label>
+          </div>
+        </div>
+        <div class="brief__panel brief__panel--done" data-brief-step="5" hidden>
+          <p class="brief__done-title" data-i18n="brief.doneTitle">Принято!</p>
+          <p class="brief__done-text" data-i18n="brief.doneText">Мы получили вашу заявку и скоро напишем или позвоним.</p>
+        </div>
+        <div class="brief__foot" data-brief-foot>
+          <button class="brief__back" type="button" data-brief-back disabled>
+            <span aria-hidden="true">←</span>
+            <span data-i18n="brief.back">Назад</span>
+          </button>
+          <button class="brief__next btn" type="button" data-brief-next disabled>
+            <span data-brief-next-label data-i18n="brief.next">Продолжить</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="brief-config.js?v=1"></script>
+  <script src="app.js?v=18"></script>
+</body>
+</html>

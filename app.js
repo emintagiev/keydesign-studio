@@ -9,6 +9,7 @@
           "brand.tag": "Студия интерьерного дизайна",
           "nav.about": "О студии",
           "nav.projects": "Проекты",
+          "nav.services": "Услуги",
           "nav.approach": "Подход",
           "nav.partners": "Партнёры",
           "nav.contact": "Контакты",
@@ -145,12 +146,71 @@
           "brief.sending": "Отправляем…",
           "brief.error": "Не удалось отправить. Попробуйте ещё раз или напишите на key-des@mail.ru",
           "brief.doneTitle": "Принято!",
-          "brief.doneText": "Мы получили вашу заявку и скоро напишем или позвоним."
+          "brief.doneText": "Мы получили вашу заявку и скоро напишем или позвоним.",
+          "services.subtitle": "Что мы делаем для вашего пространства",
+          "services.all": "Все услуги",
+          "svc.more": "Подробнее",
+          "svc.less": "Свернуть",
+          "svc.cta": "Оставить заявку",
+          "svc.1.title": "Дизайн-проект интерьера",
+          "svc.1.lead": "Авторская концепция пространства и полный комплект рабочей документации: стиль, конструктивные решения и технологии отделки. Срок разработки - от двух месяцев, в зависимости от площади и сложности объекта.",
+          "svc.1.note": "Отдельно можно заказать консультацию по планировке на этапе выбора квартиры или дома.",
+          "svc.1.s1.title": "Техническое задание",
+          "svc.1.s1.text": "Фиксируем задачи по каждой зоне, собираем пожелания и референсы по стилю, мебели и оборудованию.",
+          "svc.1.s2.title": "Обмеры и фотофиксация",
+          "svc.1.s2.text": "Выезжаем на объект, снимаем точные размеры и фиксируем исходное состояние помещений.",
+          "svc.1.s3.title": "Планировочное решение",
+          "svc.1.s3.text": "Предлагаем несколько вариантов расстановки зон с учётом сценариев жизни и инженерии.",
+          "svc.1.s4.title": "3D-визуализация",
+          "svc.1.s4.text": "Показываем будущую атмосферу интерьера: свет, материалы, мебель и детали в объёмных рендерах.",
+          "svc.1.s5.title": "Рабочий проект",
+          "svc.1.s5.text": "Готовим чертежи и спецификации, по которым строители и поставщики реализуют проект без догадок.",
+          "svc.2.title": "Менеджмент проектов",
+          "svc.2.lead": "Ведём проект как единую систему: координируем поставщиков и подрядчиков, помогаем с комплектацией. Сокращаем время на подбор чистовых материалов, мебели и декора, выстраиваем бюджет и контролируем сроки поставок.",
+          "svc.2.s1.title": "Поиск исполнителей",
+          "svc.2.s1.text": "Подбираем проверенных поставщиков и подрядчиков под задачи и бюджет проекта.",
+          "svc.2.s2.title": "Карта материалов",
+          "svc.2.s2.text": "Формируем техническое задание, собираем палитру отделки и согласовываем образцы с вами.",
+          "svc.2.s3.title": "Смета и сроки",
+          "svc.2.s3.text": "Считаем стоимость материалов, мебели и наполнения по спецификациям проекта с указанием сроков.",
+          "svc.2.s4.title": "Утверждение бюджета",
+          "svc.2.s4.text": "Согласовываем финальную смету и фиксируем приоритеты закупок.",
+          "svc.2.s5.title": "График оплат",
+          "svc.2.s5.text": "Связываем платежи с этапами строительства, чтобы закупки шли в нужной последовательности.",
+          "svc.2.s6.title": "Закупка и логистика",
+          "svc.2.s6.text": "Ведём процесс от проверки коммерческих предложений до доставки и монтажа на объекте.",
+          "svc.3.title": "Авторский надзор",
+          "svc.3.lead": "Сопровождаем реализацию дизайн-проекта на площадке: следим за качеством, координируем подрядчиков и своевременно вносим уточнения в документацию.",
+          "svc.3.s1.title": "Выезды на объект",
+          "svc.3.s1.text": "Регулярно приезжаем на площадку и сверяем ход работ с проектом.",
+          "svc.3.s2.title": "Консультации бригады",
+          "svc.3.s2.text": "Отвечаем на вопросы строителей в процессе отделки и монтажа.",
+          "svc.3.s3.title": "Контроль качества",
+          "svc.3.s3.text": "Проверяем соответствие узлов, материалов и геометрии рабочим чертежам.",
+          "svc.3.s4.title": "Корректировки проекта",
+          "svc.3.s4.text": "Оперативно обновляем чертежи, если на объекте появляются уточнения.",
+          "svc.3.s5.title": "Смежные подрядчики",
+          "svc.3.s5.text": "Согласуем работу инженеров, мебельщиков, декораторов и других специалистов.",
+          "svc.3.s6.title": "Отчётность",
+          "svc.3.s6.text": "Еженедельно фиксируем статус работ и принятые решения для прозрачности процесса.",
+          "svc.4.title": "Архитектурное планирование",
+          "svc.4.lead": "Проектируем логику пространства до деталей отделки: перепланировки, зонирование, инженерные вводные и связь интерьера с архитектурой здания.",
+          "svc.4.s1.title": "Анализ объекта",
+          "svc.4.s1.text": "Изучаем планировку, инсоляцию, инженерные стояки и ограничения застройщика или БТИ.",
+          "svc.4.s2.title": "Сценарии использования",
+          "svc.4.s2.text": "Описываем, как вы будете жить в пространстве: маршруты, приватность, хранение, зоны отдыха и работы.",
+          "svc.4.s3.title": "Планировочные схемы",
+          "svc.4.s3.text": "Готовим варианты перепланировки с расстановкой мебели и привязкой инженерии.",
+          "svc.4.s4.title": "Согласование изменений",
+          "svc.4.s4.text": "Помогаем подготовить документы для согласования перепланировки, если это требуется.",
+          "svc.4.s5.title": "Связь с дизайн-проектом",
+          "svc.4.s5.text": "Передаём утверждённую планировку в этап проработки материалов, света и деталей интерьера."
         },
         en: {
           "brand.tag": "Interior Design Studio",
           "nav.about": "About",
           "nav.projects": "Projects",
+          "nav.services": "Services",
           "nav.approach": "Approach",
           "nav.partners": "Partners",
           "nav.contact": "Contact",
@@ -287,7 +347,65 @@
           "brief.sending": "Sending…",
           "brief.error": "Could not send. Try again or email key-des@mail.ru",
           "brief.doneTitle": "Received!",
-          "brief.doneText": "We have your inquiry and will be in touch soon."
+          "brief.doneText": "We have your inquiry and will be in touch soon.",
+          "services.subtitle": "What we do for your space",
+          "services.all": "All services",
+          "svc.more": "Learn more",
+          "svc.less": "Show less",
+          "svc.cta": "Request a call",
+          "svc.1.title": "Interior design project",
+          "svc.1.lead": "A bespoke spatial concept and full working documentation: style, structural choices and finishing technologies. Timeline from two months, depending on size and complexity.",
+          "svc.1.note": "Planning consultation when choosing a home can be booked separately.",
+          "svc.1.s1.title": "Design brief",
+          "svc.1.s1.text": "We define tasks for each zone and collect preferences and references for style, furniture and equipment.",
+          "svc.1.s2.title": "Site survey",
+          "svc.1.s2.text": "We visit the site, take accurate measurements and document the existing condition.",
+          "svc.1.s3.title": "Layout options",
+          "svc.1.s3.text": "We propose several zoning schemes based on how you live and on engineering constraints.",
+          "svc.1.s4.title": "3D visualisation",
+          "svc.1.s4.text": "We show the future atmosphere: light, materials, furniture and details in rendered views.",
+          "svc.1.s5.title": "Working drawings",
+          "svc.1.s5.text": "We prepare drawings and specifications builders and suppliers can follow without guesswork.",
+          "svc.2.title": "Project management",
+          "svc.2.lead": "We run the project as one system: coordinate suppliers and contractors and help with procurement. Less time on finishes, furniture and decor; clearer budget and delivery dates.",
+          "svc.2.s1.title": "Finding partners",
+          "svc.2.s1.text": "We select trusted suppliers and contractors for the scope and budget.",
+          "svc.2.s2.title": "Material palette",
+          "svc.2.s2.text": "We prepare specifications, build a finish palette and approve samples with you.",
+          "svc.2.s3.title": "Estimate and lead times",
+          "svc.2.s3.text": "We calculate materials, furniture and fittings from project specs with costs and dates.",
+          "svc.2.s4.title": "Budget approval",
+          "svc.2.s4.text": "We agree the final estimate and set procurement priorities.",
+          "svc.2.s5.title": "Payment schedule",
+          "svc.2.s5.text": "We align payments with construction stages so orders arrive in the right sequence.",
+          "svc.2.s6.title": "Purchasing and logistics",
+          "svc.2.s6.text": "From reviewing quotes to delivery and installation on site.",
+          "svc.3.title": "Author supervision",
+          "svc.3.lead": "We support implementation on site: quality control, contractor coordination and timely updates to documentation.",
+          "svc.3.s1.title": "Site visits",
+          "svc.3.s1.text": "Regular visits to compare progress with the approved project.",
+          "svc.3.s2.title": "Team guidance",
+          "svc.3.s2.text": "We answer builders' questions during finishing and installation.",
+          "svc.3.s3.title": "Quality control",
+          "svc.3.s3.text": "We check details, materials and geometry against working drawings.",
+          "svc.3.s4.title": "Drawing updates",
+          "svc.3.s4.text": "We revise drawings promptly when the site requires clarifications.",
+          "svc.3.s5.title": "Related trades",
+          "svc.3.s5.text": "We coordinate engineers, joiners, decorators and other specialists.",
+          "svc.3.s6.title": "Reporting",
+          "svc.3.s6.text": "Weekly status and decisions documented for a transparent process.",
+          "svc.4.title": "Architectural planning",
+          "svc.4.lead": "We design spatial logic before finishes: replanning, zoning, engineering inputs and how the interior relates to the building.",
+          "svc.4.s1.title": "Site analysis",
+          "svc.4.s1.text": "We study layout, daylight, risers and developer or registry constraints.",
+          "svc.4.s2.title": "Use scenarios",
+          "svc.4.s2.text": "How you will live in the space: routes, privacy, storage, rest and work zones.",
+          "svc.4.s3.title": "Layout schemes",
+          "svc.4.s3.text": "Replanning options with furniture and engineering layouts.",
+          "svc.4.s4.title": "Approvals",
+          "svc.4.s4.text": "We help prepare documents for replanning approval when required.",
+          "svc.4.s5.title": "Handover to design",
+          "svc.4.s5.text": "Approved layout moves into materials, lighting and interior detailing."
         }
       };
 
@@ -806,4 +924,63 @@
 
         briefUpdateUi();
       }
+
+      /* ---------- Services page accordion ---------- */
+      function svcDict() {
+        var lang = root.getAttribute("lang") === "en" ? "en" : "ru";
+        return i18n[lang] || i18n.ru;
+      }
+
+      function svcClose(svc) {
+        svc.classList.remove("is-open");
+        var body = svc.querySelector(".svc__body");
+        var btn = svc.querySelector("[data-svc-toggle]");
+        if (body) body.hidden = true;
+        if (btn) {
+          btn.setAttribute("aria-expanded", "false");
+          var dict = svcDict();
+          btn.textContent = dict["svc.more"] || "Подробнее";
+        }
+      }
+
+      function svcOpenTarget(target) {
+        if (!target || !target.classList.contains("svc")) return;
+        document.querySelectorAll(".svc.is-open").forEach(function (other) {
+          if (other !== target) svcClose(other);
+        });
+        target.classList.add("is-open");
+        var body = target.querySelector(".svc__body");
+        var btn = target.querySelector("[data-svc-toggle]");
+        if (body) body.hidden = false;
+        if (btn) {
+          btn.setAttribute("aria-expanded", "true");
+          var dict = svcDict();
+          btn.textContent = dict["svc.less"] || "Свернуть";
+        }
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 60);
+      }
+
+      document.querySelectorAll("[data-svc-toggle]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var svc = btn.closest(".svc");
+          if (!svc) return;
+          if (svc.classList.contains("is-open")) svcClose(svc);
+          else svcOpenTarget(svc);
+        });
+      });
+
+      if (location.hash) {
+        var hashTarget = document.querySelector(location.hash);
+        if (hashTarget && hashTarget.classList.contains("svc")) {
+          svcOpenTarget(hashTarget);
+        }
+      }
+
+      window.addEventListener("hashchange", function () {
+        if (!location.hash) return;
+        var t = document.querySelector(location.hash);
+        if (t && t.classList.contains("svc")) svcOpenTarget(t);
+      });
     })();

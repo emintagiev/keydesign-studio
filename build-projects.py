@@ -22,6 +22,7 @@ HEADER = """  <header class="header" id="header">
       <nav class="nav" id="nav" aria-label="Основная навигация">
         <a class="nav__link" href="about.html" data-i18n="nav.about">О студии</a>
         <a class="nav__link" href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a class="nav__link" href="services.html" data-i18n="nav.services">Услуги</a>
         <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
         <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
         <a class="nav__link" href="key-design-studio.html#contact" data-i18n="nav.contact">Контакты</a>
