@@ -53,6 +53,9 @@ HOME_LINK = """        <a href="key-design-studio.html" class="link-underline" d
           На главную <span class="btn__arrow" aria-hidden="true">→</span>
         </a>"""
 
+FAVICON_LINKS = """  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />"""
+
 PROJECTS = [
     {
         "slug": "dream-house",
@@ -631,6 +634,7 @@ def generate_html(cfg: dict):
     rel="stylesheet"
   />
 
+{FAVICON_LINKS}
   <link rel="stylesheet" href="styles.css?v=53" />
 </head>
 
@@ -699,6 +703,7 @@ def generate_projects_page(projects: list[dict]):
     rel="stylesheet"
   />
 
+{FAVICON_LINKS}
   <link rel="stylesheet" href="styles.css?v=53" />
 </head>
 
@@ -749,6 +754,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
     rel="stylesheet"
   />
 
+{FAVICON_LINKS}
   <link rel="stylesheet" href="styles.css?v=53" />
 </head>
 
