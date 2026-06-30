@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
   <link rel="preload" as="image" href="assets/projects/moscow-studio/interior/1.jpg" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css?v=60" />
+  <link rel="stylesheet" href="styles.css?v=61" />
 </head>
 
 <body class="home">
@@ -27,7 +27,10 @@
     <div class="container header__inner header__inner--nav-only">
       <nav class="nav" id="nav" aria-label="Основная навигация">
         <a class="nav__link" href="about.html" data-i18n="nav.about">О студии</a>
-        <a class="nav__link" href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a class="nav__link nav__link--projects" href="projects.html">
+          <span class="nav__link-default" data-i18n="nav.projects">Проекты</span>
+          <span class="nav__link-scrolled" data-i18n="projects.all" hidden>Все проекты</span>
+        </a>
         <a class="nav__link" href="services.html" data-i18n="nav.services">Услуги</a>
         <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
         <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
@@ -312,6 +315,6 @@
   </div>
 
   <script src="brief-config.js?v=1"></script>
-  <script src="app.js?v=19"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>

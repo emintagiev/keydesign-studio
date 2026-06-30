@@ -639,7 +639,7 @@ def generate_html(cfg: dict):
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=59" />
+  <link rel="stylesheet" href="styles.css?v=61" />
 </head>
 
 <body>
@@ -649,7 +649,7 @@ def generate_html(cfg: dict):
 
 {FOOTER}
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=20"></script>
   <script src="project.js?v=7"></script>
 </body>
 </html>
@@ -708,7 +708,7 @@ def generate_projects_page(projects: list[dict]):
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=59" />
+  <link rel="stylesheet" href="styles.css?v=61" />
 </head>
 
 <body>
@@ -733,7 +733,7 @@ def generate_projects_page(projects: list[dict]):
 
 {FOOTER}
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
 '''
@@ -759,7 +759,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=59" />
+  <link rel="stylesheet" href="styles.css?v=61" />
 </head>
 
 <body>
@@ -773,7 +773,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
 
 {FOOTER}
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
 '''

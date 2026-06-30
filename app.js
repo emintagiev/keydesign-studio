@@ -451,30 +451,104 @@
       var nav = document.getElementById("nav");
       var navToggle = document.getElementById("navToggle");
       if (nav && navToggle) {
-        navToggle.addEventListener("click", function () {
-          var open = nav.classList.toggle("is-open");
+        function syncHeaderHeight() {
+          var hdr = document.getElementById("header");
+          if (!hdr) return;
+          document.documentElement.style.setProperty(
+            "--header-h",
+            hdr.offsetHeight + "px"
+          );
+        }
+
+        function setNavOpen(open) {
+          nav.classList.toggle("is-open", open);
           navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          navToggle.setAttribute(
+            "aria-label",
+            open ? "Закрыть меню" : "Открыть меню"
+          );
           document.body.classList.toggle("nav-open", open);
-          document.body.style.overflow = open ? "hidden" : "";
+          if (open) syncHeaderHeight();
+        }
+
+        function closeNav() {
+          setNavOpen(false);
+        }
+
+        syncHeaderHeight();
+        window.addEventListener("resize", syncHeaderHeight, { passive: true });
+
+        navToggle.addEventListener("click", function () {
+          setNavOpen(!nav.classList.contains("is-open"));
         });
+
         nav.addEventListener("click", function (e) {
-          if (e.target.classList.contains("nav__link")) {
-            nav.classList.remove("is-open");
-            navToggle.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("nav-open");
-            document.body.style.overflow = "";
+          if (e.target.classList.contains("nav__link")) closeNav();
+          else if (e.target === nav) closeNav();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && nav.classList.contains("is-open")) {
+            closeNav();
           }
         });
       }
 
       /* ---------- Header scroll state ---------- */
       var header = document.getElementById("header");
+      var projectsNavLink = document.querySelector(".nav__link--projects");
+      var projectsNavDefault = projectsNavLink
+        ? projectsNavLink.querySelector(".nav__link-default")
+        : null;
+      var projectsNavScrolled = projectsNavLink
+        ? projectsNavLink.querySelector(".nav__link-scrolled")
+        : null;
+
+      function syncProjectsNavLabel(scrolled) {
+        if (!projectsNavDefault || !projectsNavScrolled) return;
+        projectsNavDefault.hidden = scrolled;
+        projectsNavScrolled.hidden = !scrolled;
+      }
+
+      function scrollToHashTarget(id, behavior) {
+        var target = document.getElementById(id);
+        if (!target) return;
+        var headerH = header ? header.offsetHeight : 0;
+        var top =
+          target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: behavior || "smooth" });
+      }
+
       function onScroll() {
-        if (window.scrollY > 24) header.classList.add("is-scrolled");
-        else header.classList.remove("is-scrolled");
+        var scrolled = window.scrollY > 24;
+        if (header) {
+          header.classList.toggle("is-scrolled", scrolled);
+        }
+        if (document.body.classList.contains("home")) {
+          syncProjectsNavLabel(scrolled);
+        }
       }
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
+
+      document.querySelectorAll('a[href="#projects"]').forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          if (!document.getElementById("projects")) return;
+          e.preventDefault();
+          scrollToHashTarget("projects", "smooth");
+          if (history.replaceState) {
+            history.replaceState(null, "", "#projects");
+          } else {
+            location.hash = "projects";
+          }
+        });
+      });
+
+      if (location.hash === "#projects" && document.getElementById("projects")) {
+        requestAnimationFrame(function () {
+          scrollToHashTarget("projects", "auto");
+        });
+      }
 
       /* ---------- Hero slideshow (homepage) ---------- */
       var heroScene = document.querySelector(".hero__scene");
