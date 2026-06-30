@@ -1094,6 +1094,12 @@
     /* ============================================================
        PROJECTS
        ============================================================ */
+    .home .projects,
+    .home .contact--details {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 800px;
+    }
+
     .projects {
       background: var(--bg-alt);
       padding-block: clamp(2rem, 1.5rem + 2vw, 3.5rem) var(--sp-section);

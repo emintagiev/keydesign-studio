@@ -5,6 +5,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
+python3 build-hero-images.py
+
 rm -rf dist
 mkdir -p dist
 

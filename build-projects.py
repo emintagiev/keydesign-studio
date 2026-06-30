@@ -634,12 +634,20 @@ def generate_html(cfg: dict):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
   />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    />
+  </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=61" />
+  <link rel="stylesheet" href="styles.css?v=62" />
 </head>
 
 <body>
@@ -649,8 +657,8 @@ def generate_html(cfg: dict):
 
 {FOOTER}
 
-  <script src="app.js?v=20"></script>
-  <script src="project.js?v=7"></script>
+  <script src="app.js?v=21" defer></script>
+  <script src="project.js?v=7" defer></script>
 </body>
 </html>
 '''
@@ -703,12 +711,20 @@ def generate_projects_page(projects: list[dict]):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
   />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    />
+  </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=61" />
+  <link rel="stylesheet" href="styles.css?v=62" />
 </head>
 
 <body>
@@ -733,7 +749,7 @@ def generate_projects_page(projects: list[dict]):
 
 {FOOTER}
 
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21" defer></script>
 </body>
 </html>
 '''
@@ -754,12 +770,20 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
   />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    />
+  </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=61" />
+  <link rel="stylesheet" href="styles.css?v=62" />
 </head>
 
 <body>
@@ -773,7 +797,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
 
 {FOOTER}
 
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21" defer></script>
 </body>
 </html>
 '''

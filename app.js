@@ -554,26 +554,59 @@
       var heroScene = document.querySelector(".hero__scene");
       if (heroScene) {
         var heroSlides = heroScene.querySelectorAll(".hero__slide");
+        var heroLoaded = [];
+        var HERO_MS = 5000;
+
+        function heroSlideUrl(slide) {
+          return slide.getAttribute("data-hero-bg") || "";
+        }
+
+        function loadHeroSlide(index) {
+          if (heroLoaded[index]) {
+            return Promise.resolve();
+          }
+          var slide = heroSlides[index];
+          var url = heroSlideUrl(slide);
+          if (!url) {
+            heroLoaded[index] = true;
+            return Promise.resolve();
+          }
+          return new Promise(function (resolve) {
+            var img = new Image();
+            img.onload = img.onerror = function () {
+              slide.style.backgroundImage = 'url("' + url + '")';
+              heroLoaded[index] = true;
+              resolve();
+            };
+            img.src = url;
+          });
+        }
 
         heroSlides.forEach(function (slide, i) {
-          if (i === 0) return;
-          var url = slide.getAttribute("data-hero-bg");
-          if (!url) return;
-          var img = new Image();
-          img.onload = function () {
-            slide.style.backgroundImage = 'url("' + url + '")';
-          };
-          img.src = url;
+          if (slide.style.backgroundImage) {
+            heroLoaded[i] = true;
+          }
         });
 
-        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (heroSlides.length > 1 && !reduceMotion) {
-          var heroIdx = 0;
-          setInterval(function () {
-            heroSlides[heroIdx].classList.remove("is-active");
-            heroIdx = (heroIdx + 1) % heroSlides.length;
-            heroSlides[heroIdx].classList.add("is-active");
-          }, 5000);
+        if (heroSlides.length > 1) {
+          var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduceMotion) {
+            var heroIdx = 0;
+            var preloadNext = function () {
+              var nextIdx = (heroIdx + 1) % heroSlides.length;
+              loadHeroSlide(nextIdx);
+            };
+            setTimeout(preloadNext, 2500);
+            setInterval(function () {
+              var nextIdx = (heroIdx + 1) % heroSlides.length;
+              loadHeroSlide(nextIdx).then(function () {
+                heroSlides[heroIdx].classList.remove("is-active");
+                heroIdx = nextIdx;
+                heroSlides[heroIdx].classList.add("is-active");
+                setTimeout(preloadNext, HERO_MS - 1800);
+              });
+            }, HERO_MS);
+          }
         }
       }
 

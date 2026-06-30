@@ -7,10 +7,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
-MAX_EDGE = 2400
-JPEG_QUALITY = 82
-SKIP_DIRS = {"logo-tmp"}
-MIN_BYTES_TO_TOUCH = 350_000  # skip tiny files already web-sized
+MAX_EDGE = 1920
+JPEG_QUALITY = 76
+SKIP_DIRS = {"logo-tmp", "hero", "thumbs"}
+MIN_BYTES_TO_TOUCH = 180_000  # skip tiny files already web-sized
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP"}
 
 
