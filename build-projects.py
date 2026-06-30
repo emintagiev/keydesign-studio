@@ -3,6 +3,8 @@
 
 import re
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -892,13 +894,34 @@ def generate_info_pages():
 
 
 def main():
-    print("Copying hero image…")
-    ingest_hero()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate project pages and optionally ingest Desktop photos.")
+    parser.add_argument(
+        "--html-only",
+        action="store_true",
+        help="Regenerate HTML only; do not copy images from Desktop",
+    )
+    args = parser.parse_args()
+
+    did_ingest = False
+    if not args.html_only:
+        print("Copying hero image…")
+        ingest_hero()
+
+        for cfg in PROJECTS:
+            if cfg.get("source"):
+                print(f"Ingesting {cfg['title_plain']}…")
+                ingest_project(cfg)
+                did_ingest = True
+
+        if did_ingest:
+            opt = ROOT / "optimize-images.py"
+            if opt.exists():
+                print("Optimizing images…")
+                subprocess.run([sys.executable, str(opt)], check=False)
 
     for cfg in PROJECTS:
-        if cfg.get("source"):
-            print(f"Ingesting {cfg['title_plain']}…")
-            ingest_project(cfg)
         html = generate_html(cfg)
         out = ROOT / cfg["html"]
         out.write_text(html, encoding="utf-8")

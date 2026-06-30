@@ -358,6 +358,18 @@
       var heroScene = document.querySelector(".hero__scene");
       if (heroScene) {
         var heroSlides = heroScene.querySelectorAll(".hero__slide");
+
+        heroSlides.forEach(function (slide, i) {
+          if (i === 0) return;
+          var url = slide.getAttribute("data-hero-bg");
+          if (!url) return;
+          var img = new Image();
+          img.onload = function () {
+            slide.style.backgroundImage = 'url("' + url + '")';
+          };
+          img.src = url;
+        });
+
         var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (heroSlides.length > 1 && !reduceMotion) {
           var heroIdx = 0;

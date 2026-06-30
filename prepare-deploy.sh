@@ -15,6 +15,10 @@ if [ -f _redirects ]; then
   cp _redirects dist/
 fi
 
+if [ -f _headers ]; then
+  cp _headers dist/
+fi
+
 cp -R assets dist/
 
 echo "Deploy bundle ready: $(find dist -type f | wc -l | tr -d ' ') files"
