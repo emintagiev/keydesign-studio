@@ -14,25 +14,21 @@
   - После логически законченного изменения: `git add -A && git commit -m "коротко что сделал"`.
   - Отменить незакоммиченное: `git restore .`
   - Откатить коммит: `git log --oneline` → `git revert <hash>` (безопасно) или `git reset --hard <hash>` (жёстко).
-- Старые версии до первого чекпойнта `b2f3a7b` побайтово не восстановить - только пересобирать по смыслу.
 
-**Последний коммит:** `d253540` - HANDOFF (предыдущий сессии).
+**GitHub (актуально):** `https://github.com/emintagiev/keydesign-studio`
+**Последний коммит на origin/master:** `b5dc74c` - один squashed commit (orphan `site-clean` → force push master).
 
-**⚠️ МНОГО НЕЗАКОММИЧЕННЫХ ИЗМЕНЕНИЙ** - весь блок работы текущей сессии (hero, форма, about, типографика, кнопки и т.д.) **только в рабочей копии**, не в git. Перед новым чатом имеет смысл сделать коммит.
-
-**⚠️ PUSH НЕ ЗАВЕРШЁН:** ветка `master` **на 10 коммитов впереди** `origin/master`. Push падал с `RPC failed; curl 55 Connection reset by peer` (~30 мин). Причина: тяжёлая git-история (~1.1 ГБ `.git`, старые большие blob'ы). **После коммита - допушить или squash/filter-repo.**
-
-**Как допушить (попробовать по порядку):**
+**Локально:** если `master` расходится с GitHub (`ahead/behind`), переключиться на чистую ветку:
 ```bash
-cd /Users/emin/key-design-studio
-git gc --prune=now
-git -c http.postBuffer=524288000 push -u origin master
+git fetch origin
+git checkout site-clean   # или: git reset --hard origin/master
 ```
-Если снова падает - squash в один коммит (orphan branch) или `git filter-repo`. Репозиторий: `https://github.com/emintagiev/keydesign-studio.git`
+
+**История пересобрана:** старые коммиты до squash на GitHub больше не в master. Локальный `.git` может быть ~1.1 ГБ (старые pack'и) - `git gc --prune=now` после `checkout site-clean` уменьшит.
 
 ---
 
-## Что сделано в текущей сессии (не закоммичено)
+## Что сделано в текущей сессии (закоммичено, на GitHub)
 
 ### Главная (`key-design-studio.html`, body.home)
 - **Hero в стиле Quadro Room:** слайдер 5 светлых фото (crossfade, **5 сек**), затемнение overlay.
@@ -44,8 +40,8 @@ git -c http.postBuffer=524288000 push -u origin master
 ### Квиз-заявка (модал `#brief`, только на главной)
 - 4 шага: метраж → стиль → сроки → имя/телефон → «Принято!»
 - Свои формулировки (не копия Imetra). Метраж: до 60, 60-120, 120-200, 200-500, 500-1000, больше 1000 м².
-- Отправка: `mailto:key-des@mail.ru` + экран благодарности. Бэкенда нет.
-- JS в `app.js`, стили `.brief*` в `styles.css`.
+- Отправка: **Formspree** (`brief-config.js` → `endpoint`) + fallback `mailto:key-des@mail.ru`.
+- JS в `app.js?v=15`, конфиг `brief-config.js?v=1`, стили `.brief*` в `styles.css`.
 
 ### О студии (`about.html`)
 - **Новый текст** от Kristina (4 абзаца + подпись). Декоративные кавычки SVG.
@@ -96,11 +92,18 @@ git -c http.postBuffer=524288000 push -u origin master
 
 ### Фото
 - Оптимизация: `optimize-images.py` (max 2400px, quality 82%).
-- **Внимание:** в `git status` много modified в `assets/projects/` (dream-house, moscow-studio, salok, zhk-pulsar) - проверить, не откатились ли случайно оригиналы; `assets/projects/` сейчас ~1 ГБ на диске.
+- **Переоптимизировано** (salok и др. откатились к ~50 МБ): снова **175 МБ** в `assets/projects/`.
 
-### Деплой (не сделан)
-- `index.html` → редирект на `key-design-studio.html`.
-- Домен куплен, хостинг не подключён. После push: Cloudflare Pages / Netlify.
+### Деплой (готово к подключению)
+- Репозиторий на GitHub: `emintagiev/keydesign-studio`, ветка `master`.
+- **Cloudflare Pages:** Connect to Git → repo → branch `master`, build command пустой, output `/`.
+- **Netlify:** то же - static, root directory `/`.
+- `_redirects`: `/key-design-studio.html` → `/` (200).
+- Домен куплен - привязать в панели Pages/Netlify → Custom domains.
+- **Formspree для заявки:** formspree.io → форма на `key-des@mail.ru` → URL в `brief-config.js`:
+  ```javascript
+  window.KDS_BRIEF = { endpoint: "https://formspree.io/f/xxxxxxxx" };
+  ```
 
 ---
 
@@ -111,8 +114,8 @@ git -c http.postBuffer=524288000 push -u origin master
 | `styles.css` | `?v=54` | большинство HTML |
 | `styles.css` | `?v=52` | `key-design-studio.html` (app.js) |
 | `styles.css` | `?v=53` | шаблоны в `build-projects.py` |
+| `app.js` | `?v=15` | key-design-studio.html |
 | `app.js` | `?v=14` | about, approach, partners |
-| `app.js` | `?v=13` | key-design-studio.html |
 | `app.js` | `?v=10` | страницы проектов (из build) |
 | `project.js` | `?v=7` | страницы проектов |
 | логотипы | `?v=11` | |
@@ -131,6 +134,7 @@ git -c http.postBuffer=524288000 push -u origin master
 | Проекты | `projects.html` |
 | Подход, Партнёры | `approach.html`, `partners.html` |
 | i18n, scroll, nav, brief | `app.js` |
+| Конфиг заявки (Formspree) | `brief-config.js` |
 | Галерея, лайтбокс | `project.js` |
 | Стили | `styles.css` |
 | Генератор | `build-projects.py` (константа `HOME_LINK`) |
@@ -150,13 +154,12 @@ git -c http.postBuffer=524288000 push -u origin master
 
 ## Что НЕ сделано / открытые вопросы
 
-1. **Git commit** текущей сессии + **push на GitHub**.
-2. **Деплой** на купленный домен.
-3. **Заявка:** нет реального бэкенда (только mailto) - можно Formspree / Telegram-бот.
+1. **Formspree:** зарегистрировать форму, вставить endpoint в `brief-config.js`, закоммитить.
+2. **Деплой:** подключить Cloudflare Pages / Netlify к repo + домен.
+3. **Локальный git:** синхронизировать `master` с `origin/master` (`git checkout site-clean`).
 4. **Версии кэша** - привести к одному номеру в build и HTML.
-5. **Git history cleanup** (~1.1 ГБ `.git`) для нормального push.
-6. EN-переводы длинных названий проектов - базовые.
-7. Косметика: `.header__tools` отступ в некоторых HTML.
+5. EN-переводы длинных названий проектов - базовые.
+6. Косметика: `.header__tools` отступ в некоторых HTML.
 
 ---
 
