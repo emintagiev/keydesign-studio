@@ -1,0 +1,12 @@
+.git
+.git/**
+.cursor
+.cursor/**
+dist
+*.py
+HANDOFF.md
+README.md
+.gitignore
+prepare-deploy.sh
+wrangler.jsonc
+.assetsignore
