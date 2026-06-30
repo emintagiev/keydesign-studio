@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Материалы и партнёры Key Design Studio." />
+  <meta name="theme-color" content="#f4efe7" />
+  <title>Партнёры - Key Design Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css?v=54" />
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="key-design-studio.html" class="brand" aria-label="Key Design Studio">
+        <img class="brand__logo brand__logo--dark" src="assets/logo.png" alt="" width="859" height="722" />
+        <img class="brand__logo brand__logo--light" src="assets/logo-light.png" alt="" width="859" height="722" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="about.html" data-i18n="nav.about">О студии</a>
+        <a class="nav__link" href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
+        <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
+        <a class="nav__link" href="key-design-studio.html#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="header__tools">
+        <button class="nav-toggle" type="button" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="lang" role="group" aria-label="Выбор языка / Language">
+          <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="projects-page">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h1 class="eyebrow" data-i18n="nav.partners">Партнёры</h1>
+        </div>
+        <a href="key-design-studio.html" class="link-underline" data-i18n="nav.home">
+          На главную <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="lead reveal" style="max-width: 34ch; margin-bottom: var(--sp-5)" data-i18n="partners.text">
+          Проверенные поставщики мебели, камня, света и отделочных материалов.
+        </p>
+      </div>
+      <div class="partners__index reveal" aria-label="Партнёры и поставщики">
+        <div class="pcat">
+          <p class="pcat__label" data-i18n="partners.cat1">Мебель</p>
+          <ul class="pcat__list">
+            <li>Atelier</li><li>Forma</li><li>Casa</li><li>Lignum</li>
+          </ul>
+        </div>
+        <div class="pcat">
+          <p class="pcat__label" data-i18n="partners.cat2">Камень и поверхности</p>
+          <ul class="pcat__list">
+            <li>Pietra</li><li>Marmo</li><li>Terra</li>
+          </ul>
+        </div>
+        <div class="pcat">
+          <p class="pcat__label" data-i18n="partners.cat3">Свет</p>
+          <ul class="pcat__list">
+            <li>Lumen</li><li>Volta</li><li>Sole</li>
+          </ul>
+        </div>
+        <div class="pcat">
+          <p class="pcat__label" data-i18n="partners.cat4">Текстиль и декор</p>
+          <ul class="pcat__list">
+            <li>Norda</li><li>Studio Ferro</li>
+          </ul>
+        </div>
+      </div>
+      <p class="partners__note reveal" data-i18n="partners.note">
+        Финальный список партнёров формируется индивидуально под задачи каждого проекта.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">Key Design Studio</span>
+      <span class="footer__meta">
+        © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
+      </span>
+      <span class="footer__meta" data-i18n="footer.cities">Москва · Санкт-Петербург</span>
+    </div>
+  </footer>
+
+  <script src="app.js?v=14"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/*
+  Cloudflare Pages / Netlify: статический сайт, сборка не нужна.
+  Корень репозитория = output directory.
+  index.html уже редиректит на key-design-studio.html.
+*/
+
+/key-design-studio.html  /  200
