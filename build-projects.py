@@ -638,7 +638,7 @@ def generate_html(cfg: dict):
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=53" />
+  <link rel="stylesheet" href="styles.css?v=59" />
 </head>
 
 <body>
@@ -707,7 +707,7 @@ def generate_projects_page(projects: list[dict]):
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=53" />
+  <link rel="stylesheet" href="styles.css?v=59" />
 </head>
 
 <body>
@@ -758,7 +758,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   />
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=53" />
+  <link rel="stylesheet" href="styles.css?v=59" />
 </head>
 
 <body>

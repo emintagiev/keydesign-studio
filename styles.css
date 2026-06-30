@@ -44,7 +44,7 @@
       --sp-section: clamp(5rem, 3rem + 9vw, 11rem);
 
       /* Inner pages: header height + small gap (no extra air) */
-      --page-top: calc(clamp(84px, 11vw, 119px) + 0.9rem + 0.75rem);
+      --page-top: calc(clamp(96px, 12.5vw, 130px) + 0.9rem + 0.75rem);
 
       /* — Layout — */
       --container: 1320px;
@@ -335,7 +335,7 @@
       grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       column-gap: clamp(0.65rem, 0.2rem + 1.2vw, 1.25rem);
-      padding-block: 0.45rem;
+      padding-block: 0.55rem;
       min-height: 0;
     }
 
@@ -382,7 +382,7 @@
 
     .brand__logo {
       display: block;
-      height: clamp(84px, 11vw, 119px);
+      height: clamp(96px, 12.5vw, 130px);
       width: auto;
       object-fit: contain;
     }
@@ -417,12 +417,12 @@
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 0.1rem;
-      gap: clamp(0.55rem, 0.15rem + 0.9vw, 1.35rem);
+      gap: clamp(0.75rem, 0.25rem + 1.1vw, 1.65rem);
     }
 
     .nav__link {
       font-family: var(--font-sans);
-      font-size: clamp(0.62rem, 0.58rem + 0.15vw, 0.72rem);
+      font-size: clamp(0.7rem, 0.66rem + 0.18vw, 0.82rem);
       font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -470,7 +470,7 @@
       display: inline-flex;
       align-items: center;
       font-family: var(--font-sans);
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 400;
       letter-spacing: 0.1em;
       border: 1px solid var(--line);
