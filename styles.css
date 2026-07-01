@@ -1146,10 +1146,14 @@
 
     .projects-bar {
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: flex-start;
       gap: clamp(1rem, 0.5rem + 2vw, 2rem);
       margin-bottom: clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
+    }
+
+    .home .projects-bar .btn {
+      font-size: 0.74rem;
     }
 
     .projects .proj-grid {
