@@ -3,3 +3,6 @@
 *.__opt__*
 assets/logo-tmp/
 dist/
+deploy.env
+site-dist.zip
+site-*.zip

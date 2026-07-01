@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Собирает dist/ для Cloudflare Workers (prod-only правки в dist/, исходники не трогаем)
+# Собирает dist/ для прода (Timeweb / Cloudflare legacy)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -41,6 +41,10 @@ fi
 
 if [[ -f _headers ]]; then
   cp _headers dist/
+fi
+
+if [[ -f .htaccess ]]; then
+  cp .htaccess dist/
 fi
 
 cp -R assets dist/
