@@ -21,9 +21,9 @@ HERO_SOURCES = [
 ]
 
 THUMB_SOURCES = [
+    ("thumbs/home/kvartira-dubay.jpg", "projects/kvartira-dubay/kitchen-living/01.jpg", 900, 78),
+    ("thumbs/home/dom-sinegore.jpg", "projects/dom-sinegore/kitchen-living/1.jpg", 900, 78),
     ("thumbs/home/dream-house.jpg", "projects/dream-house/kitchen-living/8.jpg", 900, 78),
-    ("thumbs/home/zhk-pulsar.jpg", "projects/zhk-pulsar/kitchen-living/12.jpg", 900, 78),
-    ("thumbs/home/moscow-studio.jpg", "projects/moscow-studio/interior/1.jpg", 900, 78),
 ]
 
 

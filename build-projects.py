@@ -65,6 +65,56 @@ FAVICON_LINKS = """  <link rel="icon" type="image/png" sizes="32x32" href="asset
 
 PROJECTS = [
     {
+        "slug": "kvartira-dubay",
+        "html": "kvartira-dubay.html",
+        "source": DESKTOP / "Квартира Дубай ",
+        "title_html": 'Квартира <em>Дубай</em>',
+        "title_plain": "Квартира Дубай",
+        "eyebrow": "Квартира · Дубай",
+        "lead": "",
+        "meta": {"type": "Квартира", "city": "Дубай", "area": "-", "year": "2026"},
+        "description": "Квартира Дубай - проект Key Design Studio.",
+        "cover": "assets/projects/kvartira-dubay/kitchen-living/01.jpg",
+        "grid_city": "Дубай",
+        "carousel_cat": "Квартира · Дубай · 2026",
+        "carousel_name": "Квартира Дубай",
+        "i18n_cat": "project.14.cat",
+        "i18n_name": "project.14.name",
+        "room_map": [
+            ("Гостиная-кухня", "kitchen-living", "Гостиная-кухня", "01.jpg"),
+            ("Спальня\u00a01", "bedroom-1", "Спальня 1", "00.jpg"),
+            ("Спальня\u00a02", "bedroom-2", "Спальня 2", "01.jpg"),
+            ("Зелены\u0438\u0306 санузел", "wc-green", "Зеленый санузел", "01.jpg"),
+            ("Розовы\u0438\u0306 санузел", "wc-pink", "Розовый санузел", "01.jpg"),
+        ],
+    },
+    {
+        "slug": "dom-sinegore",
+        "html": "dom-sinegore.html",
+        "source": DESKTOP / "Дом Синегорье ",
+        "title_html": 'Дом <em>Синегорье</em>',
+        "title_plain": "Дом Синегорье",
+        "eyebrow": "Частный дом · Синегорье",
+        "lead": "",
+        "meta": {"type": "Частный дом", "city": "Синегорье", "area": "-", "year": "2026"},
+        "description": "Дом Синегорье - частный дом. Проект Key Design Studio.",
+        "cover": "assets/projects/dom-sinegore/kitchen-living/1.jpg",
+        "grid_city": "Синегорье",
+        "carousel_cat": "Частный дом · Синегорье · 2026",
+        "carousel_name": "Дом Синегорье",
+        "i18n_cat": "project.15.cat",
+        "i18n_name": "project.15.name",
+        "room_map": [
+            ("Кухня-гостиная", "kitchen-living", "Кухня-гостиная", "1.jpg"),
+            ("Гостевая спальня", "guest-bedroom", "Гостевая спальня", "1.jpg"),
+            ("Спальня", "bedroom", "Спальня", "1.jpg"),
+            ("Спальня Серафима", "bedroom-serafim", "Спальня Серафима", "1.jpg"),
+            ("Детская комната", "kids-room", "Детская комната", "01.jpg"),
+            ("Кабинет", "study", "Кабинет", "01.1.jpg"),
+            ("Прихожая", "entry", "Прихожая", "01.jpg"),
+        ],
+    },
+    {
         "slug": "dream-house",
         "html": "dream-house.html",
         "source": KEY_DESIGN / "Dream House",
@@ -144,6 +194,24 @@ PROJECTS = [
         "flat_room": ("interior", "Интерьер", "1.jpg"),
     },
     {
+        "slug": "zhk-arkhitektor",
+        "html": "zhk-arkhitektor.html",
+        "source": DESKTOP / "г. Москва, ЖК Архитектор",
+        "title_html": 'г. Москва, ЖК <em>Архитектор</em>',
+        "title_plain": "г. Москва, ЖК Архитектор",
+        "eyebrow": "Жилой комплекс · Москва",
+        "lead": "",
+        "meta": {"type": "Квартира", "city": "Москва", "area": "-", "year": "2025"},
+        "description": "г. Москва, ЖК Архитектор - квартира в Москве. Проект Key Design Studio.",
+        "cover": "assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG",
+        "grid_city": "Москва",
+        "carousel_cat": "Квартира · Москва · 2025",
+        "carousel_name": "г. Москва, ЖК Архитектор",
+        "i18n_cat": "project.6.cat",
+        "i18n_name": "project.6.name",
+        "flat_room": ("interior", "Интерьер", "IMG_4796.JPG"),
+    },
+    {
         "slug": "salok-krasoty-tati",
         "html": "salok-krasoty-tati.html",
         "source": KEY_DESIGN / "Салок красоты tati",
@@ -185,24 +253,6 @@ PROJECTS = [
             ("Санузел 1", "wc-1", "Санузел 1", "005544777_0000(3)-denoise-upscale-1.9x.jpeg"),
             ("Санузел 2", "wc-2", "Санузел 2", "02354_0000(1)-denoise-upscale-2x.jpeg"),
         ],
-    },
-    {
-        "slug": "zhk-arkhitektor",
-        "html": "zhk-arkhitektor.html",
-        "source": DESKTOP / "г. Москва, ЖК Архитектор",
-        "title_html": 'г. Москва, ЖК <em>Архитектор</em>',
-        "title_plain": "г. Москва, ЖК Архитектор",
-        "eyebrow": "Жилой комплекс · Москва",
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Москва", "area": "-", "year": "2025"},
-        "description": "г. Москва, ЖК Архитектор - квартира в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG",
-        "grid_city": "Москва",
-        "carousel_cat": "Квартира · Москва · 2025",
-        "carousel_name": "г. Москва, ЖК Архитектор",
-        "i18n_cat": "project.6.cat",
-        "i18n_name": "project.6.name",
-        "flat_room": ("interior", "Интерьер", "IMG_4796.JPG"),
     },
     {
         "slug": "ns-akadem-pulsar",
@@ -360,56 +410,6 @@ PROJECTS = [
             ("Кухня- гостиная", "kitchen-living", "Кухня-гостиная", "15.jpg"),
             ("Спальня", "bedroom", "Спальня", "10.jpg"),
             ("Ванная комната", "bathroom", "Ванная комната", "1.jpg"),
-        ],
-    },
-    {
-        "slug": "kvartira-dubay",
-        "html": "kvartira-dubay.html",
-        "source": DESKTOP / "Квартира Дубай ",
-        "title_html": 'Квартира <em>Дубай</em>',
-        "title_plain": "Квартира Дубай",
-        "eyebrow": "Квартира · Дубай",
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Дубай", "area": "-", "year": "2026"},
-        "description": "Квартира Дубай - проект Key Design Studio.",
-        "cover": "assets/projects/kvartira-dubay/kitchen-living/01.jpg",
-        "grid_city": "Дубай",
-        "carousel_cat": "Квартира · Дубай · 2026",
-        "carousel_name": "Квартира Дубай",
-        "i18n_cat": "project.14.cat",
-        "i18n_name": "project.14.name",
-        "room_map": [
-            ("Гостиная-кухня", "kitchen-living", "Гостиная-кухня", "01.jpg"),
-            ("Спальня\u00a01", "bedroom-1", "Спальня 1", "00.jpg"),
-            ("Спальня\u00a02", "bedroom-2", "Спальня 2", "01.jpg"),
-            ("Зелены\u0438\u0306 санузел", "wc-green", "Зеленый санузел", "01.jpg"),
-            ("Розовы\u0438\u0306 санузел", "wc-pink", "Розовый санузел", "01.jpg"),
-        ],
-    },
-    {
-        "slug": "dom-sinegore",
-        "html": "dom-sinegore.html",
-        "source": DESKTOP / "Дом Синегорье ",
-        "title_html": 'Дом <em>Синегорье</em>',
-        "title_plain": "Дом Синегорье",
-        "eyebrow": "Частный дом · Синегорье",
-        "lead": "",
-        "meta": {"type": "Частный дом", "city": "Синегорье", "area": "-", "year": "2026"},
-        "description": "Дом Синегорье - частный дом. Проект Key Design Studio.",
-        "cover": "assets/projects/dom-sinegore/kitchen-living/1.jpg",
-        "grid_city": "Синегорье",
-        "carousel_cat": "Частный дом · Синегорье · 2026",
-        "carousel_name": "Дом Синегорье",
-        "i18n_cat": "project.15.cat",
-        "i18n_name": "project.15.name",
-        "room_map": [
-            ("Кухня-гостиная", "kitchen-living", "Кухня-гостиная", "1.jpg"),
-            ("Гостевая спальня", "guest-bedroom", "Гостевая спальня", "1.jpg"),
-            ("Спальня", "bedroom", "Спальня", "1.jpg"),
-            ("Спальня Серафима", "bedroom-serafim", "Спальня Серафима", "1.jpg"),
-            ("Детская комната", "kids-room", "Детская комната", "01.jpg"),
-            ("Кабинет", "study", "Кабинет", "01.1.jpg"),
-            ("Прихожая", "entry", "Прихожая", "01.jpg"),
         ],
     },
 ]
@@ -739,25 +739,43 @@ def generate_html(cfg: dict):
 '''
 
 
+HOME_FEATURED_COUNT = 3
+
+
+def home_thumb(cfg: dict) -> str:
+    thumb = ROOT / "assets" / "thumbs" / "home" / f"{cfg['slug']}.jpg"
+    if thumb.exists():
+        return f"assets/thumbs/home/{cfg['slug']}.jpg"
+    return cfg["cover"]
+
+
 def update_homepage(projects: list[dict]):
-    slides = []
-    for p in projects:
-        slides.append(
-            f'''        <a class="pcar-slide" href="{p["html"]}" aria-label="{p["title_plain"]}">
-          <img src="{p["cover"]}" alt="{p["title_plain"]}" loading="lazy" />
-          <span class="pcar-slide__shade" aria-hidden="true"></span>
-          <span class="pcar-slide__caption">
-            <span class="pcar-slide__name" data-i18n="{p["i18n_name"]}">{p["carousel_name"]}</span>
-          </span>
-        </a>'''
+    featured = projects[:HOME_FEATURED_COUNT]
+    cards = []
+    for p in featured:
+        img = home_thumb(p)
+        cards.append(
+            f'''          <a class="proj-grid-card" href="{p["html"]}">
+            <span class="proj-grid-card__media">
+              <img src="{img}" alt="{p["title_plain"]}" width="900" height="675" loading="lazy" decoding="async" />
+            </span>
+            <span class="proj-grid-card__info">
+              <span class="proj-grid-card__name" data-i18n="{p["i18n_name"]}">{p["carousel_name"]}</span>
+            </span>
+          </a>'''
         )
 
-    home = ROOT / "key-design-studio.html"
-    text = home.read_text(encoding="utf-8")
-    pattern = r'(<div class="pcar" id="projCar">)(.*?)(</div>\s*\n\s*</section>)'
-    replacement = r'\1\n' + "\n".join(slides) + r'\n      \3'
-    text = re.sub(pattern, replacement, text, count=1, flags=re.DOTALL)
-    home.write_text(text, encoding="utf-8")
+    grid_html = "\n".join(cards)
+    pattern = r'(<div class="proj-grid reveal">)(.*?)(</div>\s*\n\s*</div>\s*\n\s*</section>)'
+
+    for page in ("key-design-studio.html", "index.html"):
+        path = ROOT / page
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        replacement = r"\1\n" + grid_html + r"\n        \3"
+        text = re.sub(pattern, replacement, text, count=1, flags=re.DOTALL)
+        path.write_text(text, encoding="utf-8")
 
 
 def generate_projects_page(projects: list[dict]):
@@ -1023,6 +1041,7 @@ def main():
                 subprocess.run([sys.executable, str(opt)], check=False)
 
     for cfg in PROJECTS:
+        sync_rooms_from_config(cfg)
         html = generate_html(cfg)
         out = ROOT / cfg["html"]
         out.write_text(html, encoding="utf-8")
