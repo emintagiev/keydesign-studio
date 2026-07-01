@@ -25,7 +25,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
-  <link rel="stylesheet" href="styles.css?v=63" />
+  <link rel="stylesheet" href="styles.css?v=64" />
 </head>
 
 <body>
@@ -283,6 +283,7 @@
       <span class="footer__meta">
         © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
       </span>
+      <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
     </div>
   </footer>
 
@@ -344,6 +345,15 @@
               <input type="tel" name="phone" autocomplete="tel" required data-i18n-placeholder="brief.phonePh" placeholder="Телефон" />
             </label>
           </div>
+          <div class="brief__consent">
+            <label class="brief__consent__label">
+              <input type="checkbox" name="consent" value="yes" />
+              <span class="brief__consent-text">
+                <span data-i18n="brief.consentBefore">Я согласен(на) на обработку персональных данных в соответствии с</span>
+                <a href="privacy.html" target="_blank" rel="noopener noreferrer" data-i18n="brief.consentLink">политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
         </div>
         <div class="brief__panel brief__panel--done" data-brief-step="5" hidden>
           <p class="brief__done-title" data-i18n="brief.doneTitle">Принято!</p>
@@ -364,6 +374,6 @@
   </div>
 
   <script src="brief-config.js?v=1" defer></script>
-  <script src="app.js?v=22" defer></script>
+  <script src="app.js?v=23" defer></script>
 </body>
 </html>

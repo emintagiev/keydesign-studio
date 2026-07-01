@@ -49,6 +49,7 @@ FOOTER = """  <footer class="footer">
       <span class="footer__meta">
         © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
       </span>
+      <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
     </div>
   </footer>"""
 
@@ -649,7 +650,7 @@ def generate_html(cfg: dict):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=63" />
+  <link rel="stylesheet" href="styles.css?v=64" />
 </head>
 
 <body>
@@ -726,7 +727,7 @@ def generate_projects_page(projects: list[dict]):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=63" />
+  <link rel="stylesheet" href="styles.css?v=64" />
 </head>
 
 <body>
@@ -785,7 +786,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=63" />
+  <link rel="stylesheet" href="styles.css?v=64" />
 </head>
 
 <body>

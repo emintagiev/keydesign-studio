@@ -114,7 +114,11 @@
           "contact.messenger": "Мессенджеры",
           "contact.social": "Соцсети",
           "footer.rights": "Все права защищены.",
+          "footer.privacy": "Политика конфиденциальности",
           "footer.cities": "Москва · Санкт-Петербург",
+          "privacy.label": "Политика конфиденциальности",
+          "brief.consentBefore": "Я согласен(на) на обработку персональных данных в соответствии с",
+          "brief.consentLink": "политикой конфиденциальности",
           "brief.title": "Заявка на проект",
           "brief.q1": "Какой метраж пространства мы будем проектировать?",
           "brief.q2": "Какое направление интерьера вам ближе?",
@@ -315,7 +319,11 @@
           "contact.messenger": "Messengers",
           "contact.social": "Social",
           "footer.rights": "All rights reserved.",
+          "footer.privacy": "Privacy policy",
           "footer.cities": "Moscow · Saint Petersburg",
+          "privacy.label": "Privacy policy",
+          "brief.consentBefore": "I agree to the processing of personal data in accordance with the",
+          "brief.consentLink": "privacy policy",
           "brief.title": "Project inquiry",
           "brief.q1": "What is the area we will be designing?",
           "brief.q2": "Which interior direction feels closest to you?",
@@ -865,7 +873,15 @@
           if (briefStep === 4) {
             var name = briefForm.querySelector('input[name="name"]');
             var phone = briefForm.querySelector('input[name="phone"]');
-            return name && phone && name.value.trim() && phone.value.trim();
+            var consent = briefForm.querySelector('input[name="consent"]');
+            return (
+              name &&
+              phone &&
+              name.value.trim() &&
+              phone.value.trim() &&
+              consent &&
+              consent.checked
+            );
           }
           return false;
         }
@@ -965,10 +981,12 @@
           var timeline = briefForm.querySelector('input[name="timeline"]:checked');
           var name = briefForm.querySelector('input[name="name"]');
           var phone = briefForm.querySelector('input[name="phone"]');
+          var consent = briefForm.querySelector('input[name="consent"]');
 
-          if (!name.value.trim() || !phone.value.trim()) {
+          if (!name.value.trim() || !phone.value.trim() || !consent || !consent.checked) {
             if (!name.value.trim()) name.classList.add("is-invalid");
             if (!phone.value.trim()) phone.classList.add("is-invalid");
+            if (consent && !consent.checked) consent.classList.add("is-invalid");
             briefUpdateUi();
             return;
           }
@@ -1047,6 +1065,12 @@
         briefForm.addEventListener("input", function (e) {
           if (e.target.classList) e.target.classList.remove("is-invalid");
           briefUpdateUi();
+        });
+
+        briefForm.querySelectorAll(".brief__consent a").forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.stopPropagation();
+          });
         });
 
         briefForm.addEventListener("submit", function (e) {
