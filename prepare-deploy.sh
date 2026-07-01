@@ -5,7 +5,11 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
-python3 build-hero-images.py
+if command -v sips >/dev/null 2>&1; then
+  python3 build-hero-images.py
+else
+  echo "Skip build-hero-images: sips not found (Cloudflare/Linux). Using committed assets/hero/."
+fi
 
 rm -rf dist
 mkdir -p dist
