@@ -1,6 +1,8 @@
     (function () {
       "use strict";
 
+      document.documentElement.classList.add("js");
+
       var root = document.documentElement;
 
   /* ---------- i18n (RU default, EN ready) ---------- */
@@ -451,6 +453,8 @@
       var nav = document.getElementById("nav");
       var navToggle = document.getElementById("navToggle");
       if (nav && navToggle) {
+        var navScrollY = 0;
+
         function syncHeaderHeight() {
           var hdr = document.getElementById("header");
           if (!hdr) return;
@@ -468,7 +472,18 @@
             open ? "Закрыть меню" : "Открыть меню"
           );
           document.body.classList.toggle("nav-open", open);
-          if (open) syncHeaderHeight();
+          if (open) {
+            navScrollY = window.scrollY || window.pageYOffset || 0;
+            document.body.style.top = "-" + navScrollY + "px";
+            document.body.style.position = "fixed";
+            document.body.style.width = "100%";
+            syncHeaderHeight();
+          } else {
+            document.body.style.top = "";
+            document.body.style.position = "";
+            document.body.style.width = "";
+            window.scrollTo(0, navScrollY);
+          }
         }
 
         function closeNav() {
@@ -492,6 +507,16 @@
             closeNav();
           }
         });
+      }
+
+      function queryHashTarget() {
+        var hash = location.hash;
+        if (!hash || hash === "#") return null;
+        try {
+          return document.querySelector(hash);
+        } catch (e) {
+          return null;
+        }
       }
 
       /* ---------- Header scroll state ---------- */
@@ -632,6 +657,13 @@
             io.unobserve(el);
           }
         });
+        setTimeout(function () {
+          revealEls.forEach(function (el) {
+            if (!el.classList.contains("is-visible")) {
+              el.classList.add("is-visible");
+            }
+          });
+        }, 2500);
       } else {
         revealEls.forEach(function (el) {
           el.classList.add("is-visible");
@@ -1083,15 +1115,14 @@
       });
 
       if (location.hash) {
-        var hashTarget = document.querySelector(location.hash);
+        var hashTarget = queryHashTarget();
         if (hashTarget && hashTarget.classList.contains("svc")) {
           svcOpenTarget(hashTarget);
         }
       }
 
       window.addEventListener("hashchange", function () {
-        if (!location.hash) return;
-        var t = document.querySelector(location.hash);
+        var t = queryHashTarget();
         if (t && t.classList.contains("svc")) svcOpenTarget(t);
       });
     })();

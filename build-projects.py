@@ -49,9 +49,11 @@ FOOTER = """  <footer class="footer">
       <span class="footer__meta">
         © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
       </span>
-      <span class="footer__meta" data-i18n="footer.cities">Москва · Санкт-Петербург</span>
     </div>
   </footer>"""
+
+JS_BOOTSTRAP = """  <script>document.documentElement.classList.add("js");</script>
+"""
 
 HOME_LINK = """        <a href="key-design-studio.html" class="link-underline" data-i18n="nav.home">
           На главную <span class="btn__arrow" aria-hidden="true">→</span>
@@ -625,7 +627,7 @@ def generate_html(cfg: dict):
     return f'''<!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+{JS_BOOTSTRAP}  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{cfg["description"]}" />
   <meta name="theme-color" content="#f4efe7" />
@@ -647,7 +649,7 @@ def generate_html(cfg: dict):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=62" />
+  <link rel="stylesheet" href="styles.css?v=63" />
 </head>
 
 <body>
@@ -657,7 +659,7 @@ def generate_html(cfg: dict):
 
 {FOOTER}
 
-  <script src="app.js?v=21" defer></script>
+  <script src="app.js?v=22" defer></script>
   <script src="project.js?v=7" defer></script>
 </body>
 </html>
@@ -702,7 +704,7 @@ def generate_projects_page(projects: list[dict]):
     html = f'''<!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+{JS_BOOTSTRAP}  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Проекты Key Design Studio - жилые и коммерческие интерьеры в Москве и Санкт-Петербурге." />
   <meta name="theme-color" content="#f4efe7" />
@@ -724,7 +726,7 @@ def generate_projects_page(projects: list[dict]):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=62" />
+  <link rel="stylesheet" href="styles.css?v=63" />
 </head>
 
 <body>
@@ -749,7 +751,7 @@ def generate_projects_page(projects: list[dict]):
 
 {FOOTER}
 
-  <script src="app.js?v=21" defer></script>
+  <script src="app.js?v=22" defer></script>
 </body>
 </html>
 '''
@@ -761,7 +763,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
     return f'''<!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+{JS_BOOTSTRAP}  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{description}" />
   <meta name="theme-color" content="#f4efe7" />
@@ -783,7 +785,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=62" />
+  <link rel="stylesheet" href="styles.css?v=63" />
 </head>
 
 <body>
@@ -797,7 +799,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
 
 {FOOTER}
 
-  <script src="app.js?v=21" defer></script>
+  <script src="app.js?v=22" defer></script>
 </body>
 </html>
 '''
