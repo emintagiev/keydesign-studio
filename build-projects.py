@@ -67,6 +67,27 @@ FAVICON_LINKS = """  <link rel="icon" type="image/png" sizes="32x32" href="asset
 
 PROJECTS = [
     {
+        "slug": "moscow-studio",
+        "html": "moscow-studio.html",
+        "source": KEY_DESIGN / "Москва студия",
+        "title_html": 'Москва <em>Студия</em>',
+        "title_plain": "Москва Студия",
+        "eyebrow": "Студия · Москва",
+        "lead": (
+            "Компактная студия с выверенной планировкой: каждый метр работает "
+            "на комфорт, свет и ощущение простора."
+        ),
+        "meta": {"type": "Студия", "city": "Москва", "area": "-", "year": "2025"},
+        "description": "Москва Студия - интерьер студии в Москве. Проект Key Design Studio.",
+        "cover": "assets/projects/moscow-studio/interior/1.jpg",
+        "grid_city": "Москва",
+        "carousel_cat": "Студия · Москва · 2025",
+        "carousel_name": "Москва Студия",
+        "i18n_cat": "project.3.cat",
+        "i18n_name": "project.3.name",
+        "flat_room": ("interior", "Интерьер", "1.jpg"),
+    },
+    {
         "slug": "kvartira-dubay",
         "html": "kvartira-dubay.html",
         "source": DESKTOP / "Квартира Дубай ",
@@ -115,85 +136,6 @@ PROJECTS = [
             ("Кабинет", "study", "Кабинет", "01.1.jpg"),
             ("Прихожая", "entry", "Прихожая", "01.jpg"),
         ],
-    },
-    {
-        "slug": "dream-house",
-        "html": "dream-house.html",
-        "source": KEY_DESIGN / "Dream House",
-        "title_html": 'Dream <em>House</em>',
-        "title_plain": "Dream House",
-        "eyebrow": "Частный дом · Москва",
-        "lead": (
-            "Частный дом в тёплой нейтральной палитре: натуральное дерево, мягкие "
-            "фактуры и спокойный свет. Выберите комнату, чтобы рассмотреть её детальнее."
-        ),
-        "meta": {"type": "Частный дом", "city": "Москва", "area": "240 м²", "year": "2025"},
-        "description": "Dream House - частный дом в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/dream-house/kitchen-living/8.jpg",
-        "grid_city": "Москва",
-        "carousel_cat": "Частный дом · Москва · 2025",
-        "carousel_name": "Dream House",
-        "i18n_cat": "project.1.cat",
-        "i18n_name": "project.1.name",
-        "room_map": [
-            ("Кухня-гостиная", "kitchen-living", "Кухня-гостиная", "8.jpg"),
-            ("Мастер- спальня", "master-bedroom", "Мастер-спальня", "1.jpg"),
-            ("Кабинет", "study", "Кабинет", "1.jpg"),
-            ("Гостевая спальня", "guest-bedroom", "Гостевая спальня", "1.jpg"),
-            ("Ванная комната", "bathroom", "Ванная комната", "1.jpg"),
-            ("Душевая", "shower", "Душевая", "1.jpg"),
-            ("Гардеробная комната", "wardrobe", "Гардеробная", "1.jpg"),
-            ("Гардеробная при входе", "entry-wardrobe", "Гардеробная при входе", "1.jpg"),
-            ("Прачечная", "laundry", "Прачечная", "1.jpg"),
-        ],
-    },
-    {
-        "slug": "zhk-pulsar",
-        "html": "zhk-pulsar.html",
-        "source": KEY_DESIGN / "ЖК Пульсар",
-        "title_html": 'ЖК <em>Пульсар</em>',
-        "title_plain": "ЖК Пульсар",
-        "eyebrow": "Жилой комплекс · Москва",
-        "lead": (
-            "Квартира в современном жилом комплексе: светлая палитра, "
-            "функциональное зонирование и продуманные детали для комфортной жизни."
-        ),
-        "meta": {"type": "Квартира", "city": "Москва", "area": "-", "year": "2025"},
-        "description": "ЖК Пульсар - квартира в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/zhk-pulsar/kitchen-living/12.jpg",
-        "grid_city": "Москва",
-        "carousel_cat": "Квартира · Москва · 2025",
-        "carousel_name": "ЖК Пульсар",
-        "i18n_cat": "project.2.cat",
-        "i18n_name": "project.2.name",
-        "room_map": [
-            ("Кухня- гостиная", "kitchen-living", "Кухня-гостиная", "12.jpg"),
-            ("Спальня", "bedroom", "Спальня", "4.jpg"),
-            ("Прихожая", "entry", "Прихожая", "21.jpg"),
-            ("Ванная комната", "bathroom", "Ванная комната", "25.jpg"),
-            ("Санузел", "wc", "Санузел", "1.jpg"),
-        ],
-    },
-    {
-        "slug": "moscow-studio",
-        "html": "moscow-studio.html",
-        "source": KEY_DESIGN / "Москва студия",
-        "title_html": 'Москва <em>Студия</em>',
-        "title_plain": "Москва Студия",
-        "eyebrow": "Студия · Москва",
-        "lead": (
-            "Компактная студия с выверенной планировкой: каждый метр работает "
-            "на комфорт, свет и ощущение простора."
-        ),
-        "meta": {"type": "Студия", "city": "Москва", "area": "-", "year": "2025"},
-        "description": "Москва Студия - интерьер студии в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/moscow-studio/interior/1.jpg",
-        "grid_city": "Москва",
-        "carousel_cat": "Студия · Москва · 2025",
-        "carousel_name": "Москва Студия",
-        "i18n_cat": "project.3.cat",
-        "i18n_name": "project.3.name",
-        "flat_room": ("interior", "Интерьер", "1.jpg"),
     },
     {
         "slug": "zhk-arkhitektor",
@@ -308,16 +250,16 @@ PROJECTS = [
         "slug": "nevskaya-dom",
         "html": "nevskaya-dom.html",
         "source": DESKTOP / 'г. Новосибирск, ул. Невская дом',
-        "title_html": 'г. Новосибирск, ул. Невская <em>дом</em>',
-        "title_plain": 'г. Новосибирск, ул. Невская дом',
+        "title_html": 'г. Новосибирск, Загородный дом, <em>160 кв.м.</em>',
+        "title_plain": 'г. Новосибирск, Загородный дом, 160 кв.м.',
         "eyebrow": 'Частный дом · Новосибирск',
         "lead": "",
-        "meta": {"type": "Частный дом", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": 'г. Новосибирск, ул. Невская дом - проект Key Design Studio.',
+        "meta": {"type": "Частный дом", "city": "Новосибирск", "area": "160 кв.м.", "year": "2025"},
+        "description": 'г. Новосибирск, Загородный дом, 160 кв.м. - проект Key Design Studio.',
         "cover": "assets/projects/nevskaya-dom/kitchen-living/3.jpg",
         "grid_city": "Новосибирск",
         "carousel_cat": 'Частный дом · Новосибирск · 2025',
-        "carousel_name": 'г. Новосибирск, ул. Невская дом',
+        "carousel_name": 'г. Новосибирск, Загородный дом, 160 кв.м.',
         "i18n_cat": "project.9.cat",
         "i18n_name": "project.9.name",
         "room_map": [
@@ -741,7 +683,7 @@ def generate_html(cfg: dict):
 '''
 
 
-HOME_FEATURED_SLUGS = ["kvartira-dubay", "dom-sinegore", "zhk-pulsar"]
+HOME_FEATURED_SLUGS = ["moscow-studio", "kvartira-dubay", "dom-sinegore"]
 
 
 def home_thumb(cfg: dict) -> str:

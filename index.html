@@ -28,19 +28,99 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
   <link rel="preload" as="image" href="assets/logo.png?v=11" />
   <link rel="preload" as="image" href="assets/hero/1.jpg" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css?v=67" />
+  <style>
+    html.is-loading,
+    body.is-loading {
+      overflow: hidden;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+    }
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .preloader__logo-wrap {
+      position: relative;
+      line-height: 0;
+    }
+
+    .preloader__logo {
+      display: block;
+      width: auto;
+      height: clamp(72px, 16vw, 112px);
+      max-width: min(132px, 38vw);
+    }
+
+    @media (min-width: 981px) {
+      .preloader {
+        display: block;
+      }
+
+      .preloader__logo-wrap {
+        position: fixed;
+        z-index: 10001;
+        opacity: 0;
+      }
+
+      .preloader.is-positioned .preloader__logo-wrap {
+        opacity: 1;
+      }
+
+      .preloader__logo {
+        height: 100%;
+        width: 100%;
+        max-width: none;
+        object-fit: contain;
+      }
+    }
+
+    .hero__brand {
+      display: block;
+      line-height: 0;
+    }
+
+    .hero__brand img {
+      display: block;
+      width: auto;
+      height: clamp(88px, 17vw, 194px);
+      max-width: min(232px, 78vw);
+      object-fit: contain;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css?v=74" />
 </head>
 
 <body class="home is-loading">
   <div class="preloader" id="preloader" aria-hidden="true">
-    <img
-      class="preloader__logo"
-      src="assets/logo.png?v=11"
-      alt=""
-      width="859"
-      height="722"
-      decoding="sync"
-    />
+    <div class="preloader__logo-wrap" id="preloaderLogoWrap">
+      <img
+        class="preloader__logo preloader__logo--dark"
+        src="assets/logo.png?v=11"
+        alt=""
+        width="192"
+        height="160"
+        decoding="sync"
+      />
+      <img
+        class="preloader__logo preloader__logo--light"
+        src="assets/logo-light.png?v=11"
+        alt=""
+        width="192"
+        height="160"
+        decoding="sync"
+        aria-hidden="true"
+      />
+    </div>
   </div>
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
@@ -85,7 +165,7 @@
 
       <div class="hero__center">
         <a href="#top" class="hero__brand reveal" style="--rd: 0s" aria-label="Key Design Studio">
-          <img src="assets/logo-light.png?v=11" alt="" width="860" height="718" decoding="async" fetchpriority="high" />
+          <img src="assets/logo-light.png?v=11" alt="" width="192" height="160" decoding="async" fetchpriority="high" />
         </a>
         <h1 class="hero__tagline reveal" style="--rd: 0.14s" data-i18n="hero.tagline">
           Создаём продуманные интерьеры, в которых выверены свет, материал и каждая деталь.
@@ -120,6 +200,14 @@
         </div>
 
         <div class="proj-grid reveal">
+          <a class="proj-grid-card" href="moscow-studio.html">
+            <span class="proj-grid-card__media">
+              <img src="assets/thumbs/home/moscow-studio.jpg" alt="Москва Студия" width="900" height="675" loading="lazy" decoding="async" />
+            </span>
+            <span class="proj-grid-card__info">
+              <span class="proj-grid-card__name" data-i18n="project.3.name">Москва Студия</span>
+            </span>
+          </a>
           <a class="proj-grid-card" href="kvartira-dubay.html">
             <span class="proj-grid-card__media">
               <img src="assets/thumbs/home/kvartira-dubay.jpg" alt="Квартира Дубай" width="900" height="675" loading="lazy" decoding="async" />
@@ -134,14 +222,6 @@
             </span>
             <span class="proj-grid-card__info">
               <span class="proj-grid-card__name" data-i18n="project.15.name">Дом Синегорье</span>
-            </span>
-          </a>
-          <a class="proj-grid-card" href="zhk-pulsar.html">
-            <span class="proj-grid-card__media">
-              <img src="assets/thumbs/home/zhk-pulsar.jpg" alt="ЖК Пульсар" width="900" height="675" loading="lazy" decoding="async" />
-            </span>
-            <span class="proj-grid-card__info">
-              <span class="proj-grid-card__name" data-i18n="project.2.name">ЖК Пульсар</span>
             </span>
           </a>
         </div>
@@ -343,6 +423,6 @@
   </div>
 
   <script src="brief-config.js?v=1" defer></script>
-  <script src="app.js?v=26" defer></script>
+  <script src="app.js?v=35" defer></script>
 </body>
 </html>

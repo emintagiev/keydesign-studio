@@ -1,104 +1,135 @@
 # Key Design Studio - передача контекста
 
-> Этот файл - «память» между чатами. В новом чате напиши: **«Прочитай HANDOFF.md и продолжай»**.
+> В новом чате напиши: **«Прочитай HANDOFF.md и продолжай»**.
 
-Дата: 30 июня 2026, поздний вечер.
-**Прод:** https://www.keydesign.studio/
-**Локально:** `http://localhost:8099/`
-
----
-
-## ВАЖНО про откат
-
-- Все файлы сайта под git.
-- Перед крупной правкой: `git status` (чистое дерево).
-- После логически законченного изменения: commit.
-- Отменить незакоммиченное: `git restore .`
-
-**GitHub:** `https://github.com/emintagiev/keydesign-studio`
-**Ветка для работы:** `site-clean` (основная)
-**Ветка деплоя Cloudflare:** `master` (fast-forward из site-clean)
-
-```bash
-git push origin site-clean
-git push origin site-clean:master   # выкат на прод
-```
-
-Локальный `master` может расходиться с GitHub - работать на `site-clean`.
+**Обновлено:** 2 июля 2026  
+**Прод:** https://www.keydesign.studio/  
+**Локально:** `python3 -m http.server 8099` → http://localhost:8099/
 
 ---
 
-## Что на проде сейчас (коммит `92e2fc6` + следующий с шапкой)
+## Быстрый старт для AI
 
-### Главная
-- URL: `https://www.keydesign.studio/` (`index.html`, чистый URL)
-- Hero: 5 фото, crossfade 5 сек, lazy hero (только 1-й кадр сразу)
-- Шапка без логотипа (nav-only), кремовые кнопки, квиз `#brief`
-- Сетка 3 проектов, контакты внизу
-
-### Услуги (`services.html` / `/services`)
-- 4 услуги: дизайн-проект, менеджмент, авторский надзор, архитектурное планирование
-- Круглое фото справа у каждой услуги, «Подробнее» раскрывает этапы
-- «Оставить заявку» = тот же квиз, что «Обсудить проект»
-- Тексты переписаны (референс buro11.ru, не копипаст)
-
-### Скрыто на проде (есть только локально)
-- **Подход** (`approach.html`) и **Партнёры** (`partners.html`)
-- В `prepare-deploy.sh`: страницы не копируются в `dist/`, `strip-prod-nav.py` убирает ссылки из меню
-- `_redirects`: `/approach.html` и `/partners.html` → `/` (302)
-
-### Скорость
-- Фото: ~176 МБ (было ~1 ГБ), `optimize-images.py` (2400px, q82)
-- `_headers`: assets `max-age=31536000, immutable`; CSS/JS 7 дней; HTML 1 час
-- Проверка: `curl -sI https://www.keydesign.studio/assets/projects/moscow-studio/interior/1.jpg | grep cache`
+1. Прочитать этот файл и `.cursor/rules/copy-typography.mdc`.
+2. `git status` - много правок может быть **не закоммичено**, но уже **на проде** (деплой шёл через `./deploy-ru.sh` без commit).
+3. Версии ассетов - только через `python3 bump-assets.py` (источник правды: `bump-assets.py`, не константы в `build-projects.py`).
 
 ---
 
-## Деплой (Cloudflare Workers + Assets)
+## Деплой (актуально: Timeweb)
 
-| Параметр | Значение |
-|----------|----------|
-| Репозиторий | `emintagiev/keydesign-studio` |
-| Ветка | `master` |
-| Build command | `bash prepare-deploy.sh` |
-| Output | `dist/` (в `.gitignore`) |
-| Конфиг | `wrangler.jsonc` → `"assets": { "directory": "dist" }` |
-| Домены | `www.keydesign.studio` (основной), apex → www |
+| Что | Как |
+|-----|-----|
+| Сборка | `bash prepare-deploy.sh` → папка `dist/` |
+| Выкладка | `./deploy-ru.sh` (SFTP, creds в `deploy.env`, gitignored) |
+| Проверка | `./verify-deploy.sh` - сравнивает prod с `dist/` по MD5 |
+| Скрыто на проде | `approach.html`, `partners.html` (`PROD_HIDDEN` в `prepare-deploy.sh`, `strip-prod-nav.py`) |
 
-Файлы деплоя: `prepare-deploy.sh`, `strip-prod-nav.py`, `_redirects`, `_headers`.
+**Важно:** `prepare-deploy.sh` перед копированием в `dist/` запускает `bump-assets.py` на **исходниках** - после деплоя локальные HTML могут чуть разъехаться по `?v=`. Коммитить лучше после деплоя или держать версии в `bump-assets.py`.
+
+**GitHub:** `emintagiev/keydesign-studio`, ветка **`site-clean`**.  
+Последний commit на ветке: `37058e9` (прелоадер), но **поверх него много uncommitted изменений** - about, команда, порядок проектов, прелоадер 0.8s, сетка projects 2 col и т.д.
+
+Cloudflare (`wrangler.jsonc`, `master`) - legacy, основной прод сейчас Timeweb. См. `HOSTING-RU.md`.
 
 ---
 
-## Версии кэша (актуально)
+## Версии кэша (сейчас)
 
 | Файл | Версия |
 |------|--------|
-| `styles.css` | `?v=59` |
-| `app.js` | `?v=18` |
-| `brief-config.js` | `?v=1` |
+| `styles.css` | `?v=74` |
+| `app.js` | `?v=35` |
 | `project.js` | `?v=7` |
+| `brief-config.js` | `?v=1` |
 | логотипы | `?v=11` |
 
-После правок CSS/JS: bump версии во **всех** `*.html` и в шаблонах `build-projects.py`.
+После правок CSS/JS: правка `bump-assets.py` → `python3 bump-assets.py`.
 
 ---
 
-## 12 проектов
+## Главная (`index.html`)
 
-| # | Название | HTML |
-|---|----------|------|
-| 1 | Dream House | `dream-house.html` |
-| 2 | ЖК Пульсар (Москва) | `zhk-pulsar.html` |
-| 3 | Москва Студия | `moscow-studio.html` |
-| 4 | Салок красоты tati | `salok-krasoty-tati.html` |
-| 5 | г. Новосибирск, Лаки Парк, Дом | `laki-park-dom.html` |
-| 6 | г. Москва, ЖК Архитектор | `zhk-arkhitektor.html` |
-| 7 | Новосибирск, Академгородок, Жк Пульсар 1 | `ns-akadem-pulsar.html` |
-| 8 | г. Новосибирск, Квартал Декабристов | `kvartal-dekabristov.html` |
-| 9 | г. Новосибирск, ул. Невская дом | `nevskaya-dom.html` |
-| 10 | г. Новосибирск, Квартира с Восточным вайбом | `vostochny-vayb.html` |
-| 11 | г. Новосибирск, Кедровый | `kedrovy-ns.html` |
-| 12 | Кабинет-Оружейная Морозово | `kabinet-morozovo.html` |
+- Канон URL: `/`
+- **Прелоадер** (только главная, `body.home`):
+  - **0.8 с** минимум + **0.8 с** переход (desktop)
+  - Desktop: логотип на месте hero, crossfade ч/б → светлый, затем контент
+  - Mobile: простой центрированный прелоадер, без морфа
+  - `prefers-reduced-motion`: почти без задержки
+- Hero: 5 фото, crossfade
+- Шапка nav-only (без логотипа в header), светлые элементы на hero
+- **3 проекта в сетке** (featured):
+
+| # | Проект | slug |
+|---|--------|------|
+| 1 | Москва Студия | `moscow-studio` |
+| 2 | Квартира Дубай | `kvartira-dubay` |
+| 3 | Дом Синегорье | `dom-sinegore` |
+
+Thumbs: `assets/thumbs/home/{moscow-studio,kvartira-dubay,dom-sinegore}.jpg` (генерит `build-hero-images.py`).
+
+---
+
+## Страница «Проекты» (`projects.html`)
+
+- **Порядок** = массив `PROJECTS` в `build-projects.py` (пересборка: `python3 build-projects.py`):
+  1. Москва Студия
+  2. Квартира Дубай
+  3. Дом Синегорье
+  4. г. Москва, ЖК Архитектор
+  5. … далее остальные (всего **13** проектов, см. ниже)
+- **Сетка: 2 колонки**, крупные карточки (`.projects-page .proj-grid`). На главной по-прежнему **3** в ряд.
+
+---
+
+## 13 проектов (порядок в `build-projects.py`)
+
+| # | Название | slug / HTML |
+|---|----------|-------------|
+| 1 | Москва Студия | `moscow-studio` |
+| 2 | Квартира Дубай | `kvartira-dubay` |
+| 3 | Дом Синегорье | `dom-sinegore` |
+| 4 | г. Москва, ЖК Архитектор | `zhk-arkhitektor` |
+| 5 | Салок красоты tati | `salok-krasoty-tati` |
+| 6 | г. Новосибирск, Лаки Парк, Дом | `laki-park-dom` |
+| 7 | Новосибирск, Академгородок, Жк Пульсар 1 | `ns-akadem-pulsar` |
+| 8 | г. Новосибирск, Квартал Декабристов | `kvartal-dekabristov` |
+| 9 | г. Новосибирск, Загородный дом, 160 кв.м. | `nevskaya-dom` |
+| 10 | г. Новосибирск, Квартира с Восточным вайбом | `vostochny-vayb` |
+| 11 | г. Новосибирск, Кедровый | `kedrovy-ns` |
+| 12 | Кабинет-Оружейная Морозово | `kabinet-morozovo` |
+| 13 | Little Classic | `little-classic` |
+
+**Не путать:** `ns-akadem-pulsar` (Новосибирск, Академгородок) - отдельный проект.
+
+---
+
+## О студии (`about.html` - ручная страница)
+
+- Фото Кристины: `assets/about-kristina.jpg?v=7`, max-width **480px**
+- Блок **«Команда»**: Софья Вигель, Полина Трубина - фото `assets/team/`, 2 в ряд (max 400px как было у команды)
+- Текст под командой: `about.team.note` в `app.js`
+- `generate_info_pages()` в `build-projects.py` **отключён** - не затирает `about.html`
+
+---
+
+## Услуги (`services.html`)
+
+- 2-я услуга: **«Проектное сопровождение»** (было «Менеджмент проектов»), ключ `svc.2.*` в `app.js`
+- У «Дизайн-проект интерьера» убрана сноска про консультацию планировки (`svc.1.note` удалён)
+
+---
+
+## build-projects.py
+
+```python
+HOME_FEATURED_SLUGS = ["moscow-studio", "kvartira-dubay", "dom-sinegore"]
+```
+
+- Источники фото: `~/Desktop/key design/…`, `~/Desktop/…`
+- `--html-only` - только HTML, без ingest с Desktop
+- После полного прогона: `projects.html`, все `*.html` проектов, `update_homepage()` для `index.html` + `key-design-studio.html`
+- `key-design-studio.html` - локально полная копия главной; на проде редирект на `/`
 
 ---
 
@@ -106,56 +137,51 @@ git push origin site-clean:master   # выкат на прод
 
 | Назначение | Файл |
 |------------|------|
-| Главная | `index.html` (канон), `key-design-studio.html` (редирект на `/`) |
-| Услуги | `services.html` |
-| О студии | `about.html` (ручная, не build) |
-| Подход / Партнёры | `approach.html`, `partners.html` (только локально) |
-| Проекты | `projects.html` |
-| i18n, hero, brief, services accordion | `app.js` |
-| Formspree endpoint | `brief-config.js` |
-| Галерея | `project.js` |
+| Главная | `index.html` |
+| i18n, hero, brief, preloader, services | `app.js` |
+| Formspree | `brief-config.js` |
+| Галерея проектов | `project.js` |
 | Стили | `styles.css` |
 | Генератор проектов | `build-projects.py` |
-| Prod-сборка | `prepare-deploy.sh`, `strip-prod-nav.py` |
+| Hero + thumbs главной | `build-hero-images.py` |
+| Bump `?v=` | `bump-assets.py` |
+| Prod bundle | `prepare-deploy.sh`, `strip-prod-nav.py` |
+| Деплой RU | `deploy-ru.sh`, `deploy.env` |
 | Оптимизация фото | `optimize-images.py` |
-| Правила AI | `.cursor/rules/copy-typography.mdc` |
+| Типографика (тире!) | `.cursor/rules/copy-typography.mdc` |
 
 ---
 
-## build-projects.py
+## Принципы (не ломать)
 
-- `HOME_LINK` - «На главную» в проектах.
-- **`generate_info_pages()` отключён** - не затирать `about.html`.
-- `--html-only` - только HTML, без копирования фото с Desktop.
-- После ingest с Desktop автоматически запускается `optimize-images.py`.
-- Пересборка: `python3 build-projects.py --html-only`
-
----
-
-## Контакты
-
-- Телефон: `+7 (923) 000-00-36`
-- Почта: `key-des@mail.ru`
-- Telegram / WhatsApp / Instagram (без ников в подписях)
+- Только **короткое тире `-`**, не `—` и не `–`.
+- Названия вкладок страниц - **`.eyebrow`**, не крупный serif.
+- «На главную →» на каждой внутренней (кроме главной).
+- **Commit только по явной просьбе** пользователя. Деплой - по «задеплой» / «на прод».
 
 ---
 
 ## Открытые вопросы
 
-1. **Formspree:** endpoint в `brief-config.js` (сейчас fallback mailto).
-2. **Подход / Партнёры:** доработать локально, потом включить в prod (убрать из `PROD_HIDDEN` в `prepare-deploy.sh`).
-3. EN-переводы длинных названий проектов.
-4. WebP / srcset - долгосрочно.
+1. Formspree в `brief-config.js` - проверить живой endpoint.
+2. Подход / Партнёры - включить на прод, когда будут готовы.
+3. **Git:** много uncommitted work - имеет смысл сделать commit на `site-clean` и push.
+4. WebP / srcset - по желанию позже.
 
 ---
 
-## Принципы
+## Контакты на сайте
 
-- Только короткое тире `-` (см. `.cursor/rules/copy-typography.mdc`).
-- Названия вкладок - `.eyebrow`, не `.section-head__title`.
-- «На главную →» на каждой внутренней странице.
-- Названия проектов = папке на Desktop, дословно.
-- Commit только по запросу пользователя (или явная просьба «выкати»).
+- `+7 (923) 000-00-36`
+- `key-des@mail.ru`
+- Telegram / WhatsApp / Instagram
+
+---
+
+## История чатов (если нужны детали)
+
+Транскрипты Cursor: `~/.cursor/projects/Users-emin-key-design-studio/agent-transcripts/`  
+Крупная сессия (прелоадер, mobile, команда, деплой): `38571574-ea1f-4e92-b50e-54d3c618934f`
 
 ---
 
@@ -164,12 +190,5 @@ git push origin site-clean:master   # выкат на прод
 ```bash
 cd /Users/emin/key-design-studio
 python3 -m http.server 8099
+# или ./serve.sh
 ```
-
-Открыть: http://localhost:8099/
-
----
-
-## Транскрипты
-
-- `agent-transcripts/c99ba3ea-005b-40f7-8105-fbcc298fc982/` - оптимизация, услуги, деплой

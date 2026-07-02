@@ -41,7 +41,7 @@ done
 
 echo ""
 echo "Homepage cards:"
-curl -fsSL "$BASE/" | grep -o 'href="[^"]*\.html"' | grep -E 'kvartira-dubay|dom-sinegore|zhk-pulsar|dream-house' || true
+curl -fsSL "$BASE/" | grep -o 'href="[^"]*\.html"' | grep -E 'moscow-studio|kvartira-dubay|dom-sinegore' || true
 
 echo ""
 echo "Projects count:"

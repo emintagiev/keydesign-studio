@@ -8,27 +8,118 @@
       /* ---------- Homepage preloader ---------- */
       var preloader = document.getElementById("preloader");
       if (preloader && document.body.classList.contains("home")) {
+        document.documentElement.classList.add("is-loading");
+        var preloaderWrap = document.getElementById("preloaderLogoWrap");
+        var heroBrand = document.querySelector(".hero__brand");
+        var heroBrandImg = heroBrand && heroBrand.querySelector("img");
+        var desktopPreloaderMq = window.matchMedia("(min-width: 981px)");
+        var reduceMotionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
         var preloaderStarted = Date.now();
-        var preloaderMinMs = 1200;
-        var preloaderMaxMs = 5000;
+        var preloaderMinMs = reduceMotionMq.matches ? 0 : 800;
+        var preloaderMaxMs = 4000;
         var preloaderDone = false;
+        var preloaderRevealMs = reduceMotionMq.matches ? 0 : 800;
+
+        function isDesktopPreloader() {
+          return desktopPreloaderMq.matches && !reduceMotionMq.matches;
+        }
+
+        function alignPreloaderLogo() {
+          if (!preloaderWrap || !heroBrandImg || !isDesktopPreloader()) {
+            if (preloaderWrap) {
+              preloaderWrap.style.left = "";
+              preloaderWrap.style.top = "";
+              preloaderWrap.style.width = "";
+              preloaderWrap.style.height = "";
+            }
+            preloader.classList.remove("is-positioned");
+            return;
+          }
+
+          var rect = heroBrandImg.getBoundingClientRect();
+          if (rect.width < 1 || rect.height < 1) return;
+
+          preloaderWrap.style.left = rect.left + "px";
+          preloaderWrap.style.top = rect.top + "px";
+          preloaderWrap.style.width = rect.width + "px";
+          preloaderWrap.style.height = rect.height + "px";
+          preloader.classList.add("is-positioned");
+        }
+
+        function revealHeroContent() {
+          if (heroBrand) {
+            heroBrand.classList.add("is-visible");
+          }
+
+          var heroReveals = document.querySelectorAll(
+            ".hero .reveal:not(.hero__brand)"
+          );
+          heroReveals.forEach(function (el, index) {
+            el.classList.remove("is-visible");
+            window.setTimeout(function () {
+              el.classList.add("is-visible");
+            }, 140 + index * 120);
+          });
+        }
 
         function finishPreloader() {
           if (preloaderDone) return;
           preloaderDone = true;
 
           var wait = Math.max(0, preloaderMinMs - (Date.now() - preloaderStarted));
-          setTimeout(function () {
+          window.setTimeout(function () {
+            if (isDesktopPreloader()) {
+              alignPreloaderLogo();
+              preloader.classList.add("is-revealing");
+
+              window.setTimeout(function () {
+                document.body.classList.remove("is-loading");
+                document.documentElement.classList.remove("is-loading");
+                preloader.classList.add("is-handoff");
+                revealHeroContent();
+
+                window.setTimeout(function () {
+                  preloader.classList.add("is-done");
+                  window.setTimeout(function () {
+                    preloader.remove();
+                  }, 120);
+                }, 120);
+              }, preloaderRevealMs);
+              return;
+            }
+
             preloader.classList.add("is-done");
             document.body.classList.remove("is-loading");
-            setTimeout(function () {
+            document.documentElement.classList.remove("is-loading");
+            window.setTimeout(function () {
               preloader.remove();
             }, 700);
           }, wait);
         }
 
-        window.addEventListener("load", finishPreloader, { once: true });
-        setTimeout(finishPreloader, preloaderMaxMs);
+        function scheduleAlignPreloaderLogo() {
+          window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(alignPreloaderLogo);
+          });
+        }
+
+        scheduleAlignPreloaderLogo();
+        window.addEventListener("resize", alignPreloaderLogo);
+
+        if (document.readyState === "complete") {
+          scheduleAlignPreloaderLogo();
+          finishPreloader();
+        } else {
+          window.addEventListener(
+            "load",
+            function () {
+              scheduleAlignPreloaderLogo();
+              finishPreloader();
+            },
+            { once: true }
+          );
+          window.setTimeout(finishPreloader, preloaderMaxMs);
+        }
       }
 
   /* ---------- i18n (RU default, EN ready) ---------- */
@@ -62,19 +153,16 @@
           "about.p4":
             "Хороший интерьер - это не про красивые фотографии. Это про то, как вы себя чувствуете в пространстве каждый день. Именно это мы проектируем.",
           "about.role": "основатель и ведущий дизайнер",
+          "about.team.label": "Команда",
+          "about.team.sofia.role": "дизайнер, конструктор-проектировщик",
+          "about.team.polina.role": "архитектор, чертёжник",
+          "about.team.note":
+            "Дизайн - это не про стены и мебель, а про чувство, что тебя услышали. Мы работаем именно так: слушаем, вникаем, вкладываемся в каждую деталь - чтобы в итоге вы получили не проект, а место, которое искренне полюбите.",
           "projects.label": "Проекты",
           "projects.viewAll": "Посмотреть все проекты",
           "projects.all": "Все проекты",
           "projects.featured": "Избранный проект",
           "project.link": "Смотреть проект",
-          "project.1.cat": "Частный дом · Москва · 2025",
-          "project.1.name": "Dream House",
-          "project.1.desc":
-            "Частный дом в тёплой нейтральной палитре: натуральное дерево, мягкие фактуры и выверенный свет - от кухни-гостиной до приватных зон.",
-          "project.2.cat": "Квартира · Москва · 2025",
-          "project.2.name": "ЖК Пульсар",
-          "project.2.desc":
-            "Квартира в современном жилом комплексе: светлая палитра, функциональное зонирование и продуманные детали.",
           "project.3.cat": "Студия · Москва · 2025",
           "project.3.name": "Москва Студия",
           "project.3.desc":
@@ -96,7 +184,7 @@
           "project.8.name": "г. Новосибирск, Квартал Декабристов",
           "project.8.desc": "",
           "project.9.cat": "Частный дом · Новосибирск · 2025",
-          "project.9.name": "г. Новосибирск, ул. Невская дом",
+          "project.9.name": "г. Новосибирск, Загородный дом, 160 кв.м.",
           "project.9.desc": "",
           "project.10.cat": "Квартира · Новосибирск · 2025",
           "project.10.name": "г. Новосибирск, Квартира с Восточным вайбом",
@@ -276,19 +364,16 @@
           "about.p4":
             "A good interior is not about beautiful photos. It is about how you feel in the space every day. That is what we design.",
           "about.role": "founder & lead designer",
+          "about.team.label": "Team",
+          "about.team.sofia.role": "interior designer, design engineer",
+          "about.team.polina.role": "architect, technical draughtsperson",
+          "about.team.note":
+            "Design is not about walls and furniture - it is about the feeling of being heard. That is how we work: we listen, we dive in, we invest in every detail - so that in the end you receive not a project, but a place you will genuinely love.",
           "projects.label": "Projects",
           "projects.viewAll": "View all projects",
           "projects.all": "All projects",
           "projects.featured": "Featured project",
           "project.link": "View project",
-          "project.1.cat": "Private house · Moscow · 2025",
-          "project.1.name": "Dream House",
-          "project.1.desc":
-            "A private house in a warm neutral palette: natural wood, soft textures and considered light - from the kitchen-living room to the private quarters.",
-          "project.2.cat": "Apartment · Moscow · 2025",
-          "project.2.name": "Pulsar Residential Complex",
-          "project.2.desc":
-            "An apartment in a modern residential complex: a light palette, functional zoning and considered details.",
           "project.3.cat": "Studio · Moscow · 2025",
           "project.3.name": "Moscow Studio",
           "project.3.desc":
@@ -310,7 +395,7 @@
           "project.8.name": "Novosibirsk, Dekabristov Quarter",
           "project.8.desc": "",
           "project.9.cat": "Private house · Novosibirsk · 2025",
-          "project.9.name": "Novosibirsk, Nevskaya St. House",
+          "project.9.name": "Novosibirsk, Country House, 160 sq.m.",
           "project.9.desc": "",
           "project.10.cat": "Apartment · Novosibirsk · 2025",
           "project.10.name": "Novosibirsk, Eastern Vibe Apartment",
