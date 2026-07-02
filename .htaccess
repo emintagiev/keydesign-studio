@@ -30,12 +30,12 @@ AddDefaultCharset utf-8
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
-  <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=604800"
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
 
-  <FilesMatch "\.(html)$">
-    Header set Cache-Control "public, max-age=3600"
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800, must-revalidate"
   </FilesMatch>
 
   <FilesMatch "\.(jpg|jpeg|png|webp|gif|ico|svg)$">

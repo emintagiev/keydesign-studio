@@ -853,6 +853,38 @@
       background: #faf6ef;
     }
 
+    /* ---------- Homepage preloader ---------- */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      transition: opacity 0.65s var(--ease), visibility 0.65s;
+    }
+
+    .preloader.is-done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader__logo {
+      width: min(220px, 54vw);
+      height: auto;
+    }
+
+    body.is-loading {
+      overflow: hidden;
+    }
+
+    body.is-loading .header,
+    body.is-loading main {
+      visibility: hidden;
+    }
+
     /* hero light-on-dark palette, available to the header too (home only) */
     .home {
       --hero-fg: #f7f0e6;

@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parent
 DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
+ASSET_JS_VERSION = "25"
+ASSET_CSS_VERSION = "66"
 
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
@@ -722,7 +724,7 @@ def generate_html(cfg: dict):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=64" />
+  <link rel="stylesheet" href="styles.css?v={ASSET_CSS_VERSION}" />
 </head>
 
 <body>
@@ -732,14 +734,14 @@ def generate_html(cfg: dict):
 
 {FOOTER}
 
-  <script src="app.js?v=22" defer></script>
+  <script src="app.js?v={ASSET_JS_VERSION}" defer></script>
   <script src="project.js?v=7" defer></script>
 </body>
 </html>
 '''
 
 
-HOME_FEATURED_COUNT = 3
+HOME_FEATURED_SLUGS = ["kvartira-dubay", "dom-sinegore", "zhk-pulsar"]
 
 
 def home_thumb(cfg: dict) -> str:
@@ -750,7 +752,8 @@ def home_thumb(cfg: dict) -> str:
 
 
 def update_homepage(projects: list[dict]):
-    featured = projects[:HOME_FEATURED_COUNT]
+    by_slug = {p["slug"]: p for p in projects}
+    featured = [by_slug[slug] for slug in HOME_FEATURED_SLUGS if slug in by_slug]
     cards = []
     for p in featured:
         img = home_thumb(p)
@@ -817,7 +820,7 @@ def generate_projects_page(projects: list[dict]):
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=64" />
+  <link rel="stylesheet" href="styles.css?v={ASSET_CSS_VERSION}" />
 </head>
 
 <body>
@@ -842,7 +845,7 @@ def generate_projects_page(projects: list[dict]):
 
 {FOOTER}
 
-  <script src="app.js?v=22" defer></script>
+  <script src="app.js?v={ASSET_JS_VERSION}" defer></script>
 </body>
 </html>
 '''
@@ -876,7 +879,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
   </noscript>
 
 {FAVICON_LINKS}
-  <link rel="stylesheet" href="styles.css?v=64" />
+  <link rel="stylesheet" href="styles.css?v={ASSET_CSS_VERSION}" />
 </head>
 
 <body>
@@ -890,7 +893,7 @@ def _page_shell(title: str, description: str, main_content: str) -> str:
 
 {FOOTER}
 
-  <script src="app.js?v=22" defer></script>
+  <script src="app.js?v={ASSET_JS_VERSION}" defer></script>
 </body>
 </html>
 '''

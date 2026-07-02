@@ -5,6 +5,32 @@
 
       var root = document.documentElement;
 
+      /* ---------- Homepage preloader ---------- */
+      var preloader = document.getElementById("preloader");
+      if (preloader && document.body.classList.contains("home")) {
+        var preloaderStarted = Date.now();
+        var preloaderMinMs = 1200;
+        var preloaderMaxMs = 5000;
+        var preloaderDone = false;
+
+        function finishPreloader() {
+          if (preloaderDone) return;
+          preloaderDone = true;
+
+          var wait = Math.max(0, preloaderMinMs - (Date.now() - preloaderStarted));
+          setTimeout(function () {
+            preloader.classList.add("is-done");
+            document.body.classList.remove("is-loading");
+            setTimeout(function () {
+              preloader.remove();
+            }, 700);
+          }, wait);
+        }
+
+        window.addEventListener("load", finishPreloader, { once: true });
+        setTimeout(finishPreloader, preloaderMaxMs);
+      }
+
   /* ---------- i18n (RU default, EN ready) ---------- */
       var i18n = {
         ru: {
@@ -170,7 +196,6 @@
           "svc.cta": "Оставить заявку",
           "svc.1.title": "Дизайн-проект интерьера",
           "svc.1.lead": "Авторская концепция пространства и полный комплект рабочей документации: стиль, конструктивные решения и технологии отделки. Срок разработки - от двух месяцев, в зависимости от площади и сложности объекта.",
-          "svc.1.note": "Отдельно можно заказать консультацию по планировке на этапе выбора квартиры или дома.",
           "svc.1.s1.title": "Техническое задание",
           "svc.1.s1.text": "Фиксируем задачи по каждой зоне, собираем пожелания и референсы по стилю, мебели и оборудованию.",
           "svc.1.s2.title": "Обмеры и фотофиксация",
@@ -181,7 +206,7 @@
           "svc.1.s4.text": "Показываем будущую атмосферу интерьера: свет, материалы, мебель и детали в объёмных рендерах.",
           "svc.1.s5.title": "Рабочий проект",
           "svc.1.s5.text": "Готовим чертежи и спецификации, по которым строители и поставщики реализуют проект без догадок.",
-          "svc.2.title": "Менеджмент проектов",
+          "svc.2.title": "Проектное сопровождение",
           "svc.2.lead": "Ведём проект как единую систему: координируем поставщиков и подрядчиков, помогаем с комплектацией. Сокращаем время на подбор чистовых материалов, мебели и декора, выстраиваем бюджет и контролируем сроки поставок.",
           "svc.2.s1.title": "Поиск исполнителей",
           "svc.2.s1.text": "Подбираем проверенных поставщиков и подрядчиков под задачи и бюджет проекта.",
@@ -385,7 +410,6 @@
           "svc.cta": "Request a call",
           "svc.1.title": "Interior design project",
           "svc.1.lead": "A bespoke spatial concept and full working documentation: style, structural choices and finishing technologies. Timeline from two months, depending on size and complexity.",
-          "svc.1.note": "Planning consultation when choosing a home can be booked separately.",
           "svc.1.s1.title": "Design brief",
           "svc.1.s1.text": "We define tasks for each zone and collect preferences and references for style, furniture and equipment.",
           "svc.1.s2.title": "Site survey",
@@ -396,7 +420,7 @@
           "svc.1.s4.text": "We show the future atmosphere: light, materials, furniture and details in rendered views.",
           "svc.1.s5.title": "Working drawings",
           "svc.1.s5.text": "We prepare drawings and specifications builders and suppliers can follow without guesswork.",
-          "svc.2.title": "Project management",
+          "svc.2.title": "Project support",
           "svc.2.lead": "We run the project as one system: coordinate suppliers and contractors and help with procurement. Less time on finishes, furniture and decor; clearer budget and delivery dates.",
           "svc.2.s1.title": "Finding partners",
           "svc.2.s1.text": "We select trusted suppliers and contractors for the scope and budget.",
