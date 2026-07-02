@@ -63,7 +63,7 @@ Cloudflare (`wrangler.jsonc`, `master`) - legacy, основной прод се
 | # | Проект | slug |
 |---|--------|------|
 | 1 | Москва Студия | `moscow-studio` |
-| 2 | Квартира Дубай | `kvartira-dubay` |
+| 2 | Дубай, апартаменты, 180 кв.м. | `kvartira-dubay` |
 | 3 | Дом Синегорье | `dom-sinegore` |
 
 Thumbs: `assets/thumbs/home/{moscow-studio,kvartira-dubay,dom-sinegore}.jpg` (генерит `build-hero-images.py`).
@@ -74,7 +74,7 @@ Thumbs: `assets/thumbs/home/{moscow-studio,kvartira-dubay,dom-sinegore}.jpg` (г
 
 - **Порядок** = массив `PROJECTS` в `build-projects.py` (пересборка: `python3 build-projects.py`):
   1. Москва Студия
-  2. Квартира Дубай
+  2. Дубай, апартаменты, 180 кв.м.
   3. Дом Синегорье
   4. г. Москва, ЖК Архитектор
   5. … далее остальные (всего **13** проектов, см. ниже)
@@ -87,7 +87,7 @@ Thumbs: `assets/thumbs/home/{moscow-studio,kvartira-dubay,dom-sinegore}.jpg` (г
 | # | Название | slug / HTML |
 |---|----------|-------------|
 | 1 | Москва Студия | `moscow-studio` |
-| 2 | Квартира Дубай | `kvartira-dubay` |
+| 2 | Дубай, апартаменты, 180 кв.м. | `kvartira-dubay` |
 | 3 | Дом Синегорье | `dom-sinegore` |
 | 4 | г. Москва, ЖК Архитектор | `zhk-arkhitektor` |
 | 5 | Салок красоты tati | `salok-krasoty-tati` |
