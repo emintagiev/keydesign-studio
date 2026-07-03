@@ -16,6 +16,8 @@ SITE_FILES = [
     "key-design-studio.html",
     "about.html",
     "projects.html",
+    "contacts.html",
+    "services.html",
     "approach.html",
     "partners.html",
     "moscow-studio.html",

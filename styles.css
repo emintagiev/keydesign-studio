@@ -522,6 +522,63 @@
       gap: var(--sp-3);
     }
 
+    .header-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
+
+    .header-social__link {
+      display: inline-grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100px;
+      color: var(--text-faint);
+      transition: color var(--t-fast);
+    }
+
+    .header-social__link:hover {
+      color: var(--accent);
+    }
+
+    .header-social__link svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .header-social {
+        gap: 0.25rem;
+      }
+
+      .header-social__link {
+        width: 2.35rem;
+        height: 2.35rem;
+      }
+
+      .header-social__link svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    @media (min-width: 981px) {
+      .header-social {
+        gap: 0.35rem;
+      }
+
+      .header-social__link {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .header-social__link svg {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
     .lang {
       display: inline-flex;
       align-items: center;
@@ -994,6 +1051,14 @@
       border-color: rgba(247, 240, 230, 0.34);
     }
 
+    .home .header .header-social__link {
+      color: var(--hero-fg-faint);
+    }
+
+    .home .header .header-social__link:hover {
+      color: var(--hero-fg);
+    }
+
     .home .header .icon-btn {
       color: var(--hero-fg);
     }
@@ -1284,8 +1349,7 @@
     /* ============================================================
        PROJECTS
        ============================================================ */
-    .home .projects,
-    .home .contact--details {
+    .home .projects {
       content-visibility: auto;
       contain-intrinsic-size: auto 800px;
     }
@@ -1826,6 +1890,162 @@
       padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
     }
 
+    .contact--office {
+      padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+      background: var(--bg-alt);
+      scroll-margin-top: calc(var(--header-h) + 0.75rem);
+    }
+
+    .contact-page {
+      padding-top: var(--page-top);
+      padding-bottom: clamp(4rem, 2.5rem + 5vw, 7rem);
+    }
+
+    .contact-page .section-head {
+      margin-bottom: clamp(2rem, 1.25rem + 2.5vw, 3.5rem);
+    }
+
+    .contact-page .contact-office {
+      padding-top: 0;
+    }
+
+    .contact-office {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+      align-items: start;
+      max-width: 52rem;
+    }
+
+    .contact-office__info {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+      min-width: 0;
+    }
+
+    .contact-office__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem, 0.9rem + 1vw, 2rem);
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-office__item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55em;
+      padding-top: clamp(1rem, 0.75rem + 0.6vw, 1.35rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-office__item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .contact-office__label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .contact-office__value {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.85rem);
+      line-height: 1.15;
+      color: var(--text);
+      transition: color var(--t-fast);
+      width: fit-content;
+    }
+
+    a.contact-office__value:hover {
+      color: var(--accent);
+    }
+
+    .contact-office__address {
+      margin: 0;
+      max-width: 28ch;
+      font-size: var(--fs-lead);
+      line-height: 1.55;
+      color: var(--text-soft);
+    }
+
+    .contact-office__map {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      width: clamp(220px, 24vw, 320px);
+      flex-shrink: 0;
+    }
+
+    .contact-office__map-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      aspect-ratio: 1;
+    }
+
+    .contact-office__map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .contact-office__map-link {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--t), box-shadow var(--t);
+    }
+
+    .contact-office__map-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(244, 239, 231, 0.04);
+      pointer-events: none;
+      transition: opacity var(--t-fast);
+    }
+
+    .contact-office__map-link:hover::after {
+      opacity: 0;
+    }
+
+    .contact-office__map-link:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-office__map-link img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .contact-office__map-caption {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: right;
+    }
+
     .contact--details .contact__row {
       margin-top: 0;
     }
@@ -2102,6 +2322,20 @@
       .contact__row {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--sp-5) var(--sp-4);
+      }
+
+      .contact-office {
+        grid-template-columns: 1fr;
+        gap: var(--sp-5);
+        max-width: none;
+      }
+
+      .contact-office__map {
+        width: min(100%, 280px);
+      }
+
+      .contact-office__map-caption {
+        text-align: left;
       }
 
       .approach__grid {

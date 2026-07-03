@@ -235,6 +235,11 @@
           "contact.cta": "Написать нам",
           "contact.phone": "Телефон",
           "contact.email": "Почта",
+          "contact.telegram": "Telegram",
+          "contact.instagram": "Instagram",
+          "contact.address": "г. Новосибирск, ул. Инженерная 7, 3 этаж",
+          "contact.mapHint": "Открыть в картах",
+          "contact.mapAria": "Открыть офис на карте",
           "contact.messenger": "Мессенджеры",
           "contact.social": "Соцсети",
           "footer.rights": "Все права защищены.",
@@ -446,6 +451,11 @@
           "contact.cta": "Get in touch",
           "contact.phone": "Phone",
           "contact.email": "Email",
+          "contact.telegram": "Telegram",
+          "contact.instagram": "Instagram",
+          "contact.address": "Novosibirsk, 7 Inzhenernaya St., 3rd floor",
+          "contact.mapHint": "Open in maps",
+          "contact.mapAria": "Open office location in maps",
           "contact.messenger": "Messengers",
           "contact.social": "Social",
           "footer.rights": "All rights reserved.",
@@ -560,6 +570,10 @@
         document.querySelectorAll("[data-i18n-placeholder]").forEach(function (node) {
           var pKey = node.getAttribute("data-i18n-placeholder");
           if (dict[pKey]) node.placeholder = dict[pKey];
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach(function (node) {
+          var aKey = node.getAttribute("data-i18n-aria-label");
+          if (dict[aKey]) node.setAttribute("aria-label", dict[aKey]);
         });
         root.setAttribute("lang", lang);
         langButtons.forEach(function (b) {

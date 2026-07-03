@@ -27,7 +27,7 @@ HEADER = """  <header class="header" id="header">
         <a class="nav__link" href="services.html" data-i18n="nav.services">Услуги</a>
         <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
         <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
-        <a class="nav__link" href="key-design-studio.html#contact" data-i18n="nav.contact">Контакты</a>
+        <a class="nav__link" href="contacts.html" data-i18n="nav.contact">Контакты</a>
       </nav>
 
       <div class="header__tools">
@@ -36,6 +36,15 @@ HEADER = """  <header class="header" id="header">
           <span></span>
           <span></span>
         </button>
+
+        <div class="header-social">
+          <a class="header-social__link" href="https://t.me/Kristina_Key_des" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+          </a>
+          <a class="header-social__link" href="https://instagram.com/key_design.studio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+        </div>
 
         <div class="lang" role="group" aria-label="Выбор языка / Language">
           <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
@@ -582,7 +591,7 @@ def generate_html(cfg: dict):
       </section>
 
       <div class="proj-foot">
-        <a class="proj-foot__cta" href="key-design-studio.html#contact">Обсудить <em>ваш проект</em></a>
+        <a class="proj-foot__cta" href="contacts.html">Обсудить <em>ваш проект</em></a>
         <a class="link-underline" href="projects.html">
           Все проекты <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
@@ -622,7 +631,7 @@ def generate_html(cfg: dict):
         </div>
 
         <div class="proj-foot">
-          <a class="proj-foot__cta" href="key-design-studio.html#contact">Обсудить <em>ваш проект</em></a>
+          <a class="proj-foot__cta" href="contacts.html">Обсудить <em>ваш проект</em></a>
           <a class="link-underline" href="projects.html">
             Все проекты <span class="btn__arrow" aria-hidden="true">→</span>
           </a>

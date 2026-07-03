@@ -4,9 +4,9 @@
   <script>document.documentElement.classList.add("js");</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Как мы работаем - Key Design Studio." />
+  <meta name="description" content="Контакты Key Design Studio - телефон, почта, Telegram, Instagram и адрес офиса в Новосибирске." />
   <meta name="theme-color" content="#f4efe7" />
-  <title>Подход - Key Design Studio</title>
+  <title>Контакты - Key Design Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,9 +31,9 @@
 <body>
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="key-design-studio.html" class="brand" aria-label="Key Design Studio">
-        <img class="brand__logo brand__logo--dark" src="assets/logo.png" alt="" width="859" height="722" />
-        <img class="brand__logo brand__logo--light" src="assets/logo-light.png" alt="" width="859" height="722" />
+      <a href="index.html" class="brand" aria-label="Key Design Studio">
+        <img class="brand__logo brand__logo--dark" src="assets/logo.png?v=11" alt="" width="859" height="722" />
+        <img class="brand__logo brand__logo--light" src="assets/logo-light.png?v=11" alt="" width="859" height="722" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
@@ -42,7 +42,7 @@
         <a class="nav__link" href="services.html" data-i18n="nav.services">Услуги</a>
         <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
         <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
-        <a class="nav__link" href="contacts.html" data-i18n="nav.contact">Контакты</a>
+        <a class="nav__link nav__link--active" href="contacts.html" data-i18n="nav.contact">Контакты</a>
       </nav>
 
       <div class="header__tools">
@@ -69,45 +69,38 @@
     </div>
   </header>
 
-  <main id="top" class="projects-page">
+  <main id="top" class="contact-page">
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <h1 class="eyebrow" data-i18n="nav.approach">Подход</h1>
-          <h2 class="section-head__subtitle" data-i18n="approach.title">Как мы работаем</h2>
+          <h1 class="eyebrow" data-i18n="contact.label">Контакты</h1>
         </div>
-        <a href="key-design-studio.html" class="link-underline" data-i18n="nav.home">
+        <a href="index.html" class="link-underline" data-i18n="nav.home">
           На главную <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
       </div>
-      <div class="approach__grid reveal">
-        <div class="step">
-          <span class="step__num">01</span>
-          <h2 class="step__title" data-i18n="step.1.title">Знакомство и бриф</h2>
-          <p class="step__text" data-i18n="step.1.text">
-            Изучаем образ жизни, задачи и характер пространства, формируем общее видение.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">02</span>
-          <h2 class="step__title" data-i18n="step.2.title">Концепция</h2>
-          <p class="step__text" data-i18n="step.2.text">
-            Предлагаем планировочные решения, палитру материалов и атмосферу интерьера.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">03</span>
-          <h2 class="step__title" data-i18n="step.3.title">Проект и детали</h2>
-          <p class="step__text" data-i18n="step.3.text">
-            Разрабатываем рабочую документацию, подбираем мебель, свет и отделку.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">04</span>
-          <h2 class="step__title" data-i18n="step.4.title">Реализация</h2>
-          <p class="step__text" data-i18n="step.4.text">
-            Ведём проект на площадке и контролируем качество вплоть до финального стайлинга.
-          </p>
+
+      <div class="contact-office reveal">
+        <div class="contact-office__info">
+          <ul class="contact-office__list">
+            <li class="contact-office__item">
+              <span class="contact-office__label" data-i18n="contact.phone">Телефон</span>
+              <a class="contact-office__value" href="tel:+79230000036">+7 (923) 000-00-36</a>
+            </li>
+            <li class="contact-office__item">
+              <span class="contact-office__label" data-i18n="contact.email">Почта</span>
+              <a class="contact-office__value" href="mailto:key-des@mail.ru">key-des@mail.ru</a>
+            </li>
+            <li class="contact-office__item">
+              <span class="contact-office__label" data-i18n="contact.telegram">Telegram</span>
+              <a class="contact-office__value" href="https://t.me/Kristina_Key_des" target="_blank" rel="noopener noreferrer">@Kristina_Key_des</a>
+            </li>
+            <li class="contact-office__item">
+              <span class="contact-office__label" data-i18n="contact.instagram">Instagram</span>
+              <a class="contact-office__value" href="https://instagram.com/key_design.studio" target="_blank" rel="noopener noreferrer">@key_design.studio</a>
+            </li>
+          </ul>
+          <p class="contact-office__address" data-i18n="contact.address">г. Новосибирск, ул. Инженерная 7, 3 этаж</p>
         </div>
       </div>
     </div>
