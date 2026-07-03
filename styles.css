@@ -2411,6 +2411,25 @@
         margin-left: auto;
       }
 
+      .header__tools .header-social {
+        order: 1;
+        gap: 0.25rem;
+      }
+
+      .header__tools .nav-toggle {
+        order: 2;
+      }
+
+      .header-social__link {
+        width: 2.45rem;
+        height: 2.45rem;
+      }
+
+      .header-social__link svg {
+        width: 18px;
+        height: 18px;
+      }
+
       .brand__logo {
         height: clamp(48px, 14vw, 68px);
       }
