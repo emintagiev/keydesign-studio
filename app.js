@@ -167,8 +167,8 @@
           "project.3.name": "Москва Студия",
           "project.3.desc":
             "Компактная студия с выверенной планировкой: каждый метр работает на комфорт, свет и ощущение простора.",
-          "project.4.cat": "Салок красоты tati · 2026",
-          "project.4.name": "Салок красоты tati",
+          "project.4.cat": "Салон красоты tati · 2026",
+          "project.4.name": "Салон красоты tati",
           "project.4.desc":
             "Интерьер салона красоты tati - мягкий свет, спокойная палитра и продуманная эргономика.",
           "project.5.cat": "Частный дом · Новосибирск · 2025",
@@ -383,8 +383,8 @@
           "project.3.name": "Moscow Studio",
           "project.3.desc":
             "A compact studio with a considered layout: every square metre works for comfort, light and a sense of space.",
-          "project.4.cat": "Salok krasoty tati · 2026",
-          "project.4.name": "Salok krasoty tati",
+          "project.4.cat": "Salon krasoty tati · 2026",
+          "project.4.name": "Salon krasoty tati",
           "project.4.desc":
             "Salon interior for tati - soft light, a calm palette, and thoughtful ergonomics.",
           "project.5.cat": "Private house · Novosibirsk · 2025",
