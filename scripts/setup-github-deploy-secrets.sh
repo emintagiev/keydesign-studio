@@ -28,5 +28,10 @@ for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PATH DEPLOY_PASSWORD DEPLOY_METHOD DE
   gh secret set "$name" --body "${!name}" --repo "$REPO"
 done
 
+if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
+  gh secret set TELEGRAM_BOT_TOKEN --body "$TELEGRAM_BOT_TOKEN" --repo "$REPO"
+  gh secret set TELEGRAM_CHAT_ID --body "$TELEGRAM_CHAT_ID" --repo "$REPO"
+fi
+
 echo "Secrets добавлены в $REPO:"
 gh secret list --repo "$REPO"

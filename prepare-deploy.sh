@@ -65,6 +65,16 @@ if [[ -d oauth ]]; then
   fi
 fi
 
+if [[ -d api ]]; then
+  mkdir -p dist/api
+  cp api/brief.php dist/api/
+  if [[ -f api/brief-secrets.php ]]; then
+    cp api/brief-secrets.php dist/api/
+  elif [[ -f "$ROOT/deploy.env" ]]; then
+    php "$ROOT/scripts/write-brief-secrets.php" "$ROOT/dist/api/brief-secrets.php" || true
+  fi
+fi
+
 python3 strip-prod-nav.py dist/
 
 echo "Deploy bundle ready: $(find dist -type f | wc -l | tr -d ' ') files"

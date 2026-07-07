@@ -9,5 +9,5 @@
  * Пока endpoint пустой - fallback на mailto:key-des@mail.ru
  */
 window.KDS_BRIEF = {
-  endpoint: ""
+  endpoint: "/api/brief.php"
 };

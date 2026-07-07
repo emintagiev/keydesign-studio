@@ -998,6 +998,17 @@
         var briefStep = 1;
         var briefTotalQuiz = 3;
 
+        if (briefForm && !briefForm.querySelector('input[name="company"]')) {
+          var briefHoneypot = document.createElement("input");
+          briefHoneypot.type = "text";
+          briefHoneypot.name = "company";
+          briefHoneypot.tabIndex = -1;
+          briefHoneypot.autocomplete = "off";
+          briefHoneypot.setAttribute("aria-hidden", "true");
+          briefHoneypot.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0";
+          briefForm.appendChild(briefHoneypot);
+        }
+
         function briefDict() {
           var lang = root.getAttribute("lang") === "en" ? "en" : "ru";
           return i18n[lang] || i18n.ru;
@@ -1140,6 +1151,8 @@
             timeline: timeline ? timeline.value : "",
             name: name.value.trim(),
             phone: phone.value.trim(),
+            page: location.pathname || "",
+            company: (briefForm.querySelector('input[name="company"]') || {}).value || "",
             _subject: "Заявка с сайта Key Design Studio"
           };
 

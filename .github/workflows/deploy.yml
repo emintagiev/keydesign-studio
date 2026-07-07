@@ -18,6 +18,12 @@ jobs:
       - name: Install Python deps
         run: pip install -r requirements.txt
 
+      - name: Write Telegram secrets for brief form
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: php scripts/write-brief-secrets.php api/brief-secrets.php
+
       - name: Build deploy bundle
         run: bash prepare-deploy.sh
 

@@ -5,6 +5,7 @@ assets/logo-tmp/
 dist/
 deploy.env
 oauth/oauth-secrets.php
+api/brief-secrets.php
 workers/decap-oauth/node_modules/
 site-dist.zip
 site-*.zip
