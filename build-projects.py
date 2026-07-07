@@ -178,6 +178,9 @@ def enrich_project(cfg: dict) -> None:
 
 def gallery_image_paths(cfg: dict) -> list[str]:
     gallery = cfg.get("gallery") or []
+    if not gallery:
+        return []
+
     paths = []
     for item in gallery:
         if isinstance(item, str):
