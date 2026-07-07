@@ -1,0 +1,35 @@
+slug: kvartal-dekabristov
+title_plain: г. Новосибирск, Квартал Декабристов
+title_html: г. Новосибирск, Квартал <em>Декабристов</em>
+eyebrow: Квартира · Новосибирск
+lead: ''
+meta:
+  type: Квартира
+  city: Новосибирск
+  area: '-'
+  year: '2025'
+description: г. Новосибирск, Квартал Декабристов - проект Key Design Studio.
+cover: assets/projects/kvartal-dekabristov/kitchen-living/6.jpg
+grid_city: Новосибирск
+carousel_cat: Квартира · Новосибирск · 2025
+carousel_name: г. Новосибирск, Квартал Декабристов
+i18n_cat: project.8.cat
+i18n_name: project.8.name
+published: true
+sort_order: 8
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: 6.jpg
+- slug: bathroom
+  name: Ванная
+  cover_filename: 19.jpg
+- slug: girls-room
+  name: Детская девочки
+  cover_filename: 25.jpg
+- slug: entry
+  name: Прихожая
+  cover_filename: 1.jpg
+- slug: bedroom
+  name: Спальня
+  cover_filename: 9.jpeg

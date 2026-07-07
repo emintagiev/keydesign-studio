@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Create GitHub App</title></head>
+<body>
+  <h1>Key Design Studio CMS</h1>
+  <p>Нажми кнопку - откроется GitHub, подтверди создание приложения.</p>
+  <form action="https://github.com/settings/apps/new" method="post">
+    <input type="hidden" name="manifest" value="{&quot;name&quot;:&quot;Key Design Studio CMS&quot;,&quot;url&quot;:&quot;https://www.keydesign.studio&quot;,&quot;redirect_url&quot;:&quot;http://127.0.0.1:5757/callback&quot;,&quot;callback_urls&quot;:[&quot;https://www.keydesign.studio/oauth/callback?provider=github&quot;],&quot;public&quot;:false,&quot;request_oauth_on_install&quot;:false,&quot;default_permissions&quot;:{&quot;contents&quot;:&quot;write&quot;},&quot;default_events&quot;:[]}">
+    <button type="submit">Создать GitHub App для админки</button>
+  </form>
+</body>
+</html>

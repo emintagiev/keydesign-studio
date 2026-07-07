@@ -1,0 +1,35 @@
+slug: ns-akadem-pulsar
+title_plain: Новосибирск, Академгородок, Жк Пульсар 1
+title_html: Новосибирск, Академгородок, Жк <em>Пульсар 1</em>
+eyebrow: Жилой комплекс · Новосибирск
+lead: ''
+meta:
+  type: Квартира
+  city: Новосибирск
+  area: '-'
+  year: '2025'
+description: Новосибирск, Академгородок, Жк Пульсар 1 - проект Key Design Studio.
+cover: assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4822.JPG
+grid_city: Новосибирск
+carousel_cat: Жилой комплекс · Новосибирск · 2025
+carousel_name: Новосибирск, Академгородок, Жк Пульсар 1
+i18n_cat: project.7.cat
+i18n_name: project.7.name
+published: true
+sort_order: 7
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: IMG_4822.JPG
+- slug: bedroom
+  name: Спальня
+  cover_filename: IMG_4831.JPG
+- slug: entry
+  name: Прихожая
+  cover_filename: IMG_4845.JPG
+- slug: master-wc
+  name: Мастер-санузел
+  cover_filename: IMG_4838.JPG
+- slug: guest-wc
+  name: Гостевой санузел
+  cover_filename: IMG_4842.JPG

@@ -1,0 +1,23 @@
+slug: kabinet-morozovo
+title_plain: Кабинет-Оружейная Морозово
+title_html: Кабинет-Оружейная <em>Морозово</em>
+eyebrow: Кабинет · Морозово
+lead: ''
+meta:
+  type: Кабинет
+  city: '-'
+  area: '-'
+  year: '2025'
+description: Кабинет-Оружейная Морозово - проект Key Design Studio.
+cover: assets/projects/kabinet-morozovo/interior/1.jpg
+grid_city: '-'
+carousel_cat: Кабинет · 2025
+carousel_name: Кабинет-Оружейная Морозово
+i18n_cat: project.12.cat
+i18n_name: project.12.name
+published: true
+sort_order: 12
+rooms:
+- slug: interior
+  name: Интерьер
+  cover_filename: 1.jpg

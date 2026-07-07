@@ -1,0 +1,41 @@
+slug: dom-sinegore
+title_plain: Дом Синегорье
+title_html: Дом <em>Синегорье</em>
+eyebrow: Частный дом · Синегорье
+lead: ''
+meta:
+  type: Частный дом
+  city: Синегорье
+  area: '-'
+  year: '2026'
+description: Дом Синегорье - частный дом. Проект Key Design Studio.
+cover: assets/projects/dom-sinegore/kitchen-living/1.jpg
+grid_city: Синегорье
+carousel_cat: Частный дом · Синегорье · 2026
+carousel_name: Дом Синегорье
+i18n_cat: project.15.cat
+i18n_name: project.15.name
+published: true
+sort_order: 3
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: 1.jpg
+- slug: guest-bedroom
+  name: Гостевая спальня
+  cover_filename: 1.jpg
+- slug: bedroom
+  name: Спальня
+  cover_filename: 1.jpg
+- slug: bedroom-serafim
+  name: Спальня Серафима
+  cover_filename: 1.jpg
+- slug: kids-room
+  name: Детская комната
+  cover_filename: 01.jpg
+- slug: study
+  name: Кабинет
+  cover_filename: 01.1.jpg
+- slug: entry
+  name: Прихожая
+  cover_filename: 01.jpg

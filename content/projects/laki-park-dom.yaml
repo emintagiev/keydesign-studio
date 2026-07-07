@@ -1,0 +1,29 @@
+slug: laki-park-dom
+title_plain: г. Новосибирск, Лаки Парк, Дом
+title_html: г. Новосибирск, Лаки Парк, <em>Дом</em>
+eyebrow: Частный дом · Новосибирск
+lead: ''
+meta:
+  type: Частный дом
+  city: Новосибирск
+  area: '-'
+  year: '2025'
+description: г. Новосибирск, Лаки Парк, Дом - частный дом. Проект Key Design Studio.
+cover: assets/projects/laki-park-dom/kitchen-living/001-denoise-upscale-1.7x.jpeg
+grid_city: Новосибирск
+carousel_cat: Частный дом · Новосибирск · 2025
+carousel_name: г. Новосибирск, Лаки Парк, Дом
+i18n_cat: project.5.cat
+i18n_name: project.5.name
+published: true
+sort_order: 6
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: 001-denoise-upscale-1.7x.jpeg
+- slug: wc-1
+  name: Санузел 1
+  cover_filename: 005544777_0000(3)-denoise-upscale-1.9x.jpeg
+- slug: wc-2
+  name: Санузел 2
+  cover_filename: 02354_0000(1)-denoise-upscale-2x.jpeg

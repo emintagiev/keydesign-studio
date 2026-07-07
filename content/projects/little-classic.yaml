@@ -1,0 +1,29 @@
+slug: little-classic
+title_plain: Little Classic
+title_html: Little <em>Classic</em>
+eyebrow: Квартира
+lead: ''
+meta:
+  type: Квартира
+  city: '-'
+  area: '-'
+  year: '2026'
+description: Little Classic - квартира. Проект Key Design Studio.
+cover: assets/projects/little-classic/kitchen-living/15.jpg
+grid_city: '-'
+carousel_cat: Квартира · 2026
+carousel_name: Little Classic
+i18n_cat: project.13.cat
+i18n_name: project.13.name
+published: true
+sort_order: 13
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: 15.jpg
+- slug: bedroom
+  name: Спальня
+  cover_filename: 10.jpg
+- slug: bathroom
+  name: Ванная комната
+  cover_filename: 1.jpg

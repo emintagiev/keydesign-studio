@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# /oauth/auth -> index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^auth$ index.php [L,QSA]
+
+# /oauth/callback -> index.php
+RewriteRule ^callback$ index.php [L,QSA]

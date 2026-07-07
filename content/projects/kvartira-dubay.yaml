@@ -1,0 +1,35 @@
+slug: kvartira-dubay
+title_plain: Дубай, апартаменты, 180 кв.м.
+title_html: Дубай, апартаменты, <em>180 кв.м.</em>
+eyebrow: Апартаменты · Дубай
+lead: ''
+meta:
+  type: Апартаменты
+  city: Дубай
+  area: 180 кв.м.
+  year: '2026'
+description: Дубай, апартаменты, 180 кв.м. - проект Key Design Studio.
+cover: assets/projects/kvartira-dubay/kitchen-living/01.jpg
+grid_city: Дубай
+carousel_cat: Апартаменты · Дубай · 2026
+carousel_name: Дубай, апартаменты, 180 кв.м.
+i18n_cat: project.14.cat
+i18n_name: project.14.name
+published: true
+sort_order: 2
+rooms:
+- slug: kitchen-living
+  name: Гостиная-кухня
+  cover_filename: 01.jpg
+- slug: bedroom-1
+  name: Спальня 1
+  cover_filename: 00.jpg
+- slug: bedroom-2
+  name: Спальня 2
+  cover_filename: 01.jpg
+- slug: wc-green
+  name: Зеленый санузел
+  cover_filename: 01.jpg
+- slug: wc-pink
+  name: Розовый санузел
+  cover_filename: 01.jpg

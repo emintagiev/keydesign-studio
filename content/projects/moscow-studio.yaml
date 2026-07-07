@@ -1,0 +1,24 @@
+slug: moscow-studio
+title_plain: Москва Студия
+title_html: Москва <em>Студия</em>
+eyebrow: Студия · Москва
+lead: 'Компактная студия с выверенной планировкой: каждый метр работает на комфорт,
+  свет и ощущение простора.'
+meta:
+  type: Студия
+  city: Москва
+  area: '-'
+  year: '2025'
+description: Москва Студия - интерьер студии в Москве. Проект Key Design Studio.
+cover: assets/projects/moscow-studio/interior/1.jpg
+grid_city: Москва
+carousel_cat: Студия · Москва · 2025
+carousel_name: Москва Студия
+i18n_cat: project.3.cat
+i18n_name: project.3.name
+published: true
+sort_order: 1
+rooms:
+- slug: interior
+  name: Интерьер
+  cover_filename: 1.jpg

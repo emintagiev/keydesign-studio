@@ -1,0 +1,25 @@
+slug: salok-krasoty-tati
+title_plain: Салок красоты tati
+title_html: Салок красоты <em>tati</em>
+eyebrow: Салок красоты tati
+lead: Интерьер салона красоты tati - мягкий свет, спокойная палитра и продуманная
+  эргономика для комфорта гостей и команды.
+meta:
+  type: Салок красоты
+  city: '-'
+  area: '-'
+  year: '2026'
+description: Салок красоты tati - проект Key Design Studio.
+cover: assets/projects/salok-krasoty-tati/interior/08.04.2026 Кристина Key Design
+  Tati DSCF2028.jpg
+grid_city: '-'
+carousel_cat: Салок красоты tati · 2026
+carousel_name: Салок красоты tati
+i18n_cat: project.4.cat
+i18n_name: project.4.name
+published: true
+sort_order: 5
+rooms:
+- slug: interior
+  name: Интерьер
+  cover_filename: 08.04.2026 Кристина Key Design Tati DSCF2028.jpg

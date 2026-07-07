@@ -1,0 +1,8 @@
+name = "keydesign-decap-oauth"
+main = "src/index.ts"
+compatibility_date = "2024-04-19"
+compatibility_flags = ["nodejs_compat"]
+
+# После деплоя привяжи домен в Cloudflare Dashboard:
+# Workers & Pages -> keydesign-decap-oauth -> Settings -> Triggers -> Custom Domain
+# Рекомендуемый: decap.keydesign.studio

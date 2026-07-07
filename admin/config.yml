@@ -1,0 +1,96 @@
+# Decap CMS - Key Design Studio
+
+site_url: https://www.keydesign.studio
+
+logo:
+  src: /assets/logo.png
+  show_in_header: true
+
+backend:
+  name: github
+  repo: emintagiev/keydesign-studio
+  branch: site-clean
+  base_url: https://www.keydesign.studio
+  auth_endpoint: oauth/auth
+
+media_folder: assets/projects
+public_folder: assets/projects
+
+locale: ru
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: site
+    label: Настройки
+    files:
+      - name: site
+        label: Главная
+        file: content/site.yaml
+        fields:
+          - label: Три проекта на главной
+            name: featured_slugs
+            widget: relation
+            collection: projects
+            search_fields: [title_plain]
+            value_field: slug
+            display_fields: [title_plain]
+            multiple: true
+            min: 0
+            max: 3
+            hint: Выберите до 3 проектов. Порядок в списке = порядок на главной.
+
+  - name: projects
+    label: Проекты
+    label_singular: Проект
+    folder: content/projects
+    extension: yaml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title_plain
+    summary: "{{title_plain}}"
+    sortable_fields: [sort_order, title_plain]
+    view_filters:
+      - label: Все
+        field: published
+        pattern: true
+    fields:
+      - label: Название проекта
+        name: title_plain
+        widget: string
+        hint: "Как на сайте, например: г. Новосибирск, Загородный дом, 160 кв.м."
+
+      - label: Порядок на странице «Проекты»
+        name: sort_order
+        widget: number
+        value_type: int
+        min: 1
+        max: 99
+        step: 1
+        default: 10
+        hint: "1 - первый в списке, 2 - второй и так далее."
+
+      - label: Главное фото (обложка)
+        name: cover
+        widget: kds-image
+        media_folder: "/assets/projects/{{slug}}/photos"
+        public_folder: "/assets/projects/{{slug}}/photos"
+        hint: Фото на карточке в каталоге и в шапке проекта. Сжимается автоматически перед загрузкой.
+
+      - label: Остальные фотографии
+        name: gallery
+        widget: kds-gallery
+        required: false
+        media_folder: "/assets/projects/{{slug}}/photos"
+        public_folder: "/assets/projects/{{slug}}/photos"
+        hint: "Выделите сразу несколько файлов - каждое фото сожмётся и загрузится автоматически. Это все фото проекта на странице (для новых проектов без комнат). У старых проектов с альбомами по комнатам - не используйте это поле."
+
+      - {name: slug, widget: hidden}
+      - {name: published, widget: hidden, default: true}
+      - {name: rooms, widget: hidden, required: false}
+      - {name: i18n_cat, widget: hidden}
+      - {name: i18n_name, widget: hidden}

@@ -12,6 +12,7 @@ else
 fi
 
 python3 bump-assets.py
+python3 build-projects.py --html-only
 
 rm -rf dist
 mkdir -p dist
@@ -50,6 +51,19 @@ if [[ -f .htaccess ]]; then
 fi
 
 cp -R assets dist/
+
+if [[ -d admin ]]; then
+  mkdir -p dist/admin
+  cp admin/index.html admin/config.yml admin/custom.css admin/admin-widgets.js dist/admin/
+fi
+
+if [[ -d oauth ]]; then
+  mkdir -p dist/oauth
+  cp oauth/index.php oauth/.htaccess dist/oauth/
+  if [[ -f oauth/oauth-secrets.php ]]; then
+    cp oauth/oauth-secrets.php dist/oauth/
+  fi
+fi
 
 python3 strip-prod-nav.py dist/
 

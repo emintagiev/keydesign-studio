@@ -1,0 +1,41 @@
+slug: nevskaya-dom
+title_plain: г. Новосибирск, Загородный дом, 160 кв.м.
+title_html: г. Новосибирск, Загородный дом, <em>160 кв.м.</em>
+eyebrow: Частный дом · Новосибирск
+lead: ''
+meta:
+  type: Частный дом
+  city: Новосибирск
+  area: 160 кв.м.
+  year: '2025'
+description: г. Новосибирск, Загородный дом, 160 кв.м. - проект Key Design Studio.
+cover: assets/projects/nevskaya-dom/kitchen-living/3.jpg
+grid_city: Новосибирск
+carousel_cat: Частный дом · Новосибирск · 2025
+carousel_name: г. Новосибирск, Загородный дом, 160 кв.м.
+i18n_cat: project.9.cat
+i18n_name: project.9.name
+published: true
+sort_order: 9
+rooms:
+- slug: kitchen-living
+  name: Кухня-гостиная
+  cover_filename: 3.jpg
+- slug: master-bedroom
+  name: Мастер-спальня
+  cover_filename: 1.jpg
+- slug: guest-bedroom
+  name: Гостевая спальня
+  cover_filename: 1.jpg
+- slug: study
+  name: Кабинет
+  cover_filename: 1.jpg
+- slug: bathroom
+  name: Ванная комната
+  cover_filename: 1.jpg
+- slug: shower
+  name: Душевая
+  cover_filename: 1.jpg
+- slug: wardrobe
+  name: Мастер-гардеробная
+  cover_filename: 1.jpg

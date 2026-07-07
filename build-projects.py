@@ -7,7 +7,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parent
+CONTENT_DIR = ROOT / "content"
+PROJECTS_DIR = CONTENT_DIR / "projects"
 DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -74,298 +78,127 @@ HOME_LINK = """        <a href="key-design-studio.html" class="link-underline" d
 FAVICON_LINKS = """  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />"""
 
-PROJECTS = [
-    {
-        "slug": "moscow-studio",
-        "html": "moscow-studio.html",
-        "source": KEY_DESIGN / "Москва студия",
-        "title_html": 'Москва <em>Студия</em>',
-        "title_plain": "Москва Студия",
-        "eyebrow": "Студия · Москва",
-        "lead": (
-            "Компактная студия с выверенной планировкой: каждый метр работает "
-            "на комфорт, свет и ощущение простора."
-        ),
-        "meta": {"type": "Студия", "city": "Москва", "area": "-", "year": "2025"},
-        "description": "Москва Студия - интерьер студии в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/moscow-studio/interior/1.jpg",
-        "grid_city": "Москва",
-        "carousel_cat": "Студия · Москва · 2025",
-        "carousel_name": "Москва Студия",
-        "i18n_cat": "project.3.cat",
-        "i18n_name": "project.3.name",
-        "flat_room": ("interior", "Интерьер", "1.jpg"),
-    },
-    {
-        "slug": "kvartira-dubay",
-        "html": "kvartira-dubay.html",
-        "source": DESKTOP / "Квартира Дубай ",
-        "title_html": 'Дубай, апартаменты, <em>180 кв.м.</em>',
-        "title_plain": "Дубай, апартаменты, 180 кв.м.",
-        "eyebrow": "Апартаменты · Дубай",
-        "lead": "",
-        "meta": {"type": "Апартаменты", "city": "Дубай", "area": "180 кв.м.", "year": "2026"},
-        "description": "Дубай, апартаменты, 180 кв.м. - проект Key Design Studio.",
-        "cover": "assets/projects/kvartira-dubay/kitchen-living/01.jpg",
-        "grid_city": "Дубай",
-        "carousel_cat": "Апартаменты · Дубай · 2026",
-        "carousel_name": "Дубай, апартаменты, 180 кв.м.",
-        "i18n_cat": "project.14.cat",
-        "i18n_name": "project.14.name",
-        "room_map": [
-            ("Гостиная-кухня", "kitchen-living", "Гостиная-кухня", "01.jpg"),
-            ("Спальня\u00a01", "bedroom-1", "Спальня 1", "00.jpg"),
-            ("Спальня\u00a02", "bedroom-2", "Спальня 2", "01.jpg"),
-            ("Зелены\u0438\u0306 санузел", "wc-green", "Зеленый санузел", "01.jpg"),
-            ("Розовы\u0438\u0306 санузел", "wc-pink", "Розовый санузел", "01.jpg"),
-        ],
-    },
-    {
-        "slug": "dom-sinegore",
-        "html": "dom-sinegore.html",
-        "source": DESKTOP / "Дом Синегорье ",
-        "title_html": 'Дом <em>Синегорье</em>',
-        "title_plain": "Дом Синегорье",
-        "eyebrow": "Частный дом · Синегорье",
-        "lead": "",
-        "meta": {"type": "Частный дом", "city": "Синегорье", "area": "-", "year": "2026"},
-        "description": "Дом Синегорье - частный дом. Проект Key Design Studio.",
-        "cover": "assets/projects/dom-sinegore/kitchen-living/1.jpg",
-        "grid_city": "Синегорье",
-        "carousel_cat": "Частный дом · Синегорье · 2026",
-        "carousel_name": "Дом Синегорье",
-        "i18n_cat": "project.15.cat",
-        "i18n_name": "project.15.name",
-        "room_map": [
-            ("Кухня-гостиная", "kitchen-living", "Кухня-гостиная", "1.jpg"),
-            ("Гостевая спальня", "guest-bedroom", "Гостевая спальня", "1.jpg"),
-            ("Спальня", "bedroom", "Спальня", "1.jpg"),
-            ("Спальня Серафима", "bedroom-serafim", "Спальня Серафима", "1.jpg"),
-            ("Детская комната", "kids-room", "Детская комната", "01.jpg"),
-            ("Кабинет", "study", "Кабинет", "01.1.jpg"),
-            ("Прихожая", "entry", "Прихожая", "01.jpg"),
-        ],
-    },
-    {
-        "slug": "zhk-arkhitektor",
-        "html": "zhk-arkhitektor.html",
-        "source": DESKTOP / "г. Москва, ЖК Архитектор",
-        "title_html": 'г. Москва, ЖК <em>Архитектор</em>',
-        "title_plain": "г. Москва, ЖК Архитектор",
-        "eyebrow": "Жилой комплекс · Москва",
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Москва", "area": "-", "year": "2025"},
-        "description": "г. Москва, ЖК Архитектор - квартира в Москве. Проект Key Design Studio.",
-        "cover": "assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG",
-        "grid_city": "Москва",
-        "carousel_cat": "Квартира · Москва · 2025",
-        "carousel_name": "г. Москва, ЖК Архитектор",
-        "i18n_cat": "project.6.cat",
-        "i18n_name": "project.6.name",
-        "flat_room": ("interior", "Интерьер", "IMG_4796.JPG"),
-    },
-    {
-        "slug": "salok-krasoty-tati",
-        "html": "salok-krasoty-tati.html",
-        "source": KEY_DESIGN / "Салок красоты tati",
-        "title_html": 'Салок красоты <em>tati</em>',
-        "title_plain": "Салок красоты tati",
-        "eyebrow": "Салок красоты tati",
-        "lead": (
-            "Интерьер салона красоты tati - мягкий свет, спокойная палитра "
-            "и продуманная эргономика для комфорта гостей и команды."
-        ),
-        "meta": {"type": "Салок красоты", "city": "-", "area": "-", "year": "2026"},
-        "description": "Салок красоты tati - проект Key Design Studio.",
-        "cover": "assets/projects/salok-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2028.jpg",
-        "grid_city": "-",
-        "carousel_cat": "Салок красоты tati · 2026",
-        "carousel_name": "Салок красоты tati",
-        "i18n_cat": "project.4.cat",
-        "i18n_name": "project.4.name",
-        "flat_room": ("interior", "Интерьер", "08.04.2026 Кристина Key Design Tati DSCF2028.jpg"),
-    },
-    {
-        "slug": "laki-park-dom",
-        "html": "laki-park-dom.html",
-        "source": DESKTOP / "г. Новосибирск, Лаки Парк, Дом",
-        "title_html": 'г. Новосибирск, Лаки Парк, <em>Дом</em>',
-        "title_plain": "г. Новосибирск, Лаки Парк, Дом",
-        "eyebrow": "Частный дом · Новосибирск",
-        "lead": "",
-        "meta": {"type": "Частный дом", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": "г. Новосибирск, Лаки Парк, Дом - частный дом. Проект Key Design Studio.",
-        "cover": "assets/projects/laki-park-dom/kitchen-living/001-denoise-upscale-1.7x.jpeg",
-        "grid_city": "Новосибирск",
-        "carousel_cat": "Частный дом · Новосибирск · 2025",
-        "carousel_name": "г. Новосибирск, Лаки Парк, Дом",
-        "i18n_cat": "project.5.cat",
-        "i18n_name": "project.5.name",
-        "room_map": [
-            ("Кухня-гостиная", "kitchen-living", "Кухня-гостиная", "001-denoise-upscale-1.7x.jpeg"),
-            ("Санузел 1", "wc-1", "Санузел 1", "005544777_0000(3)-denoise-upscale-1.9x.jpeg"),
-            ("Санузел 2", "wc-2", "Санузел 2", "02354_0000(1)-denoise-upscale-2x.jpeg"),
-        ],
-    },
-    {
-        "slug": "ns-akadem-pulsar",
-        "html": "ns-akadem-pulsar.html",
-        "source": DESKTOP / 'Новосибирск, Академгородок, Жк Пульсар 1',
-        "title_html": 'Новосибирск, Академгородок, Жк <em>Пульсар 1</em>',
-        "title_plain": 'Новосибирск, Академгородок, Жк Пульсар 1',
-        "eyebrow": 'Жилой комплекс · Новосибирск',
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": 'Новосибирск, Академгородок, Жк Пульсар 1 - проект Key Design Studio.',
-        "cover": "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4822.JPG",
-        "grid_city": "Новосибирск",
-        "carousel_cat": 'Жилой комплекс · Новосибирск · 2025',
-        "carousel_name": 'Новосибирск, Академгородок, Жк Пульсар 1',
-        "i18n_cat": "project.7.cat",
-        "i18n_name": "project.7.name",
-        "room_map": [
-            ('Кухня-гостиная', "kitchen-living", "Кухня-гостиная", 'IMG_4822.JPG'),
-            ('Спальня', "bedroom", "Спальня", 'IMG_4831.JPG'),
-            ('Прихожая', "entry", "Прихожая", 'IMG_4845.JPG'),
-            ('мастер-санузел', "master-wc", "Мастер-санузел", 'IMG_4838.JPG'),
-            ('Гостевой санузел', "guest-wc", "Гостевой санузел", 'IMG_4842.JPG'),
-        ],
-    },
-    {
-        "slug": "kvartal-dekabristov",
-        "html": "kvartal-dekabristov.html",
-        "source": DESKTOP / 'г. Новосибирск, Квартал Декабристов, Кухня - Гостиная',
-        "title_html": 'г. Новосибирск, Квартал <em>Декабристов</em>',
-        "title_plain": 'г. Новосибирск, Квартал Декабристов',
-        "eyebrow": 'Квартира · Новосибирск',
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": 'г. Новосибирск, Квартал Декабристов - проект Key Design Studio.',
-        "cover": "assets/projects/kvartal-dekabristov/kitchen-living/6.jpg",
-        "grid_city": "Новосибирск",
-        "carousel_cat": 'Квартира · Новосибирск · 2025',
-        "carousel_name": 'г. Новосибирск, Квартал Декабристов',
-        "i18n_cat": "project.8.cat",
-        "i18n_name": "project.8.name",
-        "room_map": [
-            ("__root__", "kitchen-living", "Кухня-гостиная", '6.jpg'),
-            ('Ванная', "bathroom", "Ванная", '19.jpg'),
-            ('Детская девочки', "girls-room", "Детская девочки", '25.jpg'),
-            ('Прихожая', "entry", "Прихожая", '1.jpg'),
-            ('Спальня', "bedroom", "Спальня", '9.jpeg'),
-        ],
-    },
-    {
-        "slug": "nevskaya-dom",
-        "html": "nevskaya-dom.html",
-        "source": DESKTOP / 'г. Новосибирск, ул. Невская дом',
-        "title_html": 'г. Новосибирск, Загородный дом, <em>160 кв.м.</em>',
-        "title_plain": 'г. Новосибирск, Загородный дом, 160 кв.м.',
-        "eyebrow": 'Частный дом · Новосибирск',
-        "lead": "",
-        "meta": {"type": "Частный дом", "city": "Новосибирск", "area": "160 кв.м.", "year": "2025"},
-        "description": 'г. Новосибирск, Загородный дом, 160 кв.м. - проект Key Design Studio.',
-        "cover": "assets/projects/nevskaya-dom/kitchen-living/3.jpg",
-        "grid_city": "Новосибирск",
-        "carousel_cat": 'Частный дом · Новосибирск · 2025',
-        "carousel_name": 'г. Новосибирск, Загородный дом, 160 кв.м.',
-        "i18n_cat": "project.9.cat",
-        "i18n_name": "project.9.name",
-        "room_map": [
-            ("__root__", "kitchen-living", "Кухня-гостиная", '3.jpg'),
-            ('Мастер-спальня', "master-bedroom", "Мастер-спальня", '1.jpg'),
-            ('Гостевая спальня ', "guest-bedroom", "Гостевая спальня", '1.jpg'),
-            ('Кабинет ', "study", "Кабинет", '1.jpg'),
-            ('Ванная комната', "bathroom", "Ванная комната", '1.jpg'),
-            ('Душевая', "shower", "Душевая", '1.jpg'),
-            ('Мастер-гардеробная', "wardrobe", "Мастер-гардеробная", '1.jpg'),
-        ],
-    },
-    {
-        "slug": "vostochny-vayb",
-        "html": "vostochny-vayb.html",
-        "source": DESKTOP / 'г. Новосибирск, Квартира с Восточным вайбом',
-        "title_html": 'г. Новосибирск, Квартира с Восточным <em>вайбом</em>',
-        "title_plain": 'г. Новосибирск, Квартира с Восточным вайбом',
-        "eyebrow": 'Квартира · Новосибирск',
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": 'г. Новосибирск, Квартира с Восточным вайбом - проект Key Design Studio.',
-        "cover": "assets/projects/vostochny-vayb/kitchen-living/IMG_4813.JPG",
-        "grid_city": "Новосибирск",
-        "carousel_cat": 'Квартира · Новосибирск · 2025',
-        "carousel_name": 'г. Новосибирск, Квартира с Восточным вайбом',
-        "i18n_cat": "project.10.cat",
-        "i18n_name": "project.10.name",
-        "room_map": [
-            ('Кухня-гостиная ', "kitchen-living", "Кухня-гостиная", 'IMG_4813.JPG'),
-            ('Спальня', "bedroom", "Спальня", 'IMG_4820.JPG'),
-            ('Санузел ', "wc", "Санузел", 'IMG_4818.JPG'),
-        ],
-    },
-    {
-        "slug": "kedrovy-ns",
-        "html": "kedrovy-ns.html",
-        "source": DESKTOP / 'г. Новосибирск, Кедровый',
-        "title_html": 'г. Новосибирск, <em>Кедровый</em>',
-        "title_plain": 'г. Новосибирск, Кедровый',
-        "eyebrow": 'Квартира · Новосибирск',
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "Новосибирск", "area": "-", "year": "2025"},
-        "description": 'г. Новосибирск, Кедровый - проект Key Design Studio.',
-        "cover": "assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(3)-denoise-upscale-1.9x.jpeg",
-        "grid_city": "Новосибирск",
-        "carousel_cat": 'Квартира · Новосибирск · 2025',
-        "carousel_name": 'г. Новосибирск, Кедровый',
-        "i18n_cat": "project.11.cat",
-        "i18n_name": "project.11.name",
-        "room_map": [
-            ('Кухня -гостиная', "kitchen-living", "Кухня-гостиная", '005848974447_0000(3)-denoise-upscale-1.9x.jpeg'),
-            ('Детская', "kids-room", "Детская", '1-denoise-upscale-1.9x.jpeg'),
-            ('Санузел', "wc", "Санузел", '002-upscale-1.9x.jpeg'),
-        ],
-    },
-    {
-        "slug": "kabinet-morozovo",
-        "html": "kabinet-morozovo.html",
-        "source": DESKTOP / 'Кабинет-Оружейная Морозово',
-        "title_html": 'Кабинет-Оружейная <em>Морозово</em>',
-        "title_plain": 'Кабинет-Оружейная Морозово',
-        "eyebrow": 'Кабинет · Морозово',
-        "lead": "",
-        "meta": {"type": "Кабинет", "city": "-", "area": "-", "year": "2025"},
-        "description": 'Кабинет-Оружейная Морозово - проект Key Design Studio.',
-        "cover": "assets/projects/kabinet-morozovo/interior/1.jpg",
-        "grid_city": "-",
-        "carousel_cat": 'Кабинет · 2025',
-        "carousel_name": 'Кабинет-Оружейная Морозово',
-        "i18n_cat": "project.12.cat",
-        "i18n_name": "project.12.name",
-        "flat_room": ("interior", "Интерьер", '1.jpg'),
-    },
-    {
-        "slug": "little-classic",
-        "html": "little-classic.html",
-        "source": DESKTOP / "Little Classic ",
-        "title_html": 'Little <em>Classic</em>',
-        "title_plain": "Little Classic",
-        "eyebrow": "Квартира",
-        "lead": "",
-        "meta": {"type": "Квартира", "city": "-", "area": "-", "year": "2026"},
-        "description": "Little Classic - квартира. Проект Key Design Studio.",
-        "cover": "assets/projects/little-classic/kitchen-living/15.jpg",
-        "grid_city": "-",
-        "carousel_cat": "Квартира · 2026",
-        "carousel_name": "Little Classic",
-        "i18n_cat": "project.13.cat",
-        "i18n_name": "project.13.name",
-        "room_map": [
-            ("Кухня- гостиная", "kitchen-living", "Кухня-гостиная", "15.jpg"),
-            ("Спальня", "bedroom", "Спальня", "10.jpg"),
-            ("Ванная комната", "bathroom", "Ванная комната", "1.jpg"),
-        ],
-    },
-]
+
+def load_site_config() -> dict:
+    path = CONTENT_DIR / "site.yaml"
+    if not path.exists():
+        return {"featured_slugs": [], "projects_order": []}
+    with path.open(encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def load_projects() -> list[dict]:
+    site = load_site_config()
+    order = site.get("projects_order") or []
+    order_index = {slug: i for i, slug in enumerate(order)}
+
+    projects = []
+    for path in sorted(PROJECTS_DIR.glob("*.yaml")):
+        with path.open(encoding="utf-8") as f:
+            cfg = yaml.safe_load(f) or {}
+        if not cfg.get("published", True):
+            continue
+        cfg.setdefault("slug", path.stem)
+        cfg["html"] = f"{cfg['slug']}.html"
+        projects.append(cfg)
+
+    projects.sort(
+        key=lambda p: (
+            order_index.get(p["slug"], 9999),
+            p.get("sort_order", 9999),
+            p["slug"],
+        )
+    )
+    for cfg in projects:
+        enrich_project(cfg)
+    return projects
+
+
+def title_html_from_plain(title: str, existing=None) -> str:
+    if existing and "<em>" in (existing or ""):
+        return existing
+    if ", " in title:
+        head, tail = title.rsplit(", ", 1)
+        return f"{head}, <em>{tail}</em>"
+    words = title.split()
+    if len(words) >= 2:
+        return " ".join(words[:-1]) + f" <em>{words[-1]}</em>"
+    return title
+
+
+def enrich_project(cfg: dict) -> None:
+    title = (cfg.get("title_plain") or "").strip()
+    if not title:
+        return
+
+    meta = cfg.get("meta")
+    if not isinstance(meta, dict):
+        meta = {}
+        cfg["meta"] = meta
+
+    meta.setdefault("type", "-")
+    meta.setdefault("city", "-")
+    meta.setdefault("area", "-")
+    meta.setdefault("year", str(meta.get("year") or "2026"))
+
+    year = meta.get("year", "2026")
+    city = meta.get("city", "-")
+    ptype = meta.get("type", "-")
+
+    cfg["title_html"] = title_html_from_plain(title, cfg.get("title_html"))
+    cfg["carousel_name"] = title
+    cfg["description"] = f"{title} - проект Key Design Studio."
+    cfg.setdefault("eyebrow", cfg.get("eyebrow") or "")
+    cfg.setdefault("lead", cfg.get("lead") or "")
+    cfg["grid_city"] = cfg.get("grid_city") or city
+    if not cfg.get("carousel_cat"):
+        parts = [p for p in (ptype, city, year) if p and p != "-"]
+        cfg["carousel_cat"] = " · ".join(parts) if parts else title
+
+    gallery = cfg.get("gallery") or []
+    if gallery and not cfg.get("rooms"):
+        paths = []
+        for item in gallery:
+            if isinstance(item, str):
+                paths.append(item)
+            elif isinstance(item, dict):
+                paths.append(item.get("image") or item.get("path") or "")
+        paths = [p for p in paths if p]
+        if paths:
+            cover_name = Path(paths[0]).name
+            cfg["rooms"] = [{"slug": "photos", "name": "Фотографии", "cover_filename": cover_name}]
+    elif not cfg.get("rooms") and cfg.get("cover"):
+        cover_path = cfg["cover"]
+        cover_name = Path(cover_path).name
+        room_slug = Path(cover_path).parent.name
+        if room_slug in ("projects", "assets", cfg.get("slug", "")):
+            room_slug = "interior"
+        cfg["rooms"] = [{"slug": room_slug, "name": "Интерьер", "cover_filename": cover_name}]
+
+
+def gallery_image_paths(cfg: dict) -> list[str]:
+    gallery = cfg.get("gallery") or []
+    paths = []
+    for item in gallery:
+        if isinstance(item, str):
+            paths.append(item)
+        elif isinstance(item, dict):
+            paths.append(item.get("image") or item.get("path") or "")
+    paths = [p for p in paths if p]
+    cover = cfg.get("cover")
+    if cover and cover not in paths:
+        paths.insert(0, cover)
+    return paths
+
+def sync_site_projects_order(projects: list[dict]) -> None:
+    path = CONTENT_DIR / "site.yaml"
+    site = load_site_config()
+    ordered = sorted(projects, key=lambda p: p.get("sort_order", 9999))
+    site["projects_order"] = [p["slug"] for p in ordered]
+    with path.open("w", encoding="utf-8") as f:
+        yaml.dump(site, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+
+
 
 
 def kadr(n: int) -> str:
@@ -405,7 +238,10 @@ def copy_root_images(src_dir: Path, dest_dir: Path) -> list[str]:
 
 
 def sync_rooms_from_config(cfg: dict):
-    if "room_map" in cfg:
+    rooms = cfg.get("rooms")
+    if rooms and isinstance(rooms[0], dict):
+        cfg["rooms"] = [(r["slug"], r["name"], r["cover_filename"]) for r in rooms]
+    elif "room_map" in cfg:
         cfg["rooms"] = [(room_slug, name, cover) for _, room_slug, name, cover in cfg["room_map"]]
     elif "flat_room" in cfg:
         room_slug, name, cover = cfg["flat_room"]
@@ -554,6 +390,16 @@ def build_single_gallery(cfg: dict) -> str:
     slug = cfg["slug"]
     room_slug, name, _cover = cfg["rooms"][0]
     figs = []
+    yaml_paths = gallery_image_paths(cfg)
+    if yaml_paths:
+        for src in yaml_paths:
+            figs.append(
+                f"              <figure>\n"
+                f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
+                f"              </figure>"
+            )
+        return "\n".join(figs)
+
     for img in list_images(slug, room_slug):
         src = f"assets/projects/{slug}/{room_slug}/{img}"
         figs.append(
@@ -692,9 +538,6 @@ def generate_html(cfg: dict):
 '''
 
 
-HOME_FEATURED_SLUGS = ["moscow-studio", "kvartira-dubay", "dom-sinegore"]
-
-
 def home_thumb(cfg: dict) -> str:
     thumb = ROOT / "assets" / "thumbs" / "home" / f"{cfg['slug']}.jpg"
     if thumb.exists():
@@ -702,9 +545,9 @@ def home_thumb(cfg: dict) -> str:
     return cfg["cover"]
 
 
-def update_homepage(projects: list[dict]):
+def update_homepage(projects: list[dict], featured_slugs: list[str]):
     by_slug = {p["slug"]: p for p in projects}
-    featured = [by_slug[slug] for slug in HOME_FEATURED_SLUGS if slug in by_slug]
+    featured = [by_slug[slug] for slug in featured_slugs if slug in by_slug]
     cards = []
     for p in featured:
         img = home_thumb(p)
@@ -977,12 +820,16 @@ def main():
     )
     args = parser.parse_args()
 
+    site = load_site_config()
+    projects = load_projects()
+    featured_slugs = site.get("featured_slugs") or []
+
     did_ingest = False
     if not args.html_only:
         print("Copying hero image…")
         ingest_hero()
 
-        for cfg in PROJECTS:
+        for cfg in projects:
             if cfg.get("source"):
                 print(f"Ingesting {cfg['title_plain']}…")
                 ingest_project(cfg)
@@ -994,15 +841,16 @@ def main():
                 print("Optimizing images…")
                 subprocess.run([sys.executable, str(opt)], check=False)
 
-    for cfg in PROJECTS:
+    for cfg in projects:
         sync_rooms_from_config(cfg)
         html = generate_html(cfg)
         out = ROOT / cfg["html"]
         out.write_text(html, encoding="utf-8")
         print(f"  → {out.name} ({len(html)} bytes)")
 
-    update_homepage(PROJECTS)
-    generate_projects_page(PROJECTS)
+    sync_site_projects_order(projects)
+    update_homepage(projects, featured_slugs)
+    generate_projects_page(projects)
     print("Updated projects.html")
 
 

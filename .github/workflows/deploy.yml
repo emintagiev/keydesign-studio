@@ -1,0 +1,57 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - site-clean
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Build deploy bundle
+        run: bash prepare-deploy.sh
+
+      - name: Upload to Timeweb (SFTP)
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+          DEPLOY_METHOD: ${{ secrets.DEPLOY_METHOD }}
+          DEPLOY_SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}
+        run: |
+          set -euo pipefail
+          DEPLOY_METHOD="${DEPLOY_METHOD:-sftp}"
+          SSH_PORT="${DEPLOY_SSH_PORT:-22}"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          if [[ "$DEPLOY_METHOD" == "sftp" ]]; then
+            LFTP_OPEN="open -u ${DEPLOY_USER},${DEPLOY_PASSWORD} sftp://${DEPLOY_HOST}:${SSH_PORT}"
+          else
+            LFTP_OPEN="open -u ${DEPLOY_USER},${DEPLOY_PASSWORD} ${DEPLOY_HOST}"
+          fi
+          lftp <<EOF
+          set cmd:fail-exit yes
+          set net:timeout 30
+          set net:max-retries 2
+          set sftp:auto-confirm yes
+          set ftp:use-feat no
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ftp:passive-mode true
+          set ssl:verify-certificate no
+          ${LFTP_OPEN}
+          cd ${DEPLOY_PATH}
+          mirror -R --delete --verbose dist/ .
+          quit
+          EOF
