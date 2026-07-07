@@ -2718,6 +2718,20 @@
       margin-bottom: var(--sp-2);
     }
 
+    .proj-head__name {
+      margin: 0;
+      max-width: min(100%, 46rem);
+      text-transform: none;
+      letter-spacing: 0.12em;
+      font-size: clamp(0.82rem, 0.72rem + 0.4vw, 0.98rem);
+      line-height: 1.4;
+    }
+
+    .proj-head__name em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
     .proj-head__title {
       font-size: clamp(2.45rem, 1.5rem + 3.6vw, 4.75rem);
       line-height: 1.02;
