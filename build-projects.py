@@ -16,7 +16,7 @@ DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 ASSET_JS_VERSION = "25"
-ASSET_CSS_VERSION = "66"
+ASSET_CSS_VERSION = "78"
 
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
@@ -423,7 +423,6 @@ def generate_html(cfg: dict):
     <div class="container">
       <div class="proj-head">
         <div>
-          <p class="eyebrow proj-head__eyebrow">{cfg["eyebrow"]}</p>
           <h1 class="proj-head__title">{cfg["title_html"]}</h1>
         </div>
 {HOME_LINK}
@@ -461,7 +460,6 @@ def generate_html(cfg: dict):
       <section class="project-rooms" id="rooms">
         <div class="proj-head">
           <div>
-            <p class="eyebrow proj-head__eyebrow">{cfg["eyebrow"]}</p>
             <h1 class="proj-head__title">{cfg["title_html"]}</h1>
           </div>
 {HOME_LINK}
