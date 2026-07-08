@@ -1979,6 +1979,10 @@
       align-self: flex-start;
     }
 
+    .contact-page .contact-office__cta {
+      margin-bottom: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+    }
+
     .contact-office__map {
       margin: 0;
       display: flex;
@@ -2723,8 +2727,8 @@
     }
 
     .proj-head__title {
-      font-size: clamp(2.2rem, 1.35rem + 3.2vw, 4.25rem);
-      line-height: 1;
+      font-size: clamp(1.65rem, 1.05rem + 2vw, 2.65rem);
+      line-height: 1.12;
       letter-spacing: -0.02em;
     }
 

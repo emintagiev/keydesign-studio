@@ -16,7 +16,7 @@ DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 ASSET_JS_VERSION = "25"
-ASSET_CSS_VERSION = "66"
+ASSET_CSS_VERSION = "79"
 
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
