@@ -25,6 +25,7 @@ THUMB_SOURCES = [
     ("thumbs/home/moscow-studio.jpg", "projects/moscow-studio/interior/1.jpg", 900, 78),
     ("thumbs/home/kvartira-dubay.jpg", "projects/kvartira-dubay/kitchen-living/01.jpg", 900, 78),
     ("thumbs/home/dom-sinegore.jpg", "projects/dom-sinegore/kitchen-living/1.jpg", 900, 78),
+    ("thumbs/home/nevskaya-dom.jpg", "projects/nevskaya-dom/kitchen-living/8.jpg", 900, 78),
 ]
 
 
