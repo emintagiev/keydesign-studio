@@ -1,18 +1,18 @@
 slug: zhk-arkhitektor
-title_plain: г. Москва, ЖК Архитектор
-title_html: г. Москва, ЖК <em>Архитектор</em>
+title_plain: г. Москва, ЖК Архитектор, 60 кв.м.
+title_html: г. Москва, ЖК Архитектор, <em>60 кв.м.</em>
 eyebrow: Жилой комплекс · Москва
 lead: ''
 meta:
   type: Квартира
   city: Москва
-  area: '-'
+  area: 60 кв.м.
   year: '2025'
-description: г. Москва, ЖК Архитектор - квартира в Москве. Проект Key Design Studio.
+description: г. Москва, ЖК Архитектор, 60 кв.м. - проект Key Design Studio.
 cover: assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG
 grid_city: Москва
 carousel_cat: Квартира · Москва · 2025
-carousel_name: г. Москва, ЖК Архитектор
+carousel_name: г. Москва, ЖК Архитектор, 60 кв.м.
 i18n_cat: project.6.cat
 i18n_name: project.6.name
 published: true

@@ -1,18 +1,18 @@
 slug: laki-park-dom
-title_plain: г. Новосибирск, Лаки Парк, Дом
-title_html: г. Новосибирск, Лаки Парк, <em>Дом</em>
+title_plain: г. Новосибирск, Лаки Парк, Дом, 108 кв.м.
+title_html: г. Новосибирск, Лаки Парк, Дом, <em>108 кв.м.</em>
 eyebrow: Частный дом · Новосибирск
 lead: ''
 meta:
   type: Частный дом
   city: Новосибирск
-  area: '-'
+  area: 108 кв.м.
   year: '2025'
-description: г. Новосибирск, Лаки Парк, Дом - частный дом. Проект Key Design Studio.
+description: г. Новосибирск, Лаки Парк, Дом, 108 кв.м. - проект Key Design Studio.
 cover: assets/projects/laki-park-dom/kitchen-living/001-denoise-upscale-1.7x.jpeg
 grid_city: Новосибирск
 carousel_cat: Частный дом · Новосибирск · 2025
-carousel_name: г. Новосибирск, Лаки Парк, Дом
+carousel_name: г. Новосибирск, Лаки Парк, Дом, 108 кв.м.
 i18n_cat: project.5.cat
 i18n_name: project.5.name
 published: true
