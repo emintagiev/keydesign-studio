@@ -1,18 +1,18 @@
 slug: little-classic
-title_plain: Новосибирск, ЖК Европейский берег, 48 кв.
-title_html: Новосибирск, ЖК Европейский берег, <em>48 кв.</em>
+title_plain: г. Новосибирск, ЖК Европейский берег, 48 кв.м.
+title_html: г. Новосибирск, ЖК Европейский берег, <em>48 кв.м.</em>
 eyebrow: Квартира · Новосибирск
 lead: ''
 meta:
   type: Квартира
   city: Новосибирск
-  area: 48 кв.
+  area: 48 кв.м.
   year: '2026'
-description: Новосибирск, ЖК Европейский берег, 48 кв. - проект Key Design Studio.
+description: г. Новосибирск, ЖК Европейский берег, 48 кв.м. - проект Key Design Studio.
 cover: assets/projects/little-classic/kitchen-living/15.jpg
 grid_city: Новосибирск
 carousel_cat: Квартира · Новосибирск · 2026
-carousel_name: Новосибирск, ЖК Европейский берег, 48 кв.
+carousel_name: г. Новосибирск, ЖК Европейский берег, 48 кв.м.
 i18n_cat: project.13.cat
 i18n_name: project.13.name
 published: true

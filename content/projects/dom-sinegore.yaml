@@ -1,18 +1,18 @@
 slug: dom-sinegore
-title_plain: Дом Синегорье
-title_html: Дом <em>Синегорье</em>
-eyebrow: Частный дом · Синегорье
+title_plain: г. Новосибирск, Загородный дом, 300 кв.м.
+title_html: г. Новосибирск, Загородный дом, <em>300 кв.м.</em>
+eyebrow: Частный дом · Новосибирск
 lead: ''
 meta:
   type: Частный дом
-  city: Синегорье
-  area: '-'
+  city: Новосибирск
+  area: 300 кв.м.
   year: '2026'
-description: Дом Синегорье - частный дом. Проект Key Design Studio.
+description: г. Новосибирск, Загородный дом, 300 кв.м. - проект Key Design Studio.
 cover: assets/projects/dom-sinegore/kitchen-living/1.jpg
-grid_city: Синегорье
-carousel_cat: Частный дом · Синегорье · 2026
-carousel_name: Дом Синегорье
+grid_city: Новосибирск
+carousel_cat: Частный дом · Новосибирск · 2026
+carousel_name: г. Новосибирск, Загородный дом, 300 кв.м.
 i18n_cat: project.15.cat
 i18n_name: project.15.name
 published: true
