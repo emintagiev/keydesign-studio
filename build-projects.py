@@ -20,18 +20,18 @@ ASSET_CSS_VERSION = "66"
 
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="key-design-studio.html" class="brand" aria-label="Key Design Studio">
+      <a href="/" class="brand" aria-label="Key Design Studio">
         <img class="brand__logo brand__logo--dark" src="assets/logo.png?v=11" alt="" width="859" height="722" />
         <img class="brand__logo brand__logo--light" src="assets/logo-light.png?v=11" alt="" width="859" height="722" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
-        <a class="nav__link" href="about.html" data-i18n="nav.about">О студии</a>
-        <a class="nav__link" href="projects.html" data-i18n="nav.projects">Проекты</a>
-        <a class="nav__link" href="services.html" data-i18n="nav.services">Услуги</a>
-        <a class="nav__link" href="approach.html" data-i18n="nav.approach">Подход</a>
-        <a class="nav__link" href="partners.html" data-i18n="nav.partners">Партнёры</a>
-        <a class="nav__link" href="contacts.html" data-i18n="nav.contact">Контакты</a>
+        <a class="nav__link" href="/about" data-i18n="nav.about">О студии</a>
+        <a class="nav__link" href="/projects" data-i18n="nav.projects">Проекты</a>
+        <a class="nav__link" href="/services" data-i18n="nav.services">Услуги</a>
+        <a class="nav__link" href="/approach" data-i18n="nav.approach">Подход</a>
+        <a class="nav__link" href="/partners" data-i18n="nav.partners">Партнёры</a>
+        <a class="nav__link" href="/contacts" data-i18n="nav.contact">Контакты</a>
       </nav>
 
       <div class="header__tools">
@@ -64,14 +64,14 @@ FOOTER = """  <footer class="footer">
       <span class="footer__meta">
         © <span id="year"></span> Key Design Studio. <span data-i18n="footer.rights">Все права защищены.</span>
       </span>
-      <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
+      <a href="/privacy" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
     </div>
   </footer>"""
 
 JS_BOOTSTRAP = """  <script>document.documentElement.classList.add("js");</script>
 """
 
-HOME_LINK = """        <a href="key-design-studio.html" class="link-underline" data-i18n="nav.home">
+HOME_LINK = """        <a href="/" class="link-underline" data-i18n="nav.home">
           На главную <span class="btn__arrow" aria-hidden="true">→</span>
         </a>"""
 
@@ -99,6 +99,7 @@ def load_projects() -> list[dict]:
         if not cfg.get("published", True):
             continue
         cfg.setdefault("slug", path.stem)
+        cfg["url"] = f"/{cfg['slug']}"
         cfg["html"] = f"{cfg['slug']}.html"
         projects.append(cfg)
 
@@ -440,8 +441,8 @@ def generate_html(cfg: dict):
       </section>
 
       <div class="proj-foot">
-        <a class="proj-foot__cta" href="contacts.html">Обсудить <em>ваш проект</em></a>
-        <a class="link-underline" href="projects.html">
+        <a class="proj-foot__cta" href="/contacts">Обсудить <em>ваш проект</em></a>
+        <a class="link-underline" href="/projects">
           Все проекты <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -480,8 +481,8 @@ def generate_html(cfg: dict):
         </div>
 
         <div class="proj-foot">
-          <a class="proj-foot__cta" href="contacts.html">Обсудить <em>ваш проект</em></a>
-          <a class="link-underline" href="projects.html">
+          <a class="proj-foot__cta" href="/contacts">Обсудить <em>ваш проект</em></a>
+          <a class="link-underline" href="/projects">
             Все проекты <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
         </div>
@@ -555,7 +556,7 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
     for p in featured:
         img = home_thumb(p)
         cards.append(
-            f'''          <a class="proj-grid-card" href="{p["html"]}">
+            f'''          <a class="proj-grid-card" href="{p["url"]}">
             <span class="proj-grid-card__media">
               <img src="{img}" alt="{p["title_plain"]}" width="900" height="675" loading="lazy" decoding="async" />
             </span>
@@ -566,15 +567,17 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
         )
 
     grid_html = "\n".join(cards)
-    pattern = r'(<div class="proj-grid reveal">)(.*?)(</div>\s*\n\s*</div>\s*\n\s*</section>)'
+    pattern = r'(<div class="proj-grid reveal">)\s*.*?\s*(</div>)'
 
     for page in ("key-design-studio.html", "index.html"):
         path = ROOT / page
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
-        replacement = r"\1\n" + grid_html + r"\n        \3"
-        text = re.sub(pattern, replacement, text, count=1, flags=re.DOTALL)
+        def replacer(match):
+            return match.group(1) + "\n" + grid_html + "\n        " + match.group(2)
+
+        text = re.sub(pattern, replacer, text, count=1, flags=re.DOTALL)
         path.write_text(text, encoding="utf-8")
 
 
@@ -582,7 +585,7 @@ def generate_projects_page(projects: list[dict]):
     cards = []
     for p in projects:
         cards.append(
-            f'''        <a class="proj-grid-card" href="{p["html"]}">
+            f'''        <a class="proj-grid-card" href="{p["url"]}">
           <span class="proj-grid-card__media">
             <img src="{p["cover"]}" alt="{p["title_plain"]}" loading="lazy" />
           </span>
@@ -629,7 +632,7 @@ def generate_projects_page(projects: list[dict]):
         <div>
           <h1 class="eyebrow" data-i18n="projects.label">Проекты</h1>
         </div>
-        <a href="key-design-studio.html" class="link-underline" data-i18n="nav.home">
+        <a href="/" class="link-underline" data-i18n="nav.home">
           На главную <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
       </div>
