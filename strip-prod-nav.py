@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 NAV_LINK = re.compile(
-    r'^\s*<a class="nav__link" href="(?:approach|partners)\.html"[^>]*>.*?</a>\s*\n',
+    r'^\s*<a class="nav__link" href="(?:/)?(?:approach|partners)(?:\.html)?"[^>]*>.*?</a>\s*\n',
     re.MULTILINE,
 )
 

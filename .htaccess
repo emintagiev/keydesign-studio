@@ -18,8 +18,8 @@ AddDefaultCharset utf-8
   # Legacy and hidden pages
   RewriteRule ^key-design-studio\.html$ / [L,R=301]
   RewriteRule ^key-design-studio/?$ / [L,R=301]
-  RewriteRule ^approach\.html$ / [L,R=302]
-  RewriteRule ^partners\.html$ / [L,R=302]
+  RewriteRule ^approach(?:\.html)?/?$ / [L,R=302]
+  RewriteRule ^partners(?:\.html)?/?$ / [L,R=302]
 
   RewriteRule ^favicon\.ico$ /assets/favicon-32.png [L]
 
