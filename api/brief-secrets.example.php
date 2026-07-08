@@ -5,11 +5,11 @@
  *
  * return [
  *     'bot_token' => 'BOT_TOKEN_FROM_BOTFATHER',
- *     'chat_id' => '123456789',
+ *     'chat_ids' => ['123456789', '987654321'],
  * ];
  */
 
 return [
     'bot_token' => 'REPLACE_ME',
-    'chat_id' => 'REPLACE_ME',
+    'chat_ids' => ['REPLACE_ME'],
 ];

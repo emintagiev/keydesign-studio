@@ -17,9 +17,9 @@ if (!is_file($configFile)) {
 
 $config = require $configFile;
 $botToken = (string) ($config['bot_token'] ?? '');
-$chatId = (string) ($config['chat_id'] ?? '');
+$chatIds = briefChatIds($config);
 
-if ($botToken === '' || $chatId === '') {
+if ($botToken === '' || $chatIds === []) {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => 'config'], JSON_UNESCAPED_UNICODE);
     exit;
@@ -97,33 +97,76 @@ if ($page !== '') {
 
 $text = implode("\n", $lines);
 
-$telegramUrl = 'https://api.telegram.org/bot' . $botToken . '/sendMessage';
-$payload = json_encode([
-    'chat_id' => $chatId,
-    'text' => $text,
-    'disable_web_page_preview' => true,
-], JSON_UNESCAPED_UNICODE);
+$sent = 0;
+foreach ($chatIds as $chatId) {
+    if (briefSendTelegram($botToken, $chatId, $text)) {
+        $sent++;
+    }
+}
 
-$ch = curl_init($telegramUrl);
-curl_setopt_array($ch, [
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $payload,
-    CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_TIMEOUT => 15,
-]);
-$response = curl_exec($ch);
-$httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-$result = json_decode($response ?: '', true);
-if ($httpCode !== 200 || !is_array($result) || !($result['ok'] ?? false)) {
+if ($sent === 0) {
     http_response_code(502);
     echo json_encode(['ok' => false, 'error' => 'telegram'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
 echo json_encode(['ok' => true], JSON_UNESCAPED_UNICODE);
+
+function briefChatIds(array $config): array
+{
+    $raw = $config['chat_ids'] ?? null;
+    if (is_array($raw)) {
+        $ids = [];
+        foreach ($raw as $id) {
+            $id = trim((string) $id);
+            if ($id !== '') {
+                $ids[] = $id;
+            }
+        }
+        return array_values(array_unique($ids));
+    }
+
+    $legacy = trim((string) ($config['chat_id'] ?? ''));
+    if ($legacy === '') {
+        return [];
+    }
+
+    $parts = preg_split('/\s*,\s*/', $legacy) ?: [];
+    $ids = [];
+    foreach ($parts as $part) {
+        $part = trim($part);
+        if ($part !== '') {
+            $ids[] = $part;
+        }
+    }
+
+    return array_values(array_unique($ids));
+}
+
+function briefSendTelegram(string $botToken, string $chatId, string $text): bool
+{
+    $telegramUrl = 'https://api.telegram.org/bot' . $botToken . '/sendMessage';
+    $payload = json_encode([
+        'chat_id' => $chatId,
+        'text' => $text,
+        'disable_web_page_preview' => true,
+    ], JSON_UNESCAPED_UNICODE);
+
+    $ch = curl_init($telegramUrl);
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $payload,
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 15,
+    ]);
+    $response = curl_exec($ch);
+    $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    $result = json_decode($response ?: '', true);
+    return $httpCode === 200 && is_array($result) && ($result['ok'] ?? false);
+}
 
 function briefClean(string $value, int $max): string
 {
