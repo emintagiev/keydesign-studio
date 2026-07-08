@@ -137,7 +137,7 @@
           "hero.tagline":
             "Создаём продуманные интерьеры, в которых выверены свет, материал и каждая деталь.",
           "hero.cta": "Смотреть проекты",
-          "hero.secondary": "Обсудить проект",
+          "hero.secondary": "Оставить заявку",
           "hero.media": "Скоро - съёмка проектов",
           "hero.stat1": "лет практики",
           "hero.stat2": "реализованных интерьеров",
@@ -164,7 +164,7 @@
           "projects.featured": "Избранный проект",
           "project.link": "Смотреть проект",
           "project.3.cat": "Студия · Москва · 2025",
-          "project.3.name": "Москва Студия",
+          "project.3.name": "Москва, ЖК Bauman Haus, Студия-шкатулка, 30 кв.м.",
           "project.3.desc":
             "Компактная студия с выверенной планировкой: каждый метр работает на комфорт, свет и ощущение простора.",
           "project.4.cat": "Салон красоты tati · 2026",
@@ -353,7 +353,7 @@
           "hero.tagline":
             "We create thoughtful interiors where light, material and every detail are in balance.",
           "hero.cta": "View projects",
-          "hero.secondary": "Discuss a project",
+          "hero.secondary": "Request a call",
           "hero.media": "Photography coming soon",
           "hero.stat1": "years of practice",
           "hero.stat2": "interiors delivered",
@@ -380,7 +380,7 @@
           "projects.featured": "Featured project",
           "project.link": "View project",
           "project.3.cat": "Studio · Moscow · 2025",
-          "project.3.name": "Moscow Studio",
+          "project.3.name": "Moscow, Bauman Haus RC, Studio box, 30 sq.m.",
           "project.3.desc":
             "A compact studio with a considered layout: every square metre works for comfort, light and a sense of space.",
           "project.4.cat": "Salon krasoty tati · 2026",

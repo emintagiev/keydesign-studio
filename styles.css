@@ -1975,6 +1975,10 @@
       color: var(--text-soft);
     }
 
+    .contact-office__cta {
+      align-self: flex-start;
+    }
+
     .contact-office__map {
       margin: 0;
       display: flex;

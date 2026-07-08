@@ -25,7 +25,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
-  <link rel="stylesheet" href="styles.css?v=77" />
+  <link rel="stylesheet" href="styles.css?v=78" />
 </head>
 
 <body>
@@ -101,6 +101,10 @@
             </li>
           </ul>
           <p class="contact-office__address" data-i18n="contact.address">г. Новосибирск, ул. Инженерная 7, 3 этаж</p>
+          <a href="#brief" class="btn contact-office__cta" data-open-brief data-i18n="hero.secondary">
+            Оставить заявку
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </div>
@@ -116,6 +120,93 @@
     </div>
   </footer>
 
+  <div class="brief" id="brief" aria-hidden="true">
+    <div class="brief__backdrop" data-close-brief tabindex="-1"></div>
+    <div class="brief__dialog" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
+      <div class="brief__head">
+        <p class="brief__title" id="briefTitle" data-i18n="brief.title">Заявка на проект</p>
+        <span class="brief__counter" data-brief-counter>1 / 3</span>
+        <button class="brief__close" type="button" data-close-brief aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="brief__progress" aria-hidden="true">
+          <span class="brief__progress-bar" data-brief-progress style="width: 33.33%"></span>
+        </div>
+      </div>
+      <form class="brief__form" id="briefForm" novalidate>
+        <div class="brief__panel is-active" data-brief-step="1">
+          <p class="brief__question" data-i18n="brief.q1">Какой метраж пространства мы будем проектировать?</p>
+          <div class="brief__options">
+            <label class="brief__option"><input type="radio" name="area" value="До 60 м²" required /><span class="brief__option-text" data-i18n="brief.a1.1">До 60 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="60-120 м²" /><span class="brief__option-text" data-i18n="brief.a1.2">60-120 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="120-200 м²" /><span class="brief__option-text" data-i18n="brief.a1.3">120-200 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="200-500 м²" /><span class="brief__option-text" data-i18n="brief.a1.4">200-500 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="500-1000 м²" /><span class="brief__option-text" data-i18n="brief.a1.5">500-1000 м²</span></label>
+            <label class="brief__option"><input type="radio" name="area" value="Больше 1000 м²" /><span class="brief__option-text" data-i18n="brief.a1.6">Больше 1000 м²</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="2" hidden>
+          <p class="brief__question" data-i18n="brief.q2">Какое направление интерьера вам ближе?</p>
+          <div class="brief__options">
+            <label class="brief__option"><input type="radio" name="style" value="Классический" required /><span class="brief__option-text" data-i18n="brief.a2.1">Классический</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Ар-деко" /><span class="brief__option-text" data-i18n="brief.a2.2">Ар-деко</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Минимализм" /><span class="brief__option-text" data-i18n="brief.a2.3">Минимализм</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Современный" /><span class="brief__option-text" data-i18n="brief.a2.4">Современный</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Эклектика" /><span class="brief__option-text" data-i18n="brief.a2.5">Эклектика</span></label>
+            <label class="brief__option"><input type="radio" name="style" value="Пока выбираю" /><span class="brief__option-text" data-i18n="brief.a2.6">Пока выбираю</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="3" hidden>
+          <p class="brief__question" data-i18n="brief.q3">Когда планируете приступить к работам?</p>
+          <div class="brief__options brief__options--5">
+            <label class="brief__option"><input type="radio" name="timeline" value="Уже готов(а) начать" required /><span class="brief__option-text" data-i18n="brief.a3.1">Уже готов(а) начать</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="В течение полугода" /><span class="brief__option-text" data-i18n="brief.a3.2">В течение полугода</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="В течение года" /><span class="brief__option-text" data-i18n="brief.a3.3">В течение года</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="Не раньше чем через год" /><span class="brief__option-text" data-i18n="brief.a3.4">Не раньше чем через год</span></label>
+            <label class="brief__option"><input type="radio" name="timeline" value="Пока не определился(лась)" /><span class="brief__option-text" data-i18n="brief.a3.5">Пока не определился(лась)</span></label>
+          </div>
+        </div>
+        <div class="brief__panel" data-brief-step="4" hidden>
+          <p class="brief__question" data-i18n="brief.q4">Как с вами связаться?</p>
+          <div class="brief__fields">
+            <label class="brief__field">
+              <span class="brief__label" data-i18n="brief.name">Имя</span>
+              <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="brief.namePh" placeholder="Имя" />
+            </label>
+            <label class="brief__field">
+              <span class="brief__label" data-i18n="brief.phone">Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" required data-i18n-placeholder="brief.phonePh" placeholder="Телефон" />
+            </label>
+          </div>
+          <div class="brief__consent">
+            <label class="brief__consent__label">
+              <input type="checkbox" name="consent" value="yes" />
+              <span class="brief__consent-text">
+                <span data-i18n="brief.consentBefore">Я согласен(на) на обработку персональных данных в соответствии с</span>
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" data-i18n="brief.consentLink">политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="brief__panel brief__panel--done" data-brief-step="5" hidden>
+          <p class="brief__done-title" data-i18n="brief.doneTitle">Принято!</p>
+          <p class="brief__done-text" data-i18n="brief.doneText">Мы получили вашу заявку и скоро напишем или позвоним.</p>
+        </div>
+        <div class="brief__foot" data-brief-foot>
+          <button class="brief__back" type="button" data-brief-back disabled>
+            <span aria-hidden="true">←</span>
+            <span data-i18n="brief.back">Назад</span>
+          </button>
+          <button class="brief__next btn" type="button" data-brief-next disabled>
+            <span data-brief-next-label data-i18n="brief.next">Продолжить</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="brief-config.js?v=2" defer></script>
   <script src="app.js?v=35" defer></script>
 </body>
 </html>
