@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, Лаки Парк, Дом, 108 кв.�
 i18n_cat: project.5.cat
 i18n_name: project.5.name
 published: true
-sort_order: 6
+sort_order: 5
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная

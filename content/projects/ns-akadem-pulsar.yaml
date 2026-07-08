@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, ЖК Пульсар, 62 кв.м.
 i18n_cat: project.7.cat
 i18n_name: project.7.name
 published: true
-sort_order: 7
+sort_order: 6
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная

@@ -16,7 +16,7 @@ carousel_name: г. Москва, ЖК Архитектор, 60 кв.м.
 i18n_cat: project.6.cat
 i18n_name: project.6.name
 published: true
-sort_order: 4
+sort_order: 3
 rooms:
 - slug: interior
   name: Интерьер

@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, ЖК Квартал Декабрис�
 i18n_cat: project.8.cat
 i18n_name: project.8.name
 published: true
-sort_order: 8
+sort_order: 7
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная
