@@ -1,18 +1,18 @@
 slug: kedrovy-ns
-title_plain: г. Новосибирск, Кедровый
-title_html: г. Новосибирск, <em>Кедровый</em>
+title_plain: Новосибирск, ЖК Кедровый, 120 кв.м.
+title_html: Новосибирск, ЖК Кедровый, <em>120 кв.м.</em>
 eyebrow: Квартира · Новосибирск
 lead: ''
 meta:
   type: Квартира
   city: Новосибирск
-  area: '-'
+  area: 120 кв.м.
   year: '2025'
-description: г. Новосибирск, Кедровый - проект Key Design Studio.
+description: Новосибирск, ЖК Кедровый, 120 кв.м. - проект Key Design Studio.
 cover: assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(3)-denoise-upscale-1.9x.jpeg
 grid_city: Новосибирск
 carousel_cat: Квартира · Новосибирск · 2025
-carousel_name: г. Новосибирск, Кедровый
+carousel_name: Новосибирск, ЖК Кедровый, 120 кв.м.
 i18n_cat: project.11.cat
 i18n_name: project.11.name
 published: true
