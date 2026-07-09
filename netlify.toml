@@ -1,0 +1,10 @@
+[build]
+  command = "bash prepare-deploy.sh"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/brief.php"
+  to = "/.netlify/functions/brief"
+  status = 200
+  force = true
