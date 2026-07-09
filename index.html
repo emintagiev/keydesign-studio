@@ -26,9 +26,19 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1" />
-  <link rel="preload" as="image" href="assets/logo.png?v=11" />
-  <link rel="preload" as="image" href="assets/hero/1.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/hero/1-m.jpg" media="(max-width: 980px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/hero/1.jpg" media="(min-width: 981px)" fetchpriority="high" />
   <style>
+    @media (max-width: 980px) {
+      .preloader {
+        display: none !important;
+      }
+
+      body.is-loading {
+        overflow: visible;
+      }
+    }
+
     html.is-loading,
     body.is-loading {
       overflow: hidden;
@@ -97,10 +107,10 @@
       object-fit: contain;
     }
   </style>
-  <link rel="stylesheet" href="styles.css?v=77" />
+  <link rel="stylesheet" href="styles.css?v=79" />
 </head>
 
-<body class="home is-loading">
+<body class="home">
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__logo-wrap" id="preloaderLogoWrap">
       <img
@@ -165,7 +175,7 @@
     <!-- ===================== ЭТАЖ 1 · HERO ===================== -->
     <section class="hero" id="hero">
       <div class="hero__scene" aria-hidden="true">
-        <div class="hero__slide is-active" data-hero-bg="assets/hero/1.jpg" style="background-image: url('assets/hero/1.jpg')"></div>
+        <div class="hero__slide is-active hero__slide--1" data-hero-bg="assets/hero/1.jpg" style="background-image: url('assets/hero/1.jpg')"></div>
         <div class="hero__slide" data-hero-bg="assets/hero/2.jpg"></div>
         <div class="hero__slide" data-hero-bg="assets/hero/3.jpg"></div>
         <div class="hero__slide" data-hero-bg="assets/hero/4.jpg"></div>
@@ -400,6 +410,6 @@
   </div>
 
   <script src="brief-config.js?v=2" defer></script>
-  <script src="app.js?v=35" defer></script>
+  <script src="app.js?v=38" defer></script>
 </body>
 </html>

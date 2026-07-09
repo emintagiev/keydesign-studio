@@ -2295,6 +2295,10 @@
         background-position: center 42%;
       }
 
+      .hero__slide--1.is-active {
+        background-image: url("assets/hero/1-m.jpg") !important;
+      }
+
       .hero__brand img {
         height: clamp(88px, 22vw, 128px);
       }

@@ -5,20 +5,27 @@
 
       var root = document.documentElement;
 
-      /* ---------- Homepage preloader ---------- */
+      /* ---------- Homepage preloader (desktop only) ---------- */
       var preloader = document.getElementById("preloader");
       if (preloader && document.body.classList.contains("home")) {
+        var desktopPreloaderMq = window.matchMedia("(min-width: 981px)");
+        var reduceMotionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        if (!desktopPreloaderMq.matches || reduceMotionMq.matches) {
+          document.body.classList.remove("is-loading");
+          document.documentElement.classList.remove("is-loading");
+          preloader.remove();
+        } else {
         document.documentElement.classList.add("is-loading");
+        document.body.classList.add("is-loading");
         var preloaderWrap = document.getElementById("preloaderLogoWrap");
         var heroBrand = document.querySelector(".hero__brand");
         var heroBrandImg = heroBrand && heroBrand.querySelector("img");
-        var desktopPreloaderMq = window.matchMedia("(min-width: 981px)");
-        var reduceMotionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
         var preloaderStarted = Date.now();
-        var preloaderMinMs = reduceMotionMq.matches ? 0 : 800;
-        var preloaderMaxMs = 4000;
+        var preloaderMinMs = reduceMotionMq.matches ? 0 : 450;
+        var preloaderMaxMs = 3500;
         var preloaderDone = false;
-        var preloaderRevealMs = reduceMotionMq.matches ? 0 : 800;
+        var preloaderRevealMs = reduceMotionMq.matches ? 0 : 500;
 
         function isDesktopPreloader() {
           return desktopPreloaderMq.matches && !reduceMotionMq.matches;
@@ -106,6 +113,24 @@
         scheduleAlignPreloaderLogo();
         window.addEventListener("resize", alignPreloaderLogo);
 
+        var criticalReady = 0;
+        var criticalTotal = 2;
+
+        function maybeFinishPreloader() {
+          criticalReady += 1;
+          if (criticalReady >= criticalTotal) {
+            finishPreloader();
+          }
+        }
+
+        var heroPreload = new Image();
+        heroPreload.onload = heroPreload.onerror = maybeFinishPreloader;
+        heroPreload.src = "assets/hero/1.jpg";
+
+        var logoPreload = new Image();
+        logoPreload.onload = logoPreload.onerror = maybeFinishPreloader;
+        logoPreload.src = "assets/logo.png?v=11";
+
         if (document.readyState === "complete") {
           scheduleAlignPreloaderLogo();
           finishPreloader();
@@ -119,6 +144,7 @@
             { once: true }
           );
           window.setTimeout(finishPreloader, preloaderMaxMs);
+        }
         }
       }
 
