@@ -8,19 +8,24 @@ ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
 HERO_SOURCES = [
-    ("hero/1.jpg", "projects/moscow-studio/interior/1.jpg", 1400, 68),
-    ("hero/1-m.jpg", "projects/moscow-studio/interior/1.jpg", 820, 60),
-    ("hero/2.jpg", "projects/zhk-arkhitektor/interior/IMG_4800.JPG", 1400, 68),
     (
-        "hero/3.jpg",
+        "hero/1.jpg",
         "projects/kedrovy-ns/kitchen-living/005848974447_0000(3)-denoise-upscale-1.9x.jpeg",
         1400,
         68,
     ),
-    ("hero/4.jpg", "projects/kvartira-dubay/kitchen-living/01.jpg", 1400, 68),
+    (
+        "hero/1-m.jpg",
+        "projects/kedrovy-ns/kitchen-living/005848974447_0000(3)-denoise-upscale-1.9x.jpeg",
+        820,
+        60,
+    ),
+    ("hero/2.jpg", "projects/nevskaya-dom/guest-bedroom/2.jpg", 1400, 68),
+    ("hero/3.jpg", "projects/kvartira-dubay/kitchen-living/01.jpg", 1400, 68),
+    ("hero/4.jpg", "projects/oblaka-orhan/interior/cam_25.jpg", 1400, 68),
     ("hero/5.jpg", "projects/dom-sinegore/kitchen-living/1.jpg", 1400, 68),
-    ("hero/6.jpg", "projects/nevskaya-dom/guest-bedroom/2.jpg", 1400, 68),
-    ("hero/7.jpg", "projects/oblaka-orhan/interior/cam_25.jpg", 1400, 68),
+    ("hero/6.jpg", "projects/zhk-arkhitektor/interior/IMG_4800.JPG", 1400, 68),
+    ("hero/7.jpg", "projects/moscow-studio/interior/1.jpg", 1400, 68),
 ]
 
 THUMB_SOURCES = [

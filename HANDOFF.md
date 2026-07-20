@@ -33,9 +33,13 @@
 
 ---
 
-## 🚧 В РАБОТЕ: новый проект «Облака (Орхан)» (не закоммичен, не задеплоен)
+## ✅ ГОТОВО: новый проект «г. Новосибирск, ЖК Облака, 80 кв.м.» (задеплоен 20 июля)
 
-Задача пользователя: добавить проект **4-м по порядку**, обложка **cam_25**, и добавить cam_25 в hero-карусель на главной. Сначала проверяем на localhost.
+Слаг `oblaka-orhan`, 4-й по порядку, обложка `cam_25`. Название/мета заполнены (Квартира · Новосибирск · 2026, 80 кв.м.), i18n `project.16` RU/EN. cam_25 в hero-карусель (`assets/hero/7.jpg`). **Закоммичено** (`62a12e1`, вместе с firebase.json/functions), запушено в `site-clean` (Timeweb CI), **задеплоено на Firebase**. Проверено на проде: `https://www.keydesign.studio/oblaka-orhan` - 200, Fastly.
+
+**Фото галереи - в полном размере оригиналов (1700px), НЕ оптимизировались** (исходники в папке «Облака (Орхан)» изначально 1700px, у других проектов исходники были ~2200px → в репо 1920px; это не «урезание», а предел исходников Облака). Если появятся рендеры в большем разрешении - заменить файлы в `assets/projects/oblaka-orhan/interior/` и пересобрать.
+
+Историческая справка (первоначальная постановка): добавить проект 4-м, обложка cam_25, cam_25 в hero-карусель.
 
 **Что уже сделано (собрано локально, `python3 build-projects.py --html-only` отработал):**
 - Слаг **`oblaka-orhan`**. Фото скопированы из `~/Desktop/key design/Облака (Орхан)/` в `assets/projects/oblaka-orhan/interior/` (9 шт: cam_12/24/25/27/31/32/33/34/37).
@@ -223,9 +227,9 @@ Decap CMS + OAuth (PHP) на Timeweb (`/admin/`, вход через GitHub). О
 | Что | Значение |
 |-----|----------|
 | Ветка | `site-clean` |
-| HEAD (prod) | `2752924` Improve mobile PageSpeed |
-| Не коммитить | `deploy.env`, `api/brief-secrets.php`, `oauth/oauth-secrets.php` |
-| Локально не закоммичено | `firebase.json`, `functions/`, обновлённый `.gitignore`, правки `build-projects.py`/`prepare-deploy.sh`, `scripts/setup-gcore-dns.py` (архив), `deploy.env.save`; **новый проект Облака (Орхан):** `content/projects/oblaka-orhan.yaml`, `assets/projects/oblaka-orhan/`, `assets/hero/7.jpg`, правки `sort_order` в 10 yaml, `content/site.yaml`, `app.js`, `index.html`, `key-design-studio.html`, `build-hero-images.py`, сгенерированные `*.html` |
+| HEAD (prod) | `62a12e1` Add project ЖК Облака (4th) + Firebase config + hero 7 |
+| Не коммитить | `deploy.env`, **`deploy.env.save`** (креды деплоя!), `api/brief-secrets.php`, `oauth/oauth-secrets.php` (все в `.gitignore`) |
+| Локально не закоммичено | только `deploy.env.save` (в gitignore). Всё остальное - в `62a12e1` |
 
 ---
 
