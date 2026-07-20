@@ -9,7 +9,7 @@ meta:
   area: 60 кв.м.
   year: '2025'
 description: г. Москва, ЖК Архитектор, 60 кв.м. - проект Key Design Studio.
-cover: assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG
+cover: assets/projects/zhk-arkhitektor/interior/IMG_4801.JPG
 grid_city: Москва
 carousel_cat: Квартира · Москва · 2025
 carousel_name: г. Москва, ЖК Архитектор, 60 кв.м.
@@ -20,4 +20,4 @@ sort_order: 3
 rooms:
 - slug: interior
   name: Интерьер
-  cover_filename: IMG_4796.JPG
+  cover_filename: IMG_4801.JPG
