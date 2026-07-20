@@ -4,8 +4,13 @@
 assets/logo-tmp/
 dist/
 deploy.env
+deploy.env.save
 oauth/oauth-secrets.php
 api/brief-secrets.php
 workers/decap-oauth/node_modules/
 site-dist.zip
 site-*.zip
+functions/node_modules/
+.firebase/
+firebase-debug.log
+*-debug.log

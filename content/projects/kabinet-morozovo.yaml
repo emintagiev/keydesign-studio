@@ -16,7 +16,7 @@ carousel_name: с. Морозово, Загородный дом, кабинет
 i18n_cat: project.12.cat
 i18n_name: project.12.name
 published: true
-sort_order: 12
+sort_order: 13
 rooms:
 - slug: interior
   name: Интерьер

@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, Квартира с восточны�
 i18n_cat: project.10.cat
 i18n_name: project.10.name
 published: true
-sort_order: 9
+sort_order: 10
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная

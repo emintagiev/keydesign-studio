@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "public": "dist",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "api/**",
+      "admin/**",
+      "oauth/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/brief.php",
+        "function": {
+          "functionId": "brief",
+          "region": "us-central1",
+          "pinTag": true
+        }
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs20"
+  }
+}

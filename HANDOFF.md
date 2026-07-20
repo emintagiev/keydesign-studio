@@ -1,138 +1,256 @@
 # Key Design Studio - передача контекста
 
-> В новом чате напиши: **«Прочитай HANDOFF.md и продолжай»**.
+> В новом чате напиши: **«Прочитай HANDOFF.md»**.
 
-**Обновлено:** 7 июля 2026 (вечер)  
-**Прод:** https://www.keydesign.studio/  
-**Админка:** https://www.keydesign.studio/admin/  
-**Локально:** `python3 -m http.server 8099`
-
----
-
-## Активная задача
-
-**Админка для Кристины** - MVP на проде, вход работает.  
-Подробности: **`ADMIN-HANDOFF.md`**
-
-**Главный блокер для полного flow:** Publish в админке коммитит в GitHub, но **автодеплой на Timeweb не настроен** (нет GitHub Actions secrets). Сейчас деплой вручную: `bash deploy-ru.sh`.
+**Обновлено:** 20 июля 2026  
+**Прод (пока):** https://www.keydesign.studio/ (Timeweb)  
+**Firebase (новый, работает везде):** https://keydesign-studio-xxxxx.web.app/  
+**Репозиторий:** https://github.com/emintagiev/keydesign-studio (ветка `site-clean`)
 
 ---
 
-## Быстрый старт для AI
+## ТЕКУЩИЙ ШАГ (выдать пользователю сразу после прочтения HANDOFF)
 
-1. **`ADMIN-HANDOFF.md`** - админка, OAuth, YAML, форма, CI
-2. **`HANDOFF.md`** (этот файл) - сайт, контакты, проекты
-3. `.cursor/rules/copy-typography.mdc` - только короткое тире `-`
-4. `git status` - **много uncommitted** (вся админка + content/ + oauth/)
-5. Версии `?v=` - только `python3 bump-assets.py`
+### ✅ ПЕРЕЕЗД ДОМЕНА НА FIREBASE ЗАВЕРШЁН (20 июля)
 
----
+- **`www.keydesign.studio`** → Firebase, **Connected**, сертификат `CN=www.keydesign.studio` активен. Проверено вживую: **работает везде (РФ без VPN + Instagram)** ✅
+- **apex `keydesign.studio`** → Firebase, `HOST_ACTIVE`, сертификат `CN=keydesign.studio` выпущен (был `CERT_PROPAGATING` в конце сессии - к моменту чтения уже активен).
+- **Timeweb НЕ трогали** - живой откат, TTL 1 мин. `admin.keydesign.studio` при необходимости оставить на Timeweb для CMS.
 
-## Что сделано 7 июля 2026 (админка)
+**Как чинили (важный урок):** для `www` Firebase хотел CNAME (не A-записи) - из-за двух A-записей был `HOST_CONFLICT`, висело ~2 часа. Диагностировали через **Hosting API** (`customDomains`, см. раздел «Диагностика подключения кастомного домена»). apex сделали сразу правильно по `requiredDnsUpdates.desired`: A `199.36.158.100` + TXT `hosting-site=...`.
 
-### Данные
-- `content/projects/*.yaml` - 13 проектов (миграция из `PROJECTS[]`)
-- `content/site.yaml` - featured + projects_order
-- `build-projects.py` - читает YAML, `enrich_project()` автозаполняет поля для сайта
+**Текущее состояние DNS в Cloudflare (всё DNS only, серое облако):**
+- `keydesign.studio` → A `199.36.158.100` (Firebase) + TXT `hosting-site=keydesign-studio-xxxxx`
+- `www.keydesign.studio` → CNAME `keydesign-studio-xxxxx.web.app` (Firebase) + TXT `hosting-site=keydesign-studio-xxxxx`
 
-### Decap CMS (`/admin`)
-- Вход через GitHub OAuth - **работает**
-- OAuth proxy: PHP на Timeweb (`oauth/index.php`), не Cloudflare
-- Форма проекта: **4 поля** (название, порядок, обложка, фотографии)
-- Дизайн под сайт: `admin/custom.css` (бежевый фон, Jost, Cormorant)
-- Логотип Key Design вместо Decap
+**Осталось (после переезда, по приоритету):**
+1. Проверить apex `https://keydesign.studio/` вживую; решить apex serve-контент vs 301→www (сейчас apex отдаёт тот же сайт, что и www; canonical у нас = www).
+2. Закрыть от индексации зеркала `keydesign-studio-xxxxx.web.app` и Netlify (noindex/robots).
+3. CI: добавить `firebase deploy` в GitHub Actions.
+4. Живой тест формы в Telegram.
 
-### Деплой
-- `prepare-deploy.sh` - build + копирует `admin/`, `oauth/`
-- `.github/workflows/deploy.yml` - заготовка CI (secrets не добавлены)
+**Правило (усвоено дорогой ценой):** перед внесением DNS всегда сверяться с `requiredDnsUpdates.desired` из Hosting API. Поддомены - CNAME, apex - A-записи, всё DNS only. Verify не долбить (rate limit Let's Encrypt 5 фейлов/час).
 
 ---
 
-## Git и прод
+## 🚧 В РАБОТЕ: новый проект «Облака (Орхан)» (не закоммичен, не задеплоен)
 
-| Что | Статус |
-|-----|--------|
-| Ветка | `site-clean` |
-| Последний коммит | `7fd23fb` - мобильная шапка |
-| Uncommitted | **Вся админка**, `content/`, `oauth/`, `build-projects.py`, HTML проектов |
-| Прод (сайт) | Админка + OAuth + упрощённая форма - **задеплоено через SFTP** |
-| Прод (git) | Отстаёт от рабочей копии - **нужен commit + push** |
+Задача пользователя: добавить проект **4-м по порядку**, обложка **cam_25**, и добавить cam_25 в hero-карусель на главной. Сначала проверяем на localhost.
 
-**Деплой:** `bash deploy-ru.sh` (SFTP, `deploy.env`)  
-**Скрыто на проде:** `approach.html`, `partners.html`
+**Что уже сделано (собрано локально, `python3 build-projects.py --html-only` отработал):**
+- Слаг **`oblaka-orhan`**. Фото скопированы из `~/Desktop/key design/Облака (Орхан)/` в `assets/projects/oblaka-orhan/interior/` (9 шт: cam_12/24/25/27/31/32/33/34/37).
+- `content/projects/oblaka-orhan.yaml` создан (single-gallery, room `interior`, cover `cam_25.jpg`, `sort_order: 4`, i18n `project.16`).
+- **Порядок 4-м:** пересчитаны `sort_order` у 10 проектов (salok..little-classic сдвинуты 4→5 … 13→14); `content/site.yaml` `projects_order` - `oblaka-orhan` на 4-й позиции. Проверено в `projects.html` - стоит 4-м ✅
+- **i18n** в `app.js`: добавлены `project.16.cat/name/desc` (RU: «Облака (Орхан)», EN: «Oblaka (Orhan)»).
+- **Hero-карусель:** cam_25 → `assets/hero/7.jpg` (sips 1400px q68); добавлен 7-й `hero__slide data-hero-bg="assets/hero/7.jpg"` в `index.html` и `key-design-studio.html`; entry добавлен в `build-hero-images.py`.
+- Локальный сервер: `python3 -m http.server 8099` (в корне репо). Страницы: `/oblaka-orhan.html`, `/projects.html`, `/` - отдают 200. (Локально clean URL без `.html` не работают - это норма для http.server, на проде ок.)
 
----
-
-## Сайт - структура
-
-| Страница | Файл |
-|----------|------|
-| Главная | `index.html` - hero + 3 featured, **без контактов** |
-| Проекты | `projects.html` - генерируется `build-projects.py` |
-| Контакты | `contacts.html` - Яндекс.Карта iframe |
-| Проект | `{slug}.html` - генерируется из YAML |
-
-**Контакты:** г. Новосибирск, ул. Инженерная 7, 3 этаж  
-**Координаты:** `54.8588216, 83.1087403`  
-**Телефон:** `+7 (923) 000-00-36` | **Почта:** `key-des@mail.ru`  
-**TG:** `https://t.me/Kristina_Key_des` | **IG:** `https://instagram.com/key_design.studio`
+**❗ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ / ДОДЕЛАТЬ:**
+- **Метаданные проекта пустые** - нужны: тип (квартира/дом/…), город, площадь (кв.м.), год. Сейчас в yaml `meta` пустые, `eyebrow: ''`, `title_plain: 'Облака (Орхан)'`. Заполнить `title_plain`, `meta`, `eyebrow`, и i18n `project.16.name` (RU/EN) под реальные данные, затем пересобрать.
+- Уточнить порядок фото в галерее и правильную обложку (сейчас cover=cam_25, порядок - натуральная сортировка имён).
+- Изображения НЕ оптимизированы (оригиналы 300-670 КБ) - прогнать `optimize-images.py` / пережать перед деплоем.
+- После апрува: commit + deploy (Timeweb через `prepare-deploy.sh`/CI + Firebase `firebase deploy --only hosting`), не забыть `bump-assets.py` для версий `app.js`/`styles.css`.
 
 ---
 
-## 13 проектов
+## Как мы сюда пришли (контекст)
 
-Данные в `content/projects/{slug}.yaml`. Порядок - `sort_order` в каждом yaml (синхронизируется в `site.yaml` при сборке).
+### Проблема
+Сайт на Timeweb (российский IP `92.53.96.132`) отлично открывается в РФ без VPN, но **не грузится / душится** у зарубежных и VPN-пользователей (Instagram Stories - основной канал Кристины). Причина - троттлинг трансграничного трафика (ТСПУ/DPI РКН), не вина Timeweb.
 
-| # | slug | Название |
-|---|------|----------|
-| 1 | moscow-studio | Москва Студия |
-| 2 | kvartira-dubay | Дубай, апартаменты, 180 кв.м. |
-| 3 | dom-sinegore | Дом Синегорье |
-| 4 | zhk-arkhitektor | г. Москва, ЖК Архитектор |
-| 5 | salok-krasoty-tati | Салок красоты tati |
-| 6 | laki-park-dom | г. Новосибирск, Лаки Парк, Дом |
-| 7 | ns-akadem-pulsar | Новосибирск, Академгородок, Жк Пульсар 1 |
-| 8 | kvartal-dekabristov | г. Новосибирск, Квартал Декабристов |
-| 9 | nevskaya-dom | г. Новосибирск, Загородный дом, 160 кв.м. |
-| 10 | vostochny-vayb | г. Новосибирск, Квартира с Восточным вайбом |
-| 11 | kedrovy-ns | г. Новосибирск, Кедровый |
-| 12 | kabinet-morozovo | Кабинет-Оружейная Морозово |
-| 13 | little-classic | Little Classic |
+### Прорыв (20 июля)
+Пользователь нашёл работающий сайт конкурента - [shubochkini.com](https://www.shubochkini.com/) (студия интерьеров, открывается в РФ и через Instagram). Диагностика показала:
+- Хостинг **Wix → Google Cloud (`34.149.87.45`) + Fastly CDN**, всё зарубежное, NS зарубежные.
+- **Вывод:** сеть Google + Fastly **проходит через ТСПУ**, в отличие от Cloudflare (заблокирован/душат) и Netlify (душат в РФ).
 
-**Featured на главной** (`content/site.yaml`): `moscow-studio`, `kvartira-dubay`, `dom-sinegore`
+Проверили гипотезу: развернули наш сайт на **Firebase Hosting** (это Google Cloud, IP `199.36.158.100`, фронт Fastly) → **работает везде: РФ без VPN, VPN, Instagram.** Подтверждено пользователем вживую.
 
-**Не путать:** `ns-akadem-pulsar` (Новосибирск) - живой проект. `zhk-pulsar` / `dream-house` - удалены.
+### Архитектурное решение
+- **Firebase = основной публичный сайт для всех** (бесплатно/копейки, работает везде).
+- **Timeweb остаётся** под админку/CMS Кристины (ей в РФ удобно) + как **мгновенный откат** (TTL 1 мин). Год оплачен, не пропадает.
+- **Форма заявки** - на Firebase Cloud Function (та же сеть, работает везде). Оставлять на Timeweb нельзя - у загранаудитории отваливалась бы.
+
+### Тупики (НЕ повторять)
+Cloudflare proxy (душат в РФ), Netlify (душат в РФ без VPN), Gcore (origin 504), AWS Route53 (домен в CF Registrar, NS не сменить), GeoDNS/CF Load Balancing (~$15/мес, не нужен раз Firebase и так везде работает).
 
 ---
 
-## Сборка и деплой
+## Firebase - что настроено (константы)
+
+| Параметр | Значение |
+|----------|----------|
+| Google-аккаунт | `emintagiev90@gmail.com` |
+| Firebase Project ID | `keydesign-studio-xxxxx` |
+| Project number | `491997449676` |
+| Hosting URL | `https://keydesign-studio-xxxxx.web.app` |
+| План | **Blaze** (billing включён, budget alert $1) |
+| Billing-нюанс | Страну в billing сменили с Indonesia (там требовало tax ID/NPWP) на подходящую под карту Visa ...8797 |
+| Cloud Function | `brief` в регионе **us-central1** (2nd gen, Node 20) |
+| Секреты функции | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` (заданы из `deploy.env` через Secret Manager) |
+| Cleanup policy | образы старше 1 дня удаляются (чтобы не копилась плата) |
+
+### Firebase CLI
+- Установлен глобально (`firebase --version` 15.x). Логин выполнен (`emintagiev90@gmail.com`).
+- **Логин интерактивный** - через мой неинтерактивный терминал `firebase login` НЕ работает (`Error: Cannot run login in non-interactive mode`). Если разлогинится - пользователь логинится сам в своём Терминале.
+- Деплой: `firebase deploy --only hosting --project keydesign-studio-xxxxx` (или `functions,hosting`).
+- Деплой требует подтверждения пользователя (Auto-review) - повторять вызов с request_smart_mode_approval.
+
+### Конфиг-файлы (локально, НЕ закоммичены)
+- `firebase.json` - hosting: `public: dist`, `cleanUrls: true`, ignore `api/**` `admin/**` `oauth/**`, rewrite `/api/brief.php` → функция `brief` (с явным `region: us-central1`, `pinTag: true` - без региона rewrite давал 404!).
+- `functions/index.js` - порт логики `api/brief.php` / `netlify/functions/brief.js` (honeypot `company`, валидация name+phone, отправка в Telegram всем chat_id). Node 20, глобальный `fetch`.
+- `functions/package.json` - `firebase-functions` ^6.
+- `.gitignore` - добавлены `functions/node_modules/`, `.firebase/`, `firebase-debug.log`, `*-debug.log`.
+- Эти файлы можно коммитить (секретов в них нет), но пока не коммитили - **commit/deploy только по просьбе**.
+
+### Статус формы
+- Маршрут проверен: `POST /api/brief.php` без name/phone → `422 validation`; honeypot `company` → `200 ok` (без отправки). Функция напрямую (`https://us-central1-keydesign-studio-xxxxx.cloudfunctions.net/brief`) отвечает.
+- **Живой тест доставки в Telegram НЕ делали** (пользователь отложил, чтобы не спамить Кристину). Сделать позже.
+- `brief-config.js` endpoint остаётся `/api/brief.php` - менять не нужно, rewrite ловит.
+
+### Диагностика подключения кастомного домена (Hosting API) - ВАЖНО
+
+Если провижининг домена «висит» (статус `Needs setup` / `Minting certificate` долго) - НЕ гадать и НЕ ждать сутки вслепую. Firebase Hosting API отдаёт реальное внутреннее состояние и прямым текстом показывает причину.
+
+Токен: один раз `gcloud auth login` (интерактивно, в Терминале пользователя, аккаунт `emintagiev90@gmail.com`). Дальше токен берётся `gcloud auth print-access-token` (в чат НЕ печатать). Обязателен заголовок `X-Goog-User-Project`, иначе 403 quota.
 
 ```bash
-python3 build-projects.py --html-only   # пересобрать HTML из YAML
-bash prepare-deploy.sh                  # dist/
-bash deploy-ru.sh                         # dist/ → Timeweb SFTP
-python3 bump-assets.py                    # после правок CSS/JS
+TOKEN=$(gcloud auth print-access-token)
+curl -s -H "Authorization: Bearer $TOKEN" \
+  -H "X-Goog-User-Project: keydesign-studio-xxxxx" \
+  "https://firebasehosting.googleapis.com/v1beta1/projects/keydesign-studio-xxxxx/sites/keydesign-studio-xxxxx/customDomains/<DOMAIN>" \
+  | python3 -m json.tool
 ```
+
+Что смотреть:
+- `ownershipState`: `OWNERSHIP_ACTIVE` = владение подтверждено (TXT `hosting-site=...`).
+- `hostState`: `HOST_ACTIVE` = DNS привязан верно; `HOST_CONFLICT` = конфликтующие/лишние записи; `HOST_UNHOSTED` = Firebase ещё не видит записи (перечитывает DNS периодически).
+- `cert.state`: `CERT_VALIDATING` → `CERT_ACTIVE` (готово).
+- `issues[]`: конкретные ошибки (напр. ACME challenge failed на IP).
+- `requiredDnsUpdates.desired[]`: ЧТО Firebase хочет в DNS - доверять этому, а не своему плану.
+
+**Урок 20 июля:** для `www` Firebase хотел CNAME → `keydesign-studio-xxxxx.web.app` (`certPreference: PROJECT_GROUPED`), а мы поставили две A-записи `199.36.158.100/101`. Из-за `.101` был `HOST_CONFLICT`, ACME падал `199.36.158.101: Request failed` - висело ~2 часа на «Needs setup». Как только заменили обе A-записи на **один CNAME `www → keydesign-studio-xxxxx.web.app` (DNS only)** - `hostState` → `HOST_ACTIVE`, `issues` пусто, пошёл выпуск («Minting certificate»).
+
+Правило DNS для Firebase: **поддомены (`www`) - CNAME на `<site>.web.app`; apex (`keydesign.studio`) - A-записи Firebase** (на голом домене CNAME нельзя). Всё - **DNS only** (серое облако), никакого прокси. Перед переключением сверять с `requiredDnsUpdates.desired`.
+
+---
+
+## План после переключения домена (по приоритету)
+
+1. **Домен** (текущий шаг, см. вверху) - `www` + apex на Firebase, `admin.` на Timeweb.
+2. **Проверка** в РФ без VPN + Instagram.
+3. **Закрыть от индексации** тестовый `keydesign-studio-xxxxx.web.app` и Netlify-зеркало `peppy-chimera-c97410.netlify.app` (SEO: чтобы не было дублей; canonical уже указывает на www, добавить noindex/robots на зеркалах).
+4. **CI на Firebase** - добавить в `.github/workflows/deploy.yml` шаг `firebase deploy` (нужен CI-токен/service account в GitHub Secrets), чтобы push в `site-clean` деплоил и на Timeweb (админка), и на Firebase.
+5. **Форма** - живой тест доставки в Telegram.
+6. **HANDOFF/доки** обновить под финальную схему.
+
+### SEO-замечание (на будущее, скоро займёмся)
+Переезд на Firebase для Яндекса нейтрально-положителен: «российскость» задаётся регионом в Яндекс.Вебмастере, а не сервером; скорость (Fastly) выше Timeweb. Условия: держать один индексируемый URL (закрыть зеркала), выставить регион в Вебмастере, держать Timeweb-откат на случай будущей блокировки Google/Fastly.
+
+---
+
+## Инфраструктура
+
+| Компонент | Значение |
+|-----------|----------|
+| Хостинг РФ (прод/откат/CMS) | **Timeweb**, shared, `vh464.timeweb.ru`, IP `92.53.96.132`, site ID `9198829`, аккаунт `ca794028` |
+| Хостинг мир (новый основной) | **Firebase Hosting** (Google Cloud + Fastly) |
+| DNS authority | **Cloudflare** (`anahi.ns.cloudflare.com`, `brett.ns.cloudflare.com`), серое облако (DNS only, orange нельзя) |
+| DNS сейчас | `@` → A `199.36.158.100` (Firebase) + TXT `hosting-site=...`; `www` → CNAME `keydesign-studio-xxxxx.web.app` (Firebase) + TXT `hosting-site=...`. Всё **DNS only**, TTL 1 мин / Auto. Timeweb `92.53.96.132` больше не в DNS (только откат) |
+| CF Zone ID | `3deda2169b93891d12e6fdf96463164d` |
+| CF Account ID | `e67e23f319d133c4b26dd2f7deecf9db` |
+| Домен | `keydesign.studio` (регистратор - Cloudflare Registrar, перенос заблокирован) |
+| SSL Timeweb | Let's Encrypt, оба домена |
+| Netlify-зеркало | `peppy-chimera-c97410.netlify.app` (душат в РФ - оставляем только как запас, потом закрыть от индексации) |
+
+### DNS - как менять
+Пользователь правит DNS в панели Cloudflare (dash.cloudflare.com) вручную или через browser MCP. API-токена Cloudflare у модели нет.
+
+### Откат (на Timeweb)
+Оба домена теперь на Firebase. Чтобы вернуть на Timeweb: в Cloudflare `www` - удалить CNAME, добавить A `www → 92.53.96.132`; apex - поменять A на `92.53.96.132` (удалить `199.36.158.100`). DNS only, TTL 1 мин → откат ~1-2 мин. Timeweb-сайт живой. Внимание: откат остановит SSL-провижининг на Firebase.
+
+---
+
+## Деплой (Timeweb - существующий)
+
+Push в `site-clean` → `.github/workflows/deploy.yml`: `prepare-deploy.sh` (build `dist/`) → SFTP на Timeweb (`lftp`).
+- Ручной: `bash prepare-deploy.sh && bash deploy-ru.sh` (SFTP из `deploy.env`).
+- Скрыто на проде: `approach.html`, `partners.html`.
+- **CI-флейк 9 июля:** «job was not acquired by Runner» - инфраструктурный сбой GitHub, перезапустить job (сайт мог уже быть выложен вручную).
+
+### Сборка
+```bash
+python3 build-projects.py --html-only   # HTML из YAML
+python3 build-hero-images.py            # hero + thumbs (macOS sips; mobile hero 1-m.jpg)
+bash prepare-deploy.sh                  # dist/
+python3 bump-assets.py                  # версии (сейчас app.js?v=38, styles.css?v=79)
+```
+
+---
+
+## Форма заявки + Telegram
+
+| Файл | Назначение |
+|------|------------|
+| `brief-config.js` | endpoint `/api/brief.php` |
+| `api/brief.php` | Timeweb: POST → Telegram (secrets в `api/brief-secrets.php`, gitignore) |
+| `netlify/functions/brief.js` | Netlify-зеркало |
+| `functions/index.js` | **Firebase Cloud Function (новый основной)** |
+
+**Бот:** @KeyDesignLeadsBot. **Получатели** (`TELEGRAM_CHAT_ID`): Emin `82721471`, Kristina `1459867475`. Токены в `deploy.env` (gitignore).
+
+---
+
+## Контент / проекты
+
+- 13 проектов, источник правды - `content/projects/*.yaml`, порядок через `sort_order` → `content/site.yaml`.
+- `python3 build-projects.py --html-only` пересобирает HTML + `projects.html` + сетку на главной.
+- Featured на главной: `moscow-studio`, `kvartira-dubay`, `nevskaya-dom`.
+- i18n названий дублировать в `app.js` (`project.N.name` RU + EN).
+- Hero: 6 кадров `assets/hero/1-6.jpg`, мобильный LCP `assets/hero/1-m.jpg`. Preloader только desktop (≥981px).
+
+**Контакты:** г. Новосибирск, ул. Инженерная 7, 3 этаж | `+7 (923) 000-00-36` | `key-des@mail.ru` | TG `@Kristina_Key_des` | IG `@key_design.studio`
+
+---
+
+## Админка / CMS
+
+Decap CMS + OAuth (PHP) на Timeweb (`/admin/`, вход через GitHub). Остаётся на Timeweb. Детали - `ADMIN-HANDOFF.md`.
+
+---
+
+## Git
+
+| Что | Значение |
+|-----|----------|
+| Ветка | `site-clean` |
+| HEAD (prod) | `2752924` Improve mobile PageSpeed |
+| Не коммитить | `deploy.env`, `api/brief-secrets.php`, `oauth/oauth-secrets.php` |
+| Локально не закоммичено | `firebase.json`, `functions/`, обновлённый `.gitignore`, правки `build-projects.py`/`prepare-deploy.sh`, `scripts/setup-gcore-dns.py` (архив), `deploy.env.save`; **новый проект Облака (Орхан):** `content/projects/oblaka-orhan.yaml`, `assets/projects/oblaka-orhan/`, `assets/hero/7.jpg`, правки `sort_order` в 10 yaml, `content/site.yaml`, `app.js`, `index.html`, `key-design-studio.html`, `build-hero-images.py`, сгенерированные `*.html` |
 
 ---
 
 ## Принципы (не ломать)
 
-- Только **короткое тире `-`**, не `—` / `–`
-- Названия вкладок - **`.eyebrow`**
-- «На главную →» на внутренних страницах
-- Главная **без контактов**
-- **Commit / deploy** - только по явной просьбе пользователя
+- Только **короткое тире `-`**, не `—`/`–` (см. `.cursor/rules/copy-typography.mdc`)
+- Названия вкладок меню - `.eyebrow`; «На главную →» на внутренних страницах
+- **Commit / deploy - только по явной просьбе пользователя**
+- Не слать тестовые заявки на prod без просьбы
+- Пользователь любит **пошаговые инструкции блоками** со скринами, пишет «ок»/«готово» между шагами
 
 ---
 
-## Следующие шаги
+## Проверки (копировать)
 
-1. **Commit + push** всей работы по админке (по просьбе пользователя)
-2. **GitHub Actions secrets** - автодеплой после Publish Кристины
-3. **Invite Кристины** (Write) + `docs/kristina-admin.md`
-4. Почистить `assets/contact/office-map.jpg`, мёртвый CSS `.contact-office__map-link`
-5. `.gitignore` для `workers/decap-oauth/node_modules`
+```bash
+# DNS
+dig @8.8.8.8 +short www.keydesign.studio
+# Прод/Firebase заголовки (Fastly = Firebase, nginx = Timeweb)
+curl -sI https://www.keydesign.studio/ | grep -iE 'HTTP|server|x-served-by'
+# Firebase напрямую
+curl -sI https://keydesign-studio-xxxxx.web.app/ | head -3
+# Форма (маршрут)
+curl -s -X POST https://keydesign-studio-xxxxx.web.app/api/brief.php -H 'Content-Type: application/json' -d '{"area":"x"}' -w ' HTTP %{http_code}\n'
+```
 
 ---
 
@@ -142,9 +260,11 @@ python3 bump-assets.py                    # после правок CSS/JS
 
 | Сессия | Тема |
 |--------|------|
-| 3 июля | Контакты, Яндекс-карта, удаление проектов |
-| 7 июля (утро) | План админки |
-| 7 июля (день-вечер) | YAML, Decap, OAuth, упрощение формы, дизайн админки |
+| 20 июля | **Прорыв Firebase**: анализ конкурента (Wix/Google/Fastly), деплой на Firebase (работает везде), форма на Cloud Function, Blaze, начали переезд домена |
+| 15-20 июля | Ресёрч блокировок РКН 2026, цены Bunny CDN, Firebase-гипотеза |
+| 9 июля | Mobile PageSpeed (84→86), deploy rerun, Timeweb тикет (закрыли) |
+| 8-9 июля | Netlify зеркало, матрица доступности VPN |
+| 7-8 июля | Telegram заявки, hero, deploy fix, Decap CMS, OAuth |
 
 ---
 
@@ -152,9 +272,5 @@ python3 bump-assets.py                    # после правок CSS/JS
 
 ```bash
 cd /Users/emin/key-design-studio
-python3 -m http.server 8099
+python3 -m http.server 8099   # http://localhost:8099/
 ```
-
-- Главная: http://localhost:8099/
-- Контакты: http://localhost:8099/contacts.html
-- Админка (без OAuth): раскомментировать `local_backend: true` в `admin/config.yml`, `npx decap-server`

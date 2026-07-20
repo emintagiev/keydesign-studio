@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, Загородный дом, 300 кв
 i18n_cat: project.15.cat
 i18n_name: project.15.name
 published: true
-sort_order: 11
+sort_order: 12
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная

@@ -20,6 +20,7 @@ HERO_SOURCES = [
     ("hero/4.jpg", "projects/kvartira-dubay/kitchen-living/01.jpg", 1400, 68),
     ("hero/5.jpg", "projects/dom-sinegore/kitchen-living/1.jpg", 1400, 68),
     ("hero/6.jpg", "projects/nevskaya-dom/guest-bedroom/2.jpg", 1400, 68),
+    ("hero/7.jpg", "projects/oblaka-orhan/interior/cam_25.jpg", 1400, 68),
 ]
 
 THUMB_SOURCES = [

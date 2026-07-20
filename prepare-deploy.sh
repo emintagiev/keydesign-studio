@@ -11,8 +11,8 @@ else
   echo "Skip build-hero-images: sips not found (Cloudflare/Linux). Using committed assets/hero/."
 fi
 
-python3 bump-assets.py
 python3 build-projects.py --html-only
+python3 bump-assets.py
 
 rm -rf dist
 mkdir -p dist

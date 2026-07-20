@@ -1,0 +1,23 @@
+slug: oblaka-orhan
+title_plain: г. Новосибирск, ЖК Облака, 80 кв.м.
+title_html: г. Новосибирск, ЖК Облака, <em>80 кв.м.</em>
+eyebrow: Квартира · Новосибирск
+lead: ''
+meta:
+  type: Квартира
+  city: Новосибирск
+  area: 80 кв.м.
+  year: '2026'
+description: г. Новосибирск, ЖК Облака, 80 кв.м. - проект Key Design Studio.
+cover: assets/projects/oblaka-orhan/interior/cam_25.jpg
+grid_city: Новосибирск
+carousel_cat: Квартира · Новосибирск · 2026
+carousel_name: г. Новосибирск, ЖК Облака, 80 кв.м.
+i18n_cat: project.16.cat
+i18n_name: project.16.name
+published: true
+sort_order: 4
+rooms:
+- slug: interior
+  name: Интерьер
+  cover_filename: cam_25.jpg

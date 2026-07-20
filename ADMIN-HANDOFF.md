@@ -2,7 +2,7 @@
 
 > В новом чате напиши: **«Прочитай ADMIN-HANDOFF.md и HANDOFF.md, продолжай»**.
 
-**Обновлено:** 7 июля 2026 (вечер)  
+**Обновлено:** 8 июля 2026  
 **Репозиторий:** https://github.com/emintagiev/keydesign-studio  
 **Ветка:** `site-clean`  
 **Прод:** https://www.keydesign.studio/  
@@ -20,7 +20,7 @@
 | Данные в YAML | **13 проектов** в `content/projects/` |
 | Упрощённая форма (4 поля) | **На проде** |
 | Дизайн админки под сайт | **На проде** (`admin/custom.css`) |
-| Автодеплой после Publish | **Нет** - нужны GitHub Actions secrets |
+| Автодеплой после Publish | **Работает** - push в `site-clean` → GitHub Actions → SFTP (~2-5 мин) |
 | Invite Кристины на GitHub | **Не сделано** |
 | `docs/kristina-admin.md` | **Не создано** |
 
@@ -32,9 +32,9 @@
 2. **Войти через GitHub** → разрешить
 3. Редактирует проект → **Publish**
 4. Decap коммитит в GitHub (`content/*.yaml`, фото в `assets/projects/`)
-5. Сайт обновляется после сборки и деплоя (~2-5 мин)
+5. CI собирает `dist/` и заливает на Timeweb (**автоматически**, ~2-5 мин)
 
-**Сейчас шаг 5 вручную:** после Publish нужен деплой (GitHub Actions или `bash deploy-ru.sh`). CI не активирован.
+**Не запускать два деплоя параллельно** - SFTP на Timeweb зависает. В workflow есть `concurrency: cancel-in-progress`.
 
 ---
 
@@ -111,14 +111,13 @@ backend:
 
 ---
 
-## GitHub Actions (заготовка, не активна)
+## GitHub Actions (активен)
 
-`.github/workflows/deploy.yml` - push в `site-clean` → build → SFTP.
+`.github/workflows/deploy.yml` - push в `site-clean` → build → SFTP (lftp, parallel=4, timeout 30 min).
 
-**Нужны secrets в GitHub:**
-- `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_PATH`, `DEPLOY_PASSWORD`, `DEPLOY_METHOD=sftp`
+**Secrets в GitHub** (настроены): `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_PATH`, `DEPLOY_PASSWORD`, `DEPLOY_METHOD`, `DEPLOY_SSH_PORT`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`
 
-Без них Publish Кристины обновит только GitHub, **не прод**.
+Локально дублируются в `deploy.env` (gitignored).
 
 ---
 
@@ -136,23 +135,18 @@ bash prepare-deploy.sh     # только dist/
 
 ## Следующие шаги (приоритет)
 
-### 1. Закоммитить и push (много uncommitted)
-Вся админка, `content/`, `oauth/`, правки `build-projects.py` - **только в рабочей копии и на проде через SFTP**, в git ещё не закоммичено.
-
-### 2. GitHub Actions
-Добавить secrets → после Publish сайт обновляется сам.
-
-### 3. Кристина
+### 1. Кристина
 - [ ] GitHub username Кристины
 - [ ] Invite **Write** на `emintagiev/keydesign-studio`
 - [ ] `docs/kristina-admin.md` - инструкция на 1 страницу (RU)
+- [ ] Убедиться, что написала `/start` боту @KeyDesignLeadsBot (chat_id `1459867475`)
 
-### 4. Доработки по факту использования
+### 2. Доработки по факту использования
 - [ ] Новый проект: как задавать `slug` без латиницы (сейчас hidden, файл = slug)
 - [ ] Загрузка фото в комнаты старых проектов - через «Медиафайлы» или упростить rooms
 - [ ] Проверить relation widget `featured_slugs` после первого Publish Кристины
 
-### 5. Прочее
+### 3. Прочее
 - [ ] Удалить `workers/decap-oauth/node_modules` из репо / добавить в `.gitignore`
 - [ ] Обновить `docs/oauth-setup.md` под PHP-прокси
 
@@ -170,7 +164,7 @@ bash prepare-deploy.sh     # только dist/
 | `oauth/` | GitHub OAuth proxy |
 | `scripts/migrate-projects-to-yaml.py` | Одноразовая миграция (уже выполнена) |
 | `requirements.txt` | PyYAML |
-| `.github/workflows/deploy.yml` | CI (ждёт secrets) |
+| `.github/workflows/deploy.yml` | CI (активен) |
 
 ---
 
@@ -190,5 +184,6 @@ bash prepare-deploy.sh     # только dist/
 | 7 июля (утро) | План Decap, scope, OAuth |
 | 7 июля (день) | YAML миграция, Decap, OAuth PHP, вход на проде |
 | 7 июля (вечер) | Упрощение формы до 4 полей, дизайн админки, логотип KDS |
+| 8 июля | GitHub Actions deploy, Telegram заявки, rename проектов, deploy queue fix |
 
 Транскрипт: `~/.cursor/projects/Users-emin-key-design-studio/agent-transcripts/`

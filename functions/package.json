@@ -1,0 +1,13 @@
+{
+  "name": "keydesign-functions",
+  "description": "Cloud Functions for Key Design Studio brief form",
+  "type": "commonjs",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^6.1.0"
+  },
+  "private": true
+}

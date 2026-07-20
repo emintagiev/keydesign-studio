@@ -16,7 +16,7 @@ carousel_name: г. Новосибирск, ЖК Кедровый, 120 кв.м.
 i18n_cat: project.11.cat
 i18n_name: project.11.name
 published: true
-sort_order: 10
+sort_order: 11
 rooms:
 - slug: kitchen-living
   name: Кухня-гостиная
