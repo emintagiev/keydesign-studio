@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SITE_ORIGIN = "https://www.keydesign.studio"
 DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/hero/1.jpg"
+YANDEX_VERIFICATION = "b31dd3613bec3f68"
 
 STATIC_PAGES: dict[str, dict[str, str]] = {
     "/": {
@@ -97,8 +98,14 @@ def seo_block(
     canonical = page_url(canonical_path)
     image = absolute_asset(og_image or DEFAULT_OG_IMAGE)
     robots = '  <meta name="robots" content="noindex, nofollow" />\n' if noindex else ""
+    yandex = (
+        f'  <meta name="yandex-verification" content="{html.escape(YANDEX_VERIFICATION, quote=True)}" />\n'
+        if YANDEX_VERIFICATION
+        else ""
+    )
     return (
         f'{robots}'
+        f'{yandex}'
         f'  <link rel="canonical" href="{html.escape(canonical, quote=True)}" />\n'
         f'  <meta property="og:type" content="website" />\n'
         f'  <meta property="og:site_name" content="Key Design Studio" />\n'
@@ -115,7 +122,7 @@ def seo_block(
 
 
 SEO_TAG_RE = re.compile(
-    r"\n?\s*(?:<link rel=\"canonical\"|<meta name=\"robots\"|<meta property=\"og:|<meta name=\"twitter:)[^\n]*\n?",
+    r"\n?\s*(?:<link rel=\"canonical\"|<meta name=\"robots\"|<meta name=\"yandex-verification\"|<meta property=\"og:|<meta name=\"twitter:)[^\n]*\n?",
     re.IGNORECASE,
 )
 
