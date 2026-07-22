@@ -600,7 +600,7 @@ def generate_projects_page(projects: list[dict]):
 <head>
 {JS_BOOTSTRAP}  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Проекты Key Design Studio - жилые и коммерческие интерьеры в Москве и Санкт-Петербурге." />
+  <meta name="description" content="Проекты Key Design Studio - жилые и коммерческие интерьеры в Новосибирске, Москве и других городах." />
   <meta name="theme-color" content="#f4efe7" />
   <title>Проекты - Key Design Studio</title>
 

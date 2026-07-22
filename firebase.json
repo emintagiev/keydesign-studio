@@ -11,6 +11,18 @@
       "admin/**",
       "oauth/**"
     ],
+    "redirects": [
+      {
+        "source": "/key-design-studio",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/key-design-studio.html",
+        "destination": "/",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "/api/brief.php",

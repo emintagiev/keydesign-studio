@@ -12,6 +12,7 @@ else
 fi
 
 python3 build-projects.py --html-only
+python3 build-seo.py
 python3 bump-assets.py
 
 rm -rf dist
@@ -37,6 +38,14 @@ for f in *.css *.js; do
     cp "$f" dist/
   fi
 done
+
+if [[ -f sitemap.xml ]]; then
+  cp sitemap.xml dist/
+fi
+
+if [[ -f robots.txt ]]; then
+  cp robots.txt dist/
+fi
 
 if [[ -f _redirects ]]; then
   cp _redirects dist/

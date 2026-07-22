@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /oauth/
+Disallow: /api/
+
+Sitemap: https://www.keydesign.studio/sitemap.xml
