@@ -9,7 +9,6 @@ from pathlib import Path
 import yaml
 
 from seo import (
-    PROD_HIDDEN,
     STATIC_PAGES,
     inject_seo,
     page_url,
@@ -109,25 +108,12 @@ def patch_project_pages(projects: list[dict]) -> int:
     return changed
 
 
-def patch_hidden_pages() -> None:
-    for filename in PROD_HIDDEN:
-        file_path = ROOT / filename
-        if not file_path.exists():
-            continue
-        title = "Подход" if filename == "approach.html" else "Партнёры"
-        updated = inject_seo(
-            file_path.read_text(encoding="utf-8"),
-            canonical_path=f"/{filename.replace('.html', '')}",
-            title=f"{title} - Key Design Studio",
-            description=f"{title} Key Design Studio.",
-            noindex=True,
-        )
-        file_path.write_text(updated, encoding="utf-8")
-        print(f"  seo: {filename} (noindex)")
-
-
 def collect_sitemap_urls(projects: list[dict]) -> list[str]:
-    urls = [page_url(path) for path in STATIC_PAGES if STATIC_PAGES[path]["file"] not in PROD_HIDDEN | {"key-design-studio.html"}]
+    urls = [
+        page_url(path)
+        for path in STATIC_PAGES
+        if STATIC_PAGES[path]["file"] != "key-design-studio.html"
+    ]
     urls.extend(page_url(project["path"]) for project in projects)
     # Stable order: home first, then static, then projects
     home = page_url("/")
@@ -142,7 +128,6 @@ def main() -> int:
     patch_static_pages()
     patch_key_design_studio()
     patch_project_pages(projects)
-    patch_hidden_pages()
 
     print("SEO files:")
     write_robots(ROOT / "robots.txt")

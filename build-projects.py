@@ -29,8 +29,6 @@ HEADER = """  <header class="header" id="header">
         <a class="nav__link" href="/about" data-i18n="nav.about">О студии</a>
         <a class="nav__link" href="/projects" data-i18n="nav.projects">Проекты</a>
         <a class="nav__link" href="/services" data-i18n="nav.services">Услуги</a>
-        <a class="nav__link" href="/approach" data-i18n="nav.approach">Подход</a>
-        <a class="nav__link" href="/partners" data-i18n="nav.partners">Партнёры</a>
         <a class="nav__link" href="/contacts" data-i18n="nav.contact">Контакты</a>
       </nav>
 
@@ -569,7 +567,7 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
     grid_html = "\n".join(cards)
     pattern = r'(<div class="proj-grid reveal">)\s*.*?\s*(</div>)'
 
-    for page in ("key-design-studio.html", "index.html"):
+    for page in ("key-design-studio.html",):
         path = ROOT / page
         if not path.exists():
             continue
@@ -724,95 +722,7 @@ def generate_info_pages():
       </div>''',
     )
     (ROOT / "about.html").write_text(about, encoding="utf-8")
-
-    approach = _page_shell(
-        "Подход",
-        "Как мы работаем - Key Design Studio.",
-        '''      <div class="section-head reveal">
-        <div>
-          <h1 class="eyebrow" data-i18n="nav.approach">Подход</h1>
-          <h2 class="section-head__subtitle" data-i18n="approach.title">Как мы работаем</h2>
-        </div>
-''' + HOME_LINK + '''
-      </div>
-      <div class="approach__grid reveal">
-        <div class="step">
-          <span class="step__num">01</span>
-          <h2 class="step__title" data-i18n="step.1.title">Знакомство и бриф</h2>
-          <p class="step__text" data-i18n="step.1.text">
-            Изучаем образ жизни, задачи и характер пространства, формируем общее видение.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">02</span>
-          <h2 class="step__title" data-i18n="step.2.title">Концепция</h2>
-          <p class="step__text" data-i18n="step.2.text">
-            Предлагаем планировочные решения, палитру материалов и атмосферу интерьера.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">03</span>
-          <h2 class="step__title" data-i18n="step.3.title">Проект и детали</h2>
-          <p class="step__text" data-i18n="step.3.text">
-            Разрабатываем рабочую документацию, подбираем мебель, свет и отделку.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step__num">04</span>
-          <h2 class="step__title" data-i18n="step.4.title">Реализация</h2>
-          <p class="step__text" data-i18n="step.4.text">
-            Ведём проект на площадке и контролируем качество вплоть до финального стайлинга.
-          </p>
-        </div>
-      </div>''',
-    )
-    (ROOT / "approach.html").write_text(approach, encoding="utf-8")
-
-    partners = _page_shell(
-        "Партнёры",
-        "Материалы и партнёры Key Design Studio.",
-        '''      <div class="section-head reveal">
-        <div>
-          <h1 class="eyebrow" data-i18n="nav.partners">Партнёры</h1>
-        </div>
-''' + HOME_LINK + '''
-      </div>
-      <p class="lead reveal" style="max-width: 34ch; margin-bottom: var(--sp-5)" data-i18n="partners.text">
-          Проверенные поставщики мебели, камня, света и отделочных материалов.
-        </p>
-      </div>
-      <div class="partners__index reveal" aria-label="Партнёры и поставщики">
-        <div class="pcat">
-          <p class="pcat__label" data-i18n="partners.cat1">Мебель</p>
-          <ul class="pcat__list">
-            <li>Atelier</li><li>Forma</li><li>Casa</li><li>Lignum</li>
-          </ul>
-        </div>
-        <div class="pcat">
-          <p class="pcat__label" data-i18n="partners.cat2">Камень и поверхности</p>
-          <ul class="pcat__list">
-            <li>Pietra</li><li>Marmo</li><li>Terra</li>
-          </ul>
-        </div>
-        <div class="pcat">
-          <p class="pcat__label" data-i18n="partners.cat3">Свет</p>
-          <ul class="pcat__list">
-            <li>Lumen</li><li>Volta</li><li>Sole</li>
-          </ul>
-        </div>
-        <div class="pcat">
-          <p class="pcat__label" data-i18n="partners.cat4">Текстиль и декор</p>
-          <ul class="pcat__list">
-            <li>Norda</li><li>Studio Ferro</li>
-          </ul>
-        </div>
-      </div>
-      <p class="partners__note reveal" data-i18n="partners.note">
-        Финальный список партнёров формируется индивидуально под задачи каждого проекта.
-      </p>''',
-    )
-    (ROOT / "partners.html").write_text(partners, encoding="utf-8")
-    print("  → about.html, approach.html, partners.html")
+    print("  → about.html")
 
 
 def main():

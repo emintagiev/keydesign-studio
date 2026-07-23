@@ -64,7 +64,6 @@ exports.handler = async (event) => {
   }
 
   const area = clean(data.area, 80);
-  const style = clean(data.style, 80);
   const timeline = clean(data.timeline, 80);
   const name = clean(data.name, 120);
   const phone = clean(data.phone, 40);
@@ -78,7 +77,6 @@ exports.handler = async (event) => {
     'Новая заявка с сайта Key Design Studio',
     '',
     `Метраж: ${area || '-'}`,
-    `Направление: ${style || '-'}`,
     `Сроки: ${timeline || '-'}`,
     `Имя: ${name}`,
     `Телефон: ${phone}`,

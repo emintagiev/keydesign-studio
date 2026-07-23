@@ -21,6 +21,26 @@
         "source": "/key-design-studio.html",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "/approach",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/approach.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/partners",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/partners.html",
+        "destination": "/",
+        "type": 301
       }
     ],
     "rewrites": [

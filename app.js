@@ -155,8 +155,6 @@
           "nav.about": "О студии",
           "nav.projects": "Проекты",
           "nav.services": "Услуги",
-          "nav.approach": "Подход",
-          "nav.partners": "Партнёры",
           "nav.contact": "Контакты",
           "nav.home": "На главную",
           "hero.eyebrow": "Москва - Санкт-Петербург",
@@ -168,7 +166,7 @@
           "hero.stat1": "лет практики",
           "hero.stat2": "реализованных интерьеров",
           "hero.stat3": "города присутствия",
-          "hero.scroll": "Проекты",
+          "hero.scroll": "О студии",
           "about.label": "О студии",
           "about.p1":
             "Всё началось с искренней любви к пространству и желания создавать то, что остаётся с людьми надолго.",
@@ -233,30 +231,6 @@
           "project.16.cat": "Квартира · Новосибирск · 2026",
           "project.16.name": "г. Новосибирск, ЖК Облака, 80 кв.м.",
           "project.16.desc": "",
-          "approach.label": "Подход",
-          "approach.title": "Как мы работаем",
-          "step.1.title": "Знакомство и бриф",
-          "step.1.text":
-            "Изучаем образ жизни, задачи и характер пространства, формируем общее видение.",
-          "step.2.title": "Концепция",
-          "step.2.text":
-            "Предлагаем планировочные решения, палитру материалов и атмосферу интерьера.",
-          "step.3.title": "Проект и детали",
-          "step.3.text":
-            "Разрабатываем рабочую документацию, подбираем мебель, свет и отделку.",
-          "step.4.title": "Реализация",
-          "step.4.text":
-            "Ведём проект на площадке и контролируем качество вплоть до финального стайлинга.",
-          "partners.label": "Материалы и партнёры",
-          "partners.title": "С кем мы работаем",
-          "partners.text":
-            "Проверенные поставщики мебели, камня, света и отделочных материалов.",
-          "partners.cat1": "Мебель",
-          "partners.cat2": "Камень и поверхности",
-          "partners.cat3": "Свет",
-          "partners.cat4": "Текстиль и декор",
-          "partners.note":
-            "Финальный список партнёров формируется индивидуально под задачи каждого проекта.",
           "contact.label": "Контакты",
           "contact.title": "Обсудим ваш проект",
           "contact.text":
@@ -279,7 +253,6 @@
           "brief.consentLink": "политикой конфиденциальности",
           "brief.title": "Заявка на проект",
           "brief.q1": "Какой метраж пространства мы будем проектировать?",
-          "brief.q2": "Какое направление интерьера вам ближе?",
           "brief.q3": "Когда планируете приступить к работам?",
           "brief.q4": "Как с вами связаться?",
           "brief.a1.1": "До 60 м²",
@@ -288,12 +261,6 @@
           "brief.a1.4": "200-500 м²",
           "brief.a1.5": "500-1000 м²",
           "brief.a1.6": "Больше 1000 м²",
-          "brief.a2.1": "Классический",
-          "brief.a2.2": "Ар-деко",
-          "brief.a2.3": "Минимализм",
-          "brief.a2.4": "Современный",
-          "brief.a2.5": "Эклектика",
-          "brief.a2.6": "Пока выбираю",
           "brief.a3.1": "Уже готов(а) начать",
           "brief.a3.2": "В течение полугода",
           "brief.a3.3": "В течение года",
@@ -374,8 +341,6 @@
           "nav.about": "About",
           "nav.projects": "Projects",
           "nav.services": "Services",
-          "nav.approach": "Approach",
-          "nav.partners": "Partners",
           "nav.contact": "Contact",
           "nav.home": "Home",
           "hero.eyebrow": "Moscow - Saint Petersburg",
@@ -387,7 +352,7 @@
           "hero.stat1": "years of practice",
           "hero.stat2": "interiors delivered",
           "hero.stat3": "cities",
-          "hero.scroll": "Projects",
+          "hero.scroll": "About",
           "about.label": "About the studio",
           "about.p1":
             "It started with a genuine love of space and a wish to create interiors that stay with people for years.",
@@ -452,30 +417,6 @@
           "project.16.cat": "Apartment · Novosibirsk · 2026",
           "project.16.name": "Novosibirsk, Oblaka Residence, 80 sq.m.",
           "project.16.desc": "",
-          "approach.label": "Approach",
-          "approach.title": "How we work",
-          "step.1.title": "Intro & brief",
-          "step.1.text":
-            "We study your lifestyle, goals and the character of the space to shape a shared vision.",
-          "step.2.title": "Concept",
-          "step.2.text":
-            "We propose layouts, a material palette and the overall atmosphere of the interior.",
-          "step.3.title": "Design & detail",
-          "step.3.text":
-            "We develop working documentation and select furniture, lighting and finishes.",
-          "step.4.title": "Delivery",
-          "step.4.text":
-            "We lead the project on site and control quality down to the final styling.",
-          "partners.label": "Materials & partners",
-          "partners.title": "Who we work with",
-          "partners.text":
-            "Trusted suppliers of furniture, stone, lighting and finishing materials.",
-          "partners.cat1": "Furniture",
-          "partners.cat2": "Stone & surfaces",
-          "partners.cat3": "Lighting",
-          "partners.cat4": "Textile & decor",
-          "partners.note":
-            "The final list of partners is curated individually for each project.",
           "contact.label": "Contact",
           "contact.title": "Let's discuss your project",
           "contact.text":
@@ -498,7 +439,6 @@
           "brief.consentLink": "privacy policy",
           "brief.title": "Project inquiry",
           "brief.q1": "What is the area we will be designing?",
-          "brief.q2": "Which interior direction feels closest to you?",
           "brief.q3": "When are you planning to start work?",
           "brief.q4": "How can we reach you?",
           "brief.a1.1": "Up to 60 m²",
@@ -507,12 +447,6 @@
           "brief.a1.4": "200-500 m²",
           "brief.a1.5": "500-1000 m²",
           "brief.a1.6": "Over 1000 m²",
-          "brief.a2.1": "Classic",
-          "brief.a2.2": "Art Deco",
-          "brief.a2.3": "Minimalism",
-          "brief.a2.4": "Modern",
-          "brief.a2.5": "Eclectic",
-          "brief.a2.6": "Still exploring",
           "brief.a3.1": "Ready to start now",
           "brief.a3.2": "Within six months",
           "brief.a3.3": "Within a year",
@@ -739,24 +673,26 @@
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
 
-      document.querySelectorAll('a[href="#projects"]').forEach(function (link) {
-        link.addEventListener("click", function (e) {
-          if (!document.getElementById("projects")) return;
-          e.preventDefault();
-          scrollToHashTarget("projects", "smooth");
-          if (history.replaceState) {
-            history.replaceState(null, "", "#projects");
-          } else {
-            location.hash = "projects";
-          }
+      ["about", "projects"].forEach(function (hashId) {
+        document.querySelectorAll('a[href="#' + hashId + '"]').forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            if (!document.getElementById(hashId)) return;
+            e.preventDefault();
+            scrollToHashTarget(hashId, "smooth");
+            if (history.replaceState) {
+              history.replaceState(null, "", "#" + hashId);
+            } else {
+              location.hash = hashId;
+            }
+          });
         });
-      });
 
-      if (location.hash === "#projects" && document.getElementById("projects")) {
-        requestAnimationFrame(function () {
-          scrollToHashTarget("projects", "auto");
-        });
-      }
+        if (location.hash === "#" + hashId && document.getElementById(hashId)) {
+          requestAnimationFrame(function () {
+            scrollToHashTarget(hashId, "auto");
+          });
+        }
+      });
 
       /* ---------- Hero slideshow (homepage) ---------- */
       var heroScene = document.querySelector(".hero__scene");
@@ -1028,7 +964,7 @@
         var briefNext = briefRoot.querySelector("[data-brief-next]");
         var briefNextLabel = briefRoot.querySelector("[data-brief-next-label]");
         var briefStep = 1;
-        var briefTotalQuiz = 3;
+        var briefTotalQuiz = 2;
 
         if (briefForm && !briefForm.querySelector('input[name="company"]')) {
           var briefHoneypot = document.createElement("input");
@@ -1051,12 +987,9 @@
             return !!briefForm.querySelector('input[name="area"]:checked');
           }
           if (briefStep === 2) {
-            return !!briefForm.querySelector('input[name="style"]:checked');
-          }
-          if (briefStep === 3) {
             return !!briefForm.querySelector('input[name="timeline"]:checked');
           }
-          if (briefStep === 4) {
+          if (briefStep === 3) {
             var name = briefForm.querySelector('input[name="name"]');
             var phone = briefForm.querySelector('input[name="phone"]');
             var consent = briefForm.querySelector('input[name="consent"]');
@@ -1081,7 +1014,7 @@
           });
 
           if (briefCounter) {
-            briefCounter.hidden = briefStep > briefTotalQuiz || briefStep === 5;
+            briefCounter.hidden = briefStep > briefTotalQuiz || briefStep === 4;
             if (briefStep <= briefTotalQuiz) {
               briefCounter.textContent = briefStep + " / " + briefTotalQuiz;
             }
@@ -1092,19 +1025,19 @@
             briefProgress.style.width = pct + "%";
           }
 
-          if (briefFoot) briefFoot.hidden = briefStep === 5;
-          if (briefBack) briefBack.disabled = briefStep <= 1 || briefStep === 5;
+          if (briefFoot) briefFoot.hidden = briefStep === 4;
+          if (briefBack) briefBack.disabled = briefStep <= 1 || briefStep === 4;
 
           var dict = briefDict();
           if (briefNextLabel) {
-            if (briefStep === 3) briefNextLabel.textContent = dict["brief.fillData"];
-            else if (briefStep === 4) briefNextLabel.textContent = dict["brief.submit"];
+            if (briefStep === 2) briefNextLabel.textContent = dict["brief.fillData"];
+            else if (briefStep === 3) briefNextLabel.textContent = dict["brief.submit"];
             else briefNextLabel.textContent = dict["brief.next"];
           }
 
           if (briefNext) {
             briefNext.disabled = !briefCanAdvance();
-            briefNext.type = briefStep === 4 ? "submit" : "button";
+            briefNext.type = briefStep === 3 ? "submit" : "button";
           }
         }
 
@@ -1141,7 +1074,6 @@
             "Заявка - Key Design Studio",
             "",
             "Метраж: " + payload.area,
-            "Направление: " + payload.style,
             "Сроки: " + payload.timeline,
             "Имя: " + payload.name,
             "Телефон: " + payload.phone
@@ -1157,13 +1089,12 @@
         }
 
         function briefShowDone() {
-          briefStep = 5;
+          briefStep = 4;
           briefUpdateUi();
         }
 
         function briefSubmit() {
           var area = briefForm.querySelector('input[name="area"]:checked');
-          var style = briefForm.querySelector('input[name="style"]:checked');
           var timeline = briefForm.querySelector('input[name="timeline"]:checked');
           var name = briefForm.querySelector('input[name="name"]');
           var phone = briefForm.querySelector('input[name="phone"]');
@@ -1179,7 +1110,6 @@
 
           var payload = {
             area: area ? area.value : "",
-            style: style ? style.value : "",
             timeline: timeline ? timeline.value : "",
             name: name.value.trim(),
             phone: phone.value.trim(),
@@ -1232,7 +1162,7 @@
 
         if (briefBack) {
           briefBack.addEventListener("click", function () {
-            if (briefStep > 1 && briefStep < 5) {
+            if (briefStep > 1 && briefStep < 4) {
               briefStep -= 1;
               briefUpdateUi();
             }
@@ -1242,7 +1172,7 @@
         if (briefNext) {
           briefNext.addEventListener("click", function () {
             if (briefNext.disabled) return;
-            if (briefStep < 4) {
+            if (briefStep < 3) {
               briefStep += 1;
               briefUpdateUi();
             }
@@ -1263,7 +1193,7 @@
 
         briefForm.addEventListener("submit", function (e) {
           e.preventDefault();
-          if (briefStep === 4) briefSubmit();
+          if (briefStep === 3) briefSubmit();
         });
 
         document.addEventListener("keydown", function (e) {

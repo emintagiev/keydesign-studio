@@ -2,16 +2,90 @@
 
 > В новом чате напиши: **«Прочитай HANDOFF.md»**.
 
-**Обновлено:** 20 июля 2026  
-**Прод (пока):** https://www.keydesign.studio/ (Timeweb)  
-**Firebase (новый, работает везде):** https://keydesign-studio-xxxxx.web.app/  
+**Обновлено:** 23 июля 2026  
+**Прод:** https://www.keydesign.studio/ (Firebase Hosting + Fastly)  
+**Firebase:** https://keydesign-studio-xxxxx.web.app/  
 **Репозиторий:** https://github.com/emintagiev/keydesign-studio (ветка `site-clean`)
 
 ---
 
 ## ТЕКУЩИЙ ШАГ (выдать пользователю сразу после прочтения HANDOFF)
 
-### ✅ ПЕРЕЕЗД ДОМЕНА НА FIREBASE ЗАВЕРШЁН (20 июля)
+> **Сейчас: правки по сайту.** Работа по рекламе/SEO **на паузе** - зафиксирована ниже, вернёмся после правок.
+
+Пользователь попросил внести изменения на сайте. Рекламу и Яндекс **не продолжаем**, пока не закончим правки. В новом чате: опиши правки по сайту; когда готов вернуться к рекламе - напиши **«продолжаем рекламу»** или **«прочитай HANDOFF, блок реклама»**.
+
+**Правило работы с пользователем по рекламе:** только **step-by-step**, **один шаг за раз**, без длинных списков «сделайте всё сразу». Ждём «готово»/«ок» между шагами.
+
+---
+
+## 🚧 ПАУЗА: реклама и SEO (23 июля) - вернуться после правок сайта
+
+### Стратегия (0 ₽ на старте)
+
+- **Instagram** - основной канал (уже работает). Сайт = точка доверия + портфолио + форма.
+- **SEO** - долгая база, бесплатный трафик через 2-6 мес.
+- **Яндекс.Вебмастер + карты** - бесплатно, важнее Директа на старте.
+- **Яндекс Директ** (30-80 тыс ₽/мес) - **отложен**, бюджета нет.
+- **Регион в Вебмастере** - один на сайт (Новосибирская область); Москва идёт через **контент проектов**, не второй регион.
+
+### ✅ Сделано на сайте (код, задеплоено)
+
+Коммиты `2b2f35a`, `cf30200` (+ hero/обложки раньше).
+
+| Что | Детали |
+|-----|--------|
+| `robots.txt` | https://www.keydesign.studio/robots.txt - Allow /, Disallow admin/oauth/api |
+| `sitemap.xml` | 20 URL (главная, about/projects/services/contacts/privacy + 14 проектов) |
+| `canonical` + **Open Graph** | на всех страницах через `seo.py` + `build-seo.py` |
+| Meta **yandex-verification** | `b31dd3613bec3f68` на всех страницах (`seo.py` → `YANDEX_VERIFICATION`) |
+| Тексты description | акцент **Новосибирск** (+ Москва, Дубай в проектах) |
+| Редирект | `/key-design-studio` → `/` (301 в `firebase.json`) |
+| noindex | `key-design-studio.html`, `approach.html`, `partners.html` |
+| Сборка | `prepare-deploy.sh` вызывает `build-seo.py` после `build-projects.py` |
+
+Файлы: `seo.py`, `build-seo.py`, `robots.txt`, `sitemap.xml`.
+
+### ✅ Яндекс.Вебмастер (пользователь)
+
+| Шаг | Статус |
+|-----|--------|
+| Сайт добавлен | `https://www.keydesign.studio` ✅ |
+| Подтверждение прав | **Meta-тег** (DNS TXT на `www` **не работает** - см. урок ниже) ✅ |
+| Регион | **Новосибирская область**, ссылка-подтверждение `https://www.keydesign.studio/contacts` - **заявка на модерации до 7 дней** (23 июля) ⏳ |
+| Sitemap | добавить/проверить в Вебмастере: `https://www.keydesign.studio/sitemap.xml` |
+| Главное зеркало | должно быть `https://www.keydesign.studio` |
+
+**Урок: DNS-верификация на `www` не работает** при CNAME `www → *.web.app` (Firebase). Яндекс DNS резолвит CNAME и **не видит** TXT в Cloudflare на `www`. Решение: **meta-тег** (уже на сайте). TXT на `@` и `www` в Cloudflare можно оставить - не мешают.
+
+### ⏸ Следующий шаг рекламы (когда вернёмся)
+
+**Шаг 1 (текущий незавершённый):** Яндекс Бизнес / карточка организации - поле «Чем занимаетесь и чем выделяетесь». Черновик текста согласован частично, **ещё не вставлен**:
+
+```
+Key Design Studio - авторская студия интерьерного дизайна в Новосибирске. Проектируем квартиры, дома и коммерческие пространства: от планировки и 3D-визуализации до рабочих чертежей, комплектации и авторского надзора. Выверяем свет, материалы и каждую деталь - интерьер для жизни, а не только для фото. Слушаем задачу клиента и ведём проект до результата, близкого к визуализации. В портфолио - реализованные объекты в Новосибирске, Москве и других городах.
+```
+
+Короткий вариант (если лимит символов):
+
+```
+Авторский дизайн интерьера в Новосибирске: квартиры, дома, коммерция. Полный цикл - проект, 3D, чертежи, комплектация, надзор. Продуманный свет и материалы, сопровождение до готового интерьера.
+```
+
+**Дальше по очереди (не выдавать все сразу):** 2GIS → Google Search Console → Instagram-ссылки на проекты → тексты к проектам для SEO.
+
+### Ожидания по срокам (0 ₽)
+
+| Срок | Что |
+|------|-----|
+| 1-2 нед | индексация страниц после sitemap |
+| до 7 дней | одобрение региона в Вебмастере |
+| 2-4 нед | первые показы в «Поисковые запросы» |
+| 3-6 мес | локальные запросы «дизайн интерьера новосибирск» |
+
+---
+
+## ✅ ПЕРЕЕЗД ДОМЕНА НА FIREBASE (20 июля)
 
 - **`www.keydesign.studio`** → Firebase, **Connected**, сертификат `CN=www.keydesign.studio` активен. Проверено вживую: **работает везде (РФ без VPN + Instagram)** ✅
 - **apex `keydesign.studio`** → Firebase, `HOST_ACTIVE`, сертификат `CN=keydesign.studio` выпущен (был `CERT_PROPAGATING` в конце сессии - к моменту чтения уже активен).
@@ -23,37 +97,12 @@
 - `keydesign.studio` → A `199.36.158.100` (Firebase) + TXT `hosting-site=keydesign-studio-xxxxx`
 - `www.keydesign.studio` → CNAME `keydesign-studio-xxxxx.web.app` (Firebase) + TXT `hosting-site=keydesign-studio-xxxxx`
 
-**Осталось (после переезда, по приоритету):**
-1. Проверить apex `https://keydesign.studio/` вживую; решить apex serve-контент vs 301→www (сейчас apex отдаёт тот же сайт, что и www; canonical у нас = www).
-2. Закрыть от индексации зеркала `keydesign-studio-xxxxx.web.app` и Netlify (noindex/robots).
-3. CI: добавить `firebase deploy` в GitHub Actions.
-4. Живой тест формы в Telegram.
+## ✅ ГОТОВО: проект «г. Новосибирск, ЖК Облака, 80 кв.м.» + правки (20-22 июля)
 
-**Правило (усвоено дорогой ценой):** перед внесением DNS всегда сверяться с `requiredDnsUpdates.desired` из Hosting API. Поддомены - CNAME, apex - A-записи, всё DNS only. Verify не долбить (rate limit Let's Encrypt 5 фейлов/час).
-
----
-
-## ✅ ГОТОВО: новый проект «г. Новосибирск, ЖК Облака, 80 кв.м.» (задеплоен 20 июля)
-
-Слаг `oblaka-orhan`, 4-й по порядку, обложка `cam_25`. Название/мета заполнены (Квартира · Новосибирск · 2026, 80 кв.м.), i18n `project.16` RU/EN. cam_25 в hero-карусель (`assets/hero/7.jpg`). **Закоммичено** (`62a12e1`, вместе с firebase.json/functions), запушено в `site-clean` (Timeweb CI), **задеплоено на Firebase**. Проверено на проде: `https://www.keydesign.studio/oblaka-orhan` - 200, Fastly.
-
-**Фото галереи - в полном размере оригиналов (1700px), НЕ оптимизировались** (исходники в папке «Облака (Орхан)» изначально 1700px, у других проектов исходники были ~2200px → в репо 1920px; это не «урезание», а предел исходников Облака). Если появятся рендеры в большем разрешении - заменить файлы в `assets/projects/oblaka-orhan/interior/` и пересобрать.
-
-Историческая справка (первоначальная постановка): добавить проект 4-м, обложка cam_25, cam_25 в hero-карусель.
-
-**Что уже сделано (собрано локально, `python3 build-projects.py --html-only` отработал):**
-- Слаг **`oblaka-orhan`**. Фото скопированы из `~/Desktop/key design/Облака (Орхан)/` в `assets/projects/oblaka-orhan/interior/` (9 шт: cam_12/24/25/27/31/32/33/34/37).
-- `content/projects/oblaka-orhan.yaml` создан (single-gallery, room `interior`, cover `cam_25.jpg`, `sort_order: 4`, i18n `project.16`).
-- **Порядок 4-м:** пересчитаны `sort_order` у 10 проектов (salok..little-classic сдвинуты 4→5 … 13→14); `content/site.yaml` `projects_order` - `oblaka-orhan` на 4-й позиции. Проверено в `projects.html` - стоит 4-м ✅
-- **i18n** в `app.js`: добавлены `project.16.cat/name/desc` (RU: «Облака (Орхан)», EN: «Oblaka (Orhan)»).
-- **Hero-карусель:** cam_25 → `assets/hero/7.jpg` (sips 1400px q68); добавлен 7-й `hero__slide data-hero-bg="assets/hero/7.jpg"` в `index.html` и `key-design-studio.html`; entry добавлен в `build-hero-images.py`.
-- Локальный сервер: `python3 -m http.server 8099` (в корне репо). Страницы: `/oblaka-orhan.html`, `/projects.html`, `/` - отдают 200. (Локально clean URL без `.html` не работают - это норма для http.server, на проде ок.)
-
-**❗ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ / ДОДЕЛАТЬ:**
-- **Метаданные проекта пустые** - нужны: тип (квартира/дом/…), город, площадь (кв.м.), год. Сейчас в yaml `meta` пустые, `eyebrow: ''`, `title_plain: 'Облака (Орхан)'`. Заполнить `title_plain`, `meta`, `eyebrow`, и i18n `project.16.name` (RU/EN) под реальные данные, затем пересобрать.
-- Уточнить порядок фото в галерее и правильную обложку (сейчас cover=cam_25, порядок - натуральная сортировка имён).
-- Изображения НЕ оптимизированы (оригиналы 300-670 КБ) - прогнать `optimize-images.py` / пережать перед деплоем.
-- После апрува: commit + deploy (Timeweb через `prepare-deploy.sh`/CI + Firebase `firebase deploy --only hosting`), не забыть `bump-assets.py` для версий `app.js`/`styles.css`.
+- Слаг `oblaka-orhan`, 4-й в списке, обложка `cam_25`, hero `7.jpg` в карусели.
+- Hero-карусель переставлена: 1-й - гостиная (kedrovy), 7-й - спальня с балдахином (moscow-studio). Маппинг в `build-hero-images.py`.
+- ЖК Архитектор: обложка `IMG_4801.JPG` (зелёные диваны).
+- Все задеплоено на Firebase.
 
 ---
 
@@ -99,12 +148,9 @@ Cloudflare proxy (душат в РФ), Netlify (душат в РФ без VPN), 
 - Деплой: `firebase deploy --only hosting --project keydesign-studio-xxxxx` (или `functions,hosting`).
 - Деплой требует подтверждения пользователя (Auto-review) - повторять вызов с request_smart_mode_approval.
 
-### Конфиг-файлы (локально, НЕ закоммичены)
-- `firebase.json` - hosting: `public: dist`, `cleanUrls: true`, ignore `api/**` `admin/**` `oauth/**`, rewrite `/api/brief.php` → функция `brief` (с явным `region: us-central1`, `pinTag: true` - без региона rewrite давал 404!).
-- `functions/index.js` - порт логики `api/brief.php` / `netlify/functions/brief.js` (honeypot `company`, валидация name+phone, отправка в Telegram всем chat_id). Node 20, глобальный `fetch`.
-- `functions/package.json` - `firebase-functions` ^6.
-- `.gitignore` - добавлены `functions/node_modules/`, `.firebase/`, `firebase-debug.log`, `*-debug.log`.
-- Эти файлы можно коммитить (секретов в них нет), но пока не коммитили - **commit/deploy только по просьбе**.
+### Конфиг-файлы (в репо)
+- `firebase.json`, `functions/` - **закоммичены** (`62a12e1` и далее).
+- `seo.py`, `build-seo.py`, `robots.txt`, `sitemap.xml` - **закоммичены** (`2b2f35a`, `cf30200`).
 
 ### Статус формы
 - Маршрут проверен: `POST /api/brief.php` без name/phone → `422 validation`; honeypot `company` → `200 ok` (без отправки). Функция напрямую (`https://us-central1-keydesign-studio-xxxxx.cloudfunctions.net/brief`) отвечает.
@@ -138,17 +184,12 @@ curl -s -H "Authorization: Bearer $TOKEN" \
 
 ---
 
-## План после переключения домена (по приоритету)
+## План инфраструктуры (не срочно)
 
-1. **Домен** (текущий шаг, см. вверху) - `www` + apex на Firebase, `admin.` на Timeweb.
-2. **Проверка** в РФ без VPN + Instagram.
-3. **Закрыть от индексации** тестовый `keydesign-studio-xxxxx.web.app` и Netlify-зеркало `peppy-chimera-c97410.netlify.app` (SEO: чтобы не было дублей; canonical уже указывает на www, добавить noindex/robots на зеркалах).
-4. **CI на Firebase** - добавить в `.github/workflows/deploy.yml` шаг `firebase deploy` (нужен CI-токен/service account в GitHub Secrets), чтобы push в `site-clean` деплоил и на Timeweb (админка), и на Firebase.
-5. **Форма** - живой тест доставки в Telegram.
-6. **HANDOFF/доки** обновить под финальную схему.
-
-### SEO-замечание (на будущее, скоро займёмся)
-Переезд на Firebase для Яндекса нейтрально-положителен: «российскость» задаётся регионом в Яндекс.Вебмастере, а не сервером; скорость (Fastly) выше Timeweb. Условия: держать один индексируемый URL (закрыть зеркала), выставить регион в Вебмастере, держать Timeweb-откат на случай будущей блокировки Google/Fastly.
+1. Закрыть от индексации зеркала `.web.app` и Netlify (canonical уже на www).
+2. CI: `firebase deploy` в GitHub Actions.
+3. Живой тест формы в Telegram.
+4. Apex 301→www (опционально).
 
 ---
 
@@ -184,9 +225,11 @@ Push в `site-clean` → `.github/workflows/deploy.yml`: `prepare-deploy.sh` (bu
 ### Сборка
 ```bash
 python3 build-projects.py --html-only   # HTML из YAML
+python3 build-seo.py                    # canonical, OG, yandex-verification; robots + sitemap
 python3 build-hero-images.py            # hero + thumbs (macOS sips; mobile hero 1-m.jpg)
-bash prepare-deploy.sh                  # dist/
-python3 bump-assets.py                  # версии (сейчас app.js?v=38, styles.css?v=79)
+bash prepare-deploy.sh                  # dist/ (включает build-seo)
+python3 bump-assets.py                  # версии (сейчас app.js?v=39, styles.css?v=79)
+firebase deploy --only hosting --project keydesign-studio-xxxxx
 ```
 
 ---
@@ -206,11 +249,11 @@ python3 bump-assets.py                  # версии (сейчас app.js?v=38
 
 ## Контент / проекты
 
-- 13 проектов, источник правды - `content/projects/*.yaml`, порядок через `sort_order` → `content/site.yaml`.
+- **14 проектов**, источник правды - `content/projects/*.yaml`, порядок через `sort_order` → `content/site.yaml`.
 - `python3 build-projects.py --html-only` пересобирает HTML + `projects.html` + сетку на главной.
 - Featured на главной: `moscow-studio`, `kvartira-dubay`, `nevskaya-dom`.
 - i18n названий дублировать в `app.js` (`project.N.name` RU + EN).
-- Hero: 6 кадров `assets/hero/1-6.jpg`, мобильный LCP `assets/hero/1-m.jpg`. Preloader только desktop (≥981px).
+- Hero: **7** кадров `assets/hero/1-7.jpg`, мобильный LCP `assets/hero/1-m.jpg`. Preloader только desktop (≥981px).
 
 **Контакты:** г. Новосибирск, ул. Инженерная 7, 3 этаж | `+7 (923) 000-00-36` | `key-des@mail.ru` | TG `@Kristina_Key_des` | IG `@key_design.studio`
 
@@ -227,9 +270,8 @@ Decap CMS + OAuth (PHP) на Timeweb (`/admin/`, вход через GitHub). О
 | Что | Значение |
 |-----|----------|
 | Ветка | `site-clean` |
-| HEAD (prod) | `62a12e1` Add project ЖК Облака (4th) + Firebase config + hero 7 |
-| Не коммитить | `deploy.env`, **`deploy.env.save`** (креды деплоя!), `api/brief-secrets.php`, `oauth/oauth-secrets.php` (все в `.gitignore`) |
-| Локально не закоммичено | только `deploy.env.save` (в gitignore). Всё остальное - в `62a12e1` |
+| HEAD (prod) | `cf30200` Yandex meta verification (+ SEO `2b2f35a`, hero/обложки раньше) |
+| Не коммитить | `deploy.env`, **`deploy.env.save`**, `api/brief-secrets.php`, `oauth/oauth-secrets.php` |
 
 ---
 
@@ -239,7 +281,7 @@ Decap CMS + OAuth (PHP) на Timeweb (`/admin/`, вход через GitHub). О
 - Названия вкладок меню - `.eyebrow`; «На главную →» на внутренних страницах
 - **Commit / deploy - только по явной просьбе пользователя**
 - Не слать тестовые заявки на prod без просьбы
-- Пользователь любит **пошаговые инструкции блоками** со скринами, пишет «ок»/«готово» между шагами
+- Пользователь любит **пошаговые инструкции блоками** - **один шаг**, ждём «ок»/«готово». **Не присылать много шагов сразу** (особенно по рекламе/SEO).
 
 ---
 
@@ -264,7 +306,9 @@ curl -s -X POST https://keydesign-studio-xxxxx.web.app/api/brief.php -H 'Content
 
 | Сессия | Тема |
 |--------|------|
-| 20 июля | **Прорыв Firebase**: анализ конкурента (Wix/Google/Fastly), деплой на Firebase (работает везде), форма на Cloud Function, Blaze, начали переезд домена |
+| 22-23 июля | **SEO старт (0 ₽)**: robots/sitemap/OG/canonical, Яндекс.Вебмастер (meta-тег), регион на модерации, черновик Яндекс Бизнес; **пауза** - правки сайта |
+| 20-22 июля | Firebase prod, проект Облака, hero-карусель, обложка Архитектор |
+| 20 июля | **Прорыв Firebase**: переезд домена, форма Cloud Function |
 | 15-20 июля | Ресёрч блокировок РКН 2026, цены Bunny CDN, Firebase-гипотеза |
 | 9 июля | Mobile PageSpeed (84→86), deploy rerun, Timeweb тикет (закрыли) |
 | 8-9 июля | Netlify зеркало, матрица доступности VPN |

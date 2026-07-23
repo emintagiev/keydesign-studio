@@ -18,8 +18,6 @@ SITE_FILES = [
     "projects.html",
     "contacts.html",
     "services.html",
-    "approach.html",
-    "partners.html",
     "moscow-studio.html",
     "kvartira-dubay.html",
     "dom-sinegore.html",

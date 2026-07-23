@@ -69,7 +69,6 @@ if (!briefRateLimitOk()) {
 }
 
 $area = briefClean($data['area'] ?? '', 80);
-$style = briefClean($data['style'] ?? '', 80);
 $timeline = briefClean($data['timeline'] ?? '', 80);
 $name = briefClean($data['name'] ?? '', 120);
 $phone = briefClean($data['phone'] ?? '', 40);
@@ -85,7 +84,6 @@ $lines = [
     'Новая заявка с сайта Key Design Studio',
     '',
     'Метраж: ' . ($area !== '' ? $area : '-'),
-    'Направление: ' . ($style !== '' ? $style : '-'),
     'Сроки: ' . ($timeline !== '' ? $timeline : '-'),
     'Имя: ' . $name,
     'Телефон: ' . $phone,

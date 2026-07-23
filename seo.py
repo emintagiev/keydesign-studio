@@ -71,8 +71,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
     },
 }
 
-PROD_HIDDEN = {"approach.html", "partners.html"}
-NOINDEX_FILES = {"approach.html", "partners.html", "key-design-studio.html"}
+NOINDEX_FILES = {"key-design-studio.html"}
 
 
 def page_url(path: str) -> str:

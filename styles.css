@@ -1258,6 +1258,7 @@
       padding: 0;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 400px));
+      justify-content: center;
       gap: clamp(1.5rem, 0.75rem + 2.5vw, 3rem);
     }
 
@@ -1303,8 +1304,10 @@
     }
 
     .about-team__note {
-      margin: clamp(2rem, 1.25rem + 2.5vw, 3rem) 0 0;
+      margin-top: clamp(2rem, 1.25rem + 2.5vw, 3rem);
+      margin-inline: auto;
       max-width: 56ch;
+      text-align: center;
       font-family: var(--font-sans);
       font-size: var(--fs-lead);
       font-weight: 300;
@@ -1636,51 +1639,6 @@
     }
 
     /* ============================================================
-       APPROACH
-       ============================================================ */
-    .approach__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .step {
-      padding: var(--sp-6) var(--sp-4) var(--sp-5) 0;
-      border-right: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-3);
-      transition: background var(--t-fast);
-    }
-
-    .step:last-child {
-      border-right: 0;
-    }
-
-    .step:not(:first-child) {
-      padding-left: var(--sp-4);
-    }
-
-    .step__num {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-    }
-
-    .step__title {
-      font-size: var(--fs-h3);
-      font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem);
-      margin-top: var(--sp-2);
-    }
-
-    .step__text {
-      color: var(--text-soft);
-      font-size: 0.98rem;
-    }
-
-    /* ============================================================
        SERVICES
        ============================================================ */
     .services-page {
@@ -1815,67 +1773,6 @@
 
     .svc__cta {
       align-self: flex-start;
-    }
-
-    /* ============================================================
-       PARTNERS
-       ============================================================ */
-    .partners {
-      background: var(--bg-alt);
-    }
-
-    .partners__index {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(1.75rem, 1rem + 2.5vw, 3.5rem);
-    }
-
-    .pcat {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-4);
-      padding-top: var(--sp-4);
-      border-top: 1px solid var(--line);
-    }
-
-    .pcat__label {
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .pcat__list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5em;
-    }
-
-    .pcat__list li {
-      font-family: var(--font-serif);
-      font-size: clamp(1.15rem, 0.95rem + 0.7vw, 1.5rem);
-      line-height: 1.2;
-      color: var(--text);
-      transition: color var(--t-fast);
-      cursor: default;
-    }
-
-    .pcat__list li:hover {
-      color: var(--accent);
-    }
-
-    .partners__note {
-      margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-      padding-top: var(--sp-4);
-      border-top: 1px solid var(--line);
-      font-size: 0.88rem;
-      letter-spacing: 0.03em;
-      color: var(--text-faint);
-      max-width: 54ch;
     }
 
     /* ============================================================
@@ -2327,10 +2224,6 @@
         gap: var(--sp-4);
       }
 
-      .partners__index {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       .contact__row {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--sp-5) var(--sp-4);
@@ -2348,32 +2241,6 @@
 
       .contact-office__map-caption {
         text-align: left;
-      }
-
-      .approach__grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .step {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .step:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .step,
-      .step:not(:first-child) {
-        padding-left: var(--sp-4);
-        padding-right: var(--sp-4);
-      }
-
-      .step:first-child {
-        padding-left: 0;
-      }
-
-      .step:nth-child(odd) {
-        padding-left: 0;
       }
 
       .svc__steps {
@@ -2677,26 +2544,8 @@
         gap: var(--sp-4);
       }
 
-      .partners__index {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .contact__row {
         grid-template-columns: 1fr;
-      }
-
-      .approach__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .step,
-      .step:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .step:not(:first-child),
-      .step:nth-child(odd) {
-        padding-left: 0;
       }
 
       .footer__inner {
@@ -3201,6 +3050,18 @@
     .about-page {
       padding-top: var(--page-top);
       padding-bottom: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+    }
+
+    .home .about-page {
+      padding-top: clamp(1.1rem, 0.75rem + 1vw, 1.75rem);
+      padding-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
+      scroll-margin-top: calc(var(--header-h) + 0.75rem);
+      content-visibility: auto;
+      contain-intrinsic-size: auto 1400px;
+    }
+
+    .home .about-page > .container > .eyebrow {
+      margin-bottom: clamp(1rem, 0.65rem + 1.2vw, 1.5rem);
     }
 
     .about-page .page-head {

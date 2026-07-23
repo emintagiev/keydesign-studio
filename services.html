@@ -69,6 +69,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -101,8 +114,6 @@
         <a class="nav__link" href="/about" data-i18n="nav.about">О студии</a>
         <a class="nav__link" href="/projects" data-i18n="nav.projects">Проекты</a>
         <a class="nav__link nav__link--active" href="/services" data-i18n="nav.services">Услуги</a>
-        <a class="nav__link" href="/approach" data-i18n="nav.approach">Подход</a>
-        <a class="nav__link" href="/partners" data-i18n="nav.partners">Партнёры</a>
         <a class="nav__link" href="/contacts" data-i18n="nav.contact">Контакты</a>
       </nav>
 
@@ -361,12 +372,12 @@
     <div class="brief__dialog" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
       <div class="brief__head">
         <p class="brief__title" id="briefTitle" data-i18n="brief.title">Заявка на проект</p>
-        <span class="brief__counter" data-brief-counter>1 / 3</span>
+        <span class="brief__counter" data-brief-counter>1 / 2</span>
         <button class="brief__close" type="button" data-close-brief aria-label="Закрыть">
           <span aria-hidden="true">×</span>
         </button>
         <div class="brief__progress" aria-hidden="true">
-          <span class="brief__progress-bar" data-brief-progress style="width: 33.33%"></span>
+          <span class="brief__progress-bar" data-brief-progress style="width: 50%"></span>
         </div>
       </div>
       <form class="brief__form" id="briefForm" novalidate>
@@ -382,17 +393,6 @@
           </div>
         </div>
         <div class="brief__panel" data-brief-step="2" hidden>
-          <p class="brief__question" data-i18n="brief.q2">Какое направление интерьера вам ближе?</p>
-          <div class="brief__options">
-            <label class="brief__option"><input type="radio" name="style" value="Классический" required /><span class="brief__option-text" data-i18n="brief.a2.1">Классический</span></label>
-            <label class="brief__option"><input type="radio" name="style" value="Ар-деко" /><span class="brief__option-text" data-i18n="brief.a2.2">Ар-деко</span></label>
-            <label class="brief__option"><input type="radio" name="style" value="Минимализм" /><span class="brief__option-text" data-i18n="brief.a2.3">Минимализм</span></label>
-            <label class="brief__option"><input type="radio" name="style" value="Современный" /><span class="brief__option-text" data-i18n="brief.a2.4">Современный</span></label>
-            <label class="brief__option"><input type="radio" name="style" value="Эклектика" /><span class="brief__option-text" data-i18n="brief.a2.5">Эклектика</span></label>
-            <label class="brief__option"><input type="radio" name="style" value="Пока выбираю" /><span class="brief__option-text" data-i18n="brief.a2.6">Пока выбираю</span></label>
-          </div>
-        </div>
-        <div class="brief__panel" data-brief-step="3" hidden>
           <p class="brief__question" data-i18n="brief.q3">Когда планируете приступить к работам?</p>
           <div class="brief__options brief__options--5">
             <label class="brief__option"><input type="radio" name="timeline" value="Уже готов(а) начать" required /><span class="brief__option-text" data-i18n="brief.a3.1">Уже готов(а) начать</span></label>
@@ -402,7 +402,7 @@
             <label class="brief__option"><input type="radio" name="timeline" value="Пока не определился(лась)" /><span class="brief__option-text" data-i18n="brief.a3.5">Пока не определился(лась)</span></label>
           </div>
         </div>
-        <div class="brief__panel" data-brief-step="4" hidden>
+        <div class="brief__panel" data-brief-step="3" hidden>
           <p class="brief__question" data-i18n="brief.q4">Как с вами связаться?</p>
           <div class="brief__fields">
             <label class="brief__field">
@@ -424,7 +424,7 @@
             </label>
           </div>
         </div>
-        <div class="brief__panel brief__panel--done" data-brief-step="5" hidden>
+        <div class="brief__panel brief__panel--done" data-brief-step="4" hidden>
           <p class="brief__done-title" data-i18n="brief.doneTitle">Принято!</p>
           <p class="brief__done-text" data-i18n="brief.doneText">Мы получили вашу заявку и скоро напишем или позвоним.</p>
         </div>
