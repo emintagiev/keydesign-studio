@@ -11,6 +11,7 @@ import yaml
 from seo import (
     STATIC_PAGES,
     file_lastmod,
+    inject_metrika,
     inject_seo,
     page_url,
     project_seo,
@@ -141,6 +142,15 @@ def main() -> int:
     urls, lastmods = collect_sitemap(projects)
     write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
     print(f"  sitemap.xml ({len(urls)} urls)")
+
+    metrika = 0
+    for html_path in sorted(ROOT.glob("*.html")):
+        original = html_path.read_text(encoding="utf-8")
+        updated = inject_metrika(original)
+        if updated != original:
+            html_path.write_text(updated, encoding="utf-8")
+            metrika += 1
+    print(f"  metrika: {metrika} pages")
     return 0
 
 

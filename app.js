@@ -1137,6 +1137,7 @@
           })
             .then(function (res) {
               if (!res.ok) throw new Error("submit failed");
+              if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "lead");
               briefShowDone();
             })
             .catch(function () {
@@ -1205,6 +1206,17 @@
 
         briefUpdateUi();
       }
+
+      document.querySelectorAll('a[href*="t.me/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "tg_click");
+        });
+      });
+      document.querySelectorAll('a[href*="instagram.com"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "ig_click");
+        });
+      });
 
       /* ---------- Services page accordion ---------- */
       function svcDict() {

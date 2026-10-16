@@ -12,6 +12,8 @@ from urllib.parse import quote
 
 import yaml
 
+from seo import inject_metrika
+
 ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
 PROJECTS_DIR = CONTENT_DIR / "projects"
@@ -774,7 +776,7 @@ def generate_projects_page(projects: list[dict]):
 </body>
 </html>
 '''
-    (ROOT / "projects.html").write_text(html, encoding="utf-8")
+    (ROOT / "projects.html").write_text(inject_metrika(html), encoding="utf-8")
     print("  → projects.html")
 
 
@@ -888,7 +890,7 @@ def main():
         sync_rooms_from_config(cfg)
         html = generate_html(cfg)
         out = ROOT / cfg["html"]
-        out.write_text(html, encoding="utf-8")
+        out.write_text(inject_metrika(html), encoding="utf-8")
         print(f"  → {out.name} ({len(html)} bytes)")
 
     sync_site_projects_order(projects)

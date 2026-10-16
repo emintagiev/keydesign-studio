@@ -12,6 +12,20 @@ ROOT = Path(__file__).resolve().parent
 SITE_ORIGIN = "https://www.keydesign.studio"
 DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/hero/1.jpg"
 YANDEX_VERIFICATION = "b31dd3613bec3f68"
+METRIKA_ID = "XXXXXXXX"
+METRIKA_MARKER = "Yandex.Metrika counter"
+METRIKA_SNIPPET = f"""<!-- {METRIKA_MARKER} -->
+<script>
+    (function(m,e,t,r,i,k,a){{m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {{if (document.scripts[j].src === r) {{ return; }}}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym({METRIKA_ID}, "init", {{clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/{METRIKA_ID}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /{METRIKA_MARKER} -->
+"""
 
 STATIC_PAGES: dict[str, dict[str, str]] = {
     "/": {
@@ -169,6 +183,14 @@ def project_seo(cfg: dict) -> tuple[str, str]:
     return title, desc
 
 
+
+
+def inject_metrika(text: str) -> str:
+    if METRIKA_MARKER in text:
+        return text
+    if "</head>" not in text:
+        return text
+    return text.replace("</head>", METRIKA_SNIPPET + "\n</head>", 1)
 
 
 def file_lastmod(path: Path) -> str:
