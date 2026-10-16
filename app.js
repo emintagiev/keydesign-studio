@@ -331,8 +331,6 @@
           "svc.4.s2.text": "Описываем, как вы будете жить в пространстве: маршруты, приватность, хранение, зоны отдыха и работы.",
           "svc.4.s3.title": "Планировочные схемы",
           "svc.4.s3.text": "Готовим варианты перепланировки с расстановкой мебели и привязкой инженерии.",
-          "svc.4.s4.title": "Согласование изменений",
-          "svc.4.s4.text": "Помогаем подготовить документы для согласования перепланировки, если это требуется.",
           "svc.4.s5.title": "Связь с дизайн-проектом",
           "svc.4.s5.text": "Передаём утверждённую планировку в этап проработки материалов, света и деталей интерьера."
         },
@@ -517,8 +515,6 @@
           "svc.4.s2.text": "How you will live in the space: routes, privacy, storage, rest and work zones.",
           "svc.4.s3.title": "Layout schemes",
           "svc.4.s3.text": "Replanning options with furniture and engineering layouts.",
-          "svc.4.s4.title": "Approvals",
-          "svc.4.s4.text": "We help prepare documents for replanning approval when required.",
           "svc.4.s5.title": "Handover to design",
           "svc.4.s5.text": "Approved layout moves into materials, lighting and interior detailing."
         }
