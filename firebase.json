@@ -14,52 +14,57 @@
     "redirects": [
       {
         "source": "/index",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/index.html",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
+        "type": 301
+      },
+      {
+        "source": "/little-classic.html",
+        "destination": "https://www.keydesign.studio/little-classic",
         "type": 301
       },
       {
         "source": "/salok-krasoty-tati",
-        "destination": "/salon-krasoty-tati",
+        "destination": "https://www.keydesign.studio/salon-krasoty-tati",
         "type": 301
       },
       {
         "source": "/salok-krasoty-tati.html",
-        "destination": "/salon-krasoty-tati",
+        "destination": "https://www.keydesign.studio/salon-krasoty-tati",
         "type": 301
       },
       {
         "source": "/key-design-studio",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/key-design-studio.html",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/approach",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/approach.html",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/partners",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       },
       {
         "source": "/partners.html",
-        "destination": "/",
+        "destination": "https://www.keydesign.studio/",
         "type": 301
       }
     ],
