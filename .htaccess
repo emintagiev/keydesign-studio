@@ -21,6 +21,8 @@ AddDefaultCharset utf-8
   RewriteRule ^approach(?:\.html)?/?$ / [L,R=302]
   RewriteRule ^partners(?:\.html)?/?$ / [L,R=302]
 
+  RewriteRule ^salok-krasoty-tati(?:\.html)?/?$ /salon-krasoty-tati [L,R=301]
+
   RewriteRule ^favicon\.ico$ /assets/favicon-32.png [L]
 
   # Clean URLs: /projects instead of /projects.html

@@ -13,6 +13,16 @@
     ],
     "redirects": [
       {
+        "source": "/salok-krasoty-tati",
+        "destination": "/salon-krasoty-tati",
+        "type": 301
+      },
+      {
+        "source": "/salok-krasoty-tati.html",
+        "destination": "/salon-krasoty-tati",
+        "type": 301
+      },
+      {
         "source": "/key-design-studio",
         "destination": "/",
         "type": 301

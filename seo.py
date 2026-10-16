@@ -96,7 +96,6 @@ PROJECT_PLACE = {
     "kvartira-dubay": "",
     "zhk-arkhitektor": "ЖК Архитектор",
     "oblaka-orhan": "ЖК Облака",
-    "salok-krasoty-tati": "Tati",
     "salon-krasoty-tati": "Tati",
     "laki-park-dom": "Лаки Парк",
     "ns-akadem-pulsar": "ЖК Пульсар",
@@ -111,7 +110,6 @@ PROJECT_PLACE = {
 
 # Падеж для фразы «в …», если именительный ЖК звучит криво.
 PROJECT_LOC = {
-    "salok-krasoty-tati": "салоне красоты Tati, Новосибирск",
     "salon-krasoty-tati": "салоне красоты Tati, Новосибирск",
 }
 
