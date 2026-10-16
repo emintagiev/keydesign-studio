@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 SITE_ORIGIN = "https://www.keydesign.studio"
 DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/hero/1.jpg"
 YANDEX_VERIFICATION = "b31dd3613bec3f68"
-METRIKA_ID = "12345678"
+METRIKA_ID = "НАСТОЯЩИЙ_НОМЕР"
 METRIKA_MARKER = "Yandex.Metrika counter"
 METRIKA_SNIPPET = f"""<!-- {METRIKA_MARKER} -->
 <script>
@@ -233,9 +233,15 @@ def seo_block(
         if YANDEX_VERIFICATION
         else ""
     )
+    google = (
+        '  <meta name="google-site-verification" content="9fznEkjBxEF0FImPMa7kXa0FVcBEOCJ9LR2nSDxiEis" />\n'
+        if canonical_path == "/"
+        else ""
+    )
     return (
         f'{robots}'
         f'{yandex}'
+        f'{google}'
         f'  <link rel="canonical" href="{html.escape(canonical, quote=True)}" />\n'
         f'  <meta property="og:type" content="website" />\n'
         f'  <meta property="og:site_name" content="Key Design Studio" />\n'
@@ -252,7 +258,7 @@ def seo_block(
 
 
 SEO_TAG_RE = re.compile(
-    r"\n?\s*(?:<link rel=\"canonical\"|<meta name=\"robots\"|<meta name=\"yandex-verification\"|<meta property=\"og:|<meta name=\"twitter:)[^\n]*\n?",
+    r"\n?\s*(?:<link rel=\"canonical\"|<meta name=\"robots\"|<meta name=\"yandex-verification\"|<meta name=\"google-site-verification\"|<meta property=\"og:|<meta name=\"twitter:)[^\n]*\n?",
     re.IGNORECASE,
 )
 
