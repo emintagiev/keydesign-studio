@@ -310,6 +310,16 @@ def _url(path: str) -> str:
     return quote(path, safe="/")
 
 
+def photo_alt(cfg: dict, room_name: str, number: int) -> str:
+    from seo import _area_m2, project_place
+
+    meta = cfg.get("meta") or {}
+    kind = (meta.get("type") or "").lower()
+    area = _area_m2(str(meta.get("area") or ""))
+    where = project_place(cfg.get("slug") or "", meta.get("city") or "")
+    return f"{room_name}, {kind} {area} м², {where} — фото {number}"
+
+
 def render_picture(src: str, alt: str, *, preview: bool = False, lazy: bool = True) -> str:
     info = IMAGE_MANIFEST.get(src)
     loading = 'loading="lazy"' if lazy else 'fetchpriority="high"'
@@ -382,7 +392,14 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
         cover_path = f"assets/projects/{slug}/{room_slug}/{cover}"
         if cover not in imgs and imgs:
             cover_path = f"assets/projects/{slug}/{room_slug}/{imgs[0]}"
-        cover_html = render_picture(cover_path, name, preview=True, lazy=room_index != 0)
+        cover_name = Path(cover_path).name
+        cover_number = imgs.index(cover_name) + 1 if cover_name in imgs else 1
+        cover_html = render_picture(
+            cover_path,
+            photo_alt(cfg, name, cover_number),
+            preview=True,
+            lazy=room_index != 0,
+        )
 
         cards.append(
             f'''          <button class="room-card" type="button" data-room="{room_slug}">
@@ -397,9 +414,9 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
         )
 
         figs = []
-        for img in imgs:
+        for index, img in enumerate(imgs, start=1):
             src = f"assets/projects/{slug}/{room_slug}/{img}"
-            picture = render_picture(src, f"{name} - Key Design Studio", preview=False, lazy=True)
+            picture = render_picture(src, photo_alt(cfg, name, index), preview=False, lazy=True)
             figs.append(
                 "              <figure>\n"
                 f"                {picture}\n"
@@ -434,8 +451,8 @@ def build_single_gallery(cfg: dict) -> str:
         f"assets/projects/{slug}/{room_slug}/{img}" for img in list_images(slug, room_slug)
     ]
     figs = []
-    for index, src in enumerate(sources):
-        picture = render_picture(src, f"{name} - Key Design Studio", preview=False, lazy=index != 0)
+    for index, src in enumerate(sources, start=1):
+        picture = render_picture(src, photo_alt(cfg, name, index), preview=False, lazy=index != 1)
         figs.append(
             "              <figure>\n"
             f"                {picture}\n"
@@ -614,7 +631,24 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
 def generate_projects_page(projects: list[dict]):
     cards = []
     for index, p in enumerate(projects):
-        picture = render_picture(p["cover"], p["title_plain"], preview=True, lazy=index != 0)
+        cover_file = Path(p["cover"]).name
+        room_name = "Интерьер"
+        number = 1
+        for room in p.get("rooms") or []:
+            if not isinstance(room, tuple):
+                continue
+            room_slug, name, _cover = room
+            imgs = list_images(p["slug"], room_slug)
+            if cover_file in imgs:
+                room_name = name
+                number = imgs.index(cover_file) + 1
+                break
+        picture = render_picture(
+            p["cover"],
+            photo_alt(p, room_name, number),
+            preview=True,
+            lazy=index != 0,
+        )
         cards.append(
             f'''        <a class="proj-grid-card" href="{p["url"]}">
           <span class="proj-grid-card__media">
