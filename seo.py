@@ -16,55 +16,55 @@ YANDEX_VERIFICATION = "b31dd3613bec3f68"
 STATIC_PAGES: dict[str, dict[str, str]] = {
     "/": {
         "file": "index.html",
-        "title": "Key Design Studio - студия интерьерного дизайна",
+        "title": "Дизайн интерьера в Новосибирске — Key Design Studio",
         "description": (
-            "Key Design Studio - студия интерьерного дизайна в Новосибирске. "
-            "Жилые и коммерческие интерьеры: от концепции до реализации. "
-            "Проекты в Новосибирске, Москве и Дубае."
+            "Студия дизайна интерьера Кристины Парыгиной в Новосибирске: "
+            "дизайн-проекты квартир, домов и коммерческих пространств. "
+            "Проекты также в Москве и Дубае."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/about": {
         "file": "about.html",
-        "title": "О студии",
+        "title": "О студии — Кристина Парыгина и Key Design Studio",
         "description": (
-            "Key Design Studio - студия интерьерного дизайна в Новосибирске. "
-            "Авторские интерьеры квартир, домов и коммерческих пространств."
+            "Кристина Парыгина и команда Key Design Studio — "
+            "студия дизайна интерьера в Новосибирске."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/projects": {
         "file": "projects.html",
-        "title": "Проекты",
+        "title": "Проекты дизайна интерьера — Key Design Studio, Новосибирск",
         "description": (
-            "Проекты Key Design Studio - жилые и коммерческие интерьеры "
-            "в Новосибирске, Москве и других городах."
+            "Квартиры, загородные дома и салон красоты: проекты дизайна интерьера "
+            "в Новосибирске, Москве и Дубае. Key Design Studio."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/services": {
         "file": "services.html",
-        "title": "Услуги",
+        "title": "Услуги дизайнера интерьера в Новосибирске — Key Design Studio",
         "description": (
-            "Услуги Key Design Studio в Новосибирске: дизайн-проект интерьера, "
-            "менеджмент, авторский надзор, архитектурное планирование."
+            "Дизайн-проект интерьера, проектное сопровождение и комплектация, "
+            "авторский надзор, архитектурное планирование. Key Design Studio, Новосибирск."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/contacts": {
         "file": "contacts.html",
-        "title": "Контакты",
+        "title": "Контакты — Key Design Studio, дизайн интерьера в Новосибирске",
         "description": (
-            "Контакты Key Design Studio в Новосибирске - телефон, почта, "
+            "Контакты Key Design Studio в Новосибирске — телефон, почта, "
             "Telegram, Instagram и адрес офиса на ул. Инженерная 7."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/privacy": {
         "file": "privacy.html",
-        "title": "Политика конфиденциальности",
+        "title": "Политика конфиденциальности — Key Design Studio",
         "description": (
-            "Политика конфиденциальности Key Design Studio - обработка "
+            "Политика конфиденциальности Key Design Studio — обработка "
             "персональных данных на сайте."
         ),
         "og_image": DEFAULT_OG_IMAGE,
@@ -72,6 +72,105 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
 }
 
 NOINDEX_FILES = {"key-design-studio.html"}
+
+
+TYPE_GENITIVE = {
+    "Квартира": "квартиры",
+    "Студия": "студии",
+    "Частный дом": "дома",
+    "Салон красоты": "салона красоты",
+    "Кабинет": "кабинета",
+    "Апартаменты": "апартаментов",
+}
+
+CITY_PREPOSITIONAL = {
+    "Новосибирск": "Новосибирске",
+    "Москва": "Москве",
+    "Дубай": "Дубае",
+    "Морозово": "Морозово",
+}
+
+# Место из уже опубликованного названия проекта. Пусто — отдельного ЖК в названии нет.
+PROJECT_PLACE = {
+    "moscow-studio": "ЖК Bauman Haus",
+    "kvartira-dubay": "",
+    "zhk-arkhitektor": "ЖК Архитектор",
+    "oblaka-orhan": "ЖК Облака",
+    "salok-krasoty-tati": "Tati",
+    "salon-krasoty-tati": "Tati",
+    "laki-park-dom": "Лаки Парк",
+    "ns-akadem-pulsar": "ЖК Пульсар",
+    "kvartal-dekabristov": "ЖК Квартал Декабристов",
+    "nevskaya-dom": "",
+    "vostochny-vayb": "",
+    "kedrovy-ns": "ЖК Кедровый",
+    "dom-sinegore": "",
+    "kabinet-morozovo": "с. Морозово",
+    "little-classic": "ЖК Европейский берег",
+}
+
+# Падеж для фразы «в …», если именительный ЖК звучит криво.
+PROJECT_LOC = {
+    "salok-krasoty-tati": "салоне красоты Tati, Новосибирск",
+    "salon-krasoty-tati": "салоне красоты Tati, Новосибирск",
+}
+
+
+def _area_m2(area: str) -> str:
+    text = (area or "").replace("кв.м.", "").replace("кв. м.", "").strip()
+    return text or area
+
+
+def project_place(slug: str, city: str) -> str:
+    place = PROJECT_PLACE.get(slug, "")
+    if place and city and city not in place:
+        return f"{place}, {city}"
+    if place:
+        return place
+    return city
+
+
+def project_seo(cfg: dict) -> tuple[str, str]:
+    """Title and description from the published project name, area and rooms."""
+    meta = cfg.get("meta") or {}
+    ptype = meta.get("type") or ""
+    gen = TYPE_GENITIVE.get(ptype, ptype.lower())
+    area = _area_m2(str(meta.get("area") or ""))
+    city = meta.get("city") or ""
+    where = project_place(cfg.get("slug") or "", city)
+    title = f"Дизайн {gen} {area} м² — {where} | Key Design Studio"
+    if len(title) > 65:
+        title = f"Дизайн {gen} {area} м² — {where}"
+
+    slug = cfg.get("slug") or ""
+    if slug in PROJECT_LOC:
+        loc = PROJECT_LOC[slug]
+    elif PROJECT_PLACE.get(slug):
+        loc = where
+    else:
+        loc = CITY_PREPOSITIONAL.get(city, city)
+    rooms = []
+    for room in cfg.get("rooms") or []:
+        if isinstance(room, dict) and room.get("name"):
+            rooms.append(room["name"])
+    room_list = ", ".join(rooms)
+    tail = "Фото реализованного проекта Key Design Studio."
+    if room_list:
+        desc = f"Дизайн-проект {gen} {area} м² в {loc}: {room_list}. {tail}"
+        while len(desc) > 160 and rooms:
+            rooms = rooms[:-1]
+            room_list = ", ".join(rooms)
+            if room_list:
+                desc = f"Дизайн-проект {gen} {area} м² в {loc}: {room_list}. {tail}"
+            else:
+                desc = f"Дизайн-проект {gen} {area} м² в {loc}. {tail}"
+    else:
+        desc = f"Дизайн-проект {gen} {area} м² в {loc}. {tail}"
+    if len(desc) > 160:
+        desc = desc[:157].rstrip() + "..."
+    return title, desc
+
+
 
 
 def page_url(path: str) -> str:
@@ -130,6 +229,20 @@ def strip_existing_seo(text: str) -> str:
     return SEO_TAG_RE.sub("\n", text)
 
 
+
+def upsert_title(text: str, title: str) -> str:
+    escaped = html.escape(title)
+    if re.search(r"<title>", text, re.IGNORECASE):
+        return re.sub(
+            r"<title>[^<]*</title>",
+            f"<title>{escaped}</title>",
+            text,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+    return text.replace("<head>", f"<head>\n  <title>{escaped}</title>", 1)
+
+
 def upsert_description(text: str, description: str) -> str:
     escaped = html.escape(description, quote=True)
     if re.search(r'<meta name="description"', text, re.IGNORECASE):
@@ -157,6 +270,7 @@ def inject_seo(
     noindex: bool = False,
 ) -> str:
     text = strip_existing_seo(text)
+    text = upsert_title(text, title)
     text = upsert_description(text, description)
     block = seo_block(
         canonical_path=canonical_path,

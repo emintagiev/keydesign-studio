@@ -12,6 +12,7 @@ from seo import (
     STATIC_PAGES,
     inject_seo,
     page_url,
+    project_seo,
     write_robots,
     write_sitemap,
 )
@@ -32,13 +33,15 @@ def load_projects() -> list[dict]:
         if not data.get("published", True):
             continue
         slug = data["slug"]
+        data["slug"] = slug
+        title, description = project_seo(data)
         projects.append(
             {
                 "slug": slug,
                 "file": f"{slug}.html",
                 "path": f"/{slug}",
-                "title": data["title_plain"],
-                "description": data.get("description") or f'{data["title_plain"]} - проект Key Design Studio.',
+                "title": title,
+                "description": description,
                 "cover": data.get("cover"),
                 "sort_order": order_index.get(slug, data.get("sort_order", 9999)),
             }
@@ -54,10 +57,7 @@ def patch_static_pages() -> int:
         if not file_path.exists():
             print(f"  skip missing: {meta['file']}")
             continue
-        if path_key == "/":
-            title = meta["title"]
-        else:
-            title = f"{meta['title']} - Key Design Studio"
+        title = meta["title"]
         updated = inject_seo(
             file_path.read_text(encoding="utf-8"),
             canonical_path=path_key,
@@ -78,7 +78,7 @@ def patch_key_design_studio() -> None:
     updated = inject_seo(
         file_path.read_text(encoding="utf-8"),
         canonical_path="/",
-        title="Key Design Studio - студия интерьерного дизайна",
+        title=STATIC_PAGES["/"]["title"],
         description=STATIC_PAGES["/"]["description"],
         og_image=STATIC_PAGES["/"]["og_image"],
         noindex=True,
@@ -94,7 +94,7 @@ def patch_project_pages(projects: list[dict]) -> int:
         if not file_path.exists():
             print(f"  skip missing: {project['file']}")
             continue
-        title = f'{project["title"]} - проект Key Design Studio'
+        title = project["title"]
         updated = inject_seo(
             file_path.read_text(encoding="utf-8"),
             canonical_path=project["path"],
