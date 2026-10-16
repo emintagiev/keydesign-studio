@@ -186,8 +186,16 @@ def project_seo(cfg: dict) -> tuple[str, str]:
 
 
 def inject_metrika(text: str) -> str:
-    if METRIKA_MARKER in text:
+    if METRIKA_MARKER in text and f"watch/{METRIKA_ID}" in text:
         return text
+    if METRIKA_MARKER in text:
+        text = re.sub(
+            r"<!-- Yandex\.Metrika counter -->.*?<!-- /Yandex\.Metrika counter -->\n?",
+            "",
+            text,
+            count=1,
+            flags=re.S,
+        )
     if "</head>" not in text:
         return text
     return text.replace("</head>", METRIKA_SNIPPET + "\n</head>", 1)
