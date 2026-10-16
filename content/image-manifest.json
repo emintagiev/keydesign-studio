@@ -1,0 +1,2634 @@
+{
+  "assets/projects/dom-sinegore/bedroom/1.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-01.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/2.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-02.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/3.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-03.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-03-800.webp",
+    "width": 1920,
+    "height": 1279,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/bedroom/4.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-04.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/5.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-05.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/6.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-06.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/7.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-07.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/8.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-08.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-08-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/9.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-09.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-09-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom/10.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-10.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom/dom-sinegore-bedroom-10-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/1.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-01.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/2.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-02.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/3.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-03.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/4.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-04.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/5.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-05.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/6.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-06.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/bedroom-serafim/7.jpg": {
+    "webp": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-07.webp",
+    "webp800": "assets/projects/dom-sinegore/bedroom-serafim/dom-sinegore-bedroom-serafim-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/entry/01.jpg": {
+    "webp": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-01.webp",
+    "webp800": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/entry/02.jpg": {
+    "webp": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-02.webp",
+    "webp800": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/entry/03.jpg": {
+    "webp": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-03.webp",
+    "webp800": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-03-800.webp",
+    "width": 1920,
+    "height": 1279,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/entry/04.jpg": {
+    "webp": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-04.webp",
+    "webp800": "assets/projects/dom-sinegore/entry/dom-sinegore-entry-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/1.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-01.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/2.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-02.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/3.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-03.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/4.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-04.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/5.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-05.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/6.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-06.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-06-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/guest-bedroom/7.jpg": {
+    "webp": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-07.webp",
+    "webp800": "assets/projects/dom-sinegore/guest-bedroom/dom-sinegore-guest-bedroom-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/01.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-01.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-01-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/kids-room/02.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-02.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/03.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-03.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/04.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-04.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/05.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-05.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/06.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-06.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kids-room/07.jpg": {
+    "webp": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-07.webp",
+    "webp800": "assets/projects/dom-sinegore/kids-room/dom-sinegore-kids-room-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/1.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-01.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/2.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-02.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/3.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-03.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/4.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-04.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/5.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-05.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/7.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-06.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/8.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-07.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/9.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-08.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-08-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/10.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-09.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-09-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/11.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-10.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-10-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/12.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-11.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-11-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/13.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-12.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-12-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/14.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-13.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-13-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/15.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-14.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-14-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/16.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-15.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-15-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/17.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-16.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-16-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/18.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-17.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-17-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/kitchen-living/19.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-18.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-18-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/20.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-19.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-19-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/kitchen-living/21.jpg": {
+    "webp": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-20.webp",
+    "webp800": "assets/projects/dom-sinegore/kitchen-living/dom-sinegore-kitchen-living-20-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/01.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-01.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/02.2.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-02.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/03.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-03.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/04.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-04.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/05.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-05.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/06.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-06.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/07.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-07.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/08.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-08.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-08-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/09.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-09.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-09-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/dom-sinegore/study/10.1.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-10.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-10-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/dom-sinegore/study/11.jpg": {
+    "webp": "assets/projects/dom-sinegore/study/dom-sinegore-study-11.webp",
+    "webp800": "assets/projects/dom-sinegore/study/dom-sinegore-study-11-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/kabinet-morozovo/interior/1.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-01.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/2.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-02.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/3.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-03.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/5.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-04.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/6.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-05.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/7.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-06.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-06-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/8.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-07.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-07-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/9.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-08.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-08-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kabinet-morozovo/interior/10.jpg": {
+    "webp": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-09.webp",
+    "webp800": "assets/projects/kabinet-morozovo/interior/kabinet-morozovo-interior-09-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kedrovy-ns/kids-room/1-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-01.webp",
+    "webp800": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-01-800.webp",
+    "width": 1920,
+    "height": 1309,
+    "preview_width": 800,
+    "preview_height": 545
+  },
+  "assets/projects/kedrovy-ns/kids-room/625640_0000(2)-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-02.webp",
+    "webp800": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-02-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kids-room/625640_0000(5)-upscale-1.9x(1).jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-03.webp",
+    "webp800": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-03-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kids-room/625640_0000(5)-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-04.webp",
+    "webp800": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-04-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kids-room/625640_0000-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-05.webp",
+    "webp800": "assets/projects/kedrovy-ns/kids-room/kedrovy-ns-kids-room-05-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(3)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-01.webp",
+    "webp800": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-01-800.webp",
+    "width": 1920,
+    "height": 1309,
+    "preview_width": 800,
+    "preview_height": 545
+  },
+  "assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(7)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-02.webp",
+    "webp800": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-02-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(9)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-03.webp",
+    "webp800": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-03-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/kitchen-living/005848974447_0000(14)-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-04.webp",
+    "webp800": "assets/projects/kedrovy-ns/kitchen-living/kedrovy-ns-kitchen-living-04-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/wc/002-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/wc/kedrovy-ns-wc-01.webp",
+    "webp800": "assets/projects/kedrovy-ns/wc/kedrovy-ns-wc-01-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kedrovy-ns/wc/004-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/kedrovy-ns/wc/kedrovy-ns-wc-02.webp",
+    "webp800": "assets/projects/kedrovy-ns/wc/kedrovy-ns-wc-02-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/kvartal-dekabristov/bathroom/19.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-01.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bathroom/21.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-02.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bathroom/23.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-03.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bathroom/kvartal-dekabristov-bathroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bedroom/9.jpeg": {
+    "webp": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-01.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bedroom/11.jpeg": {
+    "webp": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-02.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bedroom/12.jpeg": {
+    "webp": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-03.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bedroom/14.jpeg": {
+    "webp": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-04.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/bedroom/16.jpeg": {
+    "webp": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-05.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/bedroom/kvartal-dekabristov-bedroom-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/entry/1.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/entry/kvartal-dekabristov-entry-01.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/entry/kvartal-dekabristov-entry-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/entry/4.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/entry/kvartal-dekabristov-entry-02.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/entry/kvartal-dekabristov-entry-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/girls-room/25.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-01.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/girls-room/28.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-02.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/girls-room/29.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-03.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/girls-room/30.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-04.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/girls-room/31.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-05.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/girls-room/kvartal-dekabristov-girls-room-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/6.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-01.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/7.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-02.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/8.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-03.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/10.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-04.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/11.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-05.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/12.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-06.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-06-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/13.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-07.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-07-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/14.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-08.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-08-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartal-dekabristov/kitchen-living/15.jpg": {
+    "webp": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-09.webp",
+    "webp800": "assets/projects/kvartal-dekabristov/kitchen-living/kvartal-dekabristov-kitchen-living-09-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/00.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-01.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-01-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/01.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-02.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-02-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/03.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-03.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-03-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/04.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-04.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-04-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/06_resized.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-05.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-05-800.webp",
+    "width": 1920,
+    "height": 1371,
+    "preview_width": 800,
+    "preview_height": 571
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/07.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-06.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-06-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-1/08.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-07.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-1/kvartira-dubay-bedroom-1-07-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/01.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-01.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/02.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-02.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/03.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-03.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/05.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-04.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/06.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-05.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/07.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-06.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-06-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/bedroom-2/08.jpg": {
+    "webp": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-07.webp",
+    "webp800": "assets/projects/kvartira-dubay/bedroom-2/kvartira-dubay-bedroom-2-07-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/01.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-01.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-01-800.webp",
+    "width": 1920,
+    "height": 1407,
+    "preview_width": 800,
+    "preview_height": 586
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/02.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-02.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-02-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/03.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-03.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-03-800.webp",
+    "width": 1920,
+    "height": 1201,
+    "preview_width": 800,
+    "preview_height": 500
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/04.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-04.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-04-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/05.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-05.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-05-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/06.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-06.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-06-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/07.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-07.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-07-800.webp",
+    "width": 1920,
+    "height": 1201,
+    "preview_width": 800,
+    "preview_height": 500
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/08.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-08.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-08-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/09.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-09.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-09-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/10.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-10.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-10-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/11.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-11.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-11-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/12.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-12.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-12-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/13.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-13.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-13-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/14.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-14.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-14-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/15.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-15.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-15-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/kitchen-living/16.jpg": {
+    "webp": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-16.webp",
+    "webp800": "assets/projects/kvartira-dubay/kitchen-living/kvartira-dubay-kitchen-living-16-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/kvartira-dubay/wc-green/01.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-01.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-green/02.jpeg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-02.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-green/03.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-03.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-green/04.jpeg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-04.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-green/06.jpeg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-05.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-green/08.jpeg": {
+    "webp": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-06.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-green/kvartira-dubay-wc-green-06-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-pink/01.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-01.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-pink/03.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-02.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-pink/04.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-03.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-pink/07.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-04.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/kvartira-dubay/wc-pink/09.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-05.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/kvartira-dubay/wc-pink/10.jpg": {
+    "webp": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-06.webp",
+    "webp800": "assets/projects/kvartira-dubay/wc-pink/kvartira-dubay-wc-pink-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/laki-park-dom/kitchen-living/001-denoise-upscale-1.7x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-01.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-01-800.webp",
+    "width": 1570,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 978
+  },
+  "assets/projects/laki-park-dom/kitchen-living/002-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-02.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-02-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/kitchen-living/003-denoise-upscale-1.7x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-03.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-03-800.webp",
+    "width": 1570,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 978
+  },
+  "assets/projects/laki-park-dom/kitchen-living/004-denoise-upscale-1.7x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-04.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-04-800.webp",
+    "width": 1570,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 978
+  },
+  "assets/projects/laki-park-dom/kitchen-living/005-denoise-upscale-1.7x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-05.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-05-800.webp",
+    "width": 1570,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 978
+  },
+  "assets/projects/laki-park-dom/kitchen-living/006-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-06.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-06-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/kitchen-living/007,1-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-07.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-07-800.webp",
+    "width": 1920,
+    "height": 1309,
+    "preview_width": 800,
+    "preview_height": 545
+  },
+  "assets/projects/laki-park-dom/kitchen-living/0010-denoise-upscale-1.7x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-08.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-08-800.webp",
+    "width": 1570,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 978
+  },
+  "assets/projects/laki-park-dom/kitchen-living/0011-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-09.webp",
+    "webp800": "assets/projects/laki-park-dom/kitchen-living/laki-park-dom-kitchen-living-09-800.webp",
+    "width": 1920,
+    "height": 1309,
+    "preview_width": 800,
+    "preview_height": 545
+  },
+  "assets/projects/laki-park-dom/wc-1/005544777_0000(3)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-01.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-01-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/wc-1/005544777_0000(5)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-02.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-02-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/wc-1/005544777_0000(6)-denoise-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-03.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-03-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/wc-1/005544777_0000-upscale-1.9x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-04.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-1/laki-park-dom-wc-1-04-800.webp",
+    "width": 1309,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1173
+  },
+  "assets/projects/laki-park-dom/wc-2/02354_0000(1)-denoise-upscale-2x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-2/laki-park-dom-wc-2-01.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-2/laki-park-dom-wc-2-01-800.webp",
+    "width": 1249,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1230
+  },
+  "assets/projects/laki-park-dom/wc-2/02354_0000(2)-denoise-upscale-2x.jpeg": {
+    "webp": "assets/projects/laki-park-dom/wc-2/laki-park-dom-wc-2-02.webp",
+    "webp800": "assets/projects/laki-park-dom/wc-2/laki-park-dom-wc-2-02-800.webp",
+    "width": 1249,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1230
+  },
+  "assets/projects/little-classic/bathroom/1.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-01.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/2.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-02.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/3.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-03.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/4.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-04.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/5.1.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-05.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/6.1.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-06.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bathroom/7.jpg": {
+    "webp": "assets/projects/little-classic/bathroom/little-classic-bathroom-07.webp",
+    "webp800": "assets/projects/little-classic/bathroom/little-classic-bathroom-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/8.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-01.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/9.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-02.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/10.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-03.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/11.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-04.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/12.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-05.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/13.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-06.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/bedroom/14.jpg": {
+    "webp": "assets/projects/little-classic/bedroom/little-classic-bedroom-07.webp",
+    "webp800": "assets/projects/little-classic/bedroom/little-classic-bedroom-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/15.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-01.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/16.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-02.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/17.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-03.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/18.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-04.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/19.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-05.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/20.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-06.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/21.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-07.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/22.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-08.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-08-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/23.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-09.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-09-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/little-classic/kitchen-living/24.jpg": {
+    "webp": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-10.webp",
+    "webp800": "assets/projects/little-classic/kitchen-living/little-classic-kitchen-living-10-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/moscow-studio/interior/1.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-01.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-01-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/2.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-02.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-02-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/3.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-03.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-03-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/4.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-04.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-04-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/5.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-05.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-05-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/6.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-06.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-06-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/8.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-07.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-07-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/9.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-08.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-08-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/10.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-09.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-09-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/11.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-10.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-10-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/12.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-11.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-11-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/13.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-12.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-12-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/14.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-13.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-13-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/15.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-14.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-14-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/16.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-15.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-15-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/30.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-16.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-16-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/31.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-17.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-17-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/32.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-18.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-18-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/33.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-19.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-19-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/moscow-studio/interior/34.jpg": {
+    "webp": "assets/projects/moscow-studio/interior/moscow-studio-interior-20.webp",
+    "webp800": "assets/projects/moscow-studio/interior/moscow-studio-interior-20-800.webp",
+    "width": 1371,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1120
+  },
+  "assets/projects/nevskaya-dom/bathroom/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/bathroom/2.jpg": {
+    "webp": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/bathroom/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/bathroom/5.jpg": {
+    "webp": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/bathroom/6.jpg": {
+    "webp": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-05.webp",
+    "webp800": "assets/projects/nevskaya-dom/bathroom/nevskaya-dom-bathroom-05-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/nevskaya-dom/guest-bedroom/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/guest-bedroom/2.jpg": {
+    "webp": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/guest-bedroom/3.jpg": {
+    "webp": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/guest-bedroom/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-04-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/nevskaya-dom/guest-bedroom/5.jpg": {
+    "webp": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-05.webp",
+    "webp800": "assets/projects/nevskaya-dom/guest-bedroom/nevskaya-dom-guest-bedroom-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/3.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/6.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/7.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/8.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-05.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-05-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/9.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-06.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-06-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/11.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-07.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-07-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/12.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-08.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-08-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/13.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-09.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-09-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/14.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-10.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-10-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/15.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-11.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-11-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/kitchen-living/17.jpg": {
+    "webp": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-12.webp",
+    "webp800": "assets/projects/nevskaya-dom/kitchen-living/nevskaya-dom-kitchen-living-12-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/master-bedroom/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/master-bedroom/3.jpg": {
+    "webp": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/master-bedroom/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/master-bedroom/5.jpg": {
+    "webp": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/master-bedroom/6.jpg": {
+    "webp": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-05.webp",
+    "webp800": "assets/projects/nevskaya-dom/master-bedroom/nevskaya-dom-master-bedroom-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/shower/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/shower/2.jpg": {
+    "webp": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/shower/3.jpg": {
+    "webp": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/shower/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/shower/5.jpg": {
+    "webp": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-05.webp",
+    "webp800": "assets/projects/nevskaya-dom/shower/nevskaya-dom-shower-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/study/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/study/2.jpg": {
+    "webp": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/study/3.jpg": {
+    "webp": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-03.webp",
+    "webp800": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/study/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-04.webp",
+    "webp800": "assets/projects/nevskaya-dom/study/nevskaya-dom-study-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/wardrobe/1.jpg": {
+    "webp": "assets/projects/nevskaya-dom/wardrobe/nevskaya-dom-wardrobe-01.webp",
+    "webp800": "assets/projects/nevskaya-dom/wardrobe/nevskaya-dom-wardrobe-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/nevskaya-dom/wardrobe/4.jpg": {
+    "webp": "assets/projects/nevskaya-dom/wardrobe/nevskaya-dom-wardrobe-02.webp",
+    "webp800": "assets/projects/nevskaya-dom/wardrobe/nevskaya-dom-wardrobe-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4831.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-01.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4832.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-02.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4833.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-03.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4834.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-04.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4835.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-05.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4836.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-06.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-06-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/ns-akadem-pulsar/bedroom/IMG_4837.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-07.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/bedroom/ns-akadem-pulsar-bedroom-07-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/entry/IMG_4845.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-01.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/entry/IMG_4846.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-02.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/entry/IMG_4847.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-03.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/entry/ns-akadem-pulsar-entry-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/guest-wc/IMG_4842.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-01.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-01-800.webp",
+    "width": 1152,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1333
+  },
+  "assets/projects/ns-akadem-pulsar/guest-wc/IMG_4843.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-02.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-02-800.webp",
+    "width": 1152,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1333
+  },
+  "assets/projects/ns-akadem-pulsar/guest-wc/IMG_4844.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-03.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/guest-wc/ns-akadem-pulsar-guest-wc-03-800.webp",
+    "width": 1152,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1333
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4822.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-01.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-01-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4823.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-02.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4824.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-03.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4825.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-04.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4826.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-05.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-05-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4827.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-06.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-06-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4828.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-07.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-07-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4829.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-08.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-08-800.webp",
+    "width": 1920,
+    "height": 1280,
+    "preview_width": 800,
+    "preview_height": 533
+  },
+  "assets/projects/ns-akadem-pulsar/kitchen-living/IMG_4830.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-09.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/kitchen-living/ns-akadem-pulsar-kitchen-living-09-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/master-wc/IMG_4838.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-01.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-01-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/master-wc/IMG_4839.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-02.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-02-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/master-wc/IMG_4840.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-03.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-03-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/ns-akadem-pulsar/master-wc/IMG_4841.JPG": {
+    "webp": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-04.webp",
+    "webp800": "assets/projects/ns-akadem-pulsar/master-wc/ns-akadem-pulsar-master-wc-04-800.webp",
+    "width": 1344,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/oblaka-orhan/interior/cam_12.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-01.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-01-800.webp",
+    "width": 1190,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1143
+  },
+  "assets/projects/oblaka-orhan/interior/cam_24.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-02.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-02-800.webp",
+    "width": 1286,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1058
+  },
+  "assets/projects/oblaka-orhan/interior/cam_25.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-03.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-03-800.webp",
+    "width": 1000,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1360
+  },
+  "assets/projects/oblaka-orhan/interior/cam_27.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-04.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-04-800.webp",
+    "width": 1000,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1360
+  },
+  "assets/projects/oblaka-orhan/interior/cam_31.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-05.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-05-800.webp",
+    "width": 1074,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1266
+  },
+  "assets/projects/oblaka-orhan/interior/cam_32.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-06.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-06-800.webp",
+    "width": 1074,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1266
+  },
+  "assets/projects/oblaka-orhan/interior/cam_33.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-07.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-07-800.webp",
+    "width": 1074,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1266
+  },
+  "assets/projects/oblaka-orhan/interior/cam_34.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-08.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-08-800.webp",
+    "width": 1074,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1266
+  },
+  "assets/projects/oblaka-orhan/interior/cam_37.jpg": {
+    "webp": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-09.webp",
+    "webp800": "assets/projects/oblaka-orhan/interior/oblaka-orhan-interior-09-800.webp",
+    "width": 1074,
+    "height": 1700,
+    "preview_width": 800,
+    "preview_height": 1266
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2028.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-01.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-01-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2036.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-02.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-02-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2042.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-03.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-03-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2050.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-04.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-04-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2058.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-05.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-05-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2066.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-06.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-06-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2070.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-07.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-07-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2079.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-08.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-08-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2081.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-09.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-09-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2084.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-10.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-10-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2089.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-11.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-11-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2092.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-12.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-12-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2100.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-13.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-13-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2106 1.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-14.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-14-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2113.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-15.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-15-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2155.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-16.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-16-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2162.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-17.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-17-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2166.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-18.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-18-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/salon-krasoty-tati/interior/08.04.2026 Кристина Key Design Tati DSCF2179.jpg": {
+    "webp": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-19.webp",
+    "webp800": "assets/projects/salon-krasoty-tati/interior/salon-krasoty-tati-interior-19-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/vostochny-vayb/bedroom/IMG_4820.JPG": {
+    "webp": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-01.webp",
+    "webp800": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/bedroom/IMG_4821.JPG": {
+    "webp": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-02.webp",
+    "webp800": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/bedroom/IMG_8992.JPG": {
+    "webp": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-03.webp",
+    "webp800": "assets/projects/vostochny-vayb/bedroom/vostochny-vayb-bedroom-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_4813.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-01.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_4814.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-02.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-02-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_4815.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-03.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-03-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_4817.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-04.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-04-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_8988.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-05.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-05-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_8990.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-06.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-06-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/kitchen-living/IMG_8991.JPG": {
+    "webp": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-07.webp",
+    "webp800": "assets/projects/vostochny-vayb/kitchen-living/vostochny-vayb-kitchen-living-07-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/vostochny-vayb/wc/IMG_4818.JPG": {
+    "webp": "assets/projects/vostochny-vayb/wc/vostochny-vayb-wc-01.webp",
+    "webp800": "assets/projects/vostochny-vayb/wc/vostochny-vayb-wc-01-800.webp",
+    "width": 1248,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1231
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4796.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-01.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-01-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4797.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-02.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-02-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4798.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-03.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-03-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4799.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-04.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-04-800.webp",
+    "width": 1920,
+    "height": 1440,
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4800.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-05.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-05-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4801.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-06.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-06-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4802.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-07.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-07-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4803.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-08.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-08-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4804.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-09.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-09-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4805.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-10.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-10-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4806.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-11.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-11-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4807.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-12.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-12-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4808.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-13.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-13-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4809.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-14.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-14-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  },
+  "assets/projects/zhk-arkhitektor/interior/IMG_4810.JPG": {
+    "webp": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-15.webp",
+    "webp800": "assets/projects/zhk-arkhitektor/interior/zhk-arkhitektor-interior-15-800.webp",
+    "width": 1440,
+    "height": 1920,
+    "preview_width": 800,
+    "preview_height": 1067
+  }
+}

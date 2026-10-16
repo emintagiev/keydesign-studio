@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Copy original images and generate project pages from Desktop folders."""
 
+import json
 import re
 import shutil
 import subprocess
 import sys
+from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
 
@@ -15,6 +18,7 @@ PROJECTS_DIR = CONTENT_DIR / "projects"
 DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
+ORIGIN_EXTS = {".jpg", ".jpeg", ".png"}
 ASSET_JS_VERSION = "36"
 ASSET_CSS_VERSION = "78"
 
@@ -287,8 +291,40 @@ def list_images(slug: str, room_slug: str) -> list[str]:
     if not d.exists():
         return []
     return sorted(
-        [f.name for f in d.iterdir() if f.suffix.lower() in IMAGE_EXTS],
+        [f.name for f in d.iterdir() if f.suffix.lower() in ORIGIN_EXTS],
         key=natural_sort_key,
+    )
+
+
+def load_image_manifest() -> dict:
+    path = ROOT / "content" / "image-manifest.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+IMAGE_MANIFEST = load_image_manifest()
+
+
+def _url(path: str) -> str:
+    return quote(path, safe="/")
+
+
+def render_picture(src: str, alt: str, *, preview: bool = False, lazy: bool = True) -> str:
+    info = IMAGE_MANIFEST.get(src)
+    loading = 'loading="lazy"' if lazy else 'fetchpriority="high"'
+    safe_alt = escape(alt, quote=True)
+    if not info:
+        return f'<img src="{_url(src)}" alt="{safe_alt}" {loading} decoding="async" />'
+    webp = info["webp800"] if preview else info["webp"]
+    width = info["preview_width"] if preview else info["width"]
+    height = info["preview_height"] if preview else info["height"]
+    return (
+        "<picture>"
+        f'<source srcset="{_url(webp)}" type="image/webp" />'
+        f'<img src="{_url(src)}" data-full="{_url(info["webp"])}" alt="{safe_alt}" '
+        f'width="{width}" height="{height}" {loading} decoding="async" />'
+        "</picture>"
     )
 
 
@@ -340,17 +376,18 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
     cards = []
     views = []
 
-    for room_slug, name, cover in cfg["rooms"]:
+    for room_index, (room_slug, name, cover) in enumerate(cfg["rooms"]):
         imgs = list_images(slug, room_slug)
         n = len(imgs)
         cover_path = f"assets/projects/{slug}/{room_slug}/{cover}"
         if cover not in imgs and imgs:
             cover_path = f"assets/projects/{slug}/{room_slug}/{imgs[0]}"
+        cover_html = render_picture(cover_path, name, preview=True, lazy=room_index != 0)
 
         cards.append(
             f'''          <button class="room-card" type="button" data-room="{room_slug}">
             <span class="room-card__media">
-              <img src="{cover_path}" alt="{name}" loading="lazy" />
+              {cover_html}
             </span>
             <span class="room-card__label">
               <span class="room-card__name">{name}</span>
@@ -362,10 +399,11 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
         figs = []
         for img in imgs:
             src = f"assets/projects/{slug}/{room_slug}/{img}"
+            picture = render_picture(src, f"{name} - Key Design Studio", preview=False, lazy=True)
             figs.append(
-                f"              <figure>\n"
-                f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-                f"              </figure>"
+                "              <figure>\n"
+                f"                {picture}\n"
+                "              </figure>"
             )
 
         views.append(
@@ -391,23 +429,17 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
 def build_single_gallery(cfg: dict) -> str:
     slug = cfg["slug"]
     room_slug, name, _cover = cfg["rooms"][0]
-    figs = []
     yaml_paths = gallery_image_paths(cfg)
-    if yaml_paths:
-        for src in yaml_paths:
-            figs.append(
-                f"              <figure>\n"
-                f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-                f"              </figure>"
-            )
-        return "\n".join(figs)
-
-    for img in list_images(slug, room_slug):
-        src = f"assets/projects/{slug}/{room_slug}/{img}"
+    sources = yaml_paths or [
+        f"assets/projects/{slug}/{room_slug}/{img}" for img in list_images(slug, room_slug)
+    ]
+    figs = []
+    for index, src in enumerate(sources):
+        picture = render_picture(src, f"{name} - Key Design Studio", preview=False, lazy=index != 0)
         figs.append(
-            f"              <figure>\n"
-            f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-            f"              </figure>"
+            "              <figure>\n"
+            f"                {picture}\n"
+            "              </figure>"
         )
     return "\n".join(figs)
 
@@ -581,11 +613,12 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
 
 def generate_projects_page(projects: list[dict]):
     cards = []
-    for p in projects:
+    for index, p in enumerate(projects):
+        picture = render_picture(p["cover"], p["title_plain"], preview=True, lazy=index != 0)
         cards.append(
             f'''        <a class="proj-grid-card" href="{p["url"]}">
           <span class="proj-grid-card__media">
-            <img src="{p["cover"]}" alt="{p["title_plain"]}" loading="lazy" />
+            {picture}
           </span>
           <span class="proj-grid-card__info">
             <span class="proj-grid-card__name" data-i18n="{p["i18n_name"]}">{p["carousel_name"]}</span>

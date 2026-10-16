@@ -3746,3 +3746,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    /* WebP wrapper keeps the same image box as a plain img */
+    .proj-gallery picture,
+    .room-card__media picture,
+    .proj-grid-card__media picture {
+      display: contents;
+    }
