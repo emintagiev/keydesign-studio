@@ -39,3 +39,9 @@ rooms:
 - slug: wardrobe
   name: Мастер-гардеробная
   cover_filename: 1.jpg
+
+summary: ""
+task: ""
+solution: ""
+services: []
+relatedGuides: []

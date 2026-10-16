@@ -3753,3 +3753,36 @@
     .proj-grid-card__media picture {
       display: contents;
     }
+
+    .proj-story {
+      max-width: 62ch;
+      margin: 0 0 clamp(1.75rem, 1rem + 2vw, 2.75rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .proj-story h2 {
+      margin: 0.6rem 0 0;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .proj-story p,
+    .proj-story li {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: var(--fs-lead);
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .proj-story ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }

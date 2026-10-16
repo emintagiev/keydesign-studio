@@ -461,9 +461,45 @@ def build_single_gallery(cfg: dict) -> str:
     return "\n".join(figs)
 
 
+def story_block(cfg: dict) -> str:
+    summary = str(cfg.get("summary") or "").strip()
+    task = str(cfg.get("task") or "").strip()
+    solution = str(cfg.get("solution") or "").strip()
+    services = [str(item).strip() for item in (cfg.get("services") or []) if str(item).strip()]
+    guides = []
+    for item in cfg.get("relatedGuides") or []:
+        if isinstance(item, str) and item.strip():
+            guides.append(item.strip())
+        elif isinstance(item, dict) and item.get("url"):
+            guides.append(str(item["url"]).strip())
+    if not any([summary, task, solution, services, guides]):
+        return ""
+
+    parts = ['      <div class="proj-story">']
+    if summary:
+        parts.append(f"        <p>{escape(summary)}</p>")
+    if task:
+        parts.append("        <h2>Задача</h2>")
+        parts.append(f"        <p>{escape(task)}</p>")
+    if solution:
+        parts.append("        <h2>Решение</h2>")
+        parts.append(f"        <p>{escape(solution)}</p>")
+    if services:
+        items = "".join(f"<li>{escape(item)}</li>" for item in services)
+        parts.append(f"        <h2>Услуги</h2>\n        <ul>{items}</ul>")
+    if guides:
+        items = "".join(
+            f'<li><a href="{escape(item, quote=True)}">{escape(item)}</a></li>' for item in guides
+        )
+        parts.append(f"        <h2>Статьи</h2>\n        <ul>{items}</ul>")
+    parts.append("      </div>")
+    return "\n".join(parts)
+
+
 def generate_html(cfg: dict):
     cards, views = build_cards_and_views(cfg)
     is_single = len(cfg["rooms"]) == 1
+    story = story_block(cfg)
 
     if is_single:
         gallery = build_single_gallery(cfg)
@@ -476,7 +512,7 @@ def generate_html(cfg: dict):
         </div>
 {HOME_LINK}
       </div>
-
+{story}
       <section class="project-gallery" aria-label="Фотографии проекта">
         <div class="room-stage">
           <button class="gallery-arrow gallery-arrow--prev" type="button" data-dir="prev" aria-label="Предыдущее фото">‹</button>
@@ -514,7 +550,7 @@ def generate_html(cfg: dict):
           </div>
 {HOME_LINK}
         </div>
-
+{story}
         <div class="rooms-rail-head">
           <h2 class="rooms-rail-title">Комнаты</h2>
           <div class="rail-nav">
