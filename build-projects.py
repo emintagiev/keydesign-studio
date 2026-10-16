@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """Copy original images and generate project pages from Desktop folders."""
 
+import json
 import re
 import shutil
 import subprocess
 import sys
+from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
+
+from seo import inject_metrika
 
 ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
@@ -15,6 +20,7 @@ PROJECTS_DIR = CONTENT_DIR / "projects"
 DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
+ORIGIN_EXTS = {".jpg", ".jpeg", ".png"}
 ASSET_JS_VERSION = "36"
 ASSET_CSS_VERSION = "78"
 
@@ -287,8 +293,50 @@ def list_images(slug: str, room_slug: str) -> list[str]:
     if not d.exists():
         return []
     return sorted(
-        [f.name for f in d.iterdir() if f.suffix.lower() in IMAGE_EXTS],
+        [f.name for f in d.iterdir() if f.suffix.lower() in ORIGIN_EXTS],
         key=natural_sort_key,
+    )
+
+
+def load_image_manifest() -> dict:
+    path = ROOT / "content" / "image-manifest.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+IMAGE_MANIFEST = load_image_manifest()
+
+
+def _url(path: str) -> str:
+    return quote(path, safe="/")
+
+
+def photo_alt(cfg: dict, room_name: str, number: int) -> str:
+    from seo import _area_m2, project_place
+
+    meta = cfg.get("meta") or {}
+    kind = (meta.get("type") or "").lower()
+    area = _area_m2(str(meta.get("area") or ""))
+    where = project_place(cfg.get("slug") or "", meta.get("city") or "")
+    return f"{room_name}, {kind} {area} м², {where} — фото {number}"
+
+
+def render_picture(src: str, alt: str, *, preview: bool = False, lazy: bool = True) -> str:
+    info = IMAGE_MANIFEST.get(src)
+    loading = 'loading="lazy"' if lazy else 'fetchpriority="high"'
+    safe_alt = escape(alt, quote=True)
+    if not info:
+        return f'<img src="{_url(src)}" alt="{safe_alt}" {loading} decoding="async" />'
+    webp = info["webp800"] if preview else info["webp"]
+    width = info["preview_width"] if preview else info["width"]
+    height = info["preview_height"] if preview else info["height"]
+    return (
+        "<picture>"
+        f'<source srcset="{_url(webp)}" type="image/webp" />'
+        f'<img src="{_url(src)}" data-full="{_url(info["webp"])}" alt="{safe_alt}" '
+        f'width="{width}" height="{height}" {loading} decoding="async" />'
+        "</picture>"
     )
 
 
@@ -340,17 +388,25 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
     cards = []
     views = []
 
-    for room_slug, name, cover in cfg["rooms"]:
+    for room_index, (room_slug, name, cover) in enumerate(cfg["rooms"]):
         imgs = list_images(slug, room_slug)
         n = len(imgs)
         cover_path = f"assets/projects/{slug}/{room_slug}/{cover}"
         if cover not in imgs and imgs:
             cover_path = f"assets/projects/{slug}/{room_slug}/{imgs[0]}"
+        cover_name = Path(cover_path).name
+        cover_number = imgs.index(cover_name) + 1 if cover_name in imgs else 1
+        cover_html = render_picture(
+            cover_path,
+            photo_alt(cfg, name, cover_number),
+            preview=True,
+            lazy=room_index != 0,
+        )
 
         cards.append(
             f'''          <button class="room-card" type="button" data-room="{room_slug}">
             <span class="room-card__media">
-              <img src="{cover_path}" alt="{name}" loading="lazy" />
+              {cover_html}
             </span>
             <span class="room-card__label">
               <span class="room-card__name">{name}</span>
@@ -360,12 +416,13 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
         )
 
         figs = []
-        for img in imgs:
+        for index, img in enumerate(imgs, start=1):
             src = f"assets/projects/{slug}/{room_slug}/{img}"
+            picture = render_picture(src, photo_alt(cfg, name, index), preview=False, lazy=True)
             figs.append(
-                f"              <figure>\n"
-                f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-                f"              </figure>"
+                "              <figure>\n"
+                f"                {picture}\n"
+                "              </figure>"
             )
 
         views.append(
@@ -391,30 +448,83 @@ def build_cards_and_views(cfg: dict) -> tuple[str, str]:
 def build_single_gallery(cfg: dict) -> str:
     slug = cfg["slug"]
     room_slug, name, _cover = cfg["rooms"][0]
-    figs = []
     yaml_paths = gallery_image_paths(cfg)
-    if yaml_paths:
-        for src in yaml_paths:
-            figs.append(
-                f"              <figure>\n"
-                f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-                f"              </figure>"
-            )
-        return "\n".join(figs)
-
-    for img in list_images(slug, room_slug):
-        src = f"assets/projects/{slug}/{room_slug}/{img}"
+    sources = yaml_paths or [
+        f"assets/projects/{slug}/{room_slug}/{img}" for img in list_images(slug, room_slug)
+    ]
+    figs = []
+    for index, src in enumerate(sources, start=1):
+        picture = render_picture(src, photo_alt(cfg, name, index), preview=False, lazy=index != 1)
         figs.append(
-            f"              <figure>\n"
-            f'                <img src="{src}" data-full="{src}" alt="{name} - Key Design Studio" loading="lazy" />\n'
-            f"              </figure>"
+            "              <figure>\n"
+            f"                {picture}\n"
+            "              </figure>"
         )
     return "\n".join(figs)
+
+
+def story_block(cfg: dict) -> str:
+    summary = str(cfg.get("summary") or "").strip()
+    task = str(cfg.get("task") or "").strip()
+    solution = str(cfg.get("solution") or "").strip()
+    services = [str(item).strip() for item in (cfg.get("services") or []) if str(item).strip()]
+    guides = []
+    for item in cfg.get("relatedGuides") or []:
+        if isinstance(item, str) and item.strip():
+            guides.append(item.strip())
+        elif isinstance(item, dict) and item.get("url"):
+            guides.append(str(item["url"]).strip())
+    if not any([summary, task, solution, services, guides]):
+        return ""
+
+    parts = ['      <div class="proj-story">']
+    if summary:
+        parts.append(f"        <p>{escape(summary)}</p>")
+    if task:
+        parts.append("        <h2>Задача</h2>")
+        parts.append(f"        <p>{escape(task)}</p>")
+    if solution:
+        parts.append("        <h2>Решение</h2>")
+        parts.append(f"        <p>{escape(solution)}</p>")
+    if services:
+        items = "".join(f"<li>{escape(item)}</li>" for item in services)
+        parts.append(f"        <h2>Услуги</h2>\n        <ul>{items}</ul>")
+    if guides:
+        items = "".join(
+            f'<li><a href="{escape(item, quote=True)}">{escape(item)}</a></li>' for item in guides
+        )
+        parts.append(f"        <h2>Статьи</h2>\n        <ul>{items}</ul>")
+    parts.append("      </div>")
+    return "\n".join(parts)
+
+
+def breadcrumb_ld(cfg: dict) -> str:
+    import json
+
+    origin = "https://www.keydesign.studio"
+    data = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{origin}/"},
+            {"@type": "ListItem", "position": 2, "name": "Проекты", "item": f"{origin}/projects"},
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": cfg.get("title_plain") or cfg.get("slug"),
+                "item": f"{origin}/{cfg['slug']}",
+            },
+        ],
+    }
+    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    return f'  <script type="application/ld+json">{payload}</script>'
 
 
 def generate_html(cfg: dict):
     cards, views = build_cards_and_views(cfg)
     is_single = len(cfg["rooms"]) == 1
+    story = story_block(cfg)
+    breadcrumb = breadcrumb_ld(cfg)
 
     if is_single:
         gallery = build_single_gallery(cfg)
@@ -427,7 +537,7 @@ def generate_html(cfg: dict):
         </div>
 {HOME_LINK}
       </div>
-
+{story}
       <section class="project-gallery" aria-label="Фотографии проекта">
         <div class="room-stage">
           <button class="gallery-arrow gallery-arrow--prev" type="button" data-dir="prev" aria-label="Предыдущее фото">‹</button>
@@ -465,7 +575,7 @@ def generate_html(cfg: dict):
           </div>
 {HOME_LINK}
         </div>
-
+{story}
         <div class="rooms-rail-head">
           <h2 class="rooms-rail-title">Комнаты</h2>
           <div class="rail-nav">
@@ -524,6 +634,7 @@ def generate_html(cfg: dict):
 
 {FAVICON_LINKS}
   <link rel="stylesheet" href="styles.css?v={ASSET_CSS_VERSION}" />
+{breadcrumb}
 </head>
 
 <body>
@@ -581,11 +692,29 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
 
 def generate_projects_page(projects: list[dict]):
     cards = []
-    for p in projects:
+    for index, p in enumerate(projects):
+        cover_file = Path(p["cover"]).name
+        room_name = "Интерьер"
+        number = 1
+        for room in p.get("rooms") or []:
+            if not isinstance(room, tuple):
+                continue
+            room_slug, name, _cover = room
+            imgs = list_images(p["slug"], room_slug)
+            if cover_file in imgs:
+                room_name = name
+                number = imgs.index(cover_file) + 1
+                break
+        picture = render_picture(
+            p["cover"],
+            photo_alt(p, room_name, number),
+            preview=True,
+            lazy=index != 0,
+        )
         cards.append(
             f'''        <a class="proj-grid-card" href="{p["url"]}">
           <span class="proj-grid-card__media">
-            <img src="{p["cover"]}" alt="{p["title_plain"]}" loading="lazy" />
+            {picture}
           </span>
           <span class="proj-grid-card__info">
             <span class="proj-grid-card__name" data-i18n="{p["i18n_name"]}">{p["carousel_name"]}</span>
@@ -647,7 +776,7 @@ def generate_projects_page(projects: list[dict]):
 </body>
 </html>
 '''
-    (ROOT / "projects.html").write_text(html, encoding="utf-8")
+    (ROOT / "projects.html").write_text(inject_metrika(html), encoding="utf-8")
     print("  → projects.html")
 
 
@@ -761,7 +890,7 @@ def main():
         sync_rooms_from_config(cfg)
         html = generate_html(cfg)
         out = ROOT / cfg["html"]
-        out.write_text(html, encoding="utf-8")
+        out.write_text(inject_metrika(html), encoding="utf-8")
         print(f"  → {out.name} ({len(html)} bytes)")
 
     sync_site_projects_order(projects)

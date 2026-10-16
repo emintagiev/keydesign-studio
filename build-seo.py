@@ -10,8 +10,11 @@ import yaml
 
 from seo import (
     STATIC_PAGES,
+    file_lastmod,
+    inject_metrika,
     inject_seo,
     page_url,
+    project_seo,
     write_robots,
     write_sitemap,
 )
@@ -32,13 +35,15 @@ def load_projects() -> list[dict]:
         if not data.get("published", True):
             continue
         slug = data["slug"]
+        data["slug"] = slug
+        title, description = project_seo(data)
         projects.append(
             {
                 "slug": slug,
                 "file": f"{slug}.html",
                 "path": f"/{slug}",
-                "title": data["title_plain"],
-                "description": data.get("description") or f'{data["title_plain"]} - проект Key Design Studio.',
+                "title": title,
+                "description": description,
                 "cover": data.get("cover"),
                 "sort_order": order_index.get(slug, data.get("sort_order", 9999)),
             }
@@ -54,10 +59,7 @@ def patch_static_pages() -> int:
         if not file_path.exists():
             print(f"  skip missing: {meta['file']}")
             continue
-        if path_key == "/":
-            title = meta["title"]
-        else:
-            title = f"{meta['title']} - Key Design Studio"
+        title = meta["title"]
         updated = inject_seo(
             file_path.read_text(encoding="utf-8"),
             canonical_path=path_key,
@@ -78,7 +80,7 @@ def patch_key_design_studio() -> None:
     updated = inject_seo(
         file_path.read_text(encoding="utf-8"),
         canonical_path="/",
-        title="Key Design Studio - студия интерьерного дизайна",
+        title=STATIC_PAGES["/"]["title"],
         description=STATIC_PAGES["/"]["description"],
         og_image=STATIC_PAGES["/"]["og_image"],
         noindex=True,
@@ -94,7 +96,7 @@ def patch_project_pages(projects: list[dict]) -> int:
         if not file_path.exists():
             print(f"  skip missing: {project['file']}")
             continue
-        title = f'{project["title"]} - проект Key Design Studio'
+        title = project["title"]
         updated = inject_seo(
             file_path.read_text(encoding="utf-8"),
             canonical_path=project["path"],
@@ -108,18 +110,23 @@ def patch_project_pages(projects: list[dict]) -> int:
     return changed
 
 
-def collect_sitemap_urls(projects: list[dict]) -> list[str]:
-    urls = [
-        page_url(path)
-        for path in STATIC_PAGES
-        if STATIC_PAGES[path]["file"] != "key-design-studio.html"
-    ]
-    urls.extend(page_url(project["path"]) for project in projects)
-    # Stable order: home first, then static, then projects
+def collect_sitemap(projects: list[dict]) -> tuple[list[str], dict[str, str]]:
     home = page_url("/")
-    static = [page_url(path) for path in ("/about", "/projects", "/services", "/contacts", "/privacy")]
-    project_urls = [page_url(project["path"]) for project in projects]
-    return [home, *static, *project_urls]
+    static_paths = ("/about", "/projects", "/services", "/contacts", "/privacy")
+    urls = [home, *[page_url(path) for path in static_paths]]
+    lastmods = {home: file_lastmod(ROOT / "index.html")}
+    for path in static_paths:
+        lastmods[page_url(path)] = file_lastmod(ROOT / STATIC_PAGES[path]["file"])
+    for project in projects:
+        url = page_url(project["path"])
+        urls.append(url)
+        html_path = ROOT / project["file"]
+        yaml_path = ROOT / "content" / "projects" / f'{project["slug"]}.yaml'
+        stamps = [file_lastmod(html_path)]
+        if yaml_path.exists():
+            stamps.append(file_lastmod(yaml_path))
+        lastmods[url] = max(stamps)
+    return urls, lastmods
 
 
 def main() -> int:
@@ -132,9 +139,18 @@ def main() -> int:
     print("SEO files:")
     write_robots(ROOT / "robots.txt")
     print("  robots.txt")
-    urls = collect_sitemap_urls(projects)
-    write_sitemap(ROOT / "sitemap.xml", urls)
+    urls, lastmods = collect_sitemap(projects)
+    write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
     print(f"  sitemap.xml ({len(urls)} urls)")
+
+    metrika = 0
+    for html_path in sorted(ROOT.glob("*.html")):
+        original = html_path.read_text(encoding="utf-8")
+        updated = inject_metrika(original)
+        if updated != original:
+            html_path.write_text(updated, encoding="utf-8")
+            metrika += 1
+    print(f"  metrika: {metrika} pages")
     return 0
 
 

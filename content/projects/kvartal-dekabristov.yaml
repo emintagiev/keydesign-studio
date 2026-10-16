@@ -33,3 +33,9 @@ rooms:
 - slug: bedroom
   name: Спальня
   cover_filename: 9.jpeg
+
+summary: ""
+task: ""
+solution: ""
+services: []
+relatedGuides: []

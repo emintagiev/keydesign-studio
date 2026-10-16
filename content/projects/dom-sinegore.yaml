@@ -39,3 +39,9 @@ rooms:
 - slug: entry
   name: Прихожая
   cover_filename: 01.jpg
+
+summary: ""
+task: ""
+solution: ""
+services: []
+relatedGuides: []

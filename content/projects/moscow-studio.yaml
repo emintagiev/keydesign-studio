@@ -22,3 +22,9 @@ rooms:
 - slug: interior
   name: Интерьер
   cover_filename: 1.jpg
+
+summary: ""
+task: ""
+solution: ""
+services: []
+relatedGuides: []

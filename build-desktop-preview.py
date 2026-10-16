@@ -21,7 +21,7 @@ SITE_FILES = [
     "moscow-studio.html",
     "kvartira-dubay.html",
     "dom-sinegore.html",
-    "salok-krasoty-tati.html",
+    "salon-krasoty-tati.html",
     "laki-park-dom.html",
     "zhk-arkhitektor.html",
     "ns-akadem-pulsar.html",
