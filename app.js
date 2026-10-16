@@ -1137,7 +1137,7 @@
           })
             .then(function (res) {
               if (!res.ok) throw new Error("submit failed");
-              if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "lead");
+              if (typeof ym === "function") ym(12345678, "reachGoal", "lead");
               briefShowDone();
             })
             .catch(function () {
@@ -1209,12 +1209,12 @@
 
       document.querySelectorAll('a[href*="t.me/"]').forEach(function (link) {
         link.addEventListener("click", function () {
-          if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "tg_click");
+          if (typeof ym === "function") ym(12345678, "reachGoal", "tg_click");
         });
       });
       document.querySelectorAll('a[href*="instagram.com"]').forEach(function (link) {
         link.addEventListener("click", function () {
-          if (typeof ym === "function") ym(XXXXXXXX, "reachGoal", "ig_click");
+          if (typeof ym === "function") ym(12345678, "reachGoal", "ig_click");
         });
       });
 

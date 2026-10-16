@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 SITE_ORIGIN = "https://www.keydesign.studio"
 DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/hero/1.jpg"
 YANDEX_VERIFICATION = "b31dd3613bec3f68"
-METRIKA_ID = "XXXXXXXX"
+METRIKA_ID = "12345678"
 METRIKA_MARKER = "Yandex.Metrika counter"
 METRIKA_SNIPPET = f"""<!-- {METRIKA_MARKER} -->
 <script>
