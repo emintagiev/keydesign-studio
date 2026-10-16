@@ -496,10 +496,33 @@ def story_block(cfg: dict) -> str:
     return "\n".join(parts)
 
 
+def breadcrumb_ld(cfg: dict) -> str:
+    import json
+
+    origin = "https://www.keydesign.studio"
+    data = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{origin}/"},
+            {"@type": "ListItem", "position": 2, "name": "Проекты", "item": f"{origin}/projects"},
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": cfg.get("title_plain") or cfg.get("slug"),
+                "item": f"{origin}/{cfg['slug']}",
+            },
+        ],
+    }
+    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    return f'  <script type="application/ld+json">{payload}</script>'
+
+
 def generate_html(cfg: dict):
     cards, views = build_cards_and_views(cfg)
     is_single = len(cfg["rooms"]) == 1
     story = story_block(cfg)
+    breadcrumb = breadcrumb_ld(cfg)
 
     if is_single:
         gallery = build_single_gallery(cfg)
@@ -609,6 +632,7 @@ def generate_html(cfg: dict):
 
 {FAVICON_LINKS}
   <link rel="stylesheet" href="styles.css?v={ASSET_CSS_VERSION}" />
+{breadcrumb}
 </head>
 
 <body>
