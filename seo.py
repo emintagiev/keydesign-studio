@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import html
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -171,6 +171,10 @@ def project_seo(cfg: dict) -> tuple[str, str]:
 
 
 
+def file_lastmod(path: Path) -> str:
+    return datetime.fromtimestamp(path.stat().st_mtime).date().isoformat()
+
+
 def page_url(path: str) -> str:
     if path == "/":
         return f"{SITE_ORIGIN}/"
@@ -302,18 +306,19 @@ def write_robots(path: Path) -> None:
     path.write_text(content, encoding="utf-8")
 
 
-def write_sitemap(path: Path, urls: list[str]) -> None:
-    today = date.today().isoformat()
+def write_sitemap(path: Path, urls: list[str], lastmods: dict[str, str] | None = None) -> None:
+    fallback = date.today().isoformat()
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for url in urls:
+        lastmod = (lastmods or {}).get(url, fallback)
         lines.extend(
             [
                 "  <url>",
                 f"    <loc>{html.escape(url, quote=True)}</loc>",
-                f"    <lastmod>{today}</lastmod>",
+                f"    <lastmod>{lastmod}</lastmod>",
                 "  </url>",
             ]
         )

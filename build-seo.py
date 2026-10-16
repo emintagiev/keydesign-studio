@@ -10,6 +10,7 @@ import yaml
 
 from seo import (
     STATIC_PAGES,
+    file_lastmod,
     inject_seo,
     page_url,
     project_seo,
@@ -108,18 +109,23 @@ def patch_project_pages(projects: list[dict]) -> int:
     return changed
 
 
-def collect_sitemap_urls(projects: list[dict]) -> list[str]:
-    urls = [
-        page_url(path)
-        for path in STATIC_PAGES
-        if STATIC_PAGES[path]["file"] != "key-design-studio.html"
-    ]
-    urls.extend(page_url(project["path"]) for project in projects)
-    # Stable order: home first, then static, then projects
+def collect_sitemap(projects: list[dict]) -> tuple[list[str], dict[str, str]]:
     home = page_url("/")
-    static = [page_url(path) for path in ("/about", "/projects", "/services", "/contacts", "/privacy")]
-    project_urls = [page_url(project["path"]) for project in projects]
-    return [home, *static, *project_urls]
+    static_paths = ("/about", "/projects", "/services", "/contacts", "/privacy")
+    urls = [home, *[page_url(path) for path in static_paths]]
+    lastmods = {home: file_lastmod(ROOT / "index.html")}
+    for path in static_paths:
+        lastmods[page_url(path)] = file_lastmod(ROOT / STATIC_PAGES[path]["file"])
+    for project in projects:
+        url = page_url(project["path"])
+        urls.append(url)
+        html_path = ROOT / project["file"]
+        yaml_path = ROOT / "content" / "projects" / f'{project["slug"]}.yaml'
+        stamps = [file_lastmod(html_path)]
+        if yaml_path.exists():
+            stamps.append(file_lastmod(yaml_path))
+        lastmods[url] = max(stamps)
+    return urls, lastmods
 
 
 def main() -> int:
@@ -132,8 +138,8 @@ def main() -> int:
     print("SEO files:")
     write_robots(ROOT / "robots.txt")
     print("  robots.txt")
-    urls = collect_sitemap_urls(projects)
-    write_sitemap(ROOT / "sitemap.xml", urls)
+    urls, lastmods = collect_sitemap(projects)
+    write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
     print(f"  sitemap.xml ({len(urls)} urls)")
     return 0
 
