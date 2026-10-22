@@ -6,8 +6,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-APP_VERSION = "39"
-CSS_VERSION = "79"
+APP_VERSION = "40"
+CSS_VERSION = "80"
 
 
 def bump_file(path: Path) -> bool:
@@ -22,7 +22,8 @@ def bump_file(path: Path) -> bool:
 
 def main() -> None:
     target = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT
-    changed = sum(1 for html in sorted(target.glob("*.html")) if bump_file(html))
+    pages = [*sorted(target.glob("*.html")), *sorted((target / "guides").glob("*.html"))]
+    changed = sum(1 for html in pages if " " not in html.name and bump_file(html))
     print(f"  → asset versions: app.js?v={APP_VERSION}, styles.css?v={CSS_VERSION} ({changed} pages)")
 
 

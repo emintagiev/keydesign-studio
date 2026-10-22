@@ -72,6 +72,42 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
+    "/uslugi-dizajn-proekt": {
+        "file": "uslugi-dizajn-proekt.html",
+        "title": "Дизайн-проект интерьера в Новосибирске — Key Design Studio",
+        "description": (
+            "Дизайн-проект интерьера в Новосибирске: обмеры, планировочное решение, "
+            "3D-визуализация, рабочий проект. Срок от двух месяцев. Key Design Studio."
+        ),
+        "og_image": f"{SITE_ORIGIN}/assets/services/service-design.jpg",
+    },
+    "/uslugi-komplektaciya": {
+        "file": "uslugi-komplektaciya.html",
+        "title": "Комплектация интерьера в Новосибирске — Key Design Studio",
+        "description": (
+            "Проектное сопровождение и комплектация интерьера в Новосибирске: карта материалов, "
+            "смета, график оплат, закупка и логистика. Key Design Studio."
+        ),
+        "og_image": f"{SITE_ORIGIN}/assets/services/service-management.jpg",
+    },
+    "/uslugi-avtorskij-nadzor": {
+        "file": "uslugi-avtorskij-nadzor.html",
+        "title": "Авторский надзор дизайнера в Новосибирске — Key Design Studio",
+        "description": (
+            "Авторский надзор дизайнера в Новосибирске: выезды на объект, контроль качества, "
+            "корректировки чертежей, еженедельная отчётность. Key Design Studio."
+        ),
+        "og_image": f"{SITE_ORIGIN}/assets/services/service-supervision.jpg",
+    },
+    "/uslugi-arhitekturnoe-planirovanie": {
+        "file": "uslugi-arhitekturnoe-planirovanie.html",
+        "title": "Архитектурное планирование в Новосибирске — Key Design Studio",
+        "description": (
+            "Архитектурное планирование в Новосибирске: анализ объекта, сценарии жизни, "
+            "схемы перепланировки и передача планировки в дизайн-проект. Key Design Studio."
+        ),
+        "og_image": f"{SITE_ORIGIN}/assets/services/service-architecture.jpg",
+    },
 }
 
 NOINDEX_FILES = {"key-design-studio.html"}

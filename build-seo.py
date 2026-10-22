@@ -8,6 +8,7 @@ from pathlib import Path
 
 import yaml
 
+from site_common import SERVICES, published_guides, sync_nav
 from seo import (
     STATIC_PAGES,
     file_lastmod,
@@ -31,6 +32,8 @@ def load_projects() -> list[dict]:
 
     projects = []
     for path in sorted(PROJECTS_DIR.glob("*.yaml")):
+        if " " in path.name:
+            continue
         data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         if not data.get("published", True):
             continue
@@ -112,7 +115,8 @@ def patch_project_pages(projects: list[dict]) -> int:
 
 def collect_sitemap(projects: list[dict]) -> tuple[list[str], dict[str, str]]:
     home = page_url("/")
-    static_paths = ("/about", "/projects", "/services", "/contacts", "/privacy")
+    service_paths = tuple(f"/{svc['slug']}" for svc in SERVICES)
+    static_paths = ("/about", "/projects", "/services", *service_paths, "/contacts", "/privacy")
     urls = [home, *[page_url(path) for path in static_paths]]
     lastmods = {home: file_lastmod(ROOT / "index.html")}
     for path in static_paths:
@@ -126,6 +130,15 @@ def collect_sitemap(projects: list[dict]) -> tuple[list[str], dict[str, str]]:
         if yaml_path.exists():
             stamps.append(file_lastmod(yaml_path))
         lastmods[url] = max(stamps)
+    guides = published_guides()
+    if guides:
+        index_url = page_url("/guides")
+        urls.append(index_url)
+        lastmods[index_url] = file_lastmod(ROOT / "guides" / "index.html")
+        for guide in guides:
+            url = page_url(f"/guides/{guide['slug']}")
+            urls.append(url)
+            lastmods[url] = file_lastmod(ROOT / "guides" / f"{guide['slug']}.html")
     return urls, lastmods
 
 
@@ -143,14 +156,22 @@ def main() -> int:
     write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
     print(f"  sitemap.xml ({len(urls)} urls)")
 
+    guides_on = bool(published_guides())
     metrika = 0
-    for html_path in sorted(ROOT.glob("*.html")):
+    nav = 0
+    html_files = [p for p in sorted(ROOT.glob("*.html")) if " " not in p.name]
+    html_files += [p for p in sorted((ROOT / "guides").glob("*.html")) if " " not in p.name]
+    for html_path in html_files:
         original = html_path.read_text(encoding="utf-8")
+        in_guides = html_path.parent.name == "guides"
         updated = inject_metrika(original)
+        updated = sync_nav(updated, guides_on, active=in_guides)
         if updated != original:
             html_path.write_text(updated, encoding="utf-8")
             metrika += 1
-    print(f"  metrika: {metrika} pages")
+        if guides_on and 'href="/guides"' in updated:
+            nav += 1
+    print(f"  metrika/nav: {metrika} pages changed; guides menu: {'on' if guides_on else 'off'} ({nav} pages)")
     return 0
 
 

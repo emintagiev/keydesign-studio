@@ -12,6 +12,8 @@ else
 fi
 
 python3 build-projects.py --html-only
+python3 build-services.py
+python3 build-guides.py
 python3 build-seo.py
 python3 bump-assets.py
 
@@ -19,10 +21,22 @@ rm -rf dist
 mkdir -p dist
 
 for f in *.html; do
+  # копии файлов с пробелом в имени (iCloud/Finder) на сайт не берём
+  [[ "$f" == *" "* ]] && continue
   cp "$f" dist/
 done
 
+if [[ -d guides ]]; then
+  mkdir -p dist/guides
+  for f in guides/*.html; do
+    [[ -e "$f" ]] || continue
+    [[ "$f" == *" "* ]] && continue
+    cp "$f" dist/guides/
+  done
+fi
+
 for f in *.css *.js; do
+  [[ "$f" == *" "* ]] && continue
   if [[ -e "$f" ]]; then
     cp "$f" dist/
   fi

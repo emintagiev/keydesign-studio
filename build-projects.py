@@ -98,6 +98,8 @@ def load_projects() -> list[dict]:
 
     projects = []
     for path in sorted(PROJECTS_DIR.glob("*.yaml")):
+        if " " in path.name:
+            continue
         with path.open(encoding="utf-8") as f:
             cfg = yaml.safe_load(f) or {}
         if not cfg.get("published", True):
@@ -479,7 +481,13 @@ def story_block(cfg: dict) -> str:
 
     parts = ['      <div class="proj-story">']
     if summary:
-        parts.append(f"        <p>{escape(summary)}</p>")
+        i18n_key = str(cfg.get("i18n_name") or "").replace(".name", ".summary")
+        attr = f' data-i18n="{escape(i18n_key, quote=True)}"' if i18n_key else ""
+        parts.append(f"        <p{attr}>{escape(summary)}</p>")
+        parts.append(
+            '        <p class="proj-story__service"><span data-i18n="proj.service.label">Услуга:</span> '
+            '<a href="/uslugi-dizajn-proekt" data-i18n="proj.service.name">дизайн-проект интерьера</a></p>'
+        )
     if task:
         parts.append("        <h2>Задача</h2>")
         parts.append(f"        <p>{escape(task)}</p>")

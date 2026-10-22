@@ -25,6 +25,9 @@ AddDefaultCharset utf-8
 
   RewriteRule ^favicon\.ico$ /assets/favicon-32.png [L]
 
+  # Раздел статей: /guides -> guides/index.html
+  RewriteRule ^guides/?$ /guides/index.html [L]
+
   # Clean URLs: /projects instead of /projects.html
   RewriteRule ^index(?:\.html)?/?$ / [R=301,L]
 
