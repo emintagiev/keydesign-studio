@@ -32,6 +32,14 @@ jobs:
       - name: Build deploy bundle
         run: bash prepare-deploy.sh
 
+      - name: Deploy to Firebase Hosting (www.keydesign.studio)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: keydesign-studio-xxxxx
+          channelId: live
+
       - name: Upload to Timeweb (SFTP)
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
