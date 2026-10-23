@@ -32,6 +32,20 @@ jobs:
       - name: Build deploy bundle
         run: bash prepare-deploy.sh
 
+      - name: Prepare Firebase config (hosting only)
+        run: |
+          python3 - <<'EOF'
+          import json
+          cfg = json.load(open("firebase.json"))
+          # Функцию формы заявки выкладываем отдельно, вручную.
+          # Здесь обновляем только сайт: без блока functions и без pinTag.
+          cfg.pop("functions", None)
+          for rule in cfg["hosting"].get("rewrites", []):
+              if isinstance(rule.get("function"), dict):
+                  rule["function"].pop("pinTag", None)
+          json.dump(cfg, open("firebase.json", "w"), ensure_ascii=False, indent=2)
+          EOF
+
       - name: Deploy to Firebase Hosting (www.keydesign.studio)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
