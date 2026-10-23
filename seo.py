@@ -23,9 +23,9 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "description": (
             "Студия дизайна интерьера Кристины Парыгиной: "
             "дизайн-проекты квартир, домов и коммерческих пространств. "
-            "Новосибирск, Москва, Дубай."
+            "Москва, Дубай, Новосибирск."
         ),
-        "og_image": DEFAULT_OG_IMAGE,
+        "og_image": f"{SITE_ORIGIN}/assets/og/home-moscow-studio.jpg",
     },
     "/about": {
         "file": "about.html",
