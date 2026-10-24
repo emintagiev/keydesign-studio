@@ -77,7 +77,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "title": "Дизайн-проект интерьера — Key Design Studio",
         "description": (
             "Дизайн-проект интерьера в Москве, Дубае и Новосибирске: обмеры, планировочное решение, "
-            "3D-визуализация, рабочий проект. Срок от двух месяцев. Key Design Studio."
+            "3D-визуализация, рабочий проект. Срок от двух месяцев."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-design.jpg",
     },
@@ -86,7 +86,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "title": "Комплектация интерьера — Key Design Studio",
         "description": (
             "Проектное сопровождение и комплектация интерьера в Москве, Дубае и Новосибирске: карта материалов, "
-            "смета, график оплат, закупка и логистика. Key Design Studio."
+            "смета, график оплат, закупка и логистика."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-management.jpg",
     },
@@ -95,7 +95,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "title": "Авторский надзор дизайнера — Key Design Studio",
         "description": (
             "Авторский надзор дизайнера в Москве, Дубае и Новосибирске: выезды на объект, контроль качества, "
-            "корректировки чертежей, еженедельная отчётность. Key Design Studio."
+            "корректировки чертежей, еженедельная отчётность."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-supervision.jpg",
     },
@@ -104,7 +104,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "title": "Архитектурное планирование — Key Design Studio",
         "description": (
             "Архитектурное планирование в Москве, Дубае и Новосибирске: анализ объекта, сценарии жизни, "
-            "схемы перепланировки и передача планировки в дизайн-проект. Key Design Studio."
+            "схемы перепланировки и передача в дизайн-проект."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-architecture.jpg",
     },
