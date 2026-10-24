@@ -124,7 +124,7 @@ def build_page(service: dict) -> tuple[str, str]:
                 "description": lead,
                 "url": url,
                 "provider": provider_ld(),
-                "areaServed": {"@type": "City", "name": "Новосибирск"},
+                "areaServed": [{"@type": "City", "name": n} for n in ("Москва", "Дубай", "Новосибирск")],
             }
         ),
         ld_script(

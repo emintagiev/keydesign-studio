@@ -32,33 +32,33 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "title": "О студии — Кристина Парыгина и Key Design Studio",
         "description": (
             "Кристина Парыгина и команда Key Design Studio — "
-            "студия дизайна интерьера в Новосибирске."
+            "студия дизайна интерьера в Москве, Дубае и Новосибирске."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/projects": {
         "file": "projects.html",
-        "title": "Проекты дизайна интерьера — Key Design Studio, Новосибирск",
+        "title": "Проекты дизайна интерьера — Key Design Studio",
         "description": (
             "Квартиры, загородные дома и салон красоты: проекты дизайна интерьера "
-            "в Новосибирске, Москве и Дубае. Key Design Studio."
+            "в Москве, Дубае и Новосибирске. Key Design Studio."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/services": {
         "file": "services.html",
-        "title": "Услуги дизайнера интерьера в Новосибирске — Key Design Studio",
+        "title": "Услуги дизайнера интерьера — Key Design Studio",
         "description": (
             "Дизайн-проект интерьера, проектное сопровождение и комплектация, "
-            "авторский надзор, архитектурное планирование. Key Design Studio, Новосибирск."
+            "авторский надзор, архитектурное планирование. Москва, Дубай, Новосибирск."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/contacts": {
         "file": "contacts.html",
-        "title": "Контакты — Key Design Studio, дизайн интерьера в Новосибирске",
+        "title": "Контакты — Key Design Studio, дизайн интерьера",
         "description": (
-            "Контакты Key Design Studio в Новосибирске — телефон, почта, "
+            "Контакты Key Design Studio (Москва, Дубай, Новосибирск) — телефон, почта, "
             "Telegram, Instagram и адрес офиса на ул. Инженерная 7."
         ),
         "og_image": DEFAULT_OG_IMAGE,
@@ -74,36 +74,36 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
     },
     "/uslugi-dizajn-proekt": {
         "file": "uslugi-dizajn-proekt.html",
-        "title": "Дизайн-проект интерьера в Новосибирске — Key Design Studio",
+        "title": "Дизайн-проект интерьера — Key Design Studio",
         "description": (
-            "Дизайн-проект интерьера в Новосибирске: обмеры, планировочное решение, "
+            "Дизайн-проект интерьера в Москве, Дубае и Новосибирске: обмеры, планировочное решение, "
             "3D-визуализация, рабочий проект. Срок от двух месяцев. Key Design Studio."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-design.jpg",
     },
     "/uslugi-komplektaciya": {
         "file": "uslugi-komplektaciya.html",
-        "title": "Комплектация интерьера в Новосибирске — Key Design Studio",
+        "title": "Комплектация интерьера — Key Design Studio",
         "description": (
-            "Проектное сопровождение и комплектация интерьера в Новосибирске: карта материалов, "
+            "Проектное сопровождение и комплектация интерьера в Москве, Дубае и Новосибирске: карта материалов, "
             "смета, график оплат, закупка и логистика. Key Design Studio."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-management.jpg",
     },
     "/uslugi-avtorskij-nadzor": {
         "file": "uslugi-avtorskij-nadzor.html",
-        "title": "Авторский надзор дизайнера в Новосибирске — Key Design Studio",
+        "title": "Авторский надзор дизайнера — Key Design Studio",
         "description": (
-            "Авторский надзор дизайнера в Новосибирске: выезды на объект, контроль качества, "
+            "Авторский надзор дизайнера в Москве, Дубае и Новосибирске: выезды на объект, контроль качества, "
             "корректировки чертежей, еженедельная отчётность. Key Design Studio."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-supervision.jpg",
     },
     "/uslugi-arhitekturnoe-planirovanie": {
         "file": "uslugi-arhitekturnoe-planirovanie.html",
-        "title": "Архитектурное планирование в Новосибирске — Key Design Studio",
+        "title": "Архитектурное планирование — Key Design Studio",
         "description": (
-            "Архитектурное планирование в Новосибирске: анализ объекта, сценарии жизни, "
+            "Архитектурное планирование в Москве, Дубае и Новосибирске: анализ объекта, сценарии жизни, "
             "схемы перепланировки и передача планировки в дизайн-проект. Key Design Studio."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-architecture.jpg",
