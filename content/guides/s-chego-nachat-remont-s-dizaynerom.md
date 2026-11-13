@@ -8,9 +8,12 @@ category: Подготовка
 lead: "Какие исходные данные собрать и о чём договориться до выбора отделки, заказов мебели и начала работ."
 service: planning
 projects: [ns-akadem-pulsar]
-cover_project: ns-akadem-pulsar
-cover_alt: "Кухня-гостиная в квартире ЖК Пульсар, 62 м², Новосибирск"
-cover_caption: "ЖК Пульсар, 62 м². Проект Key Design Studio."
+cover_image: assets/guides/renovation-start-v1.jpg
+cover_thumbnail: assets/guides/renovation-start-v1-800.jpg
+cover_width: 1448
+cover_height: 1086
+cover_alt: "План квартиры на рабочем столе в пустом помещении перед ремонтом"
+cover_caption: "Иллюстрация к статье, созданная с помощью ИИ."
 related: [chto-vhodit-v-dizayn-proekt-kvartiry, avtorskiy-nadzor-dizaynera-zachem]
 faq:
   - q: Что нужно принести на первую встречу?

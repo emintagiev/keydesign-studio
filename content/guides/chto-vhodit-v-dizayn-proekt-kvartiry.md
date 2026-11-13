@@ -8,9 +8,12 @@ category: Проектирование
 lead: "От обмерного плана до чертежей мебели: какие документы нужны, чтобы перейти от идеи к ремонту."
 service: design
 projects: [oblaka-orhan]
-cover_project: oblaka-orhan
-cover_alt: "Спальня с мягким изголовьем в квартире ЖК Облака, Новосибирск"
-cover_caption: "ЖК Облака, 80 м². Проект Key Design Studio."
+cover_image: assets/guides/project-scope-v1.jpg
+cover_thumbnail: assets/guides/project-scope-v1-800.jpg
+cover_width: 1448
+cover_height: 1086
+cover_alt: "Архитектурный макет квартиры на листах чертежей"
+cover_caption: "Иллюстрация к статье, созданная с помощью ИИ."
 related: [s-chego-nachat-remont-s-dizaynerom, avtorskiy-nadzor-dizaynera-zachem]
 faq:
   - q: Входят ли визуализации в дизайн-проект?

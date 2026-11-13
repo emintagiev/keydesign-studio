@@ -8,9 +8,12 @@ category: Реализация
 lead: "Как превратить список материалов и мебели в согласованные заказы и поставки к нужному этапу ремонта."
 service: management
 projects: [kedrovy-ns]
-cover_project: kedrovy-ns
-cover_alt: "Кухня-гостиная в квартире ЖК Кедровый, 120 м², Новосибирск"
-cover_caption: "ЖК Кедровый, 120 м². Проект Key Design Studio."
+cover_image: assets/guides/procurement-v1.jpg
+cover_thumbnail: assets/guides/procurement-v1-800.jpg
+cover_width: 1448
+cover_height: 1086
+cover_alt: "Образцы дерева, камня, льна и бронзовой фурнитуры"
+cover_caption: "Иллюстрация к статье, созданная с помощью ИИ."
 related: [avtorskiy-nadzor-dizaynera-zachem, s-chego-nachat-remont-s-dizaynerom]
 faq:
   - q: Можно ли заказать комплектацию по проекту другой студии?

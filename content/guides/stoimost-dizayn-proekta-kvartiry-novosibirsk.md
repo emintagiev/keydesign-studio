@@ -8,9 +8,12 @@ category: Бюджет
 lead: "Что вы получаете за 5 000 ₽/м² и какие расходы стоит обсудить до начала ремонта."
 service: design
 projects: [ns-akadem-pulsar, kedrovy-ns]
-cover_project: ns-akadem-pulsar
-cover_alt: "Кухня-гостиная в квартире ЖК Пульсар, 62 м², Новосибирск"
-cover_caption: "ЖК Пульсар, 62 м². Проект Key Design Studio."
+cover_image: assets/guides/budget-v1.jpg
+cover_thumbnail: assets/guides/budget-v1-800.jpg
+cover_width: 1448
+cover_height: 1086
+cover_alt: "План квартиры и образцы отделки на деревянном столе"
+cover_caption: "Иллюстрация к статье, созданная с помощью ИИ."
 related: [chto-vhodit-v-dizayn-proekt-kvartiry, dizayn-kvartiry-60-80-m2-novosibirsk]
 faq:
   - q: Сколько стоит дизайн-проект квартиры 60 м²?

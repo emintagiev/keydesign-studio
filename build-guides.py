@@ -134,6 +134,21 @@ def check_guide(guide: dict) -> None:
 
 
 def cover_data(guide: dict) -> dict:
+    image = guide.get("cover_image")
+    if image:
+        for key in ("cover_image", "cover_thumbnail"):
+            path = guide.get(key)
+            if not isinstance(path, str) or not path.startswith("assets/guides/"):
+                raise SystemExit(f"Статья {guide['slug']}: {key} должен быть файлом в assets/guides/")
+            resolved = (ROOT / path).resolve()
+            if not resolved.is_relative_to((ROOT / "assets" / "guides").resolve()) or not resolved.is_file():
+                raise SystemExit(f"Статья {guide['slug']}: нет файла {key}")
+        if not guide.get("cover_alt") or not guide.get("cover_caption"):
+            raise SystemExit(f"Статья {guide['slug']}: отдельной обложке нужны alt и подпись")
+        for key in ("cover_width", "cover_height"):
+            if not isinstance(guide.get(key), int) or guide[key] <= 0:
+                raise SystemExit(f"Статья {guide['slug']}: неверный размер {key}")
+        return {"cover": image, "title_plain": guide["cover_alt"]}
     slug = guide.get("cover_project")
     if not slug:
         return {}
@@ -151,6 +166,22 @@ def cover_picture(guide: dict, *, preview: bool = False) -> str:
     project = cover_data(guide)
     if not project:
         return ""
+    if guide.get("cover_image"):
+        full = "/" + ESC(guide["cover_image"], quote=True)
+        thumb = "/" + ESC(guide["cover_thumbnail"], quote=True)
+        alt = ESC(guide["cover_alt"], quote=True)
+        width, height = guide["cover_width"], guide["cover_height"]
+        loading = 'loading="lazy"' if preview else 'fetchpriority="high"'
+        sizes = '(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw' if preview else '(max-width: 960px) 100vw, 960px'
+        webp_full = Path(guide["cover_image"]).with_suffix(".webp")
+        webp_thumb = Path(guide["cover_thumbnail"]).with_suffix(".webp")
+        source = ""
+        if (ROOT / webp_full).is_file() and (ROOT / webp_thumb).is_file():
+            source = (f'<source type="image/webp" srcset="/{ESC(str(webp_thumb))} 800w, '
+                      f'/{ESC(str(webp_full))} {width}w" sizes="{sizes}" />')
+        return (f'<picture>{source}<img src="{thumb if preview else full}" '
+                f'srcset="{thumb} 800w, {full} {width}w" sizes="{sizes}" '
+                f'alt="{alt}" width="{width}" height="{height}" {loading} decoding="async" /></picture>')
     return bp().render_picture(project["cover"], guide.get("cover_alt") or project["title_plain"],
                                preview=preview, lazy=preview)
 
@@ -266,8 +297,11 @@ def article_page(guide: dict, by_slug: dict[str, dict], noindex: bool = False) -
         f'<li><a href="#part-{i}">{ESC(h)}</a></li>' for i, h in enumerate(headings, 1)
     ) + '</ol></nav>' if headings else ''
     project = cover_data(guide)
+    caption = ESC(guide.get('cover_caption') or project.get('title_plain', ''))
+    if project.get('slug'):
+        caption = f'<a href="/{ESC(project["slug"])}">{caption} →</a>'
     photo = f'''<figure class="guide-cover">{cover_picture(guide)}
-      <figcaption><a href="/{ESC(project['slug'])}">{ESC(guide.get('cover_caption') or project['title_plain'])} →</a></figcaption></figure>''' if project else ''
+      <figcaption>{caption}</figcaption></figure>''' if project else ''
     lead = f'<p class="guide-lead">{ESC(guide["lead"])}</p>' if guide.get("lead") else ''
     main_html = f"""      <div class="section-head guide-heading reveal" lang="ru">
         <div>

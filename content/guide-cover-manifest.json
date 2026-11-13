@@ -1,0 +1,50 @@
+[
+  {
+    "id": "budget",
+    "article": "stoimost-dizayn-proekta-kvartiry-novosibirsk",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-df0f814d-cc9a-40e1-817d-d29db5610279.png",
+    "image": "assets/guides/budget-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "project-scope",
+    "article": "chto-vhodit-v-dizayn-proekt-kvartiry",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-86e0ef91-18b3-492e-b2f0-cb90887ee430.png",
+    "image": "assets/guides/project-scope-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "procurement",
+    "article": "komplektatsiya-interera-chto-eto",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-5ef14e51-a878-4900-9ba5-a5c68f1f257e.png",
+    "image": "assets/guides/procurement-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "supervision",
+    "article": "avtorskiy-nadzor-dizaynera-zachem",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-f7e62e48-b307-496b-8da8-d6d0a04e6eb7.png",
+    "image": "assets/guides/supervision-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "renovation-start",
+    "article": "s-chego-nachat-remont-s-dizaynerom",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-e321f069-e163-4280-8a85-90430b34797e.png",
+    "image": "assets/guides/renovation-start-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "compact-apartment",
+    "article": "dizayn-kvartiry-60-80-m2-novosibirsk",
+    "source": "/Users/emin/.codex/generated_images/01a1d36c-d582-7693-b073-65021af9096d/exec-266abac2-3b10-4dbf-ad22-e074559e3721.png",
+    "image": "assets/guides/compact-apartment-v1.jpg",
+    "width": 1448,
+    "height": 1086
+  }
+]

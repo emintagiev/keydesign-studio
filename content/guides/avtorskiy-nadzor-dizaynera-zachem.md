@@ -8,9 +8,12 @@ category: Реализация
 lead: "Как сохранить связь между проектом и стройкой: выезды дизайнера, вопросы бригады и согласование изменений."
 service: supervision
 projects: [kvartal-dekabristov]
-cover_project: kvartal-dekabristov
-cover_alt: "Зона отдыха со стеллажом в квартире ЖК Квартал Декабристов, Новосибирск"
-cover_caption: "ЖК Квартал Декабристов, 140 м². Проект Key Design Studio."
+cover_image: assets/guides/supervision-v1.jpg
+cover_thumbnail: assets/guides/supervision-v1-800.jpg
+cover_width: 1448
+cover_height: 1086
+cover_alt: "Проверка установки деревянных панелей лазерным уровнем"
+cover_caption: "Иллюстрация к статье, созданная с помощью ИИ."
 related: [chto-vhodit-v-dizayn-proekt-kvartiry, komplektatsiya-interera-chto-eto]
 faq:
   - q: Как часто дизайнер приезжает на объект?
