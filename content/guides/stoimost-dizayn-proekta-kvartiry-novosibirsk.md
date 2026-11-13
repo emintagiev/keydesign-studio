@@ -11,7 +11,7 @@ projects: [ns-akadem-pulsar, kedrovy-ns]
 cover_project: ns-akadem-pulsar
 cover_alt: "Кухня-гостиная в квартире ЖК Пульсар, 62 м², Новосибирск"
 cover_caption: "ЖК Пульсар, 62 м². Проект Key Design Studio."
-related: [chto-vhodit-v-dizayn-proekt-kvartiry, komplektatsiya-interera-chto-eto]
+related: [chto-vhodit-v-dizayn-proekt-kvartiry, dizayn-kvartiry-60-80-m2-novosibirsk]
 faq:
   - q: Сколько стоит дизайн-проект квартиры 60 м²?
     a: При ставке 5 000 ₽/м² расчёт составляет 300 000 ₽ за разработку проекта. Это арифметический пример для полного состава, а не стоимость ремонта и закупок.

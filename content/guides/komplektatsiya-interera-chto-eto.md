@@ -11,7 +11,7 @@ projects: [kedrovy-ns]
 cover_project: kedrovy-ns
 cover_alt: "Кухня-гостиная в квартире ЖК Кедровый, 120 м², Новосибирск"
 cover_caption: "ЖК Кедровый, 120 м². Проект Key Design Studio."
-related: [chto-vhodit-v-dizayn-proekt-kvartiry, stoimost-dizayn-proekta-kvartiry-novosibirsk]
+related: [avtorskiy-nadzor-dizaynera-zachem, s-chego-nachat-remont-s-dizaynerom]
 faq:
   - q: Можно ли заказать комплектацию по проекту другой студии?
     a: Да, берём в комплектацию и проекты других студий. Условия обсуждаем отдельно после знакомства с документацией и задачей.

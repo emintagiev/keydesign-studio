@@ -38,4 +38,6 @@ summary: "Дизайн квартиры 140 м² в ЖК Квартал Дека
 task: ""
 solution: ""
 services: []
-relatedGuides: []
+relatedGuides:
+  - url: /guides/avtorskiy-nadzor-dizaynera-zachem
+    title: Зачем нужен авторский надзор при ремонте

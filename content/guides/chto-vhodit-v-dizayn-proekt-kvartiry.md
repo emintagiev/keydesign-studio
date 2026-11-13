@@ -11,7 +11,7 @@ projects: [oblaka-orhan]
 cover_project: oblaka-orhan
 cover_alt: "Спальня с мягким изголовьем в квартире ЖК Облака, Новосибирск"
 cover_caption: "ЖК Облака, 80 м². Проект Key Design Studio."
-related: [stoimost-dizayn-proekta-kvartiry-novosibirsk, komplektatsiya-interera-chto-eto]
+related: [s-chego-nachat-remont-s-dizaynerom, avtorskiy-nadzor-dizaynera-zachem]
 faq:
   - q: Входят ли визуализации в дизайн-проект?
     a: Да. В стоимость разработки Key Design Studio входят проект с визуализациями и спецификация-смета.
