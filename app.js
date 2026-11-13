@@ -5,6 +5,17 @@
 
       var root = document.documentElement;
 
+      function trackGoal(name) {
+        if (window.KDS_METRIKA_ID && typeof window.ym === "function") {
+          try { window.ym(window.KDS_METRIKA_ID, "reachGoal", name); } catch (e) {}
+        }
+      }
+      if (document.querySelector("article.guide")) {
+        document.querySelectorAll('a[href^="/uslugi-"]').forEach(function (link) {
+          link.addEventListener("click", function () { trackGoal("guide_service_click"); });
+        });
+      }
+
       /* ---------- Homepage preloader (desktop only) ---------- */
       var preloader = document.getElementById("preloader");
       if (preloader && document.body.classList.contains("home")) {
@@ -374,7 +385,7 @@
           "guides.service": "Услуга",
           "guides.faq": "Вопросы и ответы",
           "guides.related": "Читайте также",
-          "guides.cta": "Расскажите метраж и когда планируете начать — заявка на сайте.",
+          "guides.cta": "Расскажите метраж и когда планируете начать - обсудим ваш проект.",
           "project.15.summary": "Дизайн загородного дома 300 м², Новосибирск. В проекте: кухня-гостиная, гостевая спальня, спальня, спальня Серафима, детская комната, кабинет, прихожая.",
           "project.12.summary": "Дизайн кабинета-оружейной 25 м² в загородном доме, с. Морозово.",
           "project.11.summary": "Дизайн квартиры 120 м² в ЖК Кедровый, Новосибирск. В проекте: кухня-гостиная, детская, санузел.",
@@ -1161,6 +1172,7 @@
         }
 
         function briefOpen() {
+          trackGoal("brief_open");
           briefReset();
           briefRoot.classList.add("is-open");
           briefRoot.setAttribute("aria-hidden", "false");

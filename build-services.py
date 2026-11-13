@@ -16,6 +16,7 @@ from site_common import (
     page_shell,
     project_cards,
     provider_ld,
+    published_guides,
 )
 
 ROOT = Path(__file__).resolve().parent
@@ -109,6 +110,11 @@ def build_page(service: dict) -> tuple[str, str]:
 {chr(10).join(others)}
         </ul>
       </div>"""
+
+    reading = [g for g in published_guides() if g.get("service") == service["key"]]
+    if reading:
+        links = ''.join(f'<li><a class="link-underline" href="/guides/{ESC(g["slug"])}">{ESC(g["title"])}</a></li>' for g in reading)
+        main_html += f'<section class="svc-reading" lang="ru"><h2 class="svc-page__h">Перед началом работы</h2><ul class="svc-others">{links}</ul></section>'
 
     path = f"/{service['slug']}"
     meta = STATIC_PAGES[path]

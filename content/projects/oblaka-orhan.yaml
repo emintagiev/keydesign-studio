@@ -26,4 +26,6 @@ summary: "Дизайн квартиры 80 м² в ЖК Облака, Новос
 task: ""
 solution: ""
 services: []
-relatedGuides: []
+relatedGuides:
+  - url: /guides/chto-vhodit-v-dizayn-proekt-kvartiry
+    title: Что входит в дизайн-проект квартиры

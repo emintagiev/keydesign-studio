@@ -473,9 +473,9 @@ def story_block(cfg: dict) -> str:
     guides = []
     for item in cfg.get("relatedGuides") or []:
         if isinstance(item, str) and item.strip():
-            guides.append(item.strip())
+            guides.append((item.strip(), item.strip()))
         elif isinstance(item, dict) and item.get("url"):
-            guides.append(str(item["url"]).strip())
+            guides.append((str(item["url"]).strip(), str(item.get("title") or item["url"]).strip()))
     if not any([summary, task, solution, services, guides]):
         return ""
 
@@ -499,7 +499,7 @@ def story_block(cfg: dict) -> str:
         parts.append(f"        <h2>Услуги</h2>\n        <ul>{items}</ul>")
     if guides:
         items = "".join(
-            f'<li><a href="{escape(item, quote=True)}">{escape(item)}</a></li>' for item in guides
+            f'<li><a href="{escape(url, quote=True)}">{escape(title)}</a></li>' for url, title in guides
         )
         parts.append(f"        <h2>Статьи</h2>\n        <ul>{items}</ul>")
     parts.append("      </div>")

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SITE_ORIGIN = "https://www.keydesign.studio"
 DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/hero/1.jpg"
 YANDEX_VERIFICATION = "b31dd3613bec3f68"
-METRIKA_ID = ""
+METRIKA_ID = "114228778"
 METRIKA_MARKER = "Yandex.Metrika counter"
 
 STATIC_PAGES: dict[str, dict[str, str]] = {
@@ -21,9 +21,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "file": "index.html",
         "title": "Key Design Studio — дизайн интерьера Кристины Парыгиной",
         "description": (
-            "Студия дизайна интерьера Кристины Парыгиной: "
-            "дизайн-проекты квартир, домов и коммерческих пространств. "
-            "Новосибирск, Москва, Дубай."
+            "Студия дизайна интерьера Кристины Парыгиной: дизайн-проекты квартир, домов и коммерческих пространств. Москва, Дубай, Новосибирск."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
@@ -31,35 +29,31 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "file": "about.html",
         "title": "О студии — Кристина Парыгина и Key Design Studio",
         "description": (
-            "Кристина Парыгина и команда Key Design Studio — "
-            "студия дизайна интерьера в Новосибирске."
+            "Кристина Парыгина и команда Key Design Studio — студия дизайна интерьера в Москве, Дубае и Новосибирске."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/projects": {
         "file": "projects.html",
-        "title": "Проекты дизайна интерьера — Key Design Studio, Новосибирск",
+        "title": "Проекты дизайна интерьера — Key Design Studio",
         "description": (
-            "Квартиры, загородные дома и салон красоты: проекты дизайна интерьера "
-            "в Новосибирске, Москве и Дубае. Key Design Studio."
+            "Квартиры, загородные дома и салон красоты: проекты дизайна интерьера в Москве, Дубае и Новосибирске. Key Design Studio."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/services": {
         "file": "services.html",
-        "title": "Услуги дизайнера интерьера в Новосибирске — Key Design Studio",
+        "title": "Услуги дизайнера интерьера — Key Design Studio",
         "description": (
-            "Дизайн-проект интерьера, проектное сопровождение и комплектация, "
-            "авторский надзор, архитектурное планирование. Key Design Studio, Новосибирск."
+            "Дизайн-проект интерьера, проектное сопровождение и комплектация, авторский надзор, архитектурное планирование. Москва, Дубай, Новосибирск."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/contacts": {
         "file": "contacts.html",
-        "title": "Контакты — Key Design Studio, дизайн интерьера в Новосибирске",
+        "title": "Контакты — Key Design Studio, дизайн интерьера",
         "description": (
-            "Контакты Key Design Studio в Новосибирске — телефон, почта, "
-            "Telegram, Instagram и адрес офиса на ул. Инженерная 7."
+            "Контакты Key Design Studio (Москва, Дубай, Новосибирск) — телефон, почта, Telegram, Instagram и адрес офиса на ул. Инженерная 7."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
@@ -67,44 +61,39 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
         "file": "privacy.html",
         "title": "Политика конфиденциальности — Key Design Studio",
         "description": (
-            "Политика конфиденциальности Key Design Studio — обработка "
-            "персональных данных на сайте."
+            "Политика конфиденциальности Key Design Studio — обработка персональных данных на сайте."
         ),
         "og_image": DEFAULT_OG_IMAGE,
     },
     "/uslugi-dizajn-proekt": {
         "file": "uslugi-dizajn-proekt.html",
-        "title": "Дизайн-проект интерьера в Новосибирске — Key Design Studio",
+        "title": "Дизайн-проект интерьера — Key Design Studio",
         "description": (
-            "Дизайн-проект интерьера в Новосибирске: обмеры, планировочное решение, "
-            "3D-визуализация, рабочий проект. Срок от двух месяцев. Key Design Studio."
+            "Дизайн-проект интерьера в Москве, Дубае и Новосибирске: обмеры, планировочное решение, 3D-визуализация, рабочий проект. Срок от двух месяцев."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-design.jpg",
     },
     "/uslugi-komplektaciya": {
         "file": "uslugi-komplektaciya.html",
-        "title": "Комплектация интерьера в Новосибирске — Key Design Studio",
+        "title": "Комплектация интерьера — Key Design Studio",
         "description": (
-            "Проектное сопровождение и комплектация интерьера в Новосибирске: карта материалов, "
-            "смета, график оплат, закупка и логистика. Key Design Studio."
+            "Проектное сопровождение и комплектация интерьера в Москве, Дубае и Новосибирске: карта материалов, смета, график оплат, закупка и логистика."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-management.jpg",
     },
     "/uslugi-avtorskij-nadzor": {
         "file": "uslugi-avtorskij-nadzor.html",
-        "title": "Авторский надзор дизайнера в Новосибирске — Key Design Studio",
+        "title": "Авторский надзор дизайнера — Key Design Studio",
         "description": (
-            "Авторский надзор дизайнера в Новосибирске: выезды на объект, контроль качества, "
-            "корректировки чертежей, еженедельная отчётность. Key Design Studio."
+            "Авторский надзор дизайнера в Москве, Дубае и Новосибирске: выезды на объект, контроль качества, корректировки чертежей, еженедельная отчётность."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-supervision.jpg",
     },
     "/uslugi-arhitekturnoe-planirovanie": {
         "file": "uslugi-arhitekturnoe-planirovanie.html",
-        "title": "Архитектурное планирование в Новосибирске — Key Design Studio",
+        "title": "Архитектурное планирование — Key Design Studio",
         "description": (
-            "Архитектурное планирование в Новосибирске: анализ объекта, сценарии жизни, "
-            "схемы перепланировки и передача планировки в дизайн-проект. Key Design Studio."
+            "Архитектурное планирование в Москве, Дубае и Новосибирске: анализ объекта, сценарии жизни, схемы перепланировки и передача в дизайн-проект."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-architecture.jpg",
     },
@@ -222,8 +211,8 @@ def metrika_snippet() -> str:
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {{if (document.scripts[j].src === r) {{ return; }}}}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(window.KDS_METRIKA_ID, "init", {{clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}});
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id={counter_id}", "ym");
+    ym(window.KDS_METRIKA_ID, "init", {{clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:false}});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/{html.escape(counter_id, quote=True)}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /{METRIKA_MARKER} -->

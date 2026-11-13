@@ -112,6 +112,7 @@ def published_guides() -> list[dict]:
             continue
         items.append(guide)
     items.sort(key=lambda g: g["date"], reverse=True)
+    items.sort(key=lambda g: g.get("sort_order", 999))
     return items
 
 

@@ -32,4 +32,6 @@ summary: "Дизайн квартиры 120 м² в ЖК Кедровый, Но�
 task: ""
 solution: ""
 services: []
-relatedGuides: []
+relatedGuides:
+  - url: /guides/komplektatsiya-interera-chto-eto
+    title: Комплектация интерьера - что это и зачем нужна
