@@ -9,9 +9,9 @@ from pathlib import Path
 import yaml
 
 from site_common import SERVICES, published_guides, sync_nav
+from sitemap_dates import content_dates, normalize_head_spacing
 from seo import (
     STATIC_PAGES,
-    file_lastmod,
     inject_metrika,
     inject_seo,
     page_url,
@@ -70,8 +70,9 @@ def patch_static_pages() -> int:
             description=meta["description"],
             og_image=meta.get("og_image"),
         )
-        file_path.write_text(updated, encoding="utf-8")
-        changed += 1
+        if normalize_head_spacing(updated) != normalize_head_spacing(file_path.read_text(encoding="utf-8")):
+            file_path.write_text(updated, encoding="utf-8")
+            changed += 1
         print(f"  seo: {meta['file']}")
     return changed
 
@@ -88,7 +89,8 @@ def patch_key_design_studio() -> None:
         og_image=STATIC_PAGES["/"]["og_image"],
         noindex=True,
     )
-    file_path.write_text(updated, encoding="utf-8")
+    if normalize_head_spacing(updated) != normalize_head_spacing(file_path.read_text(encoding="utf-8")):
+        file_path.write_text(updated, encoding="utf-8")
     print("  seo: key-design-studio.html (noindex, canonical /)")
 
 
@@ -107,8 +109,9 @@ def patch_project_pages(projects: list[dict]) -> int:
             description=project["description"],
             og_image=project.get("cover"),
         )
-        file_path.write_text(updated, encoding="utf-8")
-        changed += 1
+        if normalize_head_spacing(updated) != normalize_head_spacing(file_path.read_text(encoding="utf-8")):
+            file_path.write_text(updated, encoding="utf-8")
+            changed += 1
         print(f"  seo: {project['file']}")
     return changed
 
@@ -118,28 +121,23 @@ def collect_sitemap(projects: list[dict]) -> tuple[list[str], dict[str, str]]:
     service_paths = tuple(f"/{svc['slug']}" for svc in SERVICES)
     static_paths = ("/about", "/projects", "/services", *service_paths, "/contacts", "/privacy")
     urls = [home, *[page_url(path) for path in static_paths]]
-    lastmods = {home: file_lastmod(ROOT / "index.html")}
+    pages = {home: ROOT / "index.html"}
     for path in static_paths:
-        lastmods[page_url(path)] = file_lastmod(ROOT / STATIC_PAGES[path]["file"])
+        pages[page_url(path)] = ROOT / STATIC_PAGES[path]["file"]
     for project in projects:
         url = page_url(project["path"])
         urls.append(url)
-        html_path = ROOT / project["file"]
-        yaml_path = ROOT / "content" / "projects" / f'{project["slug"]}.yaml'
-        stamps = [file_lastmod(html_path)]
-        if yaml_path.exists():
-            stamps.append(file_lastmod(yaml_path))
-        lastmods[url] = max(stamps)
+        pages[url] = ROOT / project["file"]
     guides = published_guides()
     if guides:
         index_url = page_url("/guides")
         urls.append(index_url)
-        lastmods[index_url] = file_lastmod(ROOT / "guides" / "index.html")
+        pages[index_url] = ROOT / "guides" / "index.html"
         for guide in guides:
             url = page_url(f"/guides/{guide['slug']}")
             urls.append(url)
-            lastmods[url] = file_lastmod(ROOT / "guides" / f"{guide['slug']}.html")
-    return urls, lastmods
+            pages[url] = ROOT / "guides" / f"{guide['slug']}.html"
+    return urls, content_dates(pages, ROOT / "content" / "sitemap-dates.json")
 
 
 def main() -> int:
@@ -152,9 +150,6 @@ def main() -> int:
     print("SEO files:")
     write_robots(ROOT / "robots.txt")
     print("  robots.txt")
-    urls, lastmods = collect_sitemap(projects)
-    write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
-    print(f"  sitemap.xml ({len(urls)} urls)")
 
     guides_on = bool(published_guides())
     metrika = 0
@@ -166,12 +161,16 @@ def main() -> int:
         in_guides = html_path.parent.name == "guides"
         updated = inject_metrika(original)
         updated = sync_nav(updated, guides_on, active=in_guides)
-        if updated != original:
+        if normalize_head_spacing(updated) != normalize_head_spacing(original):
             html_path.write_text(updated, encoding="utf-8")
             metrika += 1
         if guides_on and 'href="/guides"' in updated:
             nav += 1
     print(f"  metrika/nav: {metrika} pages changed; guides menu: {'on' if guides_on else 'off'} ({nav} pages)")
+    urls, lastmods = collect_sitemap(projects)
+    write_sitemap(ROOT / "sitemap.xml", urls, lastmods)
+    print(f"  sitemap.xml ({len(urls)} urls)")
+
     return 0
 
 

@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-APP_VERSION = "42"
+APP_VERSION = "43"
 CSS_VERSION = "82"
 
 

@@ -140,7 +140,7 @@
 
         var logoPreload = new Image();
         logoPreload.onload = logoPreload.onerror = maybeFinishPreloader;
-        logoPreload.src = "assets/logo.png?v=11";
+        logoPreload.src = "assets/logo-v1.webp";
 
         if (document.readyState === "complete") {
           scheduleAlignPreloaderLogo();

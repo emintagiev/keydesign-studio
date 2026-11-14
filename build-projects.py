@@ -27,8 +27,8 @@ ASSET_CSS_VERSION = "82"
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
       <a href="/" class="brand" aria-label="Key Design Studio">
-        <img class="brand__logo brand__logo--dark" src="assets/logo.png?v=11" alt="" width="859" height="722" />
-        <img class="brand__logo brand__logo--light" src="assets/logo-light.png?v=11" alt="" width="859" height="722" />
+        <img class="brand__logo brand__logo--dark" src="assets/logo-v1.webp" alt="" width="859" height="722" />
+        <img class="brand__logo brand__logo--light" src="assets/logo-light-v1.webp" alt="" width="859" height="722" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
