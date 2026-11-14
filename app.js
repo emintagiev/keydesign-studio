@@ -299,13 +299,13 @@
           "svc.1.s1.title": "Техническое задание",
           "svc.1.s1.text": "Фиксируем задачи по каждой зоне, собираем пожелания и референсы по стилю, мебели и оборудованию.",
           "svc.1.s2.title": "Обмеры и фотофиксация",
-          "svc.1.s2.text": "Выезжаем на объект, снимаем точные размеры и фиксируем исходное состояние помещений.",
+          "svc.1.s2.text": "Организуем обмеры и фотофиксацию объекта. В Москве и Дубае их выполняют специализированные фирмы.",
           "svc.1.s3.title": "Планировочное решение",
           "svc.1.s3.text": "Предлагаем несколько вариантов расстановки зон с учётом сценариев жизни и инженерии.",
           "svc.1.s4.title": "3D-визуализация",
           "svc.1.s4.text": "Показываем будущую атмосферу интерьера: свет, материалы, мебель и детали в объёмных рендерах.",
           "svc.1.s5.title": "Рабочий проект",
-          "svc.1.s5.text": "Готовим чертежи и спецификации, по которым строители и поставщики реализуют проект без догадок.",
+          "svc.1.s5.text": "Готовим рабочие чертежи, визуализации и спецификацию-смету: от планировки, электрики и освещения до развёрток помещений и чертежей заказной мебели.",
           "svc.2.title": "Проектное сопровождение",
           "svc.2.lead": "Ведём проект как единую систему: координируем поставщиков и подрядчиков, помогаем с комплектацией. Сокращаем время на подбор чистовых материалов, мебели и декора, выстраиваем бюджет и контролируем сроки поставок.",
           "svc.2.s1.title": "Поиск исполнителей",
@@ -323,7 +323,7 @@
           "svc.3.title": "Авторский надзор",
           "svc.3.lead": "Сопровождаем реализацию дизайн-проекта на площадке: следим за качеством, координируем подрядчиков и своевременно вносим уточнения в документацию.",
           "svc.3.s1.title": "Выезды на объект",
-          "svc.3.s1.text": "Регулярно приезжаем на площадку и сверяем ход работ с проектом.",
+          "svc.3.s1.text": "Выезжаем один раз в неделю; на заключительном этапе стройки при необходимости чаще. Между выездами поддерживаем связь со строителями и поставщиками.",
           "svc.3.s2.title": "Консультации бригады",
           "svc.3.s2.text": "Отвечаем на вопросы строителей в процессе отделки и монтажа.",
           "svc.3.s3.title": "Контроль качества",
@@ -350,20 +350,20 @@
           "svc.examples": "Примеры проектов",
           "svc.faqTitle": "Вопросы и ответы",
           "svc.others": "Другие услуги",
-          "svc.cost.1": "Стоимость считаем за квадратный метр и называем после первого разговора о проекте.",
+          "svc.cost.1": "Дизайн-проект квартиры в Новосибирске - 5 000 ₽/м². В стоимость входят визуализации и спецификация-смета. Для Москвы, Дубая и коммерческих объектов стоимость обсуждаем индивидуально.",
           "svc.cost.n": "Стоимость называем после первого разговора о проекте.",
           "svc.1.faq.1.q": "Что входит в дизайн-проект?",
-          "svc.1.faq.1.a": "Техническое задание, обмеры и фотофиксация, планировочное решение, 3D-визуализация и рабочий проект: чертежи и спецификации, по которым строители и поставщики реализуют проект без догадок.",
+          "svc.1.faq.1.a": "Визуализации, спецификация-смета и рабочие чертежи: обмерный план, планировочное решение, планы демонтажа и монтажа, электрики, освещения и включения светильников, сантехники, пола и потолков, развёртки помещений и чертежи мебели индивидуального изготовления.",
           "svc.1.faq.2.q": "Сколько занимает разработка проекта?",
           "svc.1.faq.2.a": "Срок разработки - от двух месяцев, в зависимости от площади и сложности объекта.",
           "svc.1.faq.3.q": "Сколько стоит дизайн-проект?",
-          "svc.1.faq.3.a": "Стоимость считаем за квадратный метр и называем после первого разговора о проекте.",
+          "svc.1.faq.3.a": "Дизайн-проект квартиры в Новосибирске - 5 000 ₽/м². В стоимость входят визуализации и спецификация-смета. Для Москвы, Дубая и коммерческих объектов стоимость обсуждаем индивидуально.",
           "svc.2.faq.1.q": "Что такое проектное сопровождение?",
           "svc.2.faq.1.a": "Ведём проект как единую систему: координируем поставщиков и подрядчиков, помогаем с комплектацией, выстраиваем бюджет и контролируем сроки поставок.",
           "svc.2.faq.2.q": "Как проходит комплектация?",
           "svc.2.faq.2.a": "Формируем карту материалов, считаем смету и сроки по спецификациям проекта, согласовываем бюджет и связываем платежи с этапами строительства. Закупку и логистику ведём от проверки коммерческих предложений до доставки и монтажа на объекте.",
-          "svc.2.faq.3.q": "Как выстраивается бюджет?",
-          "svc.2.faq.3.a": "Считаем стоимость материалов, мебели и наполнения по спецификациям проекта, согласовываем финальную смету и фиксируем приоритеты закупок.",
+          "svc.2.faq.3.q": "Кому оплачивать мебель и материалы?",
+          "svc.2.faq.3.a": "Клиент платит поставщикам напрямую. Помогаем согласовать бюджет и последовательность закупок по проекту.",
           "svc.3.faq.1.q": "Что делает дизайнер на объекте?",
           "svc.3.faq.1.a": "Приезжаем на площадку и сверяем ход работ с проектом, отвечаем на вопросы бригады, проверяем соответствие узлов, материалов и геометрии рабочим чертежам.",
           "svc.3.faq.2.q": "Что, если на объекте что-то меняется?",
@@ -399,7 +399,38 @@
           "project.16.summary": "Дизайн квартиры 80 м² в ЖК Облака, Новосибирск.",
           "project.4.summary": "Дизайн салона красоты Tati, 90 м², Новосибирск.",
           "project.10.summary": "Дизайн квартиры с восточным вайбом, 48 м², Новосибирск. В проекте: кухня-гостиная, спальня, санузел.",
-          "project.6.summary": "Дизайн квартиры 60 м² в ЖК Архитектор, Москва."
+          "project.6.summary": "Дизайн квартиры 60 м² в ЖК Архитектор, Москва.",
+          "svc.2.pageTitle": "Комплектация и сопровождение проекта",
+          "svc.conditions": "Условия работы",
+          "svc.portfolio": "Работы студии",
+          "svc.portfolioNote": "Познакомьтесь с интерьерами студии. Состав услуг для вашего объекта обсудим отдельно.",
+          "svc.next": "Обсудим ваш объект",
+          "svc.nextText": "Расскажите о городе, площади и стадии проекта. Поможем определить, с какой услуги начать.",
+          "svc.1.faq.4.q": "Когда можно обсудить снижение стоимости?",
+          "svc.1.faq.4.a": "При сокращении состава работ или площади свыше 300 м² условия обсуждаем индивидуально. Стоимость коммерческих объектов рассчитываем отдельно; фиксированную скидку заранее не обещаем.",
+          "svc.1.condition.1": "Проектируем квартиры, дома и коммерческие интерьеры в Новосибирске, Москве и Дубае.",
+          "svc.1.condition.2": "Дизайн-проект определяет будущий интерьер и документацию для его реализации. Комплектацию и авторский надзор обсуждаем как отдельные услуги.",
+          "svc.2.condition.1": "Берём в комплектацию и проекты других студий - условия обсуждаем отдельно.",
+          "svc.2.condition.2": "Клиент оплачивает заказы поставщикам напрямую. Стоимость сопровождения обсуждаем отдельно от стоимости мебели и материалов.",
+          "svc.2.faq.4.q": "Можно обратиться с проектом другой студии?",
+          "svc.2.faq.4.a": "Да, берём в комплектацию проекты других студий. Состав работ и условия обсуждаем отдельно после знакомства с проектом.",
+          "svc.3.condition.1": "Надзор помогает сверять реализацию с дизайн-проектом и вовремя разбирать вопросы строителей и поставщиков.",
+          "svc.3.condition.2": "Стоимость надзора рассчитывается за месяц. Условия согласуем с учётом города и объекта; закупки и комплектацию обсуждаем отдельно.",
+          "svc.3.faq.4.q": "Как часто дизайнер приезжает на стройку?",
+          "svc.3.faq.4.a": "Один раз в неделю, а на заключительном этапе при необходимости чаще. Между выездами ведём постоянную коммуникацию со строителями и поставщиками.",
+          "svc.4.condition.1": "Начинаем с организации пространства: зонирования, расстановки мебели и связи с инженерными вводными.",
+          "svc.4.condition.2": "При необходимости подключаем профильную организацию для перепланировки. Состав работ и формат дальнейшего дизайн-проекта обсуждаем для конкретного объекта.",
+          "svc.4.faq.4.q": "Что делать, если требуется согласование перепланировки?",
+          "svc.4.faq.4.a": "При необходимости подключаем профильную организацию. Планировочное решение и оформление согласования - разные задачи; нужный состав работ обсуждаем отдельно.",
+          "projects.filterLabel": "Тип объекта",
+          "projects.filter.all": "Все проекты",
+          "projects.filter.apartment": "Квартиры",
+          "projects.filter.house": "Дома",
+          "projects.filter.commercial": "Коммерческие",
+          "projects.count": "Показано проектов:",
+          "projects.intro": "Квартиры, загородные дома и коммерческие интерьеры в Новосибирске, Москве и Дубае. Выберите тип объекта и посмотрите работы близкого масштаба.",
+          "projects.next": "От проекта к вашему интерьеру",
+          "projects.nextText": "Посмотрите состав дизайн-проекта или узнайте, как студия помогает с комплектацией готового проекта."
         },
         en: {
           "brand.tag": "Interior Design Studio",
@@ -539,13 +570,13 @@
           "svc.1.s1.title": "Design brief",
           "svc.1.s1.text": "We define tasks for each zone and collect preferences and references for style, furniture and equipment.",
           "svc.1.s2.title": "Site survey",
-          "svc.1.s2.text": "We visit the site, take accurate measurements and document the existing condition.",
+          "svc.1.s2.text": "We arrange site measurements and photo documentation. In Moscow and Dubai, specialist firms carry out the surveys.",
           "svc.1.s3.title": "Layout options",
           "svc.1.s3.text": "We propose several zoning schemes based on how you live and on engineering constraints.",
           "svc.1.s4.title": "3D visualisation",
           "svc.1.s4.text": "We show the future atmosphere: light, materials, furniture and details in rendered views.",
           "svc.1.s5.title": "Working drawings",
-          "svc.1.s5.text": "We prepare drawings and specifications builders and suppliers can follow without guesswork.",
+          "svc.1.s5.text": "We prepare working drawings, visualisations and an itemised specification and estimate, from layouts, electrical and lighting plans to room elevations and bespoke furniture drawings.",
           "svc.2.title": "Project support",
           "svc.2.lead": "We run the project as one system: coordinate suppliers and contractors and help with procurement. Less time on finishes, furniture and decor; clearer budget and delivery dates.",
           "svc.2.s1.title": "Finding partners",
@@ -563,7 +594,7 @@
           "svc.3.title": "Author supervision",
           "svc.3.lead": "We support implementation on site: quality control, contractor coordination and timely updates to documentation.",
           "svc.3.s1.title": "Site visits",
-          "svc.3.s1.text": "Regular visits to compare progress with the approved project.",
+          "svc.3.s1.text": "We visit once a week, or more often during the final construction stage when needed. Between visits we stay in contact with builders and suppliers.",
           "svc.3.s2.title": "Team guidance",
           "svc.3.s2.text": "We answer builders' questions during finishing and installation.",
           "svc.3.s3.title": "Quality control",
@@ -590,20 +621,20 @@
           "svc.examples": "Project examples",
           "svc.faqTitle": "Questions and answers",
           "svc.others": "Other services",
-          "svc.cost.1": "We price per square metre and quote the cost after a first conversation about your project.",
+          "svc.cost.1": "Apartment design in Novosibirsk costs RUB 5,000 per square metre, including visualisations and an itemised specification and estimate. We discuss pricing for Moscow, Dubai and commercial spaces individually.",
           "svc.cost.n": "We quote the cost after a first conversation about your project.",
           "svc.1.faq.1.q": "What does the design project include?",
-          "svc.1.faq.1.a": "A design brief, site survey and photo documentation, a layout solution, 3D visualisation and working drawings: drawings and specifications that builders and suppliers can follow without guesswork.",
+          "svc.1.faq.1.a": "Visualisations, an itemised specification and estimate, and working drawings: the measured survey, layout, demolition and construction plans, electrical, lighting and switching plans, plumbing, floor and ceiling plans, room elevations and bespoke furniture drawings.",
           "svc.1.faq.2.q": "How long does the design take?",
           "svc.1.faq.2.a": "From two months, depending on the size and complexity of the project.",
           "svc.1.faq.3.q": "How much does a design project cost?",
-          "svc.1.faq.3.a": "We price per square metre and quote the cost after a first conversation about your project.",
+          "svc.1.faq.3.a": "Apartment design in Novosibirsk costs RUB 5,000 per square metre, including visualisations and an itemised specification and estimate. We discuss pricing for Moscow, Dubai and commercial spaces individually.",
           "svc.2.faq.1.q": "What is project support?",
           "svc.2.faq.1.a": "We run the project as a single system: we coordinate suppliers and contractors, help with sourcing, build the budget and keep an eye on delivery times.",
           "svc.2.faq.2.q": "How does sourcing work?",
           "svc.2.faq.2.a": "We prepare a materials map, calculate the estimate and timing from the project specifications, agree the budget and tie payments to the stages of construction. We manage purchasing and logistics from checking quotations to delivery and installation on site.",
-          "svc.2.faq.3.q": "How is the budget built?",
-          "svc.2.faq.3.a": "We calculate the cost of materials, furniture and furnishings from the project specifications, agree the final estimate and fix purchasing priorities.",
+          "svc.2.faq.3.q": "Who receives payments for furniture and materials?",
+          "svc.2.faq.3.a": "The client pays suppliers directly. We help agree the budget and purchasing sequence for the project.",
           "svc.3.faq.1.q": "What does the designer do on site?",
           "svc.3.faq.1.a": "We visit the site and compare the progress of the work with the project, answer the crew's questions and check that details, materials and geometry match the working drawings.",
           "svc.3.faq.2.q": "What if something changes on site?",
@@ -639,7 +670,38 @@
           "project.16.summary": "Interior design of an 80 sq m apartment at Oblaka Residence, Novosibirsk.",
           "project.4.summary": "Interior design of the Tati beauty salon, 90 sq m, Novosibirsk.",
           "project.10.summary": "Interior design of a 48 sq m apartment with an eastern vibe, Novosibirsk. Rooms: kitchen and living room, bedroom, bathroom.",
-          "project.6.summary": "Interior design of a 60 sq m apartment at ZHK Arkhitektor, Moscow."
+          "project.6.summary": "Interior design of a 60 sq m apartment at ZHK Arkhitektor, Moscow.",
+          "svc.2.pageTitle": "Interior sourcing and project support",
+          "svc.conditions": "Working arrangements",
+          "svc.portfolio": "Studio portfolio",
+          "svc.portfolioNote": "Explore interiors by the studio. We will agree the scope of services for your project separately.",
+          "svc.next": "Let’s discuss your space",
+          "svc.nextText": "Tell us the location, floor area and current project stage. We will help you choose where to start.",
+          "svc.1.faq.4.q": "When can a lower fee be discussed?",
+          "svc.1.faq.4.a": "We discuss terms individually if the scope is reduced or the floor area exceeds 300 square metres. Commercial spaces are quoted separately; there is no automatic fixed discount.",
+          "svc.1.condition.1": "We design apartments, houses and commercial interiors in Novosibirsk, Moscow and Dubai.",
+          "svc.1.condition.2": "The design project defines the interior and the documents needed to implement it. Sourcing and site supervision are discussed as separate services.",
+          "svc.2.condition.1": "We also provide sourcing for projects by other studios, on individually agreed terms.",
+          "svc.2.condition.2": "The client pays suppliers directly. Our support fee is discussed separately from furniture and material costs.",
+          "svc.2.faq.4.q": "Can I bring a project by another studio?",
+          "svc.2.faq.4.a": "Yes, we provide sourcing for other studios’ projects. We discuss the scope and terms after reviewing the design.",
+          "svc.3.condition.1": "Site supervision helps keep implementation aligned with the design and resolve questions from builders and suppliers.",
+          "svc.3.condition.2": "Supervision is priced per month. Terms depend on the location and project; purchasing and sourcing are discussed separately.",
+          "svc.3.faq.4.q": "How often does the designer visit the site?",
+          "svc.3.faq.4.a": "Once a week, or more often during the final construction stage when needed. We stay in regular contact with builders and suppliers between visits.",
+          "svc.4.condition.1": "We start with the organisation of space: zoning, furniture placement and coordination with building services.",
+          "svc.4.condition.2": "Where necessary, we involve a specialist organisation for layout alterations. The scope and subsequent design work are discussed for each project.",
+          "svc.4.faq.4.q": "What if layout alterations require approval?",
+          "svc.4.faq.4.a": "Where necessary, we involve a specialist organisation. Designing a layout and obtaining approval are separate tasks; we discuss the required scope individually.",
+          "projects.filterLabel": "Property type",
+          "projects.filter.all": "All projects",
+          "projects.filter.apartment": "Apartments",
+          "projects.filter.house": "Houses",
+          "projects.filter.commercial": "Commercial",
+          "projects.count": "Projects shown:",
+          "projects.intro": "Apartments, country houses and commercial interiors in Novosibirsk, Moscow and Dubai. Choose a property type to explore projects of a similar scale.",
+          "projects.next": "From our portfolio to your interior",
+          "projects.nextText": "Explore what a design project includes or find out how we help source materials and furniture for an existing design."
         }
       };
 
@@ -684,6 +746,31 @@
           applyLang(b.getAttribute("data-lang"));
         });
       });
+
+      /* ---------- Portfolio filters: all links remain in the source HTML ---------- */
+      var portfolioFilters = document.getElementById("portfolioFilters");
+      var portfolioGrid = document.getElementById("portfolioGrid");
+      var portfolioCount = document.getElementById("portfolioCount");
+      if (portfolioFilters && portfolioGrid && portfolioCount) {
+        var filterButtons = portfolioFilters.querySelectorAll("[data-project-filter]");
+        var projectCards = portfolioGrid.querySelectorAll("[data-project-type]");
+        portfolioFilters.hidden = false;
+        portfolioCount.hidden = false;
+        filterButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var selected = button.getAttribute("data-project-filter");
+            var visible = 0;
+            projectCards.forEach(function (card) {
+              card.hidden = selected !== "all" && card.getAttribute("data-project-type") !== selected;
+              if (!card.hidden) visible += 1;
+            });
+            filterButtons.forEach(function (item) {
+              item.setAttribute("aria-pressed", item === button ? "true" : "false");
+            });
+            portfolioCount.querySelector("[data-project-count]").textContent = String(visible);
+          });
+        });
+      }
 
       /* ---------- Mobile nav ---------- */
       var nav = document.getElementById("nav");

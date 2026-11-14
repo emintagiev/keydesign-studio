@@ -21,8 +21,8 @@ DESKTOP = Path.home() / "Desktop"
 KEY_DESIGN = DESKTOP / "key design"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 ORIGIN_EXTS = {".jpg", ".jpeg", ".png"}
-ASSET_JS_VERSION = "36"
-ASSET_CSS_VERSION = "78"
+ASSET_JS_VERSION = "42"
+ASSET_CSS_VERSION = "82"
 
 HEADER = """  <header class="header" id="header">
     <div class="container header__inner">
@@ -699,8 +699,12 @@ def update_homepage(projects: list[dict], featured_slugs: list[str]):
 
 
 def generate_projects_page(projects: list[dict]):
+    from site_i18n import RU
+
     cards = []
     for index, p in enumerate(projects):
+        kind = p.get("meta", {}).get("type", "")
+        category = "commercial" if kind == "Салон красоты" else "house" if kind in ("Частный дом", "Загородный дом", "Дом", "Кабинет") else "apartment"
         cover_file = Path(p["cover"]).name
         room_name = "Интерьер"
         number = 1
@@ -720,7 +724,7 @@ def generate_projects_page(projects: list[dict]):
             lazy=index != 0,
         )
         cards.append(
-            f'''        <a class="proj-grid-card" href="{p["url"]}">
+            f'''        <a class="proj-grid-card" href="{p["url"]}" data-project-type="{category}">
           <span class="proj-grid-card__media">
             {picture}
           </span>
@@ -772,9 +776,22 @@ def generate_projects_page(projects: list[dict]):
         </a>
       </div>
 
-      <div class="proj-grid reveal">
+      <p class="portfolio-intro" data-i18n="projects.intro">{RU['projects.intro']}</p>
+      <div class="portfolio-filters" id="portfolioFilters" role="group" aria-label="Тип объекта" data-i18n-aria-label="projects.filterLabel" hidden>
+        {''.join(f'<button type="button" class="portfolio-filter" data-project-filter="{kind}" aria-pressed="{str(kind == "all").lower()}" aria-controls="portfolioGrid" data-i18n="projects.filter.{kind}">{RU[f"projects.filter.{kind}"]}</button>' for kind in ('all', 'apartment', 'house', 'commercial'))}
+      </div>
+      <p class="portfolio-count" id="portfolioCount" aria-live="polite" aria-atomic="true" hidden><span data-i18n="projects.count">{RU['projects.count']}</span> <span data-project-count>{len(projects)}</span></p>
+      <div class="proj-grid reveal" id="portfolioGrid">
 {chr(10).join(cards)}
       </div>
+      <section class="svc-next">
+        <h2 class="svc-page__h" data-i18n="projects.next">{RU['projects.next']}</h2>
+        <p data-i18n="projects.nextText">{RU['projects.nextText']}</p>
+        <ul class="svc-others">
+          <li><a class="link-underline" href="/uslugi-dizajn-proekt" data-i18n="svc.1.title">Дизайн-проект интерьера</a></li>
+          <li><a class="link-underline" href="/uslugi-komplektaciya" data-i18n="svc.2.pageTitle">{RU['svc.2.pageTitle']}</a></li>
+        </ul>
+      </section>
     </div>
   </main>
 

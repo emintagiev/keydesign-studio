@@ -11,6 +11,7 @@ else
   echo "Skip build-hero-images: sips not found (Cloudflare/Linux). Using committed assets/hero/."
 fi
 
+python3 scripts/sync-site-i18n.py
 python3 build-projects.py --html-only
 python3 build-services.py
 python3 build-guides.py

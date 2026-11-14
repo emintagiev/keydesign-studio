@@ -40,7 +40,8 @@ def arrow_link(attrs: str, key: str, text: str) -> str:
 
 def build_page(service: dict) -> tuple[str, str]:
     n = service["n"]
-    name = app_ru(f"svc.{n}.title")
+    title_key = f"svc.{n}.pageTitle" if f"svc.{n}.pageTitle" in t.RU else f"svc.{n}.title"
+    name = app_ru(title_key)
     lead = app_ru(f"svc.{n}.lead")
     cost = t.RU[service["cost_key"]]
 
@@ -56,7 +57,7 @@ def build_page(service: dict) -> tuple[str, str]:
         )
 
     faq = []
-    for k in (1, 2, 3):
+    for k in (1, 2, 3, 4):
         q = t.RU[f"svc.{n}.faq.{k}.q"]
         a = t.RU[f"svc.{n}.faq.{k}.a"]
         faq.append(
@@ -80,7 +81,7 @@ def build_page(service: dict) -> tuple[str, str]:
     main_html = f"""      <div class="section-head reveal">
         <div>
           <p class="eyebrow"><a href="/services" data-i18n="nav.services">Услуги</a></p>
-          <h1 class="svc__title svc-page__title" data-i18n="svc.{n}.title">{ESC(name)}</h1>
+          <h1 class="svc__title svc-page__title" data-i18n="{title_key}">{ESC(name)}</h1>
         </div>
         {arrow_link('href="/services" class="link-underline"', "svc.all", "Все услуги")}
       </div>
@@ -88,6 +89,13 @@ def build_page(service: dict) -> tuple[str, str]:
       <div class="svc-page reveal">
         <p class="svc__lead svc-page__lead" data-i18n="svc.{n}.lead">{ESC(lead)}</p>
         <p class="svc__note" data-i18n="{service["cost_key"]}">{ESC(cost)}</p>
+        {arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}
+
+        <h2 class="svc-page__h" data-i18n="svc.conditions">Условия работы</h2>
+        <ul class="svc-conditions">
+          <li data-i18n="svc.{n}.condition.1">{ESC(t.RU[f"svc.{n}.condition.1"])}</li>
+          <li data-i18n="svc.{n}.condition.2">{ESC(t.RU[f"svc.{n}.condition.2"])}</li>
+        </ul>
 
         <h2 class="svc-page__h" data-i18n="svc.how">Как проходит работа</h2>
         <div class="svc__steps">
@@ -95,7 +103,8 @@ def build_page(service: dict) -> tuple[str, str]:
         </div>
         {arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}
 
-        <h2 class="svc-page__h" data-i18n="svc.examples">Примеры проектов</h2>
+        <h2 class="svc-page__h" data-i18n="svc.portfolio">Работы студии</h2>
+        <p class="svc__note" data-i18n="svc.portfolioNote">{ESC(t.RU['svc.portfolioNote'])}</p>
         <div class="proj-grid">
 {project_cards(service["projects"])}
         </div>
@@ -116,6 +125,12 @@ def build_page(service: dict) -> tuple[str, str]:
         links = ''.join(f'<li><a class="link-underline" href="/guides/{ESC(g["slug"])}">{ESC(g["title"])}</a></li>' for g in reading)
         main_html += f'<section class="svc-reading" lang="ru"><h2 class="svc-page__h">Перед началом работы</h2><ul class="svc-others">{links}</ul></section>'
 
+    main_html += f'''<section class="svc-next">
+      <h2 class="svc-page__h" data-i18n="svc.next">{ESC(t.RU['svc.next'])}</h2>
+      <p data-i18n="svc.nextText">{ESC(t.RU['svc.nextText'])}</p>
+      {arrow_link('href="#brief" class="btn" data-open-brief', 'svc.cta', 'Оставить заявку')}
+    </section>'''
+
     path = f"/{service['slug']}"
     meta = STATIC_PAGES[path]
     title, description = meta["title"], meta["description"]
@@ -130,7 +145,7 @@ def build_page(service: dict) -> tuple[str, str]:
                 "description": lead,
                 "url": url,
                 "provider": provider_ld(),
-                "areaServed": {"@type": "City", "name": "Новосибирск"},
+                "areaServed": [{"@type": "City", "name": city} for city in ("Новосибирск", "Москва", "Дубай")],
             }
         ),
         ld_script(

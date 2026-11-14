@@ -11,7 +11,7 @@ from pathlib import Path
 
 import yaml
 
-from seo import SITE_ORIGIN, inject_seo
+from seo import SITE_ORIGIN, inject_metrika, inject_seo
 
 ROOT = Path(__file__).resolve().parent
 GUIDES_DIR = ROOT / "content" / "guides"
@@ -179,7 +179,7 @@ def brief_block() -> str:
 def project_cards(slugs: list[str]) -> str:
     text = (ROOT / "projects.html").read_text(encoding="utf-8")
     found = {}
-    for match in re.finditer(r'<a class="proj-grid-card" href="/([^"]+)">.*?</a>', text, re.S):
+    for match in re.finditer(r'<a class="proj-grid-card" href="/([^"]+)"[^>]*>.*?</a>', text, re.S):
         found[match.group(1)] = match.group(0)
     cards = []
     for slug in slugs:
@@ -279,4 +279,5 @@ def page_shell(
         og_image=og_image,
         noindex=noindex,
     )
+    page = inject_metrika(sync_nav(page, has_published_guides(), active=active == "guides"))
     return absolutize(page) if nested else page

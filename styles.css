@@ -3806,6 +3806,60 @@
       max-width: 46rem;
     }
 
+    .svc-conditions {
+      margin: 0;
+      padding-left: 1.1rem;
+      max-width: 46rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .svc-conditions li + li { margin-top: 0.65rem; }
+
+    .svc-next {
+      max-width: 46rem;
+      margin-top: var(--sp-5);
+      padding-top: var(--sp-3);
+      border-top: 1px solid var(--line);
+    }
+
+    .svc-next p, .portfolio-intro {
+      max-width: 46rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .svc-next .svc-page__h { margin-top: 0; }
+    .svc-next .btn { margin-top: var(--sp-2); }
+
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: var(--sp-3) 0 1rem;
+    }
+
+    .portfolio-filter {
+      min-height: 44px;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--text-soft);
+      font: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .portfolio-filter[aria-pressed="true"] {
+      color: var(--text);
+      border-color: currentColor;
+    }
+
+    .portfolio-filter:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .portfolio-count { color: var(--text-soft); font-size: 0.85rem; }
+    .portfolio-filters[hidden], .portfolio-count[hidden], #portfolioGrid > [hidden] { display: none; }
+
     .svc-page__h {
       margin: var(--sp-4) 0 0;
       font-family: var(--font-sans);

@@ -67,31 +67,31 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
     },
     "/uslugi-dizajn-proekt": {
         "file": "uslugi-dizajn-proekt.html",
-        "title": "Дизайн-проект интерьера — Key Design Studio",
+        "title": "Дизайн-проект интерьера - Key Design Studio",
         "description": (
-            "Дизайн-проект интерьера в Москве, Дубае и Новосибирске: обмеры, планировочное решение, 3D-визуализация, рабочий проект. Срок от двух месяцев."
+            "Дизайн-проект квартиры в Новосибирске - 5 000 ₽/м²: планировка, визуализации, чертежи и спецификация-смета. Москва и Дубай - индивидуальные условия."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-design.jpg",
     },
     "/uslugi-komplektaciya": {
         "file": "uslugi-komplektaciya.html",
-        "title": "Комплектация интерьера — Key Design Studio",
+        "title": "Комплектация интерьера - Key Design Studio",
         "description": (
-            "Проектное сопровождение и комплектация интерьера в Москве, Дубае и Новосибирске: карта материалов, смета, график оплат, закупка и логистика."
+            "Комплектация интерьера в Москве, Дубае и Новосибирске. Подбор мебели и материалов, бюджет и поставки. Прямые оплаты поставщикам. Работаем с чужими проектами."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-management.jpg",
     },
     "/uslugi-avtorskij-nadzor": {
         "file": "uslugi-avtorskij-nadzor.html",
-        "title": "Авторский надзор дизайнера — Key Design Studio",
+        "title": "Авторский надзор дизайнера - Key Design Studio",
         "description": (
-            "Авторский надзор дизайнера в Москве, Дубае и Новосибирске: выезды на объект, контроль качества, корректировки чертежей, еженедельная отчётность."
+            "Авторский надзор в Москве, Дубае и Новосибирске: выезд раз в неделю, связь со строителями и поставщиками, уточнение чертежей. Оплата за месяц."
         ),
         "og_image": f"{SITE_ORIGIN}/assets/services/service-supervision.jpg",
     },
     "/uslugi-arhitekturnoe-planirovanie": {
         "file": "uslugi-arhitekturnoe-planirovanie.html",
-        "title": "Архитектурное планирование — Key Design Studio",
+        "title": "Архитектурное планирование - Key Design Studio",
         "description": (
             "Архитектурное планирование в Москве, Дубае и Новосибирске: анализ объекта, сценарии жизни, схемы перепланировки и передача в дизайн-проект."
         ),
