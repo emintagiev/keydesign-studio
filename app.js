@@ -136,7 +136,7 @@
 
         var heroPreload = new Image();
         heroPreload.onload = heroPreload.onerror = maybeFinishPreloader;
-        heroPreload.src = "assets/hero/1.jpg";
+        heroPreload.src = "assets/hero/opening-curtains-v1.webp";
 
         var logoPreload = new Image();
         logoPreload.onload = logoPreload.onerror = maybeFinishPreloader;

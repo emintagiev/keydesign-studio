@@ -691,6 +691,10 @@
       will-change: opacity;
     }
 
+    .hero__slide--1 {
+      background-position: center 65%;
+    }
+
     .hero__slide.is-active {
       opacity: 1;
     }
@@ -2193,7 +2197,7 @@
       }
 
       .hero__slide--1.is-active {
-        background-image: url("assets/hero/1-m.jpg") !important;
+        background-image: url("assets/hero/opening-curtains-mobile-v1.webp") !important;
       }
 
       .hero__brand img {

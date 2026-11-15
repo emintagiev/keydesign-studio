@@ -6,8 +6,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-APP_VERSION = "43"
-CSS_VERSION = "82"
+APP_VERSION = "44"
+CSS_VERSION = "83"
 
 
 def bump_file(path: Path) -> bool:

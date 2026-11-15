@@ -2,6 +2,7 @@
 """Build compressed hero slideshow and homepage grid thumbnails."""
 
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -70,7 +71,28 @@ def build(entries):
         print(f"  {rel_out}: {before // 1024}KB -> {after // 1024}KB")
 
 
+def build_opening_image():
+    """Keep the supplied opening photo separate from existing user image edits."""
+    from PIL import Image, ImageOps
+
+    source = ROOT / "content" / "hero" / "opening-curtains-20261115.jpg"
+    with Image.open(source) as original:
+        image = ImageOps.exif_transpose(original).convert("RGB")
+        for name, width in (("opening-curtains-v1", 1600),
+                            ("opening-curtains-mobile-v1", 820)):
+            resized = image.copy()
+            resized.thumbnail((width, 10000), Image.Resampling.LANCZOS)
+            target = ASSETS / "hero" / (name + ".webp")
+            resized.save(target, "WEBP", quality=84, method=6)
+            print(f"  {target.relative_to(ASSETS)}: {target.stat().st_size // 1024}KB")
+            if width == 1600:
+                resized.save(target.with_suffix(".jpg"), "JPEG", quality=84, optimize=True)
+
+
 def main():
+    build_opening_image()
+    if "--opening-only" in sys.argv:
+        return
     print("Hero slides:")
     build(HERO_SOURCES)
     print("Homepage thumbs:")
