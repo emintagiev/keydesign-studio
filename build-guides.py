@@ -161,7 +161,11 @@ def cover_data(guide: dict) -> dict:
 
 
 def read_minutes(guide: dict) -> int:
-    return max(1, math.ceil(len(guide["body"].split()) / 180))
+    sections = [guide.get("lead", ""), guide["body"], *guide.get("drawing_list", []),
+                *guide.get("project_captions", {}).values()]
+    for item in guide.get("faq") or []:
+        sections.extend([item["q"], item["a"]])
+    return max(1, math.ceil(len(" ".join(sections).split()) / 180))
 
 
 def cover_picture(guide: dict, *, preview: bool = False) -> str:
@@ -239,7 +243,17 @@ def article_page(guide: dict, by_slug: dict[str, dict], noindex: bool = False) -
 
     blocks = []
     projects = [p for p in (guide.get("projects") or []) if p]
-    if projects:
+    gallery = ""
+    captions = guide.get("project_captions") or {}
+    if captions:
+        if set(captions) != set(projects):
+            raise ValueError(f"{slug}: для каждого проекта нужна подпись")
+        figures = [
+            f'<figure class="guide-cover">{project_cards([p])}<figcaption>{ESC(captions[p])}</figcaption></figure>'
+            for p in projects
+        ]
+        gallery = '<div class="guide__block"><div class="proj-grid">' + "".join(figures) + '</div></div>'
+    elif projects:
         blocks.append(
             f"""        <section class="guide__block">
           <h2 class="svc-page__h">Работы студии</h2>
@@ -287,14 +301,22 @@ def article_page(guide: dict, by_slug: dict[str, dict], noindex: bool = False) -
           </ul>
         </section>"""
         )
-    blocks.append(
-        f"""        <section class="guide__block">
+    cta = f"""        <section class="guide__block">
           <p class="svc__note" data-i18n="guides.cta">Расскажите метраж и когда планируете начать - обсудим ваш проект.</p>
           {arrow('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}
         </section>"""
-    )
 
     headings = re.findall(r"^#{1,3}\s+(.+)$", guide["body"], re.M)
+    compact = len(headings) <= 3 and len(guide["body"].split()) <= 350
+    if compact and "](#brief)" not in guide["body"]:
+        blocks.insert(0, cta)
+    elif not compact:
+        blocks.append(cta)
+    drawings = guide.get("drawing_list") or []
+    details = ""
+    if drawings:
+        items = "".join(f"<li>{ESC(item)}</li>" for item in drawings)
+        details = f'<details><summary>Посмотреть все чертежи ({len(drawings)})</summary><ol>{items}</ol></details>'
     toc = '<nav class="guide-toc" aria-label="Содержание статьи"><p class="eyebrow">В этой статье</p><ol>' + ''.join(
         f'<li><a href="#part-{i}">{ESC(h)}</a></li>' for i, h in enumerate(headings, 1)
     ) + '</ol></nav>' if headings else ''
@@ -316,12 +338,14 @@ def article_page(guide: dict, by_slug: dict[str, dict], noindex: bool = False) -
       <article class="guide reveal" lang="{ESC(guide.get('lang', 'ru'))}">
         <p class="guide__date"><time datetime="{ESC(guide['date'])}">{ESC(human_date(guide['date']))}</time> · {read_minutes(guide)} мин</p>
         {lead}
-        <p class="guide-byline">Key Design Studio · По материалам Кристины Парыгиной, основателя студии</p>
-        {photo}
-        {toc}
+{gallery}
+{photo if not compact else ''}
+{toc if not compact else ''}
         <div class="proj-story guide__body">
 {md_to_html(guide['body'])}
+{details}
         </div>
+        <p class="guide-byline">Key Design Studio · По материалам Кристины Парыгиной, основателя студии</p>
 {chr(10).join(blocks)}
       </article>"""
 
@@ -333,6 +357,7 @@ def article_page(guide: dict, by_slug: dict[str, dict], noindex: bool = False) -
                 "headline": title,
                 "description": description,
                 "datePublished": guide["date"],
+                **({"dateModified": str(guide["updated"])} if guide.get("updated") else {}),
                 "mainEntityOfPage": url,
                 "image": f"{SITE_ORIGIN}/{project['cover']}" if project else DEFAULT_OG_IMAGE,
                 "inLanguage": guide.get("lang", "ru"),

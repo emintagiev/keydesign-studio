@@ -101,6 +101,8 @@ def parse_guide(path: Path) -> dict:
     meta["body"] = body
     meta["draft"] = path.name.startswith("_")
     meta["date"] = str(meta.get("date") or "")
+    if meta.get("updated"):
+        meta["updated"] = str(meta["updated"])
     return meta
 
 
