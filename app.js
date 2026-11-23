@@ -5,12 +5,30 @@
 
       var root = document.documentElement;
 
+      // Record only the article path and the entry point, never form fields or URL queries.
+      var isGuide = !!document.querySelector("article.guide");
+      var guidePath = isGuide ? location.pathname : "";
+      try {
+        var referrer = document.referrer && new URL(document.referrer);
+        var previousGuide = JSON.parse(sessionStorage.getItem("kds.guide") || "null");
+        if (!isGuide && referrer && referrer.origin === location.origin && previousGuide &&
+            Date.now() - previousGuide.time < 1800000 && /^\/guides\/[a-z0-9-]+$/.test(previousGuide.path)) {
+          guidePath = previousGuide.path;
+        }
+        if (guidePath) sessionStorage.setItem("kds.guide", JSON.stringify({path: guidePath, time: Date.now()}));
+        else sessionStorage.removeItem("kds.guide");
+      } catch (e) {}
+      var briefEntry = "page";
+
       function trackGoal(name) {
         if (window.KDS_METRIKA_ID && typeof window.ym === "function") {
-          try { window.ym(window.KDS_METRIKA_ID, "reachGoal", name); } catch (e) {}
+          try {
+            var params = guidePath ? { guide: guidePath, entry: briefEntry } : {};
+            window.ym(window.KDS_METRIKA_ID, "reachGoal", name, params);
+          } catch (e) {}
         }
       }
-      if (document.querySelector("article.guide")) {
+      if (isGuide) {
         document.querySelectorAll('a[href^="/uslugi-"]').forEach(function (link) {
           link.addEventListener("click", function () { trackGoal("guide_service_click"); });
         });
@@ -286,7 +304,7 @@
           "brief.fillData": "Указать контакты",
           "brief.submit": "Отправить",
           "brief.sending": "Отправляем…",
-          "brief.error": "Не удалось отправить. Попробуйте ещё раз или напишите на key-des@mail.ru",
+          "brief.error": "Не удалось отправить. Попробуйте ещё раз или напишите на почту:",
           "brief.doneTitle": "Принято!",
           "brief.doneText": "Мы получили вашу заявку и скоро напишем или позвоним.",
           "services.subtitle": "Что мы делаем для вашего пространства",
@@ -557,7 +575,7 @@
           "brief.fillData": "Add contacts",
           "brief.submit": "Send",
           "brief.sending": "Sending…",
-          "brief.error": "Could not send. Try again or email key-des@mail.ru",
+          "brief.error": "Could not send. Try again or email:",
           "brief.doneTitle": "Received!",
           "brief.doneText": "We have your inquiry and will be in touch soon.",
           "services.subtitle": "What we do for your space",
@@ -1171,6 +1189,17 @@
         var briefNextLabel = briefRoot.querySelector("[data-brief-next-label]");
         var briefStep = 1;
         var briefTotalQuiz = 2;
+        var briefSending = false;
+        var briefError = document.createElement("p");
+        briefError.hidden = true;
+        briefError.setAttribute("role", "alert");
+        var briefErrorText = document.createElement("span");
+        var briefEmail = document.createElement("a");
+        briefEmail.href = "mailto:key-des@mail.ru";
+        briefEmail.textContent = "key-des@mail.ru";
+        briefEmail.className = "link-underline";
+        briefError.append(briefErrorText, " ", briefEmail);
+        briefRoot.querySelector('[data-brief-step="3"]').appendChild(briefError);
 
         if (briefForm && !briefForm.querySelector('input[name="company"]')) {
           var briefHoneypot = document.createElement("input");
@@ -1232,17 +1261,19 @@
           }
 
           if (briefFoot) briefFoot.hidden = briefStep === 4;
-          if (briefBack) briefBack.disabled = briefStep <= 1 || briefStep === 4;
+          if (briefBack) briefBack.disabled = briefSending || briefStep <= 1 || briefStep === 4;
 
           var dict = briefDict();
+          briefErrorText.textContent = dict["brief.error"];
           if (briefNextLabel) {
-            if (briefStep === 2) briefNextLabel.textContent = dict["brief.fillData"];
+            if (briefSending) briefNextLabel.textContent = dict["brief.sending"];
+            else if (briefStep === 2) briefNextLabel.textContent = dict["brief.fillData"];
             else if (briefStep === 3) briefNextLabel.textContent = dict["brief.submit"];
             else briefNextLabel.textContent = dict["brief.next"];
           }
 
           if (briefNext) {
-            briefNext.disabled = !briefCanAdvance();
+            briefNext.disabled = briefSending || !briefCanAdvance();
             briefNext.type = briefStep === 3 ? "submit" : "button";
           }
         }
@@ -1251,6 +1282,7 @@
 
         function briefReset() {
           briefStep = 1;
+          briefError.hidden = true;
           briefForm.reset();
           briefForm.querySelectorAll(".is-invalid").forEach(function (el) {
             el.classList.remove("is-invalid");
@@ -1258,9 +1290,11 @@
           briefUpdateUi();
         }
 
-        function briefOpen() {
+        function briefOpen(trigger) {
+          briefEntry = trigger && trigger.closest(".guide__body") ? "guide_body" : isGuide ? "guide_footer" : "page";
+          if (!trigger) briefEntry = "direct_link";
           trackGoal("brief_open");
-          briefReset();
+          if (!briefSending) briefReset();
           briefRoot.classList.add("is-open");
           briefRoot.setAttribute("aria-hidden", "false");
           document.body.style.overflow = "hidden";
@@ -1276,31 +1310,13 @@
           }
         }
 
-        function briefMailtoFallback(payload) {
-          var lines = [
-            "Заявка - Key Design Studio",
-            "",
-            "Метраж: " + payload.area,
-            "Сроки: " + payload.timeline,
-            "Имя: " + payload.name,
-            "Телефон: " + payload.phone
-          ];
-
-          try {
-            var mail = "mailto:key-des@mail.ru?subject=" +
-              encodeURIComponent("Заявка с сайта Key Design Studio") +
-              "&body=" + encodeURIComponent(lines.join("\n"));
-            var mailWin = window.open(mail, "_blank");
-            if (!mailWin) window.location.href = mail;
-          } catch (e) {}
-        }
-
         function briefShowDone() {
           briefStep = 4;
           briefUpdateUi();
         }
 
         function briefSubmit() {
+          if (briefSending) return;
           var area = briefForm.querySelector('input[name="area"]:checked');
           var timeline = briefForm.querySelector('input[name="timeline"]:checked');
           var name = briefForm.querySelector('input[name="name"]');
@@ -1327,17 +1343,14 @@
 
           var endpoint = window.KDS_BRIEF && window.KDS_BRIEF.endpoint;
           if (!endpoint) {
-            briefMailtoFallback(payload);
-            briefShowDone();
+            trackGoal("brief_error");
+            briefError.hidden = false;
             return;
           }
 
-          var dict = briefDict();
-          if (briefNext) {
-            briefNext.disabled = true;
-            if (briefNextLabel) briefNextLabel.textContent = dict["brief.sending"];
-          }
-
+          briefSending = true;
+          briefError.hidden = true;
+          briefUpdateUi();
           fetch(endpoint, {
             method: "POST",
             headers: {
@@ -1348,21 +1361,26 @@
           })
             .then(function (res) {
               if (!res.ok) throw new Error("submit failed");
-              if (window.KDS_METRIKA_ID && typeof ym === "function") {
-                ym(window.KDS_METRIKA_ID, "reachGoal", "lead");
-              }
+              return res.json();
+            })
+            .then(function (result) {
+              if (!result || result.ok !== true) throw new Error("unconfirmed submission");
+              briefSending = false;
+              trackGoal("lead");
               briefShowDone();
             })
             .catch(function () {
-              briefMailtoFallback(payload);
-              briefShowDone();
+              trackGoal("brief_error");
+              briefSending = false;
+              briefError.hidden = false;
+              briefUpdateUi();
             });
         }
 
         document.querySelectorAll("[data-open-brief]").forEach(function (trigger) {
           trigger.addEventListener("click", function (e) {
             e.preventDefault();
-            briefOpen();
+            briefOpen(trigger);
           });
         });
 
@@ -1380,10 +1398,12 @@
         }
 
         if (briefNext) {
-          briefNext.addEventListener("click", function () {
+          briefNext.addEventListener("click", function (event) {
             if (briefNext.disabled) return;
             if (briefStep < 3) {
+              event.preventDefault();
               briefStep += 1;
+              if (briefStep === 3) trackGoal("brief_contacts");
               briefUpdateUi();
             }
           });

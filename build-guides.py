@@ -47,6 +47,8 @@ def _inline(text: str) -> str:
 
     def link(match):
         label, url = match.group(1), match.group(2).strip()
+        if url == "#brief":
+            return f'<a href="#brief" class="btn svc__cta" data-open-brief>{label} <span aria-hidden="true">→</span></a>'
         if not (url.startswith("/") or url.startswith("https://") or url.startswith("http://")):
             return match.group(0)
         return f'<a href="{ESC(url, quote=True)}">{label}</a>'
