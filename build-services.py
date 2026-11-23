@@ -44,6 +44,13 @@ def build_page(service: dict) -> tuple[str, str]:
     name = app_ru(title_key)
     lead = app_ru(f"svc.{n}.lead")
     cost = t.RU[service["cost_key"]]
+    price_actions = arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")
+    if service["key"] == "design":
+        contact = arrow_link(
+            'href="https://t.me/Kristina_Key_des" class="link-underline svc__cta" data-service-price-contact target="_blank" rel="noopener noreferrer"',
+            "svc.askKristina", t.RU["svc.askKristina"],
+        )
+        price_actions += "\n        " + contact
 
     steps = []
     for k in step_keys(n):
@@ -89,7 +96,7 @@ def build_page(service: dict) -> tuple[str, str]:
       <div class="svc-page reveal">
         <p class="svc__lead svc-page__lead" data-i18n="svc.{n}.lead">{ESC(lead)}</p>
         <p class="svc__note" data-i18n="{service["cost_key"]}">{ESC(cost)}</p>
-        {arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}
+        {price_actions}
 
         <h2 class="svc-page__h" data-i18n="svc.conditions">Условия работы</h2>
         <ul class="svc-conditions">
