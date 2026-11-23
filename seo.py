@@ -67,7 +67,7 @@ STATIC_PAGES: dict[str, dict[str, str]] = {
     },
     "/uslugi-dizajn-proekt": {
         "file": "uslugi-dizajn-proekt.html",
-        "title": "Дизайн-проект интерьера - Key Design Studio",
+        "title": "Дизайн-проект квартиры в Новосибирске - Key Design Studio",
         "description": (
             "Дизайн-проект квартиры в Новосибирске - 5 000 ₽/м²: планировка, визуализации, чертежи и спецификация-смета. Москва и Дубай - индивидуальные условия."
         ),

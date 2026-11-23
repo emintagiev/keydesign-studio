@@ -414,7 +414,7 @@
           "project.3.summary": "Дизайн студии 30 м² в ЖК Bauman Haus, Москва.",
           "project.9.summary": "Дизайн загородного дома 160 м², Новосибирск. В проекте: кухня-гостиная, мастер-спальня, гостевая спальня, кабинет, ванная комната, душевая, мастер-гардеробная.",
           "project.7.summary": "Дизайн квартиры 62 м² в ЖК Пульсар, Новосибирск. В проекте: кухня-гостиная, спальня, прихожая, мастер-санузел, гостевой санузел.",
-          "project.16.summary": "Дизайн квартиры 80 м² в ЖК Облака, Новосибирск.",
+          "project.16.summary": "У спальни и санузла разное настроение. В спальне - мягкое изголовье и светлые шторы до пола. За дверью санузла белый пол с чёрными вставками сочетается с тёмно-синими стенами.",
           "project.4.summary": "Дизайн салона красоты Tati, 90 м², Новосибирск.",
           "project.10.summary": "Дизайн квартиры с восточным вайбом, 48 м², Новосибирск. В проекте: кухня-гостиная, спальня, санузел.",
           "project.6.summary": "Дизайн квартиры 60 м² в ЖК Архитектор, Москва.",
@@ -448,7 +448,10 @@
           "projects.count": "Показано проектов:",
           "projects.intro": "Квартиры, загородные дома и коммерческие интерьеры в Новосибирске, Москве и Дубае. Выберите тип объекта и посмотрите работы близкого масштаба.",
           "projects.next": "От проекта к вашему интерьеру",
-          "projects.nextText": "Посмотрите состав дизайн-проекта или узнайте, как студия помогает с комплектацией готового проекта."
+          "projects.nextText": "Посмотрите состав дизайн-проекта или узнайте, как студия помогает с комплектацией готового проекта.",
+          "svc.1.pageTitle": "Дизайн-проект квартиры в Новосибирске",
+          "project.16.caption.bedroom": "Широкое изголовье объединяет кровать и прикроватные столики. Над ним - настенное бра.",
+          "project.16.caption.bathroom": "Шкаф над инсталляцией и тумба под раковиной перекликаются рисунком дерева."
         },
         en: {
           "brand.tag": "Interior Design Studio",
@@ -685,7 +688,7 @@
           "project.3.summary": "Interior design of a 30 sq m studio at Bauman Haus RC, Moscow.",
           "project.9.summary": "Interior design of a 160 sq m country house, Novosibirsk. Rooms: kitchen and living room, master bedroom, guest bedroom, study, bathroom, shower room, master dressing room.",
           "project.7.summary": "Interior design of a 62 sq m apartment at ZHK Pulsar, Novosibirsk. Rooms: kitchen and living room, bedroom, entry hall, master bathroom, guest bathroom.",
-          "project.16.summary": "Interior design of an 80 sq m apartment at Oblaka Residence, Novosibirsk.",
+          "project.16.summary": "The bedroom and bathroom have different moods. An upholstered headboard and pale floor-length curtains soften the bedroom. In the bathroom, the white floor with black insets meets deep blue walls.",
           "project.4.summary": "Interior design of the Tati beauty salon, 90 sq m, Novosibirsk.",
           "project.10.summary": "Interior design of a 48 sq m apartment with an eastern vibe, Novosibirsk. Rooms: kitchen and living room, bedroom, bathroom.",
           "project.6.summary": "Interior design of a 60 sq m apartment at ZHK Arkhitektor, Moscow.",
@@ -719,7 +722,10 @@
           "projects.count": "Projects shown:",
           "projects.intro": "Apartments, country houses and commercial interiors in Novosibirsk, Moscow and Dubai. Choose a property type to explore projects of a similar scale.",
           "projects.next": "From our portfolio to your interior",
-          "projects.nextText": "Explore what a design project includes or find out how we help source materials and furniture for an existing design."
+          "projects.nextText": "Explore what a design project includes or find out how we help source materials and furniture for an existing design.",
+          "svc.1.pageTitle": "Apartment interior design in Novosibirsk",
+          "project.16.caption.bedroom": "The headboard extends beyond the bed to frame the bedside tables. A wall light sits above it.",
+          "project.16.caption.bathroom": "The cabinet above the toilet and the vanity below the basin echo each other’s wood grain."
         }
       };
 

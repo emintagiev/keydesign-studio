@@ -13,6 +13,7 @@ from urllib.parse import quote
 import yaml
 
 from seo import inject_metrika
+from site_i18n import RU
 
 ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
@@ -456,10 +457,14 @@ def build_single_gallery(cfg: dict) -> str:
     ]
     figs = []
     for index, src in enumerate(sources, start=1):
-        picture = render_picture(src, photo_alt(cfg, name, index), preview=False, lazy=index != 1)
+        caption_key = cfg.get("photo_captions", {}).get(Path(src).name)
+        caption = RU[caption_key] if caption_key else ""
+        picture = render_picture(src, caption or photo_alt(cfg, name, index), preview=False, lazy=index != 1)
+        legend = f'                <figcaption data-i18n="{escape(caption_key)}">{escape(caption)}</figcaption>\n' if caption else ""
         figs.append(
             "              <figure>\n"
             f"                {picture}\n"
+            f"{legend}"
             "              </figure>"
         )
     return "\n".join(figs)

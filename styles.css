@@ -2916,6 +2916,26 @@
       border-radius: var(--radius);
     }
 
+    .proj-gallery figure:has(figcaption) {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+
+    .proj-gallery figure:has(figcaption) picture {
+      display: block;
+      height: 100%;
+    }
+
+    .proj-gallery figcaption {
+      width: 0;
+      min-width: 100%;
+      padding-top: .5rem;
+      font-size: .85rem;
+      line-height: 1.4;
+      color: var(--text-soft);
+      cursor: auto;
+    }
+
     /* big side arrows (‹ ›) */
     .gallery-arrow {
       position: absolute;

@@ -22,7 +22,10 @@ rooms:
   name: Интерьер
   cover_filename: cam_25.jpg
 
-summary: "Дизайн квартиры 80 м² в ЖК Облака, Новосибирск."
+summary: "У спальни и санузла разное настроение. В спальне - мягкое изголовье и светлые шторы до пола. За дверью санузла белый пол с чёрными вставками сочетается с тёмно-синими стенами."
+photo_captions:
+  cam_24.jpg: project.16.caption.bedroom
+  cam_31.jpg: project.16.caption.bathroom
 task: ""
 solution: ""
 services: []
