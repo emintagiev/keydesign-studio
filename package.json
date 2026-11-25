@@ -1,0 +1,7 @@
+{
+  "name": "key-design-studio",
+  "private": true,
+  "dependencies": {
+    "@netlify/blobs": "11.1.11"
+  }
+}
