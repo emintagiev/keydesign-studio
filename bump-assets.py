@@ -14,7 +14,7 @@ def bump_file(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
     updated = re.sub(r"app\.js\?v=\d+", f"app.js?v={APP_VERSION}", text)
     updated = re.sub(r"styles\.css\?v=\d+", f"styles.css?v={CSS_VERSION}", updated)
-    updated = re.sub(r"brief-config\.js\?v=\d+", "brief-config.js?v=4", updated)
+    updated = re.sub(r"brief-config\.js\?v=\d+", "brief-config.js?v=5", updated)
     if updated == text:
         return False
     path.write_text(updated, encoding="utf-8")

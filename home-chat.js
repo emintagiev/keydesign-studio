@@ -11,13 +11,14 @@
     open: ['Задать вопрос','Ask a question'], title: ['Вопрос дизайнеру','Ask the designer'],
     hint: ['Ответ появится здесь. Вернитесь в этот чат с того же браузера.','Your reply will appear here. Return using the same browser.'],
     name: ['Имя и фамилия','Full name'], message: ['Ваш вопрос','Your message'],
-    agree: ['Соглашаюсь на обработку данных и передачу вопроса в рабочий Telegram студии.','I consent to processing my details and sending my question to the studio’s work Telegram.'],
+    agree: ['Соглашаюсь на обработку данных в Netlify и передачу вопроса в рабочий Telegram студии.','I consent to processing my details on Netlify and sending my question to the studio’s work Telegram.'],
     policy: ['Политика конфиденциальности','Privacy policy'], send: ['Отправить','Send'], close: ['Закрыть','Close'],
     visitor: ['Вы','You'], studio: ['Студия','Studio'], sending: ['Отправляем…','Sending…'],
     sent: ['Вопрос доставлен.','Your message was delivered.'],
     error: ['Не удалось отправить. Попробуйте ещё раз.','Could not send. Please try again.'],
     readError: ['Не удалось обновить чат. Проверим снова автоматически.','Could not refresh the chat. We’ll try again automatically.'],
-    wait: ['Сайт уточняет доставку. Проверьте переписку позже.','Delivery is unconfirmed. Check back later.'],
+    offline: ['Нет связи с чатом. Ваш текст остался в форме. Попробуйте ещё раз или напишите Кристине напрямую.','Cannot connect to the chat. Your draft is still here. Try again or contact Kristina directly.'],
+    wait: ['Пока не получили подтверждение. Можно повторить отправку этого сообщения.','Delivery hasn’t been confirmed yet. You can retry this message.'],
     rate: ['Много сообщений подряд. Попробуйте позже.','Too many messages. Please try again later.'],
     fallback: ['Написать Кристине в Telegram','Message Kristina on Telegram'],
     temporary: ['Чтобы увидеть ответ, оставьте эту вкладку открытой.','Keep this tab open to receive your reply.']
@@ -57,14 +58,20 @@
   function say(key) {
     statusKey = key;
     status.textContent = key ? t(key) : '';
-    document.querySelector('#chat-fallback').hidden = !['error','rate','wait','readError'].includes(key);
+    document.querySelector('#chat-fallback').hidden = !['error','rate','wait','readError','offline'].includes(key);
   }
   async function api(action, extra={}) {
-    const response = await fetch(window.KDS_BRIEF.chatEndpoint, {method:'POST',credentials:'omit',cache:'no-store',
-      headers:{'Content-Type':'application/json'},body:JSON.stringify({action,session:saved.token,...extra}),signal:typeof AbortSignal.timeout === 'function' ? AbortSignal.timeout(30000) : undefined});
-    const body = await response.json();
-    if (!response.ok || body.ok !== true) throw Object.assign(new Error('chat'),{status:response.status});
-    return body;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), action === 'read' ? 8000 : 16000);
+    try {
+      const response = await fetch(window.KDS_BRIEF.chatEndpoint, {
+        method:'POST', headers:{'Content-Type':'application/json'}, credentials:'omit', cache:'no-store',
+        body:JSON.stringify({action, session:saved.token, ...extra}), signal:controller.signal
+      });
+      const body = await response.json();
+      if (!response.ok || body.ok !== true) throw Object.assign(new Error('chat'), {status:response.status});
+      return body;
+    } finally { clearTimeout(timeout); }
   }
   async function refresh() {
     if (!panel.open || document.hidden || !saved.token || reading) return;
@@ -77,13 +84,17 @@
       if (JSON.stringify(result.messages) !== JSON.stringify(rows)) {
         rows = result.messages; render(); thread.scrollTop = thread.scrollHeight;
       }
+      if (!busy && saved.pending && rows.some(row => row.request_id === saved.pending)) {
+        delete saved.pending; delete saved.digest; persist(); say('sent');
+      }
       if (rows.some(r=>r.side === 'visitor') && !saved.sent) { saved.sent=true; persist(); goal('home_chat_sent'); }
       if (rows.some(r=>r.side === 'studio') && !saved.seen) { saved.seen=true; persist(); goal('chat_reply_seen'); }
     } catch (_) { if (!busy && !statusKey) say('readError'); }
     finally { reading = false; }
   }
   button.addEventListener('click', () => {
-    panel.showModal(); goal('home_chat_open'); render(); refresh();
+    panel.showModal(); goal('home_chat_open'); render();
+    refresh();
     clearInterval(timer); timer = setInterval(refresh, 12000);
   });
   panel.querySelector('.close-panel').addEventListener('click',()=>panel.close());
@@ -106,7 +117,7 @@
       delete saved.pending; delete saved.digest;
       if (!saved.sent) { saved.sent = true; goal('home_chat_sent'); }
       persist(); form.elements.message.value=''; say('sent'); await refresh();
-    } catch (err) { say(err.status===409?'wait':err.status===429?'rate':'error'); }
+    } catch (err) { say(!navigator.onLine ? 'offline' : !err.status || err.status===409 || err.status===503 ? 'wait' : err.status===429 ? 'rate' : 'error'); }
     finally { busy=false; submit.disabled=false; }
   });
   render(); button.hidden=false;
