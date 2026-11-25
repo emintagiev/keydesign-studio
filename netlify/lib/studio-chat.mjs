@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
+import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 
 const HOUR = 3600000;
 const WEEK = 168 * HOUR;
@@ -48,7 +48,7 @@ async function readRoom(store, room, now) {
     for (const e of batch) if (e?.state === 'sent' && e.created + WEEK > now) events.push(e);
   }
   return events.sort((a,b) => a.created - b.created).slice(-120).map(e => ({
-    side:e.side, text:e.text, request_id:e.side === 'visitor' ? e.id : null
+    side:e.side, text:e.text, created:e.created, request_id:e.side === 'visitor' ? e.id : null
   }));
 }
 
@@ -57,9 +57,8 @@ async function visitor(data, ip, {store,token,targets,dispatch}, now) {
   const room = digest(token,data.session);
   if (data.action === 'read') return [200,{messages:await readRoom(store,room,now)}];
   const text = typeof data.text === 'string' ? data.text.trim() : '';
-  const name = typeof data.name === 'string' ? data.name.trim() : '';
   if (data.action !== 'send' || typeof data.id !== 'string' || !hexEvent.test(data.id) ||
-      !text || text.length > 1500 || !name || name.length > 100 || data.company || data.consent !== true) return [422,{}];
+      !text || text.length > 1500 || data.company || data.consent !== true) return [422,{}];
   const key = 'room/' + room + '/' + data.id;
   const previous = await store.get(key,{type:'json'});
   if (previous) return existing(previous);
@@ -68,9 +67,18 @@ async function visitor(data, ip, {store,token,targets,dispatch}, now) {
   const event = {side:'visitor', id:data.id, state:'pending', text, created:now};
   const claim = await addEvent(store,key,event);
   if (!claim.modified) return existing(await store.get(key,{type:'json'}));
-  const notice = 'Вопрос с сайта #' + room + '.' + data.id + '\n' + name + '\n\n' + text +
-    '\n\nЧтобы ответ появился у посетителя, нажмите «Ответить» на это сообщение.';
-  const results = await Promise.allSettled(targets.map(id => dispatch(token,id,notice)));
+  // A capability is delivered only in the work bot's inline button. Only its digest is stored.
+  const ticket = randomBytes(32).toString('hex');
+  const reference = {room, id:data.id, created:now};
+  await addEvent(store,'ticket/' + digest(token,ticket),reference);
+  const link = staffURL + ticket;
+  const notice = 'Сообщение с сайта\n\n' + text + '\n\nЧтобы ответить здесь, нажмите «Ответить».';
+  const results = await Promise.allSettled(targets.map(async chatId => {
+    const messageId = await dispatch(token,chatId,notice,link);
+    if (!Number.isSafeInteger(messageId) || messageId <= 0) return messageId === false ? false : null;
+    await addEvent(store,telegramKey(token,chatId,messageId),reference);
+    return true;
+  }));
   if (results.some(r => r.status === 'fulfilled' && r.value === true)) {
     await store.setJSON(key,{...event,state:'sent'},{metadata:{expires:now+WEEK}});
     return [200,{delivery:'sent'}];
@@ -82,15 +90,44 @@ async function visitor(data, ip, {store,token,targets,dispatch}, now) {
   return [409,{delivery:'unknown'}];
 }
 
+const staffURL = 'https://www.keydesign.studio/studio-chat#';
+const telegramKey = (token,chatId,messageId) => 'telegram/' + digest(token,chatId+':'+messageId);
+
+async function ticketReference(ticket, {store,token}, now) {
+  if (typeof ticket !== 'string' || !hexSession.test(ticket)) return null;
+  const ref = await store.get('ticket/'+digest(token,ticket),{type:'json'});
+  return ref && ref.created + WEEK > now ? ref : null;
+}
+
+async function staff(data, deps, now) {
+  const ref = await ticketReference(data.ticket,deps,now);
+  if (!ref) return [403,{}];
+  const {store} = deps;
+  if (data.action === 'staff_read') return [200,{messages:await readRoom(store,ref.room,now)}];
+  const text = typeof data.text === 'string' ? data.text.trim() : '';
+  if (!text || text.length > 1500 || typeof data.id !== 'string' || !hexEvent.test(data.id)) return [422,{}];
+  await addEvent(store,'room/'+ref.room+'/staff-'+data.id,{side:'studio',state:'sent',text,created:now});
+  return [200,{delivery:'sent'}];
+}
+
 async function acceptReply(data, {store,token,targets}, now) {
   const m = data.message;
   const parent = m?.reply_to_message;
   if (!targets.includes(String(m?.chat?.id)) || !m?.message_id || !m.from || m.from.is_bot ||
       !parent?.from?.is_bot || String(parent.from.id) !== token.split(':')[0] ||
       typeof m.text !== 'string' || !m.text.trim()) return;
-  const match = /^Вопрос с сайта #([a-f0-9]{64})(?:\.([a-f0-9]{32}))?\n/.exec(parent.text || '');
-  if (!match || !Number.isSafeInteger(parent.date) || parent.date*1000 + WEEK <= now) return;
-  const [,room,id] = match;
+  if (!Number.isSafeInteger(parent.date) || parent.date*1000 + WEEK <= now) return;
+  let ref = await store.get(telegramKey(token,m.chat.id,parent.message_id),{type:'json'});
+  if (!ref) {
+    const link = parent.reply_markup?.inline_keyboard?.flat().find(button=>button.url?.startsWith(staffURL))?.url;
+    if (link) ref = await ticketReference(link.slice(staffURL.length),{store,token},now);
+  }
+  if (!ref) {
+    const legacy = /^Вопрос с сайта #([a-f0-9]{64})(?:\.([a-f0-9]{32}))?\n/.exec(parent.text || '');
+    if (!legacy) return;
+    ref = {room:legacy[1],id:legacy[2]};
+  }
+  const {room,id} = ref;
   if (id) {
     const key = 'room/' + room + '/' + id;
     const question = await store.get(key,{type:'json'});
@@ -126,7 +163,8 @@ export async function handleChat(req, context, deps) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return json(400,{},origin);
   try {
     if (webhook) { await acceptReply(data,deps,Date.now()); return json(200,{}); }
-    const [status,result] = await visitor(data,context.ip || 'unknown',deps,Date.now());
+    const [status,result] = ['staff_read','staff_reply'].includes(data.action)
+      ? await staff(data,deps,Date.now()) : await visitor(data,context.ip || 'unknown',deps,Date.now());
     return json(status,result,origin);
   } catch { return json(503,{},origin); }
 }
