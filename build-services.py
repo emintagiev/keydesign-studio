@@ -42,10 +42,12 @@ def build_page(service: dict) -> tuple[str, str]:
     n = service["n"]
     title_key = f"svc.{n}.pageTitle" if f"svc.{n}.pageTitle" in t.RU else f"svc.{n}.title"
     name = app_ru(title_key)
-    lead = app_ru(f"svc.{n}.lead")
+    design = service["key"] == "design"
+    lead_key = "svc.1.pageLead" if design else f"svc.{n}.lead"
+    lead = app_ru(lead_key)
     cost = t.RU[service["cost_key"]]
     price_actions = arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")
-    if service["key"] == "design":
+    if design:
         contact = arrow_link(
             'href="https://t.me/Kristina_Key_des" class="link-underline svc__cta" data-service-price-contact target="_blank" rel="noopener noreferrer"',
             "svc.askKristina", t.RU["svc.askKristina"],
@@ -85,6 +87,15 @@ def build_page(service: dict) -> tuple[str, str]:
             % (other["slug"], o_n, o_name)
         )
 
+    portfolio_key = "svc.1.portfolio" if design else "svc.portfolio"
+    portfolio_note = "" if design else f'\n        <p class="svc__note" data-i18n="svc.portfolioNote">{ESC(t.RU["svc.portfolioNote"])}</p>'
+    portfolio = f"""        <h2 class="svc-page__h" data-i18n="{portfolio_key}">{ESC(t.RU[portfolio_key])}</h2>{portfolio_note}
+        <div class="proj-grid">
+{project_cards(service["projects"])}
+        </div>"""
+    portfolio_after_price = "\n\n" + portfolio if design else ""
+    portfolio_after_steps = "" if design else "\n\n" + portfolio
+
     main_html = f"""      <div class="section-head reveal">
         <div>
           <p class="eyebrow"><a href="/services" data-i18n="nav.services">Услуги</a></p>
@@ -94,9 +105,9 @@ def build_page(service: dict) -> tuple[str, str]:
       </div>
 
       <div class="svc-page reveal">
-        <p class="svc__lead svc-page__lead" data-i18n="svc.{n}.lead">{ESC(lead)}</p>
+        <p class="svc__lead svc-page__lead" data-i18n="{lead_key}">{ESC(lead)}</p>
         <p class="svc__note" data-i18n="{service["cost_key"]}">{ESC(cost)}</p>
-        {price_actions}
+        {price_actions}{portfolio_after_price}
 
         <h2 class="svc-page__h" data-i18n="svc.conditions">Условия работы</h2>
         <ul class="svc-conditions">
@@ -108,13 +119,7 @@ def build_page(service: dict) -> tuple[str, str]:
         <div class="svc__steps">
 {chr(10).join(steps)}
         </div>
-        {arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}
-
-        <h2 class="svc-page__h" data-i18n="svc.portfolio">Работы студии</h2>
-        <p class="svc__note" data-i18n="svc.portfolioNote">{ESC(t.RU['svc.portfolioNote'])}</p>
-        <div class="proj-grid">
-{project_cards(service["projects"])}
-        </div>
+        {arrow_link('href="#brief" class="btn svc__cta" data-open-brief', "svc.cta", "Оставить заявку")}{portfolio_after_steps}
 
         <h2 class="svc-page__h" data-i18n="svc.faqTitle">Вопросы и ответы</h2>
         <dl class="faq">

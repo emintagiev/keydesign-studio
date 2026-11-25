@@ -449,10 +449,12 @@
           "projects.intro": "Квартиры, загородные дома и коммерческие интерьеры в Новосибирске, Москве и Дубае. Выберите тип объекта и посмотрите работы близкого масштаба.",
           "projects.next": "От проекта к вашему интерьеру",
           "projects.nextText": "Посмотрите состав дизайн-проекта или узнайте, как студия помогает с комплектацией готового проекта.",
-          "svc.1.pageTitle": "Дизайн-проект квартиры в Новосибирске",
+          "svc.1.pageTitle": "Дизайн-проект в Новосибирске",
           "project.16.caption.bedroom": "Широкое изголовье объединяет кровать и прикроватные столики. Над ним - настенное бра.",
           "project.16.caption.bathroom": "Шкаф над инсталляцией и тумба под раковиной перекликаются рисунком дерева.",
-          "svc.askKristina": "Задать вопрос Кристине"
+          "svc.askKristina": "Задать вопрос Кристине",
+          "svc.1.pageLead": "Проектируем интерьеры квартир и домов. Вы получите планировку с расстановкой мебели, визуализации, чертежи для строителей и смету с выбранными материалами. На разработку потребуется от двух месяцев в зависимости от площади и сложности.",
+          "svc.1.portfolio": "Квартиры в Новосибирске"
         },
         en: {
           "brand.tag": "Interior Design Studio",
@@ -724,10 +726,12 @@
           "projects.intro": "Apartments, country houses and commercial interiors in Novosibirsk, Moscow and Dubai. Choose a property type to explore projects of a similar scale.",
           "projects.next": "From our portfolio to your interior",
           "projects.nextText": "Explore what a design project includes or find out how we help source materials and furniture for an existing design.",
-          "svc.1.pageTitle": "Apartment interior design in Novosibirsk",
+          "svc.1.pageTitle": "Interior design in Novosibirsk",
           "project.16.caption.bedroom": "The headboard extends beyond the bed to frame the bedside tables. A wall light sits above it.",
           "project.16.caption.bathroom": "The cabinet above the toilet and the vanity below the basin echo each other’s wood grain.",
-          "svc.askKristina": "Ask Kristina a question"
+          "svc.askKristina": "Ask Kristina a question",
+          "svc.1.pageLead": "We design apartments and houses. You receive a furniture layout, visualisations, construction drawings and an itemised estimate for the selected materials. Design takes at least two months, depending on size and complexity.",
+          "svc.1.portfolio": "Apartments in Novosibirsk"
         }
       };
 
