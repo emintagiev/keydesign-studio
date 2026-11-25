@@ -191,7 +191,6 @@
           "hero.tagline":
             "Создаём продуманные интерьеры, в которых выверены свет, материал и каждая деталь.",
           "home.project": "Обсудить проект",
-          "home.price": "Уточнить стоимость у Кристины",
           "hero.cta": "Смотреть проекты",
           "hero.secondary": "Оставить заявку",
           "hero.media": "Скоро - съёмка проектов",
@@ -470,7 +469,6 @@
           "hero.tagline":
             "We create thoughtful interiors where light, material and every detail are in balance.",
           "home.project": "Discuss your project",
-          "home.price": "Ask Kristina about pricing",
           "hero.cta": "View projects",
           "hero.secondary": "Request a call",
           "hero.media": "Photography coming soon",
@@ -1465,7 +1463,6 @@
       document.querySelectorAll('a[href*="t.me/"]').forEach(function (link) {
         link.addEventListener("click", function () {
           trackGoal("tg_click");
-          if (link.classList.contains("contact-price")) trackGoal("home_price_tg");
           if (link === priceContact) trackGoal("tg_service_price");
           else if (priceContact && link.closest("header")) trackGoal("tg_service_header");
         });

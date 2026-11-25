@@ -531,8 +531,8 @@
     .header-social__link {
       display: inline-grid;
       place-items: center;
-      width: 2rem;
-      height: 2rem;
+      width: 44px;
+      height: 44px;
       border-radius: 100px;
       color: var(--text-faint);
       transition: color var(--t-fast);
@@ -543,39 +543,20 @@
     }
 
     .header-social__link svg {
-      width: 15px;
-      height: 15px;
+      width: clamp(24px, 2.1vw, 28px);
+      height: auto;
+      aspect-ratio: 1;
     }
 
     @media (min-width: 768px) {
       .header-social {
         gap: 0.25rem;
       }
-
-      .header-social__link {
-        width: 2.35rem;
-        height: 2.35rem;
-      }
-
-      .header-social__link svg {
-        width: 17px;
-        height: 17px;
-      }
     }
 
     @media (min-width: 981px) {
       .header-social {
         gap: 0.35rem;
-      }
-
-      .header-social__link {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-
-      .header-social__link svg {
-        width: 19px;
-        height: 19px;
       }
     }
 
@@ -2301,16 +2282,6 @@
 
       .header__tools .nav-toggle {
         order: 2;
-      }
-
-      .header-social__link {
-        width: 2.45rem;
-        height: 2.45rem;
-      }
-
-      .header-social__link svg {
-        width: 18px;
-        height: 18px;
       }
 
       .brand__logo {
