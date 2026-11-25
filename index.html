@@ -503,6 +503,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/114228778" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
+  <link rel="stylesheet" href="/home-contact.css?v=1" />
 </head>
 
 <body class="home">
@@ -585,14 +586,13 @@
         <h1 class="hero__tagline reveal" style="--rd: 0.14s" data-i18n="hero.tagline">
           Создаём продуманные интерьеры, в которых выверены свет, материал и каждая деталь.
         </h1>
+        <div class="contact-actions">
+          <a href="#brief" class="contact-primary" data-open-brief><b data-i18n="home.project">Обсудить проект</b> <span aria-hidden="true">→</span></a>
+          <a href="https://t.me/Kristina_Key_des" class="contact-price" target="_blank" rel="noopener noreferrer"><b data-i18n="home.price">Уточнить стоимость у Кристины</b> <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
 
       <div class="container hero__bottom reveal" style="--rd: 0.28s">
-        <div class="hero__actions">
-          <a href="#brief" class="link-underline" data-open-brief data-i18n="hero.secondary">
-            Оставить заявку
-          </a>
-        </div>
         <a class="hero__scroll" href="#about" aria-label="К разделу о студии">
           <span class="hero__scroll-label" data-i18n="hero.scroll">О студии</span>
           <span class="hero__scroll-line" aria-hidden="true"><span class="hero__scroll-dot"></span></span>
@@ -860,7 +860,27 @@
     </div>
   </div>
 
-  <script src="brief-config.js?v=2" defer></script>
-  <script src="app.js?v=48" defer></script>
+  <script src="brief-config.js?v=3" defer></script>
+  <script src="app.js?v=49" defer></script>
+  <button type="button" class="contact-chat" hidden aria-haspopup="dialog" aria-controls="question-panel"><span class="chat-mark" aria-hidden="true"></span><span data-chat-copy="open">Задать вопрос</span></button>
+  <dialog class="contact-dialog ym-hide-content" id="question-panel" aria-labelledby="chat-title">
+    <button type="button" class="close-panel" aria-label="Закрыть">×</button>
+    <h2 id="chat-title" data-chat-copy="title">Вопрос дизайнеру</h2>
+    <p data-chat-copy="hint">Ответ появится здесь. Вернитесь в этот чат с того же браузера.</p>
+    <div id="chat-thread" role="log" aria-live="polite"></div>
+    <form id="question-form">
+      <label for="contact-name" data-chat-copy="name">Имя и фамилия</label>
+      <input id="contact-name" name="fullname" autocomplete="name" maxlength="100" required>
+      <label for="contact-question" data-chat-copy="message">Ваш вопрос</label>
+      <textarea id="contact-question" name="message" maxlength="1500" required></textarea>
+      <input class="chat-trap" name="company" tabindex="-1" aria-hidden="true" autocomplete="off">
+      <label class="chat-consent"><input type="checkbox" name="consent" required><span data-chat-copy="agree">Соглашаюсь на обработку данных и передачу вопроса в рабочий Telegram студии.</span></label>
+      <a href="/privacy" class="chat-note" target="_blank" rel="noopener" data-chat-copy="policy">Политика конфиденциальности</a><br>
+      <button class="solid" type="submit" data-chat-copy="send">Отправить</button>
+      <p id="chat-status" role="status"></p>
+      <a class="chat-note" id="chat-fallback" href="https://t.me/Kristina_Key_des" target="_blank" rel="noopener noreferrer" data-chat-copy="fallback" hidden>Написать Кристине в Telegram</a>
+    </form>
+  </dialog>
+  <script src="/home-chat.js?v=1" defer></script>
 </body>
 </html>

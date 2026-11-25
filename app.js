@@ -24,6 +24,7 @@
         if (window.KDS_METRIKA_ID && typeof window.ym === "function") {
           try {
             var params = guidePath ? { guide: guidePath, entry: briefEntry } : {};
+            if (briefEntry === "home_hero" && /^(brief_|lead$)/.test(name)) params.entry = briefEntry;
             window.ym(window.KDS_METRIKA_ID, "reachGoal", name, params);
           } catch (e) {}
         }
@@ -189,6 +190,8 @@
           "hero.eyebrow": "Москва - Санкт-Петербург",
           "hero.tagline":
             "Создаём продуманные интерьеры, в которых выверены свет, материал и каждая деталь.",
+          "home.project": "Обсудить проект",
+          "home.price": "Уточнить стоимость у Кристины",
           "hero.cta": "Смотреть проекты",
           "hero.secondary": "Оставить заявку",
           "hero.media": "Скоро - съёмка проектов",
@@ -466,6 +469,8 @@
           "hero.eyebrow": "Moscow - Saint Petersburg",
           "hero.tagline":
             "We create thoughtful interiors where light, material and every detail are in balance.",
+          "home.project": "Discuss your project",
+          "home.price": "Ask Kristina about pricing",
           "hero.cta": "View projects",
           "hero.secondary": "Request a call",
           "hero.media": "Photography coming soon",
@@ -1305,6 +1310,10 @@
         function briefOpen(trigger) {
           briefEntry = trigger && trigger.closest(".guide__body") ? "guide_body" : isGuide ? "guide_footer" : "page";
           if (!trigger) briefEntry = "direct_link";
+          if (trigger && trigger.classList.contains("contact-primary")) {
+            briefEntry = "home_hero";
+            trackGoal("home_project_open");
+          }
           trackGoal("brief_open");
           if (!briefSending) briefReset();
           briefRoot.classList.add("is-open");
@@ -1456,6 +1465,7 @@
       document.querySelectorAll('a[href*="t.me/"]').forEach(function (link) {
         link.addEventListener("click", function () {
           trackGoal("tg_click");
+          if (link.classList.contains("contact-price")) trackGoal("home_price_tg");
           if (link === priceContact) trackGoal("tg_service_price");
           else if (priceContact && link.closest("header")) trackGoal("tg_service_header");
         });
