@@ -52,7 +52,8 @@ body:has(.is-open) .contact-chat{visibility:hidden}
 dialog.contact-dialog::backdrop{background:#231a131c}
 dialog#question-panel{position:fixed;margin:0;inset:auto max(12px,3vw) max(12px,3vh) auto}
 .chat-head{display:flex;align-items:center;flex:none;gap:12px;padding:17px 20px;background:#eee7dc;border-bottom:1px solid var(--line)}
-.chat-avatar{display:grid;place-items:center;width:42px;height:42px;flex:none;border:1px solid #9f8e78;border-radius:50%;font:italic 27px/1 Georgia,serif;color:#64513e}
+/* Use the key emblem above the wordmark; the studio name is already in the header. */
+.chat-avatar{display:block;width:42px;height:46px;flex:none;background:url("/assets/logo-v1.webp") center top / 86px auto no-repeat}
 .chat-head small{display:block;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
 .chat-head h2{font:500 27px/1.14 var(--font-serif,Georgia,serif);letter-spacing:-.02em;margin:1px 0 0}
 .chat-head .close-panel{margin-left:auto;align-self:center;width:40px;height:40px;color:var(--muted);background:transparent;border:0;font:300 26px/1 system-ui}
