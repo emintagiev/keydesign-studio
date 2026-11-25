@@ -1,4 +1,8 @@
-const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' };
+const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', Vary: 'Origin' };
+const STUDIO_ORIGINS = new Set([
+  'https://www.keydesign.studio', 'https://keydesign.studio',
+  'https://keydesign-studio-xxxxx.web.app', 'https://keydesign-studio-xxxxx.firebaseapp.com',
+]);
 
 function clean(value, max) {
   if (typeof value !== 'string') return '';
@@ -32,7 +36,7 @@ function jsonResponse(statusCode, body) {
   };
 }
 
-exports.handler = async (event) => {
+async function submitBrief(event) {
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { ok: false, error: 'method' });
   }
@@ -100,4 +104,23 @@ exports.handler = async (event) => {
   }
 
   return jsonResponse(200, { ok: true });
+}
+
+exports.handler = async (event) => {
+  const origin = event.headers?.origin;
+  const headers = { ...JSON_HEADERS };
+  if (origin) {
+    const sameOrigin = event.rawUrl && new URL(event.rawUrl).origin === origin;
+    if (!sameOrigin && !STUDIO_ORIGINS.has(origin)) {
+      return jsonResponse(403, { ok: false, error: 'origin' });
+    }
+    headers['Access-Control-Allow-Origin'] = origin;
+  }
+  if (event.httpMethod === 'OPTIONS') {
+    headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS';
+    headers['Access-Control-Allow-Headers'] = 'Content-Type';
+    return { statusCode: 204, headers, body: '' };
+  }
+  const response = await submitBrief(event);
+  return { ...response, headers };
 };
