@@ -29,6 +29,52 @@
           } catch (e) {}
         }
       }
+      // Clicks are session parameters. Only confirmed outcomes use the lead/chat goals.
+      var controls = [
+        ['[data-open-brief]', 'brief_open'], ['[data-close-brief]', 'brief_close'],
+        ['[data-brief-back]', 'brief_back'], ['[data-brief-next]', 'brief_next'],
+        ['.contact-chat', 'chat_open'], ['.close-panel', 'chat_close'], ['.chat-send', 'chat_send'],
+        ['.nav-toggle', 'menu_toggle'], ['[data-lang]', 'language'],
+        ['[data-project-filter]', 'portfolio_filter'], ['[data-room]', 'room_open'],
+        ['[data-back]', 'room_back'], ['[data-dir="next"],.lightbox__nav--next,.lightbox__img', 'photo_next'],
+        ['[data-dir="prev"],.lightbox__nav--prev', 'photo_previous'],
+        ['.lightbox__close', 'photo_close'], ['.proj-gallery img', 'photo_open'], ['summary', 'faq_toggle']
+      ];
+      function recordControl(event) {
+        var el = event.target.closest && event.target.closest('a[href],button,summary,.proj-gallery img,.lightbox__img');
+        if (!el || el.disabled || !window.KDS_METRIKA_ID || typeof window.ym !== 'function') return;
+        var rule = controls.find(function (pair) { return el.matches(pair[0]); });
+        var name = rule ? rule[1] : 'button';
+        var detail = '';
+        if (!rule && el.tagName === 'A') {
+          var url = new URL(el.href, location.href);
+          if (url.protocol === 'mailto:') name = 'email';
+          else if (url.protocol === 'tel:') name = 'phone';
+          else if (url.hostname === 't.me') name = 'telegram';
+          else if (/(^|\.)instagram\.com$/.test(url.hostname)) name = 'instagram';
+          else if (url.origin === location.origin) {
+            name = 'internal_link';
+            // Read static hrefs only. Never transmit search parameters, contacts or access tokens.
+            var href = el.getAttribute('href');
+            if (/^#[a-z0-9_-]+$/i.test(href)) detail = href;
+            else if (/^\/(?:[a-z0-9-]+\/)*[a-z0-9.-]*$/i.test(url.pathname)) detail = url.pathname;
+          } else name = 'external_link';
+        }
+        if (el.matches('[data-lang]')) detail = el.dataset.lang;
+        if (el.matches('[data-project-filter]')) detail = el.dataset.projectFilter;
+        if (el.matches('[data-room]')) detail = el.dataset.room;
+        if (el.matches('[data-brief-back],[data-brief-next]')) detail = 'step_' + briefStep;
+        var area = el.closest('#question-panel') ? 'chat' : el.closest('#brief,.brief') ? 'brief' :
+          el.closest('header') ? 'header' : el.closest('footer') ? 'footer' :
+          el.closest('.hero') ? 'hero' : el.closest('nav') ? 'navigation' : 'content';
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var page = canonical ? new URL(canonical.href).pathname : '/';
+        var label = [area, name, detail].filter(Boolean).join(' | ');
+        try { window.ym(window.KDS_METRIKA_ID, 'params', {site_click: { [page]: label }}); } catch (e) {}
+      }
+      document.addEventListener('click', recordControl, true);
+      document.addEventListener('auxclick', function (event) { if (event.button === 1) recordControl(event); }, true);
+
       if (isGuide) {
         document.querySelectorAll('a[href^="/uslugi-"]').forEach(function (link) {
           link.addEventListener("click", function () { trackGoal("guide_service_click"); });
