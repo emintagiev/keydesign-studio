@@ -5,6 +5,38 @@
 
       var root = document.documentElement;
 
+      // app.js is loaded on public pages only. The staff conversation has no analytics.
+      var measurementId = 'G-TXT9Y8GR05';
+      var canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (location.hostname === 'www.keydesign.studio' && canonicalLink) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', {
+          ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'
+        });
+        window.gtag('js', new Date());
+        var config = {
+          allow_google_signals:false,
+          allow_ad_personalization_signals:false,
+          page_location:canonicalLink.href,
+          page_referrer:document.referrer ? new URL(document.referrer).origin : ''
+        };
+        // Preserve campaign attribution without sending arbitrary queries or fragments.
+        var campaign = new URLSearchParams(location.search);
+        ['source','medium','campaign','content','term'].forEach(function (key) {
+          var value = campaign.get('utm_' + key);
+          if (value && /^[\p{L}\p{N}_. -]{1,100}$/u.test(value)) config['campaign_' + (key==='campaign'?'name':key)] = value;
+        });
+        window.gtag('config', measurementId, config);
+        var tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+        document.head.appendChild(tag);
+      }
+      function googleEvent(name, params) {
+        if (typeof window.gtag === 'function') window.gtag('event', name, params);
+      }
+
       // Record only the article path and the entry point, never form fields or URL queries.
       var isGuide = !!document.querySelector("article.guide");
       var guidePath = isGuide ? location.pathname : "";
@@ -20,15 +52,19 @@
       } catch (e) {}
       var briefEntry = "page";
 
-      function trackGoal(name) {
+      function trackGoal(name, entry) {
+        var params = {entry:entry || briefEntry};
+        if (guidePath) params.guide = guidePath;
         if (window.KDS_METRIKA_ID && typeof window.ym === "function") {
-          try {
-            var params = guidePath ? { guide: guidePath, entry: briefEntry } : {};
-            if (briefEntry === "home_hero" && /^(brief_|lead$)/.test(name)) params.entry = briefEntry;
-            window.ym(window.KDS_METRIKA_ID, "reachGoal", name, params);
-          } catch (e) {}
+          try { window.ym(window.KDS_METRIKA_ID, "reachGoal", name, params); } catch (e) {}
+        }
+        if (name === 'lead' || name === 'home_chat_sent') {
+          googleEvent('generate_lead', Object.assign({method:name === 'lead' ? 'brief' : 'chat'},params));
+        } else {
+          googleEvent(name,params);
         }
       }
+      window.KDS_trackChatGoal = function (name) { trackGoal(name, 'home_chat'); };
       // Clicks are session parameters. Only confirmed outcomes use the lead/chat goals.
       var controls = [
         ['[data-open-brief]', 'brief_open'], ['[data-close-brief]', 'brief_close'],
@@ -42,7 +78,7 @@
       ];
       function recordControl(event) {
         var el = event.target.closest && event.target.closest('a[href],button,summary,.proj-gallery img,.lightbox__img');
-        if (!el || el.disabled || !window.KDS_METRIKA_ID || typeof window.ym !== 'function') return;
+        if (!el || el.disabled) return;
         var rule = controls.find(function (pair) { return el.matches(pair[0]); });
         var name = rule ? rule[1] : 'button';
         var detail = '';
@@ -70,6 +106,8 @@
         var canonical = document.querySelector('link[rel="canonical"]');
         var page = canonical ? new URL(canonical.href).pathname : '/';
         var label = [area, name, detail].filter(Boolean).join(' | ');
+        googleEvent('site_click', {control_name:name, control_area:area, control_detail:detail});
+        if (!window.KDS_METRIKA_ID || typeof window.ym !== 'function') return;
         try { window.ym(window.KDS_METRIKA_ID, 'params', {site_click: { [page]: label }}); } catch (e) {}
       }
       document.addEventListener('click', recordControl, true);
@@ -1515,9 +1553,7 @@
       });
       document.querySelectorAll('a[href*="instagram.com"]').forEach(function (link) {
         link.addEventListener("click", function () {
-          if (window.KDS_METRIKA_ID && typeof ym === "function") {
-            ym(window.KDS_METRIKA_ID, "reachGoal", "ig_click");
-          }
+          trackGoal("ig_click");
         });
       });
 

@@ -57,9 +57,7 @@
     try { localStorage.setItem(key,JSON.stringify(saved)); } catch { persistent=false; }
   }
   function goal(name) {
-    if (!staff && window.KDS_METRIKA_ID && typeof window.ym === 'function') {
-      try { window.ym(window.KDS_METRIKA_ID,'reachGoal',name,{entry:'home_chat'}); } catch {}
-    }
+    if (!staff && window.KDS_trackChatGoal) window.KDS_trackChatGoal(name);
   }
   let rows=[], busy=false, locked=false, reading=false, revision=0, timer, statusKey='';
   let staffPending, staffText;
